@@ -1,0 +1,27 @@
+@mixin full-width-bg($bg-color, $pseudoelement-after: false) {
+    position: relative;
+
+    // See https://css-tricks.com/full-width-containers-limited-width-parents/#article-header-id-6
+    &:#{if($pseudoelement-after, 'after', 'before')} {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -50vw;
+        background-color: $bg-color;
+        height: 100%;
+        width: 100vw;
+        z-index: $z-index-behind-1;
+        // Allow click events to propagate through
+        // See: https://stackoverflow.com/a/4839672
+        pointer-events: none;
+        @content;
+    }
+}
+
+@mixin card-bg($color: rgba(0, 0, 0, 0.12)) {
+    background-color: $color-white;
+    border: 1px solid $color-gray-light-1;
+    box-shadow: 0px 0px 15px $color;
+    border-radius: $border-radius;
+}

@@ -1,0 +1,194 @@
+// Wrap in a block to avoid introducing global scope variables
+.landing {
+    &-header {
+        @extend .container;
+        @include full-width-bg($color-seafoam) {
+            height: 100%;
+        }
+        @include full-width-bg($color-none, $pseudoelement-after: true) {
+            height: 0;
+            width: 0;
+            top: 100%;
+            border-top: ($baseunit * 3) solid $color-seafoam;
+            border-right: 100vw solid $color-none;
+        }
+
+        display: flex;
+        align-items: center;
+        min-height: 70vh;
+        max-height: $baseunit * 35;
+
+        &__container {
+            width: 100%;
+        }
+    }
+    &-video {
+        @extend .container;
+        @include full-width-bg($color-none) {
+            top: -5vw;
+            height: 105vw;
+            width: 100vw;
+            background-image: url('../assets/images/drawing-stethescope.png');
+            background-position: top right -30vw;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            z-index: $z-index-front-1;
+            opacity: 0.4;
+        }
+        @include full-width-bg(
+            $color-gold-light-2,
+            $pseudoelement-after: true
+        ) {
+            top: 60%;
+            left: 60%;
+            margin-top: -50vw;
+            margin-left: -100vw;
+            height: 100vw;
+            width: 100vw;
+            border-radius: 100%;
+            z-index: $z-index-behind-2;
+        }
+
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        position: relative;
+        min-height: 55vh;
+        max-height: $baseunit * 25;
+
+        &__description {
+            z-index: $z-index-front-1;
+        }
+        &__preview {
+            margin-top: $baseunit * 2;
+            width: 50%;
+            max-width: $baseunit * 15;
+        }
+        & &__button {
+            @include scut-center-transform;
+
+            top: calc(100% - #{$height-control * 1.5});
+            left: 75%;
+            height: $height-control;
+            width: $height-control;
+            background-color: $color-gold;
+            color: $color-gold-dark-1;
+            border: 1px solid $color-gold-dark-1;
+            border-radius: 100%;
+
+            &:after {
+                $triangle-size: $height-control * 0.4;
+                @include scut-triangle(right, $triangle-size);
+
+                content: '';
+                position: relative;
+                top: $triangle-size * 0.1;
+                left: $triangle-size * 0.1;
+            }
+        }
+    }
+    &-cover-video-overflow {
+        @include full-width-bg($color-white);
+    }
+
+    // vertical spacing for landscape orientation for iPhone 5
+    @media (orientation: landscape) {
+        &-header {
+            min-height: 90vh;
+        }
+        &-video {
+            min-height: 110vh;
+        }
+    }
+    // vertical spacing for landscape orientation for iPhone 6 Plus
+    @media (orientation: landscape) and (min-width: $media-width-landscape-medium-mobile) {
+        &-header {
+            min-height: 70vh;
+        }
+        &-video {
+            min-height: 90vh;
+        }
+    }
+    // vertical spacing for landscape orientation for iPhone X and Pixel 2 XL
+    @media (orientation: landscape) and (min-width: $media-width-landscape-large-mobile) {
+        &-header {
+            min-height: 90vh;
+        }
+        &-video {
+            min-height: 70vh;
+
+            &:before {
+                top: -35vw;
+            }
+        }
+    }
+    // vertical spacing for actual large width
+    @media (min-width: $media-width-tablet) and (min-height: $media-height-actual-tablet) {
+        $hero-total-height: 98vh;
+        $nav-and-header-proportion: 0.7;
+        $header-slant-height: $baseunit * 5;
+
+        &-header {
+            min-height: calc(
+                #{$hero-total-height * $nav-and-header-proportion} - #{$header-slant-height} -
+                    #{$height-nav}
+            );
+
+            &:after {
+                border-top-width: $header-slant-height;
+            }
+        }
+        &-video {
+            min-height: calc(
+                #{$hero-total-height * (1 - $nav-and-header-proportion)} + #{$header-slant-height}
+            );
+
+            &:before {
+                $drawing-size-multiple: 7.5;
+
+                top: -35vh;
+                height: $drawing-size-multiple * 10vw;
+                background-position: top right ($drawing-size-multiple * -2vw);
+            }
+        }
+    }
+    // actual large width size general styles
+    @media (min-width: $media-width-tablet) {
+        &-header {
+            &__container {
+                width: 60%;
+            }
+        }
+        &-video {
+            $play-button-left-position: 50%;
+
+            flex-wrap: nowrap;
+
+            &:before {
+                opacity: 0.8;
+            }
+            &:after {
+                top: 50%;
+                left: $play-button-left-position;
+            }
+            &__description {
+                width: calc(#{$play-button-left-position} - #{$height-control});
+            }
+            &__preview {
+                position: absolute;
+                left: calc(#{$play-button-left-position} + #{$height-control});
+                bottom: 0;
+                max-height: 80%;
+                width: auto;
+                max-width: 40vw;
+                margin-top: 0;
+                transform: rotateY(180deg);
+            }
+            & &__button {
+                top: calc(50% + #{$baseunit});
+                left: $play-button-left-position;
+            }
+        }
+    }
+}

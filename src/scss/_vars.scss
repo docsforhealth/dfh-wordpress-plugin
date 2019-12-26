@@ -1,0 +1,55 @@
+$color-seafoam-dark-3: #88c8b6;
+$color-seafoam-dark-2: #aed6c9;
+$color-seafoam-dark-1: #d1e6df;
+$color-seafoam: #f2f7f5;
+
+$color-gold-dark-1: #b7a175;
+$color-gold: #f2dfb9;
+$color-gold-light-1: #f9f0df;
+$color-gold-light-2: #fdfaf3;
+
+$color-gray-dark-1: #333333;
+$color-gray: #595959;
+$color-gray-light-1: #e5e5e5;
+
+$color-navy: #345980;
+$color-navy-light-1: #8fabc7;
+$color-navy-light-2: #eaeff4;
+
+$color-white: white;
+$color-none: transparent;
+
+$baseunit: 1rem;
+
+$unit-vertical-spacing-small: $baseunit;
+$unit-horizontal-overhang: $baseunit * 2;
+$unit-horizontal-overhang-small: $baseunit * 1.5;
+
+$height-nav: $baseunit * 5;
+$height-control: $baseunit * 3;
+$height-control-small: $height-control * 0.7;
+
+$width-logo: $baseunit * 14;
+
+$offset-form-item-1: $baseunit * 0.5;
+$offset-form-item-2: $baseunit * 0.7;
+
+$font-weight-normal: 400;
+$font-weight-bold: 600; // actually is semi-bold
+
+$border-radius: 3px;
+
+$z-index-front-2: 10;
+$z-index-front-1: 5;
+$z-index-reset: 0; // create new stacking context
+$z-index-behind-1: -5;
+$z-index-behind-2: -10;
+
+$media-height-actual-tablet: 500px; // excludes mobile landscape
+
+$media-width-landscape-small-mobile: 568px; // iPhone 5
+$media-width-landscape-medium-mobile: 667px; // iPhone 6 Plus
+$media-width-tablet: 768px; // iPad
+$media-width-landscape-large-mobile: 812px; // iPhone X and Pixel 2 XL
+$media-width-laptop: 1024px;
+$media-width-desktop: 1280px;
