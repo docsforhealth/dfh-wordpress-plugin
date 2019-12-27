@@ -2,7 +2,7 @@
     $value-image-space: $baseunit * 4;
     $value-image-vertical-offset: $value-image-space * -0.5;
 
-    @extend .container !optional;
+    @extend .container;
 
     display: flex;
     position: relative;

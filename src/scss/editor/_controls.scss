@@ -1,9 +1,17 @@
-.editor-uploader {
-    margin-top: $baseunit;
+.editor-image-picker {
+    .components-placeholder {
+        margin-bottom: 0;
+    }
+    &__control {
+        margin-top: $baseunit * 0.5;
+    }
+}
+.editor-link-picker {
+    display: flex;
+    align-items: center;
+    margin-left: $baseunit * 0.5;
 
-    &__button {
-        @extend .button !optional;
-        @extend .button--outline !optional;
-        @extend .button--small !optional;
+    &__target {
+        margin-left: $baseunit * 0.5;
     }
 }

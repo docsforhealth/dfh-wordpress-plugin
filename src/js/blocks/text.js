@@ -50,7 +50,7 @@ registerBlockType(Constants.BLOCK_TEXT, {
         <RichText
           tagName="p"
           className={`${className} text ${buildClasses(attributes)}`}
-          placeholder={__('Enter your text here', Constants.TEXT_DOMAIN)}
+          placeholder={__('Enter text here', Constants.TEXT_DOMAIN)}
           value={attributes.value}
           onChange={value => setAttributes({ value })}
           preserveWhiteSpace={!attributes.oneLine}
@@ -64,6 +64,7 @@ registerBlockType(Constants.BLOCK_TEXT, {
         tagName="p"
         className={`text ${buildClasses(attributes)}`}
         value={attributes.value}
+        preserveWhiteSpace={!attributes.oneLine}
       />
     );
   },

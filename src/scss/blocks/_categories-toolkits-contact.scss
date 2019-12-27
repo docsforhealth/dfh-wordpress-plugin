@@ -5,7 +5,7 @@
         $divider-height: $baseunit;
         $nav-height: $baseunit * 4;
 
-        @extend .container !optional;
+        @extend .container;
         @include full-width-bg($color-none) {
             height: $nav-height + $divider-height;
             background: linear-gradient(
@@ -158,7 +158,7 @@
     }
 
     &-toolkits {
-        @extend .container !optional;
+        @extend .container;
         @include full-width-bg($color-seafoam);
         @include full-width-bg($color-none, $pseudoelement-after: true) {
             top: 10vw;
@@ -196,8 +196,8 @@
     }
 
     &-contact {
-        @extend .container !optional;
-        @extend .container--narrow !optional;
+        @extend .container;
+        @extend .container--narrow;
         @include full-width-bg($color-seafoam);
 
         padding: ($baseunit * 8) 0 0;

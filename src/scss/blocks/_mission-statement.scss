@@ -1,6 +1,6 @@
 .landing-mission {
-    @extend .container !optional;
-    @extend .container--narrow !optional;
+    @extend .container;
+    @extend .container--narrow;
     @include full-width-bg($color-none, $pseudoelement-after: true) {
         background-image: url('../assets/images/bg-blue-wave.png');
         background-position: center left -10vw;

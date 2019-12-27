@@ -66,7 +66,7 @@ registerBlockType(Constants.BLOCK_TITLE, {
               tagName="span"
               className="heading__subtitle heading__subtitle--pre"
               placeholder={__(
-                'Enter your pre-heading here',
+                'Enter pre-heading here',
                 Constants.TEXT_DOMAIN,
               )}
               value={attributes.preTitle}
@@ -76,7 +76,7 @@ registerBlockType(Constants.BLOCK_TITLE, {
           <RichText
             tagName="span"
             className="heading__title"
-            placeholder={__('Enter your heading here', Constants.TEXT_DOMAIN)}
+            placeholder={__('Enter heading here', Constants.TEXT_DOMAIN)}
             value={attributes.mainTitle}
             onChange={mainTitle => setAttributes({ mainTitle })}
           />
@@ -85,7 +85,7 @@ registerBlockType(Constants.BLOCK_TITLE, {
               tagName="span"
               className="heading__subtitle heading__subtitle--post"
               placeholder={__(
-                'Enter your post-heading here',
+                'Enter post-heading here',
                 Constants.TEXT_DOMAIN,
               )}
               value={attributes.postTitle}

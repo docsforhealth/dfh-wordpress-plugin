@@ -1,15 +1,11 @@
 import { __ } from '@wordpress/i18n';
-import { Button, ToggleControl, PanelBody } from '@wordpress/components';
 import { Fragment } from 'react';
+import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-import {
-  InnerBlocks,
-  InspectorControls,
-  MediaUpload,
-} from '@wordpress/block-editor';
+import { ToggleControl, PanelBody } from '@wordpress/components';
 
 import * as Constants from '../constants';
-import placeholderUrl from '../../../assets/images/illustration-flower.png';
+import ImagePicker from '../editor/image-picker';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType('dfh/value-statement', {
@@ -22,7 +18,6 @@ registerBlockType('dfh/value-statement', {
       source: 'attribute',
       selector: '.landing-value__image img',
       attribute: 'src',
-      default: placeholderUrl,
     },
     valueImageAlt: {
       type: 'string',
@@ -64,23 +59,12 @@ registerBlockType('dfh/value-statement', {
             />
           </div>
           <div className="landing-value__image">
-            <img src={attributes.valueImage} alt={attributes.valueImageAlt} />
-            <MediaUpload
+            <ImagePicker
               onSelect={({ url, alt }) =>
                 setAttributes({ valueImage: url, valueImageAlt: alt })
               }
-              type="image"
-              value={attributes.valueImage}
-              render={({ open }) => (
-                <div className="editor-uploader">
-                  <Button
-                    className="editor-uploader__button"
-                    onClick={open}
-                  >
-                    {__('Select image', Constants.TEXT_DOMAIN)}
-                  </Button>
-                </div>
-              )}
+              url={attributes.valueImage}
+              description={attributes.valueImageAlt}
             />
           </div>
         </div>

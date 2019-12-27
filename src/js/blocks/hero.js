@@ -1,10 +1,10 @@
 import { __ } from '@wordpress/i18n';
-import { Button } from '@wordpress/components';
-import { MediaUpload, RichText } from '@wordpress/block-editor';
+import { RichText } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as Constants from '../constants';
-import placeholderUrl from '../../../assets/images/picture-megan.png';
+import ImagePicker from '../editor/image-picker';
+import LinkPicker from '../editor/link-picker';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType('dfh/hero', {
@@ -13,22 +13,22 @@ registerBlockType('dfh/hero', {
   attributes: {
     mainTitle: {
       type: 'string',
-      source:'html',
+      source: 'html',
       selector: '.landing-header__container .heading',
     },
     mainSubtitle: {
       type: 'string',
-      source:'html',
+      source: 'html',
       selector: '.landing-header__container .text',
     },
     videoTitle: {
       type: 'string',
-      source:'html',
+      source: 'html',
       selector: '.landing-video__description .heading',
     },
     videoSubtitle: {
       type: 'string',
-      source:'html',
+      source: 'html',
       selector: '.landing-video__description .text',
     },
     videoImage: {
@@ -36,7 +36,6 @@ registerBlockType('dfh/hero', {
       source: 'attribute',
       selector: '.landing-video__preview img',
       attribute: 'src',
-      default: placeholderUrl,
     },
     videoImageAlt: {
       type: 'string',
@@ -45,6 +44,12 @@ registerBlockType('dfh/hero', {
       attribute: 'alt',
       default: 'Video thumbnail',
     },
+    primaryActionUrl: { type: 'string' },
+    primaryActionUrlTitle: { type: 'string' },
+    primaryActionLabel: { type: 'string' },
+    secondaryActionUrl: { type: 'string' },
+    secondaryActionUrlTitle: { type: 'string' },
+    secondaryActionLabel: { type: 'string' },
   },
   edit({ attributes, setAttributes }) {
     return (
@@ -54,33 +59,62 @@ registerBlockType('dfh/hero', {
             <RichText
               tagName="h1"
               className="heading heading--1"
-              placeholder={__('Enter your title here', Constants.TEXT_DOMAIN)}
+              placeholder={__('Enter title here', Constants.TEXT_DOMAIN)}
               value={attributes.mainTitle}
               onChange={mainTitle => setAttributes({ mainTitle })}
             />
             <RichText
               tagName="p"
               className="text text--large margin-b-3"
-              placeholder={__(
-                'Enter your subtitle here',
-                Constants.TEXT_DOMAIN,
-              )}
+              placeholder={__('Enter subtitle here', Constants.TEXT_DOMAIN)}
               value={attributes.mainSubtitle}
               onChange={mainSubtitle => setAttributes({ mainSubtitle })}
             />
             <div className="button-container">
-              <a
-                href="/resources.html"
+              <RichText
                 className="button-container__button button"
-              >
-                {__('Show me the resources', Constants.TEXT_DOMAIN)}
-              </a>
-              <button
-                type="button"
+                placeholder={__(
+                  'Enter primary action label here',
+                  Constants.TEXT_DOMAIN,
+                )}
+                value={attributes.primaryActionLabel}
+                onChange={primaryActionLabel =>
+                  setAttributes({ primaryActionLabel })
+                }
+              />
+              <LinkPicker
+                url={attributes.primaryActionUrl}
+                title={attributes.primaryActionUrlTitle}
+                onChange={({ url, title }) =>
+                  setAttributes({
+                    primaryActionUrl: url,
+                    primaryActionUrlTitle: title,
+                  })
+                }
+              />
+            </div>
+            <div className="button-container">
+              <RichText
                 className="button-container__button button button--outline"
-              >
-                {__('Get in touch', Constants.TEXT_DOMAIN)}
-              </button>
+                placeholder={__(
+                  'Enter secondary action label here',
+                  Constants.TEXT_DOMAIN,
+                )}
+                value={attributes.secondaryActionLabel}
+                onChange={secondaryActionLabel =>
+                  setAttributes({ secondaryActionLabel })
+                }
+              />
+              <LinkPicker
+                url={attributes.secondaryActionUrl}
+                title={attributes.secondaryActionUrlTitle}
+                onChange={({ url, title }) =>
+                  setAttributes({
+                    secondaryActionUrl: url,
+                    secondaryActionUrlTitle: title,
+                  })
+                }
+              />
             </div>
           </div>
         </header>
@@ -89,10 +123,7 @@ registerBlockType('dfh/hero', {
             <RichText
               tagName="h2"
               className="heading heading--3"
-              placeholder={__(
-                'Enter your video title here',
-                Constants.TEXT_DOMAIN,
-              )}
+              placeholder={__('Enter video title here', Constants.TEXT_DOMAIN)}
               value={attributes.videoTitle}
               onChange={videoTitle => setAttributes({ videoTitle })}
             />
@@ -100,31 +131,20 @@ registerBlockType('dfh/hero', {
               tagName="p"
               className="text"
               placeholder={__(
-                'Enter your video subtitle here',
+                'Enter video subtitle here',
                 Constants.TEXT_DOMAIN,
               )}
               value={attributes.videoSubtitle}
               onChange={videoSubtitle => setAttributes({ videoSubtitle })}
             />
           </div>
-          <img
-            className="landing-video__preview"
-            src={attributes.videoImage}
-            alt={attributes.videoImageAlt}
-          />
-          <MediaUpload
+          <ImagePicker
             onSelect={({ url, alt }) =>
               setAttributes({ videoImage: url, videoImageAlt: alt })
             }
-            type="image"
-            value={attributes.videoImage}
-            render={({ open }) => (
-              <div className="editor-uploader">
-                <Button className="editor-uploader__button" onClick={open}>
-                  {__('Select image', Constants.TEXT_DOMAIN)}
-                </Button>
-              </div>
-            )}
+            previewClassName="landing-video__preview"
+            url={attributes.videoImage}
+            description={attributes.videoImageAlt}
           />
           <button
             type="button"
@@ -152,17 +172,17 @@ registerBlockType('dfh/hero', {
             />
             <div className="button-container">
               <a
-                href="/resources.html"
+                href={attributes.primaryActionUrl}
                 className="button-container__button button"
               >
-                {__('Show me the resources', Constants.TEXT_DOMAIN)}
+                {attributes.primaryActionLabel}
               </a>
-              <button
-                type="button"
+              <a
+                href={attributes.secondaryActionUrl}
                 className="button-container__button button button--outline"
               >
-                {__('Get in touch', Constants.TEXT_DOMAIN)}
-              </button>
+                {attributes.secondaryActionLabel}
+              </a>
             </div>
           </div>
         </header>

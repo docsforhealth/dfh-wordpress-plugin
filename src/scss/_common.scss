@@ -1,3 +1,12 @@
+/**
+ * NOTE all of these styles below are included for easy extending in plugin-specific CSS
+ * These styles are reapplied by the theme via a shared Github repository. The theme's
+ * styles have a higher priority than the default Wordpress styles so the theme's styles
+ * will override the defaults. The stylesheets included by the plugin in this file have a
+ * lower priority than the default Wordpress styles so these alone will not sufficiently
+ * override the Wordpress defaults.
+ */
+
 @import 'scut/dist/scut';
 
 @import 'base/vars';
