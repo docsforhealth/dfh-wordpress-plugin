@@ -23,3 +23,17 @@
         }
     }
 }
+
+.link {
+    color: inherit;
+    line-height: normal;
+
+    &:hover,
+    &:visited,
+    &:active {
+        color: $color-navy;
+    }
+    &:active {
+        text-decoration: none;
+    }
+}

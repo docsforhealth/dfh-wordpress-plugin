@@ -1,3 +1,18 @@
+// Contain hero overflow
+.landing-hero {
+    $bottom-border-height: $baseunit;
+
+    @include full-width-bg($color-gold-light-1) {
+        height: $bottom-border-height;
+        top: auto;
+        bottom: 0;
+        z-index: $z-index-front-2;
+    }
+
+    padding-bottom: $bottom-border-height;
+    overflow: hidden;
+}
+
 // Wrap in a block to avoid introducing global scope variables
 .landing {
     &-header {

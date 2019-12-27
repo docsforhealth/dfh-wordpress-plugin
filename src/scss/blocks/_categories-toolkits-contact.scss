@@ -1,0 +1,241 @@
+.landing {
+    $ellipse-height: $baseunit * 10;
+
+    &-categories {
+        $divider-height: $baseunit;
+        $nav-height: $baseunit * 4;
+
+        @extend .container;
+        @include full-width-bg($color-none) {
+            height: $nav-height + $divider-height;
+            background: linear-gradient(
+                $color-gold-light-1 $divider-height,
+                $color-gold-light-2 $divider-height
+            );
+        }
+        @include full-width-bg($color-white, $pseudoelement-after: true) {
+            top: auto;
+            bottom: $ellipse-height * -0.5;
+            height: $ellipse-height;
+            border-radius: 100%;
+            z-index: $z-index-front-1;
+        }
+
+        &__nav {
+            display: flex;
+            height: $nav-height + $divider-height;
+            padding-top: $divider-height;
+
+            &__arrow {
+                flex-shrink: 0;
+                height: $nav-height;
+                width: $nav-height;
+                background-image: url('../assets/images/icon-arrow.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: $baseunit * 2;
+                cursor: pointer;
+                transform: rotateY(180deg);
+
+                &--back {
+                    right: auto;
+                    left: 0;
+                    transform: none;
+                }
+            }
+            &__items {
+                @include scut-list-unstyled;
+
+                display: flex;
+                align-items: stretch;
+                justify-content: center;
+                height: 100%;
+                min-width: 0;
+                flex-grow: 1;
+            }
+            &__item {
+                position: relative;
+                min-width: 0;
+                flex-basis: 100%;
+                color: transparent;
+                overflow: hidden;
+
+                &:before {
+                    @include scut-center-transform;
+                    content: '';
+                    height: $baseunit * 0.5;
+                    width: $baseunit * 0.5;
+                    background-color: $color-gray-light-1;
+                    border-radius: 100%;
+                }
+                &--active:before {
+                    background-color: $color-navy;
+                }
+
+                &__control {
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+                    border-width: 0;
+                    border-radius: 0;
+                }
+            }
+
+            @media (min-width: $media-width-tablet) {
+                &__arrow {
+                    display: none !important;
+                }
+                &__item {
+                    flex-grow: 1;
+                    color: inherit;
+
+                    &--active:after {
+                        @include scut-triangle(
+                            up,
+                            ($baseunit * 1.2) ($baseunit * 0.8),
+                            $color-white
+                        );
+                        @include scut-center-transform(x);
+
+                        content: '';
+                        bottom: 0;
+                    }
+
+                    &:before {
+                        display: none;
+                    }
+                    &__control {
+                        color: $color-navy;
+                        font-weight: $font-weight-bold;
+
+                        &:hover,
+                        &:visited,
+                        &:active {
+                            background-color: $color-gold-light-1;
+                        }
+                    }
+                    &--active &__control {
+                        background-color: $color-gold-light-1;
+                    }
+                }
+            }
+        }
+
+        &__slide-container {
+            position: relative; // so z-index works
+            z-index: $z-index-front-2; // overlay ellipse
+        }
+        &__slide {
+            display: flex;
+            padding: ($baseunit * 3) $baseunit 0;
+
+            &__examples {
+                display: none;
+            }
+
+            @media (min-width: $media-width-tablet) {
+                &__description {
+                    width: 50%;
+                    padding-right: $baseunit * 3;
+                }
+                &__examples {
+                    @include scut-list-unstyled;
+
+                    display: block;
+                    width: 50%;
+                }
+                &__example {
+                    border: 1px solid $color-seafoam-dark-2;
+                    border-radius: $border-radius;
+                    padding: $baseunit;
+
+                    & + & {
+                        margin-top: $baseunit * 0.5;
+                    }
+                }
+            }
+        }
+    }
+
+    &-toolkits {
+        @extend .container;
+        @include full-width-bg($color-seafoam);
+        @include full-width-bg($color-none, $pseudoelement-after: true) {
+            top: 10vw;
+            height: 115vw;
+            width: 80vw;
+            margin-left: -90vw;
+            background-image: url('../assets/images/drawing-pencil.png');
+            background-position: top right;
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: $z-index-front-1;
+            opacity: 0.4;
+        }
+
+        display: flex;
+        justify-content: flex-end;
+        padding-top: $ellipse-height;
+
+        &__featured {
+            z-index: $z-index-front-2;
+        }
+
+        @media (min-width: $media-width-tablet) {
+            &:after {
+                top: 0;
+                height: 85vw;
+                width: 60vw;
+                margin-left: -70vw;
+                opacity: 0.8;
+            }
+            &__featured {
+                width: 50%;
+            }
+        }
+    }
+
+    &-contact {
+        @extend .container;
+        @extend .container--narrow;
+        @include full-width-bg($color-seafoam);
+
+        padding: ($baseunit * 8) 0 0;
+
+        &__form {
+            @include full-width-bg($color-white);
+            @include full-width-bg($color-white, $pseudoelement-after: true) {
+                top: $ellipse-height * -0.5;
+                height: $ellipse-height;
+                border-radius: 100%;
+            }
+
+            position: relative; // so z-index works
+            padding: ($baseunit * 2) 0 ($baseunit * 5);
+            z-index: $z-index-front-1;
+        }
+
+        @media (min-width: $media-width-tablet) {
+            @include full-width-bg($color-none, $pseudoelement-after: true) {
+                background-image: url('../assets/images/bg-yellow-waves.png');
+                background-position: bottom left -10vw;
+                background-repeat: no-repeat;
+                background-size: 120vw 50%;
+                opacity: 0.7;
+            }
+
+            padding: ($baseunit * 8) 0;
+
+            &__form {
+                @include card-bg;
+
+                padding: ($baseunit * 2) ($baseunit * 2.5);
+
+                &:before,
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}

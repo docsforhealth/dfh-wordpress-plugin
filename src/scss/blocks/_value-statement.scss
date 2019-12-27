@@ -1,0 +1,38 @@
+.landing-value {
+    $value-image-space: $baseunit * 4;
+    $value-image-vertical-offset: $value-image-space * -0.5;
+
+    @extend .container;
+
+    display: flex;
+    position: relative;
+    padding-top: abs($value-image-vertical-offset);
+
+    &__description {
+        padding-bottom: abs($value-image-vertical-offset) * 1.5;
+    }
+    &__image {
+        position: absolute;
+        top: $value-image-vertical-offset;
+        left: calc(100% - #{$value-image-space * 1.5});
+        width: $value-image-space * 2.5;
+        opacity: 0.4;
+    }
+
+    @media (min-width: $media-width-tablet) {
+        &--reversed {
+            flex-direction: row-reverse;
+        }
+
+        &__description {
+            width: 50%;
+        }
+        &__image {
+            position: initial;
+            height: auto;
+            width: 50%;
+            padding: 0 10%;
+            opacity: 1;
+        }
+    }
+}

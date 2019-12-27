@@ -12,40 +12,40 @@ registerBlockType('dfh/hero', {
   // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-edit-save/
   edit() {
     return (
-      <div>
-        <header class="landing-header">
-          <div class="landing-header__container">
-            <h1 class="heading heading--1">
+      <div className="landing-hero">
+        <header className="landing-header">
+          <div className="landing-header__container">
+            <h1 className="heading heading--1">
               {__(
                 'Provider resources for the determinants of health',
                 Constants.TEXT_DOMAIN,
               )}
             </h1>
-            <p class="text text--large margin-b-3">
+            <p className="text text--large margin-b-3">
               {__(
                 'Helping healthcare providers create a system that truly supports our vulnerable patients',
                 Constants.TEXT_DOMAIN,
               )}
             </p>
-            <div class="button-container">
-              <a href="/resources.html" class="button-container__button button">
+            <div className="button-container">
+              <a href="/resources.html" className="button-container__button button">
                 {__('Show me the resources', Constants.TEXT_DOMAIN)}
               </a>
               <button
                 type="button"
-                class="button-container__button button button--outline"
+                className="button-container__button button button--outline"
               >
                 {__('Get in touch', Constants.TEXT_DOMAIN)}
               </button>
             </div>
           </div>
         </header>
-        <section class="landing-video">
-          <div class="landing-video__description">
-            <h2 class="heading heading--3">
+        <section className="landing-video">
+          <div className="landing-video__description">
+            <h2 className="heading heading--3">
               {__('Why Docs for Health?', Constants.TEXT_DOMAIN)}
             </h2>
-            <p class="text">
+            <p className="text">
               {__(
                 'Ask Megan, an outreach program manager who helped put together Docs for Health',
                 Constants.TEXT_DOMAIN,
@@ -53,13 +53,13 @@ registerBlockType('dfh/hero', {
             </p>
           </div>
           <img
-            class="landing-video__preview"
+            className="landing-video__preview"
             src={headshotUrl}
             alt="Megan Smith headshot"
           />
           <button
             type="button"
-            class="landing-video__button"
+            className="landing-video__button"
             aria-label="Play introductory video"
           />
         </section>
@@ -68,40 +68,40 @@ registerBlockType('dfh/hero', {
   },
   save() {
     return (
-      <div>
-        <header class="landing-header">
-          <div class="landing-header__container">
-            <h1 class="heading heading--1">
+      <div className="landing-hero">
+        <header className="landing-header">
+          <div className="landing-header__container">
+            <h1 className="heading heading--1">
               {__(
                 'Provider resources for the determinants of health',
                 Constants.TEXT_DOMAIN,
               )}
             </h1>
-            <p class="text text--large margin-b-3">
+            <p className="text text--large margin-b-3">
               {__(
                 'Helping healthcare providers create a system that truly supports our vulnerable patients',
                 Constants.TEXT_DOMAIN,
               )}
             </p>
-            <div class="button-container">
-              <a href="/resources.html" class="button-container__button button">
+            <div className="button-container">
+              <a href="/resources.html" className="button-container__button button">
                 {__('Show me the resources', Constants.TEXT_DOMAIN)}
               </a>
               <button
                 type="button"
-                class="button-container__button button button--outline"
+                className="button-container__button button button--outline"
               >
                 {__('Get in touch', Constants.TEXT_DOMAIN)}
               </button>
             </div>
           </div>
         </header>
-        <section class="landing-video">
-          <div class="landing-video__description">
-            <h2 class="heading heading--3">
+        <section className="landing-video">
+          <div className="landing-video__description">
+            <h2 className="heading heading--3">
               {__('Why Docs for Health?', Constants.TEXT_DOMAIN)}
             </h2>
-            <p class="text">
+            <p className="text">
               {__(
                 'Ask Megan, an outreach program manager who helped put together Docs for Health',
                 Constants.TEXT_DOMAIN,
@@ -109,13 +109,13 @@ registerBlockType('dfh/hero', {
             </p>
           </div>
           <img
-            class="landing-video__preview"
+            className="landing-video__preview"
             src={headshotUrl}
             alt="Megan Smith headshot"
           />
           <button
             type="button"
-            class="landing-video__button"
+            className="landing-video__button"
             aria-label="Play introductory video"
           />
         </section>

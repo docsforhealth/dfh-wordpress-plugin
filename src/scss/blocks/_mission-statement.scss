@@ -1,0 +1,20 @@
+.landing-mission {
+    @extend .container;
+    @extend .container--narrow;
+    @include full-width-bg($color-none, $pseudoelement-after: true) {
+        background-image: url('../assets/images/bg-blue-wave.png');
+        background-position: center left -10vw;
+        background-repeat: no-repeat;
+        background-size: 160vw 70%;
+
+        @media (min-width: $media-width-tablet) {
+            background-size: 120vw 70%;
+        }
+    }
+
+    padding: ($baseunit * 5) 0;
+
+    &__title {
+        @include scut-hide-visually;
+    }
+}

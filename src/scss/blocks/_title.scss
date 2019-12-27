@@ -1,0 +1,119 @@
+.heading {
+    margin-bottom: $baseunit;
+    font-weight: $font-weight-normal;
+
+    &--one-line {
+        @include scut-truncate;
+
+        display: block;
+    }
+    &--bold {
+        font-weight: $font-weight-bold;
+    }
+    &--1 {
+        font-size: $baseunit * 1.786;
+    }
+    &--2,
+    &--3 {
+        font-size: $baseunit * 1.429;
+    }
+    &--4 {
+        font-size: $baseunit * 1.25;
+    }
+
+    &__title {
+        display: inline-block;
+        position: relative;
+        font-weight: $font-weight-bold;
+        z-index: $z-index-reset;
+
+        &:after {
+            $highlight-offset: $baseunit * 0.6;
+
+            content: '';
+            position: absolute;
+            left: $highlight-offset * -1;
+            bottom: $baseunit * -0.2;
+            height: $baseunit;
+            width: calc(100% + #{$highlight-offset * 1.5});
+            background-color: $color-gold;
+            border-radius: $border-radius * 2;
+            transform: skewX(20deg);
+            z-index: $z-index-behind-1;
+            opacity: 0.8;
+        }
+    }
+    &__subtitle,
+    &__nav {
+        @include scut_truncate;
+
+        display: block;
+        font-size: 70%;
+        text-transform: uppercase;
+    }
+    &__subtitle + &__title {
+        margin-top: $baseunit * 0.25;
+    }
+    &__title + &__subtitle {
+        margin-top: $baseunit * 0.65;
+    }
+    &__nav {
+        @extend .link;
+
+        display: flex;
+        align-items: center;
+        padding-bottom: $baseunit;
+        margin-bottom: $baseunit * 2;
+        border-bottom: 1px solid $color-seafoam-dark-1;
+        font-size: $baseunit;
+
+        & > * + * {
+            margin-left: $baseunit * 0.5;
+        }
+
+        &__image {
+            height: $height-control-small * 0.8;
+        }
+        &__text {
+            color: $color-navy;
+        }
+    }
+
+    @media (min-width: $media-width-tablet) {
+        &--1 {
+            font-size: $baseunit * 2.5;
+        }
+        &--2 {
+            font-size: $baseunit * 1.875;
+        }
+        &--3,
+        &--4 {
+            font-size: $baseunit * 1.25;
+        }
+
+        &__nav {
+            // Override previous styles
+            height: $height-control-small;
+            margin-bottom: $baseunit * 0.5;
+            padding-bottom: 0;
+            border-bottom-width: 0;
+        }
+    }
+    @media (min-width: $media-width-desktop) {
+        position: relative;
+
+        &__nav {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(calc(-100% - #{$baseunit}), -50%);
+
+            &__image {
+                height: 100%;
+            }
+            &__text {
+                display: none;
+            }
+        }
+    }
+}

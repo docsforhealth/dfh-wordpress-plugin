@@ -36,51 +36,47 @@ function dfh_block_categories($categories, $post) {
 add_filter('block_categories', 'dfh_block_categories', 10, 2);
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
-function dfh_register_blocks() {
+function dfh_setup_plugin() {
     // if Block Editor is not active, bail.
     if (!function_exists('register_block_type')) {
         return;
     }
+    // See https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/
+    if (function_exists('wp_set_script_translations')) {
+        wp_set_script_translations('dfh-editor-script', 'dfh', plugin_dir_path(__FILE__) . '/languages');
+    }
+}
+add_action('init', 'dfh_setup_plugin');
 
-    // Retister the block editor script.
-    wp_register_script(
+// see https://jasonyingling.me/enqueueing-scripts-and-styles-for-gutenberg-blocks/
+function dfh_register_editor_blocks() {
+    // Register the block editor script.
+    wp_enqueue_script(
         'dfh-editor-script', // label
         plugins_url('build/index.js', __FILE__), // script file
-        array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-data"), // dependencies
+        array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-block-editor', 'wp-data'), // dependencies
         filemtime(plugin_dir_path(__FILE__) . 'build/index.js') // set version as file last modified time
     );
-
     // Register the block editor stylesheet.
-    wp_register_style(
+    wp_enqueue_style(
         'dfh-editor-styles', // label
         plugins_url('build/editor.css', __FILE__), // CSS file
         array('wp-edit-blocks'), // dependencies
         filemtime(plugin_dir_path(__FILE__) . 'build/editor.css') // set version as file last modified time
     );
+}
+add_action('enqueue_block_editor_assets', 'dfh_register_editor_blocks');
+
+// see https://jasonyingling.me/enqueueing-scripts-and-styles-for-gutenberg-blocks/
+function dfh_register_frontend_blocks() {
+    // TODO add in scripts needed for both frontend and backend
 
     // Register the front-end stylesheet.
-    wp_register_style(
+    wp_enqueue_style(
         'dfh-front-end-styles', // label
         plugins_url('build/style.css', __FILE__), // CSS file
         array(), // dependencies
         filemtime(plugin_dir_path(__FILE__) . 'build/style.css') // set version as file last modified time
     );
-
-    // See https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/
-    if (function_exists('wp_set_script_translations')) {
-        wp_set_script_translations('dfh-editor-script', 'dfh', plugin_dir_path(__FILE__) . '/languages');
-    }
-
-    // Loop through $blocks and register each block with the same script and styles.
-    $blocks = [
-        'dfh/hero',
-    ];
-    foreach($blocks as $block) {
-        register_block_type($block, array(
-            'editor_script' => 'dfh-editor-script', // Calls registered script above
-            'editor_style' => 'dfh-editor-styles', // Calls registered stylesheet above
-            'style' => 'dfh-front-end-styles', // Calls registered stylesheet above
-        ));
-    }
 }
-add_action('init', 'dfh_register_blocks');
+add_action('enqueue_block_assets', 'dfh_register_frontend_blocks');
