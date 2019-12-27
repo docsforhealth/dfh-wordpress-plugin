@@ -72,9 +72,9 @@ registerBlockType('dfh/value-statement', {
               type="image"
               value={attributes.valueImage}
               render={({ open }) => (
-                <div style={{ marginTop: '1rem' }}>
+                <div className="editor-uploader">
                   <Button
-                    className="button button--outline button--small"
+                    className="editor-uploader__button"
                     onClick={open}
                   >
                     {__('Select image', Constants.TEXT_DOMAIN)}

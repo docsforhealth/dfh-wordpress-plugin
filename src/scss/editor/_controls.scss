@@ -1,0 +1,9 @@
+.editor-uploader {
+    margin-top: $baseunit;
+
+    &__button {
+        @extend .button !optional;
+        @extend .button--outline !optional;
+        @extend .button--small !optional;
+    }
+}

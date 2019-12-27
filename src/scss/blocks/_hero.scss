@@ -16,7 +16,7 @@
 // Wrap in a block to avoid introducing global scope variables
 .landing {
     &-header {
-        @extend .container;
+        @extend .container !optional;
         @include full-width-bg($color-seafoam) {
             height: 100%;
         }
@@ -38,7 +38,7 @@
         }
     }
     &-video {
-        @extend .container;
+        @extend .container !optional;
         @include full-width-bg($color-none) {
             top: -5vw;
             height: 105vw;

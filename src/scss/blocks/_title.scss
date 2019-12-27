@@ -58,7 +58,7 @@
         margin-top: $baseunit * 0.65;
     }
     &__nav {
-        @extend .link;
+        @extend .link !optional;
 
         display: flex;
         align-items: center;
