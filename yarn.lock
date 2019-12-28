@@ -5609,6 +5609,11 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
+lity@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/lity/-/lity-2.4.0.tgz#af7eb0c33efe3b21c31ab22848e608eca432e819"
+  integrity sha512-6sj/IjJ6bDWdWcvo15r12erzVkVQFx8xA5dWT3WjuJxCns8o7PEkDAjfTjaoy6wbR2KDxAfxBWqY9YNnpAUWPQ==
+
 livereload-js@^2.3.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/livereload-js/-/livereload-js-2.4.0.tgz#447c31cf1ea9ab52fc20db615c5ddf678f78009c"

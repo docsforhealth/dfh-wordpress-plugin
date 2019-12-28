@@ -69,13 +69,20 @@ add_action('enqueue_block_editor_assets', 'dfh_register_editor_blocks');
 
 // see https://jasonyingling.me/enqueueing-scripts-and-styles-for-gutenberg-blocks/
 function dfh_register_frontend_blocks() {
+    // Styles and scripts needed for ONLY the frontend
     // see https://github.com/WordPress/gutenberg/issues/1893#issuecomment-315240663
     if (!is_admin()) {
-        // TODO add in scripts needed for both frontend and backend
-
-        // Register the front-end stylesheet.
+        wp_enqueue_script('jquery');
+        // TODO add in scripts needed for frontend
+        wp_enqueue_script(
+            'dfh-frontend-script', // label
+            plugins_url('build/editor.js', __FILE__), // script file
+            array(), // dependencies
+            filemtime(plugin_dir_path(__FILE__) . 'build/editor.js') // set version as file last modified time
+        );
+        // Register the frontend stylesheet.
         wp_enqueue_style(
-            'dfh-front-end-styles', // label
+            'dfh-frontend-styles', // label
             plugins_url('build/style.css', __FILE__), // CSS file
             array(), // dependencies
             filemtime(plugin_dir_path(__FILE__) . 'build/style.css') // set version as file last modified time

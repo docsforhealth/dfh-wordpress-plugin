@@ -93,13 +93,10 @@
             border-radius: 100%;
 
             &:after {
-                $triangle-size: $height-control * 0.4;
-                @include scut-triangle(right, $triangle-size);
+                @include scut-triangle(right, $height-control * 0.4);
+                @include scut-center-transform;
 
                 content: '';
-                position: relative;
-                top: $triangle-size * 0.1;
-                left: $triangle-size * 0.1;
             }
         }
     }

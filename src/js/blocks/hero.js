@@ -1,10 +1,11 @@
 import { __ } from '@wordpress/i18n';
-import { RichText } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
+import { RichText } from '@wordpress/block-editor';
 
 import * as Constants from '../constants';
 import ImagePicker from '../editor/image-picker';
 import LinkPicker from '../editor/link-picker';
+import VideoPopup from '../editor/video-popup';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType('dfh/hero', {
@@ -44,6 +45,7 @@ registerBlockType('dfh/hero', {
       attribute: 'alt',
       default: 'Video thumbnail',
     },
+    videoUrl: { type: 'string' },
     primaryActionUrl: { type: 'string' },
     primaryActionUrlTitle: { type: 'string' },
     primaryActionLabel: { type: 'string' },
@@ -146,10 +148,10 @@ registerBlockType('dfh/hero', {
             url={attributes.videoImage}
             description={attributes.videoImageAlt}
           />
-          <button
-            type="button"
-            className="landing-video__button"
-            aria-label="Play introductory video"
+          <LinkPicker
+            url={attributes.videoUrl}
+            title={attributes.videoUrl}
+            onChange={({ url }) => setAttributes({ videoUrl: url })}
           />
         </section>
       </div>
@@ -204,11 +206,12 @@ registerBlockType('dfh/hero', {
             src={attributes.videoImage}
             alt={attributes.videoImageAlt}
           />
-          <button
-            type="button"
+          <VideoPopup
             className="landing-video__button"
-            aria-label="Play introductory video"
-          />
+            target={attributes.videoUrl}
+          >
+            <span class="sr-only">Play introductory video</span>
+          </VideoPopup>
         </section>
       </div>
     );
