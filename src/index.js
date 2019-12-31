@@ -22,5 +22,3 @@ import './js/blocks/featured-and-contact';
 import './js/blocks/hero';
 import './js/blocks/mission-statement';
 import './js/blocks/value-statement';
-
-
