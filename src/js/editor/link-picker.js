@@ -23,3 +23,11 @@ export default function LinkPicker({ onChange, url, title }) {
     </div>
   );
 }
+
+LinkPicker.Content = function({ children, className = '', url }) {
+  return (
+    <a href={url} className={className}>
+      {children}
+    </a>
+  );
+};

@@ -1,0 +1,36 @@
+.wpcf7 {
+    // Do not need provided loading state spinner
+    .ajax-loader {
+        display: none !important;
+    }
+
+    // Inline error message
+    & &-not-valid-tip {
+        margin-top: $baseunit * 0.5;
+        color: $color-red-dark-1;
+        font-size: $baseunit;
+    }
+
+    // After send message displayed at bottom of form
+    & &-response-output {
+        width: 100%;
+        margin: $baseunit 0;
+        padding: $baseunit;
+        border-width: 0;
+        border-radius: $border-radius;
+        background-color: $color-red-light-1;
+        text-align: center;
+    }
+    & &-mail-sent-ok {
+        border-width: 0;
+        background-color: $color-seafoam;
+    }
+    & &-mail-sent-ng,
+    & &-aborted,
+    & &-spam-blocked,
+    & &-validation-errors,
+    & &-acceptance-missing {
+        border-width: 0;
+        background-color: $color-red-light-1;
+    }
+}

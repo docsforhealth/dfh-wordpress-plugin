@@ -81,7 +81,10 @@ registerBlockType('dfh/value-statement', {
           <InnerBlocks.Content />
         </div>
         <div className="landing-value__image">
-          <img src={attributes.valueImage} alt={attributes.valueImageAlt} />
+          <ImagePicker.Content
+            url={attributes.valueImage}
+            description={attributes.valueImageAlt}
+          />
         </div>
       </div>
     );

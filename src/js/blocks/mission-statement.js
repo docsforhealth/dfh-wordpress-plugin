@@ -7,7 +7,7 @@ import * as Constants from '../constants';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType('dfh/mission-statement', {
-  title: __('Mission statement', Constants.TEXT_DOMAIN),
+  title: __('Mission Statement', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
   attributes: {
     hiddenTitle: {

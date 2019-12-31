@@ -11,22 +11,10 @@ registerBlockType(Constants.BLOCK_TITLE, {
   title: __('Title', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
   attributes: {
-    mainTitle: {
-      type: 'string',
-      source: 'html',
-      selector: '.heading__title',
-    },
-    preTitle: {
-      type: 'string',
-      source: 'html',
-      selector: '.heading__subtitle--pre',
-    },
-    postTitle: {
-      type: 'string',
-      source: 'html',
-      selector: '.heading__subtitle--post',
-    },
-    className: { type: 'string', default: ''},
+    mainTitle: { type: 'string' },
+    preTitle: { type: 'string' },
+    postTitle: { type: 'string' },
+    className: { type: 'string', default: '' },
     level: { type: 'string', default: '2' },
     showPreTitle: { type: 'boolean', default: true },
     showPostTitle: { type: 'boolean', default: true },
@@ -60,15 +48,16 @@ registerBlockType(Constants.BLOCK_TITLE, {
             />
           </PanelBody>
         </InspectorControls>
-        <TitleTag className={`${attributes.className} heading heading--${attributes.level}`}>
+        <TitleTag
+          className={`${attributes.className} heading heading--${
+            attributes.level
+          }`}
+        >
           {attributes.showPreTitle && (
             <RichText
               tagName="span"
               className="heading__subtitle heading__subtitle--pre"
-              placeholder={__(
-                'Enter pre-heading here',
-                Constants.TEXT_DOMAIN,
-              )}
+              placeholder={__('Enter pre-heading here', Constants.TEXT_DOMAIN)}
               value={attributes.preTitle}
               onChange={preTitle => setAttributes({ preTitle })}
             />
@@ -84,10 +73,7 @@ registerBlockType(Constants.BLOCK_TITLE, {
             <RichText
               tagName="span"
               className="heading__subtitle heading__subtitle--post"
-              placeholder={__(
-                'Enter post-heading here',
-                Constants.TEXT_DOMAIN,
-              )}
+              placeholder={__('Enter post-heading here', Constants.TEXT_DOMAIN)}
               value={attributes.postTitle}
               onChange={postTitle => setAttributes({ postTitle })}
             />

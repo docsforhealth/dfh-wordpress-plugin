@@ -33,6 +33,10 @@ export default function ImagePicker({
   );
 }
 
+ImagePicker.Content = function({ url, description, className = '' }) {
+  return <img className={className} src={url} alt={description} />;
+};
+
 function buildImagePreview(src, alt, className) {
   return src ? (
     <img className={className} src={src} alt={alt} />

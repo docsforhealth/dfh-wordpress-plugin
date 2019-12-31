@@ -11,14 +11,16 @@ registerBlockType(Constants.BLOCK_TEXT, {
   title: __('Text', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
   attributes: {
-    value: {
+    className: { type: 'string', default: '' },
+    deemphasize: { type: 'boolean', default: false },
+    oneLine: { type: 'boolean', default: false },
+    placeholder: {
       type: 'string',
-      source: 'html',
-      selector: 'p',
+      default: __('Enter text here', Constants.TEXT_DOMAIN),
     },
     size: { type: 'string', default: '' },
-    oneLine: { type: 'boolean', default: false },
-    deemphasize: { type: 'boolean', default: false },
+    tagName: { type: 'string', default: 'p' },
+    value: { type: 'string' },
   },
   edit({ className, attributes, setAttributes }) {
     return (
@@ -29,31 +31,37 @@ registerBlockType(Constants.BLOCK_TEXT, {
               label={__('Size', Constants.TEXT_DOMAIN)}
               selected={attributes.size}
               options={[
-                { label: 'Large', value: 'large' },
-                { label: 'Default', value: '' },
-                { label: 'Small', value: 'small' },
+                {
+                  label: __('Large', Constants.TEXT_DOMAIN),
+                  value: Constants.TEXT_SIZE_LARGE,
+                },
+                { label: __('Default', Constants.TEXT_DOMAIN), value: '' },
+                {
+                  label: __('Small', Constants.TEXT_DOMAIN),
+                  value: Constants.TEXT_SIZE_SMALL,
+                },
               ]}
               onChange={size => setAttributes({ size })}
             />
             <ToggleControl
-              label="Force to be one line"
+              label={__('Force to be one line', Constants.TEXT_DOMAIN)}
               checked={attributes.oneLine}
               onChange={oneLine => setAttributes({ oneLine })}
             />
             <ToggleControl
-              label="De-emphasize"
+              label={__('De-emphasize', Constants.TEXT_DOMAIN)}
               checked={attributes.deemphasize}
               onChange={deemphasize => setAttributes({ deemphasize })}
             />
           </PanelBody>
         </InspectorControls>
         <RichText
-          tagName="p"
+          tagName={attributes.tagName}
           className={`${className} text ${buildClasses(attributes)}`}
-          placeholder={__('Enter text here', Constants.TEXT_DOMAIN)}
+          placeholder={attributes.placeholder}
           value={attributes.value}
           onChange={value => setAttributes({ value })}
-          preserveWhiteSpace={!attributes.oneLine}
+          multiline={!attributes.oneLine}
         />
       </Fragment>
     );
@@ -61,18 +69,19 @@ registerBlockType(Constants.BLOCK_TEXT, {
   save({ attributes }) {
     return (
       <RichText.Content
-        tagName="p"
+        tagName={attributes.tagName}
         className={`text ${buildClasses(attributes)}`}
         value={attributes.value}
-        preserveWhiteSpace={!attributes.oneLine}
+        multiline={!attributes.oneLine}
       />
     );
   },
 });
 
 function buildClasses(attributes) {
-  const sizeClass = attributes.size && `text--${attributes.size}`,
-    oneLineClass = attributes.oneLine && 'text--one-line',
-    deemphasizeClass = attributes.deemphasize && 'text--light';
-  return `${sizeClass} ${oneLineClass} ${deemphasizeClass}`;
+  const sizeClass = attributes.size ? `text--${attributes.size}` : '',
+    oneLineClass = attributes.oneLine ? 'text--one-line' : '',
+    deemphasizeClass = attributes.deemphasize ? 'text--light' : '',
+    additionalClass = attributes.className ? attributes.className : '';
+  return `${sizeClass} ${oneLineClass} ${deemphasizeClass} ${additionalClass}`;
 }
