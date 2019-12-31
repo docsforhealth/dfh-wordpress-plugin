@@ -5,7 +5,7 @@ module.exports = {
   ...defaultConfig,
   entry: {
     ...defaultConfig.entry,
-    editor: path.resolve(process.cwd(), "src", "editor.js")
+    frontend: path.resolve(process.cwd(), "src", "frontend.js")
   },
   module: {
     ...defaultConfig.module,

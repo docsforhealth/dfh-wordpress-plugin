@@ -50,9 +50,9 @@ function dfh_register_frontend_blocks() {
         wp_enqueue_script('jquery');
         wp_enqueue_script(
             'dfh-frontend-script', // label
-            plugins_url('build/editor.js', __FILE__), // script file
+            plugins_url('build/frontend.js', __FILE__), // script file
             array(), // dependencies
-            filemtime(plugin_dir_path(__FILE__) . 'build/editor.js') // set version as file last modified time
+            filemtime(plugin_dir_path(__FILE__) . 'build/frontend.js') // set version as file last modified time
         );
         // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/
         if (function_exists('wp_set_script_translations')) {

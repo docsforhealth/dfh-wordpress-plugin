@@ -1,24 +1,24 @@
 /**
  * Hidden helper blocks
  */
-import './js/blocks/helper/landing-contact';
-import './js/blocks/helper/landing-featured';
-import './js/blocks/helper/landing-header';
-import './js/blocks/helper/landing-video';
-import './js/blocks/helper/link-button';
-import './js/blocks/helper/text-container';
+import './js/block/helper/landing-contact';
+import './js/block/helper/landing-featured';
+import './js/block/helper/landing-header';
+import './js/block/helper/landing-video';
+import './js/block/helper/link-button';
+import './js/block/helper/text-container';
 
 /**
  * Basic blocks
  */
-import './js/blocks/button-container';
-import './js/blocks/text';
-import './js/blocks/title';
+import './js/block/button-container';
+import './js/block/text';
+import './js/block/title';
 
 /**
  * Landing page blocks
  */
-import './js/blocks/featured-and-contact';
-import './js/blocks/hero';
-import './js/blocks/mission-statement';
-import './js/blocks/value-statement';
+import './js/block/featured-and-contact';
+import './js/block/hero';
+import './js/block/mission-statement';
+import './js/block/value-statement';
