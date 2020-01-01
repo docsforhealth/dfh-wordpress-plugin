@@ -1,0 +1,12 @@
+.text {
+    &--one-line {
+        @include scut-truncate;
+
+        display: block;
+
+        // WordPress RichText uses a div with nested child tags
+        & * {
+            @include scut-truncate;
+        }
+    }
+}

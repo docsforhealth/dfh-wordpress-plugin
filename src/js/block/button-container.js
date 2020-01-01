@@ -11,6 +11,7 @@ registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
   attributes: {
     template: { type: 'array', default: [[Constants.BLOCK_BUTTON, {}]] },
     isLocked: { type: 'boolean', default: false },
+    expandWidth: { type: 'boolean', default: false },
   },
   edit({ attributes }) {
     return (
@@ -25,11 +26,15 @@ registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
       />
     );
   },
-  save() {
+  save({ attributes }) {
     return (
-      <div className="button-container">
+      <div className={`button-container ${buildClassName(attributes)}`}>
         <InnerBlocks.Content />
       </div>
     );
   },
 });
+
+function buildClassName(attributes) {
+  return attributes.expandWidth ? 'button-container--expand-width' : '';
+}

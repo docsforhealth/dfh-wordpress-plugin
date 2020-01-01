@@ -19,9 +19,8 @@ function dfh_register_resource_type() {
         'can_export'          => true,
         'rewrite'             => array('slug' => 'resources', 'with_front' => false),
         'menu_icon'           => 'dashicons-rest-api',
-        // TODO
-        // 'template'            => array( array( 'core/quote', array( 'className' => 'is-style-large' ) ) ),
-        // 'template_lock'      => 'all',
+        'template'            => array(array('dfh/resource-detail', array())),
+        'template_lock'       => 'all',
         'labels'              => array(
             'name'               => __('Resources', DFH_TEXT_DOMAIN),
             'singular_name'      => __('Resource', DFH_TEXT_DOMAIN),

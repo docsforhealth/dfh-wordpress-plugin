@@ -82,4 +82,5 @@ function dfh_register_dynamic_blocks() {
     // in these files, we only need to specify the render_callback AND attributes
     // see https://github.com/WordPress/gutenberg/issues/6187#issuecomment-381446732
     require DFH_PLUGIN_DIR . '/src/php/setup/block/resource_categories.php';
+    require DFH_PLUGIN_DIR . '/src/php/setup/block/resource_detail_info.php';
 }

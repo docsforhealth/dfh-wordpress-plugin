@@ -30,24 +30,24 @@ registerBlockType(Constants.BLOCK_LANDING_VIDEO, {
       };
     return (
       <section className="landing-video">
-        <InnerBlocks
-          allowedBlocks={[Constants.BLOCK_TEXT_CONTAINER]}
-          templateLock={Constants.INNER_BLOCKS_LOCKED}
-          template={[
-            [
-              Constants.BLOCK_TEXT_CONTAINER,
-              {
-                wrapperElement: 'div',
-                wrapperClassName: 'landing-video__description',
-                template: [
-                  [Constants.BLOCK_TEXT, videoTitleConfig],
-                  [Constants.BLOCK_TEXT, videoSubtitleConfig],
-                ],
-                isLocked: true,
-              },
-            ],
-          ]}
-        />
+        <div className="landing-video__description">
+          <InnerBlocks
+            allowedBlocks={[Constants.BLOCK_TEXT_CONTAINER]}
+            templateLock={Constants.INNER_BLOCKS_LOCKED}
+            template={[
+              [
+                Constants.BLOCK_TEXT_CONTAINER,
+                {
+                  template: [
+                    [Constants.BLOCK_TEXT, videoTitleConfig],
+                    [Constants.BLOCK_TEXT, videoSubtitleConfig],
+                  ],
+                  isLocked: true,
+                },
+              ],
+            ]}
+          />
+        </div>
         <ImagePicker
           onSelect={({ url, alt }) =>
             setAttributes({ videoImageUrl: url, videoImageAlt: alt })
@@ -66,7 +66,9 @@ registerBlockType(Constants.BLOCK_LANDING_VIDEO, {
   save({ attributes }) {
     return (
       <section className="landing-video">
-        <InnerBlocks.Content />
+        <div className="landing-video__description">
+          <InnerBlocks.Content />
+        </div>
         <ImagePicker.Content
           className="landing-video__preview"
           url={attributes.videoImageUrl}

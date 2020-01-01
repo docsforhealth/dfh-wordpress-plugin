@@ -1,0 +1,95 @@
+.resource-detail {
+    @extend .container;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: $unit-vertical-spacing-small;
+
+    &__info {
+        width: 100%;
+    }
+    &__steps {
+        @include full-width-bg(transparent) {
+            @include card-bg;
+        }
+
+        position: relative;
+        width: 100%;
+        padding: ($baseunit * 2) 0 ($baseunit * 3);
+        margin-top: $baseunit * 2;
+    }
+
+    $center-spacing: $baseunit * 3;
+
+    @media (min-width: $media-width-laptop) {
+        flex-direction: row;
+        padding: $unit-vertical-spacing-small 0;
+
+        &__info {
+            width: calc(50% - #{$center-spacing});
+            padding-right: $center-spacing;
+        }
+        &__steps {
+            width: calc(50% + #{$center-spacing});
+            padding: $baseunit * 2;
+            padding-left: $center-spacing;
+            margin-top: 0;
+
+            &:before {
+                left: 0;
+                width: 100%;
+                height: 100%;
+                margin-left: 0;
+            }
+        }
+    }
+    @media (min-width: $media-width-desktop) {
+        padding: ($baseunit * 2) 0;
+    }
+}
+
+// From https://css-tricks.com/custom-list-number-styling/
+.resource-steps {
+    $counter-height: $baseunit * 1.5;
+    $counter-offset: $baseunit * 0.5;
+
+    @include scut-list-unstyled;
+
+    padding-left: $counter-height + $counter-offset;
+    margin-bottom: $baseunit * 2;
+    counter-reset: resource-steps-counter;
+
+    &__step {
+        $spacing-around: $baseunit * 0.2;
+        position: relative;
+        counter-increment: resource-steps-counter;
+
+        & + & {
+            margin-top: $baseunit;
+        }
+        &:before {
+            content: counter(resource-steps-counter);
+            position: absolute;
+            top: $spacing-around * -1;
+            left: 0;
+            transform: translateX(calc(-100% - #{$counter-offset}));
+            height: $counter-height;
+            min-width: $counter-height;
+            padding: $spacing-around;
+            background-color: $color-navy;
+            color: $color-white;
+            font-weight: $font-weight-bold;
+            border-radius: 100%;
+            text-align: center;
+        }
+
+        &__title {
+            margin-bottom: $baseunit * 0.7;
+        }
+    }
+
+    @media (min-width: $media-width-tablet) {
+        padding-left: 0;
+    }
+}

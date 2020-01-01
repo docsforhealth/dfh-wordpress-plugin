@@ -19,7 +19,9 @@ registerBlockType(Constants.BLOCK_TEXT, {
       default: __('Enter text here', Constants.TEXT_DOMAIN),
     },
     size: { type: 'string', default: '' },
-    tagName: { type: 'string', default: 'p' },
+    // `tagName` should not be `p` because cannot nest paragraph tags
+    // see https://stackoverflow.com/a/12015809
+    tagName: { type: 'string', default: 'div' },
     value: { type: 'string' },
   },
   edit({ className, attributes, setAttributes }) {

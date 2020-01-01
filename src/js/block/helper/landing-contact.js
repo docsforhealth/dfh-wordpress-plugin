@@ -18,19 +18,13 @@ registerBlockType(Constants.BLOCK_LANDING_CONTACT, {
     return (
       <section className="landing-contact">
         <div className="landing-contact__form">
-          <InnerBlocks
-            allowedBlocks={[Constants.BLOCK_TEXT_CONTAINER]}
-            templateLock={Constants.INNER_BLOCKS_LOCKED}
-            template={[
-              [
-                Constants.BLOCK_TEXT_CONTAINER,
-                {
-                  wrapperElement: 'div',
-                  wrapperClassName: 'margin-b-2',
-                },
-              ],
-            ]}
-          />
+          <div className="margin-b-2">
+            <InnerBlocks
+              allowedBlocks={[Constants.BLOCK_TEXT_CONTAINER]}
+              templateLock={Constants.INNER_BLOCKS_LOCKED}
+              template={[[Constants.BLOCK_TEXT_CONTAINER, {}]]}
+            />
+          </div>
           <FormPicker
             value={attributes.formId}
             onChange={formId => setAttributes({ formId })}
@@ -59,7 +53,9 @@ registerBlockType(Constants.BLOCK_LANDING_CONTACT, {
     return (
       <section className="landing-contact">
         <div className="landing-contact__form">
-          <InnerBlocks.Content />
+          <div className="margin-b-2">
+            <InnerBlocks.Content />
+          </div>
           <FormPicker.Content
             value={attributes.formId}
             className="margin-b-2"

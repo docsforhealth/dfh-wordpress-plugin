@@ -3,8 +3,8 @@
 register_block_type('dfh/resource-categories', array(
     'render_callback' => 'dfh_dynamic_render_resource_categories',
     'attributes'      => array(
-        'allResourcesUrl'   => array('type' => 'string', 'default' => '#'),
-        'allResourcesTitle' => array('type' => 'string'),
+        'allResourcesUrl'   => array('type' => 'string', 'default' => 'javascript:history.back()'),
+        'allResourcesTitle' => array('type' => 'string', 'default' => 'javascript:history.back()'),
     ),
 ));
 
