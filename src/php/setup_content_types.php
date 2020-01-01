@@ -8,7 +8,7 @@ function dfh_register_resource_type() {
     // see https://developer.wordpress.org/plugins/post-types/registering-custom-post-types/
     register_post_type('dfh_resource', array(
         'hierarchical'        => false,
-        'supports'            => array('title', 'editor'),
+        'supports'            => array('title', 'editor', 'excerpt'),
         'public'              => true,
         'show_ui'             => true,
         'show_in_rest'        => true,

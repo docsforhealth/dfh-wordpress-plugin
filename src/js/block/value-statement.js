@@ -41,23 +41,20 @@ registerBlockType('dfh/value-statement', {
             />
           </PanelBody>
         </InspectorControls>
-        <div
-          className={`landing-value ${attributes.reverse &&
-            'landing-value--reversed'}`}
-        >
-          <div className="landing-value__description">
-            <InnerBlocks
-              templateLock="all"
-              allowedBlocks={[Constants.BLOCK_TITLE, Constants.BLOCK_TEXT]}
-              template={[
-                [
-                  Constants.BLOCK_TITLE,
-                  { className: 'landing-value__description-title' },
-                ],
-                [Constants.BLOCK_TEXT, {}],
-              ]}
-            />
-          </div>
+        <div className={`landing-value ${buildClassName(attributes)}`}>
+          <InnerBlocks
+            allowedBlocks={[Constants.BLOCK_TEXT_CONTAINER]}
+            templateLock={Constants.INNER_BLOCKS_LOCKED}
+            template={[
+              [
+                Constants.BLOCK_TEXT_CONTAINER,
+                {
+                  wrapperElement: 'div',
+                  wrapperClassName: 'landing-value__description',
+                },
+              ],
+            ]}
+          />
           <div className="landing-value__image">
             <ImagePicker
               onSelect={({ url, alt }) =>
@@ -73,13 +70,8 @@ registerBlockType('dfh/value-statement', {
   },
   save({ attributes }) {
     return (
-      <div
-        className={`landing-value ${attributes.reverse &&
-          'landing-value--reversed'}`}
-      >
-        <div className="landing-value__description">
-          <InnerBlocks.Content />
-        </div>
+      <div className={`landing-value ${buildClassName(attributes)}`}>
+        <InnerBlocks.Content />
         <div className="landing-value__image">
           <ImagePicker.Content
             url={attributes.valueImage}
@@ -90,3 +82,7 @@ registerBlockType('dfh/value-statement', {
     );
   },
 });
+
+function buildClassName(attributes) {
+  return attributes.reverse ? 'landing-value--reversed' : '';
+}

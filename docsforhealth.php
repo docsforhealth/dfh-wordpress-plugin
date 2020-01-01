@@ -13,7 +13,7 @@
 
 // Based on https://github.com/LinkedInLearning/WPContentBlocks-Adv-5034179
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 // see https://developer.wordpress.org/reference/functions/load_plugin_textdomain/
 $DFH_TEXT_DOMAIN = 'dfh';

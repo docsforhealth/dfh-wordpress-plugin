@@ -7,8 +7,9 @@
  * override the Wordpress defaults.
  */
 
-@import 'scut/dist/scut';
 @import 'lity/dist/lity';
+@import 'scut/dist/scut';
+@import 'slick-carousel/slick/slick.scss';
 
 @import 'base/vars';
 @import 'base/mixins';
