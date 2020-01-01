@@ -6,8 +6,8 @@ function dfh_block_categories($categories, $post) {
     return array_merge(
         array(
             array(
-                'slug' => 'dfh',
-                'title' => __('Docs for Health', $GLOBALS['DFH_TEXT_DOMAIN']),
+                'slug' => DFH_BLOCK_CATEGORY_SLUG,
+                'title' => __('Docs for Health', DFH_TEXT_DOMAIN),
             ),
         ),
         $categories,
@@ -20,24 +20,24 @@ function dfh_register_editor_blocks() {
     // Register the block editor script.
     wp_enqueue_script(
         'dfh-editor-script', // label
-        plugins_url('../../build/index.js', __FILE__), // script file
+        plugins_url('/build/index.js', DFH_PLUGIN_ROOT), // URL to script file
         array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-block-editor', 'wp-data'), // dependencies
-        filemtime(plugin_dir_path(__FILE__) . '../../build/index.js') // set version as file last modified time
+        filemtime(DFH_PLUGIN_DIR . '/build/index.js'), // is a file path, set version as file last modified time
     );
     // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/
     if (function_exists('wp_set_script_translations')) {
         wp_set_script_translations(
             'dfh-editor-script',
-            $GLOBALS['DFH_TEXT_DOMAIN'],
-            plugin_dir_path(__FILE__) . '../../languages'
+            DFH_TEXT_DOMAIN,
+            DFH_PLUGIN_DIR . '/languages'
         );
     }
     // Register the block editor stylesheet.
     wp_enqueue_style(
         'dfh-editor-styles', // label
-        plugins_url('../../build/editor.css', __FILE__), // CSS file
+        plugins_url('/build/editor.css', DFH_PLUGIN_ROOT), // URL to CSS file
         array('wp-edit-blocks'), // dependencies
-        filemtime(plugin_dir_path(__FILE__) . '../../build/editor.css') // set version as file last modified time
+        filemtime(DFH_PLUGIN_DIR . '/build/editor.css'), // is a file path, set version as file last modified time
     );
 }
 
@@ -50,24 +50,24 @@ function dfh_register_frontend_blocks() {
         wp_enqueue_script('jquery');
         wp_enqueue_script(
             'dfh-frontend-script', // label
-            plugins_url('../../build/frontend.js', __FILE__), // script file
+            plugins_url('/build/frontend.js', DFH_PLUGIN_ROOT), // URL to script file
             array(), // dependencies
-            filemtime(plugin_dir_path(__FILE__) . '../../build/frontend.js') // set version as file last modified time
+            filemtime(DFH_PLUGIN_DIR . '/build/frontend.js'), // is a file path, set version as file last modified time
         );
         // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/
         if (function_exists('wp_set_script_translations')) {
             wp_set_script_translations(
                 'dfh-frontend-script',
-                $GLOBALS['DFH_TEXT_DOMAIN'],
-                plugin_dir_path(__FILE__) . '../../languages'
+                DFH_TEXT_DOMAIN,
+                DFH_PLUGIN_DIR . '/languages'
             );
         }
         // Register the frontend stylesheet.
         wp_enqueue_style(
             'dfh-frontend-styles', // label
-            plugins_url('../../build/style.css', __FILE__), // CSS file
+            plugins_url('/build/style.css', DFH_PLUGIN_ROOT), // URL to CSS file
             array(), // dependencies
-            filemtime(plugin_dir_path(__FILE__) . '../../build/style.css') // set version as file last modified time
+            filemtime(DFH_PLUGIN_DIR . '/build/style.css'), // is a file path, set version as file last modified time
         );
     }
 }
@@ -81,5 +81,5 @@ function dfh_register_dynamic_blocks() {
     // scripts and stylesheets already registered in editor-specific hooks
     // in these files, we only need to specify the render_callback AND attributes
     // see https://github.com/WordPress/gutenberg/issues/6187#issuecomment-381446732
-    require plugin_dir_path(__FILE__) . '/block/resource_categories.php';
+    require DFH_PLUGIN_DIR . '/src/php/setup/block/resource_categories.php';
 }

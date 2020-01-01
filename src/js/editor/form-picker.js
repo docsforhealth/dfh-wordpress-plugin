@@ -10,7 +10,7 @@ export default function FormPicker({ value, onChange }) {
   return (
     <div class="components-placeholder">
       <label for={inputId} class="components-placeholder__label">
-        {__('ContactForm7 Form ID', Constants.TEXT_DOMAIN)}
+        {__('Contact Form 7 ID', Constants.TEXT_DOMAIN)}
       </label>
       <span className="components-placeholder__instructions">
         {__(
@@ -22,7 +22,7 @@ export default function FormPicker({ value, onChange }) {
         id={inputId}
         className="editor-plain-text block-editor-plain-text input-control"
         placeholder={__(
-          'Enter the form ID for the ContactForm7 form',
+          'Enter the form ID for the Contact Form 7 form',
           Constants.TEXT_DOMAIN,
         )}
         value={value}

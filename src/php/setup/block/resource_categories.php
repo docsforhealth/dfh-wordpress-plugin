@@ -11,15 +11,15 @@ register_block_type('dfh/resource-categories', array(
 function dfh_dynamic_render_resource_categories($attributes) {
     $all_resources_url = $attributes['allResourcesUrl'];
     // see https://wordpress.stackexchange.com/a/193000
-    $terms = get_terms(array('taxonomy' => 'dfh_resource_classification'));
+    $terms = get_terms(array('taxonomy' => DFH_TAXONOMY_RESOURCE));
     $terms_resources = array();
     foreach ($terms as $term) {
         $terms_resources[$term->name] = get_posts(array(
             'posts_per_page' => 3,
-            'post_type'      => 'dfh_resource',
+            'post_type'      => DFH_CONTENT_TYPE_RESOURCE,
             'tax_query'      => array(
                 array(
-                    'taxonomy' => 'dfh_resource_classification',
+                    'taxonomy' => DFH_TAXONOMY_RESOURCE,
                     'field'    => 'slug',
                     'terms'    => $term->slug,
                 ),

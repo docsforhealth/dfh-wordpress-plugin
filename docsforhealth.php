@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Docs for Health
  * Author: Eric Bai
@@ -11,17 +10,20 @@
  * Text Domain: docsforhealth
  */
 
-// Based on https://github.com/LinkedInLearning/WPContentBlocks-Adv-5034179
-
 defined('ABSPATH') || exit;
 
-// see https://developer.wordpress.org/reference/functions/load_plugin_textdomain/
-$DFH_TEXT_DOMAIN = 'dfh';
-add_action('init', 'dfh_load_textdomain');
-function dfh_load_textdomain() {
-    load_plugin_textdomain($GLOBALS['DFH_TEXT_DOMAIN'], false, basename(__DIR__) . '/languages');
-}
+// From Contact Form 7 plugin setup files
+define('DFH_PLUGIN_ROOT', __FILE__);
+define('DFH_PLUGIN_DIR', untrailingslashit(dirname(DFH_PLUGIN_ROOT)));
 
-require plugin_dir_path(__FILE__) . '/src/php/remove_default_post_type.php';
-require plugin_dir_path(__FILE__) . '/src/php/setup_blocks.php';
-require plugin_dir_path(__FILE__) . '/src/php/setup_content_types.php';
+define('DFH_TEXT_DOMAIN', 'dfh');
+define('DFH_BLOCK_CATEGORY_SLUG', 'dfh');
+define('DFH_CONTENT_TYPE_RESOURCE', 'dfh_resource');
+define('DFH_TAXONOMY_RESOURCE', 'dfh_resource_classification');
+
+// from https://waclawjacek.com/check-wordpress-plugin-dependencies/
+if (!class_exists('DFH_Setup')) {
+    require_once DFH_PLUGIN_DIR . '/src/php/class/Setup.php';
+    $dfh_setup = new DFH_Setup();
+    $dfh_setup->init();
+}
