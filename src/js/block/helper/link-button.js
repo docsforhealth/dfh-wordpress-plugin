@@ -9,6 +9,11 @@ import LinkPicker from '../../editor/link-picker';
 registerBlockType(Constants.BLOCK_LINK_BUTTON, {
   ...SharedButton.config,
   title: __('Link Button', Constants.TEXT_DOMAIN),
+  icon: 'admin-links',
+  description: __(
+    'Button that points to a link, whether internal or external',
+    Constants.TEXT_DOMAIN,
+  ),
   edit(props) {
     return SharedButton.buildButtonEdit(props, LinkPicker);
   },

@@ -8,6 +8,8 @@ import * as Constants from '../../constants';
 registerBlockType(Constants.BLOCK_LANDING_HEADER, {
   title: __('Landing Header', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'flag',
+  description: __('Header of the landing page', Constants.TEXT_DOMAIN),
   supports: { inserter: false },
   edit() {
     const titleConfig = {

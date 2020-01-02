@@ -10,6 +10,11 @@ import LinkPicker from '../../editor/link-picker';
 registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_INFO, {
   title: __('Resource Detail Info', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'networking',
+  description: __(
+    'Title and category of a specific resource',
+    Constants.TEXT_DOMAIN,
+  ),
   supports: { inserter: false },
   edit({ attributes, setAttributes }) {
     return (

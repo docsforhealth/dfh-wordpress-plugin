@@ -8,6 +8,11 @@ import LinkPicker from '../editor/link-picker';
 registerBlockType(`${Constants.NAMESPACE}/resource-categories`, {
   title: __('Resource Categories', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'index-card',
+  description: __(
+    'Displays all resource categories with examples of each',
+    Constants.TEXT_DOMAIN,
+  ),
   edit({ attributes, setAttributes }) {
     return (
       <LinkPicker

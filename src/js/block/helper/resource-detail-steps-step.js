@@ -8,6 +8,11 @@ import * as Constants from '../../constants';
 registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {
   title: __('Resource Detail Step', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'excerpt-view',
+  description: __(
+    'Specific step for a specific resource',
+    Constants.TEXT_DOMAIN,
+  ),
   parent: [Constants.BLOCK_RESOURCE_DETAIL_STEPS],
   edit({ attributes, setAttributes }) {
     return (

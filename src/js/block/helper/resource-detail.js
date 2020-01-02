@@ -9,6 +9,11 @@ import * as Constants from '../../constants';
 registerBlockType(`${Constants.NAMESPACE}/resource-detail`, {
   title: __('Resource Detail', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'networking',
+  description: __(
+    'Detailed information for a specific resource',
+    Constants.TEXT_DOMAIN,
+  ),
   supports: { inserter: false },
   // [FUTURE] This is a hack which forces the template to appear valid.
   // See https://github.com/WordPress/gutenberg/issues/11681

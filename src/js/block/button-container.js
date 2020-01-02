@@ -8,6 +8,11 @@ import * as Constants from '../constants';
 registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
   title: __('Button Container', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'editor-table',
+  description: __(
+    'Allows adding and automatic formatting of various button blocks',
+    Constants.TEXT_DOMAIN,
+  ),
   attributes: {
     template: { type: 'array', default: [[Constants.BLOCK_LINK_BUTTON, {}]] },
     isLocked: { type: 'boolean', default: false },
@@ -16,7 +21,10 @@ registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
   edit({ attributes }) {
     return (
       <InnerBlocks
-        allowedBlocks={[Constants.BLOCK_LINK_BUTTON]}
+        allowedBlocks={[
+          Constants.BLOCK_LINK_BUTTON,
+          Constants.BLOCK_FILE_BUTTON,
+        ]}
         template={attributes.template}
         templateLock={
           attributes.isLocked

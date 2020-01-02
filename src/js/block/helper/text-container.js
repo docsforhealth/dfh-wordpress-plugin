@@ -9,11 +9,16 @@ import * as Constants from '../../constants';
 registerBlockType(Constants.BLOCK_TEXT_CONTAINER, {
   title: __('Text Container', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'media-text',
+  description: __(
+    'Allows adding of various text-based blocks',
+    Constants.TEXT_DOMAIN,
+  ),
   supports: { inserter: false },
   attributes: {
     template: {
       type: 'array',
-      default: [[Constants.BLOCK_TITLE, {}], [Constants.BLOCK_TEXT, {}]],
+      default: [[Constants.BLOCK_HEADING, {}], [Constants.BLOCK_TEXT, {}]],
     },
     isLocked: { type: 'boolean', default: false },
     onlyText: { type: 'boolean', default: false },
@@ -24,7 +29,7 @@ registerBlockType(Constants.BLOCK_TEXT_CONTAINER, {
         allowedBlocks={
           attributes.onlyText
             ? [Constants.BLOCK_TEXT]
-            : [Constants.BLOCK_TITLE, Constants.BLOCK_TEXT]
+            : [Constants.BLOCK_HEADING, Constants.BLOCK_TEXT]
         }
         template={filterTemplateIfOnlyText(attributes)}
         templateLock={

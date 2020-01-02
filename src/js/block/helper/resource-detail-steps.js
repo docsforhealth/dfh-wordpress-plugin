@@ -8,20 +8,22 @@ import * as Constants from '../../constants';
 registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
   title: __('Resource Detail Steps', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'excerpt-view',
+  description: __('Next steps for a specific resource', Constants.TEXT_DOMAIN),
   supports: { inserter: false },
   edit() {
     return (
       <div class="resource-detail__steps">
         <InnerBlocks
           allowedBlocks={[
-            Constants.BLOCK_TITLE,
+            Constants.BLOCK_HEADING,
             Constants.BLOCK_TEXT_CONTAINER,
             Constants.BLOCK_INNER_BLOCK_WRAPPER,
           ]}
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
             [
-              Constants.BLOCK_TITLE,
+              Constants.BLOCK_HEADING,
               {
                 mainTitle: __('Documents', Constants.TEXT_DOMAIN),
                 level: '3',
@@ -39,7 +41,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
               },
             ],
             [
-              Constants.BLOCK_TITLE,
+              Constants.BLOCK_HEADING,
               {
                 mainTitle: __('Next steps', Constants.TEXT_DOMAIN),
                 level: '3',

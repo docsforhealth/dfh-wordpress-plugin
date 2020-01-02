@@ -8,6 +8,11 @@ import * as Constants from '../constants';
 registerBlockType(`${Constants.NAMESPACE}/hero`, {
   title: __('Hero', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'flag',
+  description: __(
+    'Header with overview video for the landing page',
+    Constants.TEXT_DOMAIN,
+  ),
   edit() {
     return (
       <div className="landing-hero">

@@ -8,6 +8,11 @@ import * as Constants from '../constants';
 registerBlockType(`${Constants.NAMESPACE}/featured-and-contact`, {
   title: __('Featured & Contact', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'awards',
+  description: __(
+    'Featured item and contact form for the landing page',
+    Constants.TEXT_DOMAIN,
+  ),
   edit() {
     return (
       <div className="landing-featured-and-contact">

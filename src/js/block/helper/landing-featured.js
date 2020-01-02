@@ -8,6 +8,8 @@ import * as Constants from '../../constants';
 registerBlockType(Constants.BLOCK_LANDING_FEATURED, {
   title: __('Landing Featured', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'awards',
+  description: __('Featured item on the landing page', Constants.TEXT_DOMAIN),
   supports: { inserter: false },
   edit() {
     return (

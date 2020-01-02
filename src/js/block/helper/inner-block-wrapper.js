@@ -9,6 +9,11 @@ import * as Constants from '../../constants';
 registerBlockType(Constants.BLOCK_INNER_BLOCK_WRAPPER, {
   title: __('Inner Block Wrapper', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'grid-view',
+  description: __(
+    'Enables wrapping other blocks in custom elements',
+    Constants.TEXT_DOMAIN,
+  ),
   supports: { inserter: false },
   attributes: {
     allowedBlocks: { type: 'array' },

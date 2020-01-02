@@ -9,6 +9,8 @@ import FilePicker from '../../editor/file-picker';
 registerBlockType(Constants.BLOCK_FILE_BUTTON, {
   ...SharedButton.config,
   title: __('File Button', Constants.TEXT_DOMAIN),
+  icon: 'category',
+  description: __('Button that points to a file', Constants.TEXT_DOMAIN),
   edit(props) {
     return SharedButton.buildButtonEdit(props, FilePicker);
   },

@@ -8,6 +8,11 @@ import * as Constants from '../../constants';
 registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_DESCRIPTION, {
   title: __('Resource Detail Description', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'networking',
+  description: __(
+    'Title, category, and description of a specific resource',
+    Constants.TEXT_DOMAIN,
+  ),
   supports: { inserter: false },
   edit() {
     return (

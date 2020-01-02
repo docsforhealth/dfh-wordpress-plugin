@@ -9,6 +9,11 @@ import * as Constants from '../constants';
 registerBlockType(`${Constants.NAMESPACE}/mission-statement`, {
   title: __('Mission Statement', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'lightbulb',
+  description: __(
+    'Statement with background graphic for emphasis',
+    Constants.TEXT_DOMAIN,
+  ),
   attributes: {
     hiddenTitle: {
       type: 'string',

@@ -7,6 +7,7 @@ export const INNER_BLOCKS_UNLOCKED = false;
 
 export const BLOCK_BUTTON_CONTAINER = `${NAMESPACE}/button-container`;
 export const BLOCK_FILE_BUTTON = `${NAMESPACE}/file-button`;
+export const BLOCK_HEADING = `${NAMESPACE}/heading`;
 export const BLOCK_INNER_BLOCK_WRAPPER = `${NAMESPACE}/inner-block-wrapper`;
 export const BLOCK_LANDING_CONTACT = `${NAMESPACE}/landing-contact`;
 export const BLOCK_LANDING_FEATURED = `${NAMESPACE}/landing-featured`;
@@ -19,7 +20,6 @@ export const BLOCK_RESOURCE_DETAIL_STEPS = `${NAMESPACE}/resource-detail-steps`;
 export const BLOCK_RESOURCE_DETAIL_STEPS_STEP = `${NAMESPACE}/resource-detail-steps-step`;
 export const BLOCK_TEXT = `${NAMESPACE}/text`;
 export const BLOCK_TEXT_CONTAINER = `${NAMESPACE}/text-container`;
-export const BLOCK_TITLE = `${NAMESPACE}/title`;
 
 export const BUTTON_SIZE_SMALL = 'small';
 

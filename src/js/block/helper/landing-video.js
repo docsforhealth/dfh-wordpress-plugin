@@ -11,6 +11,8 @@ import PopupPicker from '../../editor/popup-picker';
 registerBlockType(Constants.BLOCK_LANDING_VIDEO, {
   title: __('Landing Video', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'video-alt2',
+  description: __('Overview video on the landing page', Constants.TEXT_DOMAIN),
   supports: { inserter: false },
   attributes: {
     videoImageUrl: { type: 'string', default: placeholderImage },

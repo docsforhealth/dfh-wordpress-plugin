@@ -12,6 +12,11 @@ import placeholderImage from '../../../assets/images/placeholder-value.png';
 registerBlockType(`${Constants.NAMESPACE}/value-statement`, {
   title: __('Value Statement', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'heart',
+  description: __(
+    'Statement accompanied by an illustration',
+    Constants.TEXT_DOMAIN,
+  ),
   attributes: {
     reverse: { type: 'boolean', default: false },
     valueImage: { type: 'string', default: placeholderImage },

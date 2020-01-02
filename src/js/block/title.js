@@ -7,9 +7,12 @@ import { ToggleControl, PanelBody, RadioControl } from '@wordpress/components';
 import * as Constants from '../constants';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
-registerBlockType(Constants.BLOCK_TITLE, {
-  title: __('Title', Constants.TEXT_DOMAIN),
+registerBlockType(Constants.BLOCK_HEADING, {
+  title: __('Heading', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  // not listed in Dashicon page, but documented at https://iconify.design/icon-sets/dashicons/
+  icon: 'heading',
+  description: __('Titles of varying sizes', Constants.TEXT_DOMAIN),
   attributes: {
     mainTitle: { type: 'string' },
     preTitle: { type: 'string' },

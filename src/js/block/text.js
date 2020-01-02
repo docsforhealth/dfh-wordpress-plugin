@@ -18,16 +18,15 @@ const MERGE_BLOCK_PROP_NAME = 'value';
 registerBlockType(Constants.BLOCK_TEXT, {
   title: __('Text', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
+  icon: 'editor-paragraph',
+  description: __('Paragraph text', Constants.TEXT_DOMAIN),
   attributes: {
     className: { type: 'string', default: '' },
     deemphasize: { type: 'boolean', default: false },
     oneLine: { type: 'boolean', default: false },
     placeholder: {
       type: 'string',
-      default: __(
-        'Enter text here',
-        Constants.TEXT_DOMAIN,
-      ),
+      default: __('Enter text here', Constants.TEXT_DOMAIN),
     },
     size: { type: 'string', default: '' },
     // `tagName` should not be `p` because cannot nest paragraph tags
