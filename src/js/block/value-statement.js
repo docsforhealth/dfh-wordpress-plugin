@@ -44,7 +44,12 @@ registerBlockType(`${Constants.NAMESPACE}/value-statement`, {
             <InnerBlocks
               allowedBlocks={[Constants.BLOCK_TEXT_CONTAINER]}
               templateLock={Constants.INNER_BLOCKS_LOCKED}
-              template={[[Constants.BLOCK_TEXT_CONTAINER, {}]]}
+              template={[
+                [
+                  Constants.BLOCK_TEXT_CONTAINER,
+                  { forceHeadingLevel: Constants.HEADING_SIZE_LARGE },
+                ],
+              ]}
             />
           </div>
           <div className="landing-value__image">

@@ -25,3 +25,8 @@ export const BUTTON_SIZE_SMALL = 'small';
 
 export const TEXT_SIZE_LARGE = 'large';
 export const TEXT_SIZE_SMALL = 'small';
+
+export const HEADING_SIZE_EXTRA_LARGE = '1';
+export const HEADING_SIZE_LARGE = '2';
+export const HEADING_SIZE_MEDIUM = '3';
+export const HEADING_SIZE_SMALL = '4';

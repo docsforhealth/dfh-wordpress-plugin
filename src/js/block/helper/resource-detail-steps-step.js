@@ -39,11 +39,11 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {
               Constants.BLOCK_BUTTON_CONTAINER,
               {
                 expandWidth: true,
+                forceButtonSize: Constants.BUTTON_SIZE_SMALL,
                 template: [
                   [
                     Constants.BLOCK_FILE_BUTTON,
                     {
-                      size: Constants.BUTTON_SIZE_SMALL,
                       isOutlined: true,
                       label: __('Download file', Constants.TEXT_DOMAIN),
                     },

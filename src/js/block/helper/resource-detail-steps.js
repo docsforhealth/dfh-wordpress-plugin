@@ -26,7 +26,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
               Constants.BLOCK_HEADING,
               {
                 mainTitle: __('Documents', Constants.TEXT_DOMAIN),
-                level: '3',
+                level: Constants.HEADING_SIZE_MEDIUM,
                 showPreTitle: false,
                 showPostTitle: false,
               },
@@ -44,7 +44,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
               Constants.BLOCK_HEADING,
               {
                 mainTitle: __('Next steps', Constants.TEXT_DOMAIN),
-                level: '3',
+                level: Constants.HEADING_SIZE_MEDIUM,
                 showPreTitle: false,
                 showPostTitle: false,
               },

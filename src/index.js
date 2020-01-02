@@ -24,8 +24,8 @@ import './js/block/helper/text-container';
  * Basic blocks
  */
 import './js/block/button-container';
+import './js/block/heading';
 import './js/block/text';
-import './js/block/title';
 
 /**
  * Landing page blocks

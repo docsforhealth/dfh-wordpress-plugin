@@ -6,6 +6,9 @@ import { ToggleControl, PanelBody, RadioControl } from '@wordpress/components';
 
 import * as Constants from '../constants';
 
+export const ATTRIBUTE_LEVEL = 'level';
+export const ATTRIBUTE_SHOW_LEVEL_OPTIONS = 'showLevelOptions';
+
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_HEADING, {
   title: __('Heading', Constants.TEXT_DOMAIN),
@@ -18,27 +21,36 @@ registerBlockType(Constants.BLOCK_HEADING, {
     preTitle: { type: 'string' },
     postTitle: { type: 'string' },
     className: { type: 'string', default: '' },
-    level: { type: 'string', default: '2' },
+    [ATTRIBUTE_LEVEL]: {
+      type: 'string',
+      default: Constants.HEADING_SIZE_LARGE,
+    },
+    [ATTRIBUTE_SHOW_LEVEL_OPTIONS]: { type: 'boolean', default: true },
     showPreTitle: { type: 'boolean', default: true },
     showPostTitle: { type: 'boolean', default: true },
   },
   edit({ attributes, setAttributes }) {
-    const TitleTag = `h${attributes.level}`;
+    const TitleTag = `h${attributes[ATTRIBUTE_LEVEL]}`;
     return (
       <Fragment>
         <InspectorControls>
           <PanelBody title={__('Title Settings', Constants.TEXT_DOMAIN)}>
-            <RadioControl
-              label={__('Size', Constants.TEXT_DOMAIN)}
-              selected={attributes.level}
-              options={[
-                { label: 'Extra large', value: '1' },
-                { label: 'Large', value: '2' },
-                { label: 'Medium', value: '3' },
-                { label: 'Small', value: '4' },
-              ]}
-              onChange={level => setAttributes({ level })}
-            />
+            {attributes[ATTRIBUTE_SHOW_LEVEL_OPTIONS] && (
+              <RadioControl
+                label={__('Size', Constants.TEXT_DOMAIN)}
+                selected={attributes[ATTRIBUTE_LEVEL]}
+                options={[
+                  {
+                    label: 'Extra large',
+                    value: Constants.HEADING_SIZE_EXTRA_LARGE,
+                  },
+                  { label: 'Large', value: Constants.HEADING_SIZE_LARGE },
+                  { label: 'Medium', value: Constants.HEADING_SIZE_MEDIUM },
+                  { label: 'Small', value: Constants.HEADING_SIZE_SMALL },
+                ]}
+                onChange={level => setAttributes({ [ATTRIBUTE_LEVEL]: level })}
+              />
+            )}
             <ToggleControl
               label="Show pre-title"
               checked={attributes.showPreTitle}
@@ -53,7 +65,7 @@ registerBlockType(Constants.BLOCK_HEADING, {
         </InspectorControls>
         <TitleTag
           className={`${attributes.className} heading heading--${
-            attributes.level
+            attributes[ATTRIBUTE_LEVEL]
           }`}
         >
           {attributes.showPreTitle && (
@@ -86,9 +98,9 @@ registerBlockType(Constants.BLOCK_HEADING, {
     );
   },
   save({ attributes }) {
-    const TitleTag = `h${attributes.level}`;
+    const TitleTag = `h${attributes[ATTRIBUTE_LEVEL]}`;
     return (
-      <TitleTag className={`heading heading--${attributes.level}`}>
+      <TitleTag className={`heading heading--${attributes[ATTRIBUTE_LEVEL]}`}>
         {attributes.showPreTitle && (
           <RichText.Content
             tagName="span"

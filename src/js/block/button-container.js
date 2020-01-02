@@ -3,6 +3,8 @@ import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as Constants from '../constants';
+import * as SharedButton from './shared/button';
+import { setAttributesOnInnerBlocks } from '../utils';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
@@ -17,8 +19,15 @@ registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
     template: { type: 'array', default: [[Constants.BLOCK_LINK_BUTTON, {}]] },
     isLocked: { type: 'boolean', default: false },
     expandWidth: { type: 'boolean', default: false },
+    forceButtonSize: { type: 'string' },
   },
-  edit({ attributes }) {
+  edit({ attributes, clientId }) {
+    if (attributes.forceButtonSize) {
+      setAttributesOnInnerBlocks(clientId, {
+        [SharedButton.ATTRIBUTE_SIZE]: attributes.forceButtonSize,
+        [SharedButton.ATTRIBUTE_SHOW_SIZE_OPTIONS]: false,
+      });
+    }
     return (
       <InnerBlocks
         allowedBlocks={[

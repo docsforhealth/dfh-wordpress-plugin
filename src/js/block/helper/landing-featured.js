@@ -29,7 +29,14 @@ registerBlockType(Constants.BLOCK_LANDING_FEATURED, {
                   wrapperClassName: 'margin-b-2',
                   isLocked: true,
                   allowedBlocks: [Constants.BLOCK_TEXT_CONTAINER],
-                  template: [[Constants.BLOCK_TEXT_CONTAINER, {}]],
+                  template: [
+                    [
+                      Constants.BLOCK_TEXT_CONTAINER,
+                      {
+                        forceHeadingLevel: Constants.HEADING_SIZE_LARGE,
+                      },
+                    ],
+                  ],
                 },
               ],
               [Constants.BLOCK_BUTTON_CONTAINER, {}],

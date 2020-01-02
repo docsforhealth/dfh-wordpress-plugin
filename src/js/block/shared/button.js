@@ -5,13 +5,16 @@ import { ToggleControl, PanelBody, RadioControl } from '@wordpress/components';
 
 import * as Constants from '../../constants';
 
+export const ATTRIBUTE_SIZE = 'size';
+export const ATTRIBUTE_SHOW_SIZE_OPTIONS = 'showSizeOptions';
 export const config = {
   category: Constants.CATEGORY,
   parent: [Constants.BLOCK_BUTTON_CONTAINER],
   supports: { customClassName: false },
   attributes: {
     label: { type: 'string' },
-    size: { type: 'string', default: '' },
+    [ATTRIBUTE_SIZE]: { type: 'string', default: '' },
+    [ATTRIBUTE_SHOW_SIZE_OPTIONS]: { type: 'boolean', default: true },
     isSecondary: { type: 'boolean', default: false },
     isOutlined: { type: 'boolean', default: false },
     url: { type: 'string' },
@@ -24,18 +27,20 @@ export function buildButtonEdit({ attributes, setAttributes }, AssetPicker) {
     <Fragment>
       <InspectorControls>
         <PanelBody title={__('Link Button Settings', Constants.TEXT_DOMAIN)}>
-          <RadioControl
-            label={__('Size', Constants.TEXT_DOMAIN)}
-            selected={attributes.size}
-            options={[
-              { label: __('Default', Constants.TEXT_DOMAIN), value: '' },
-              {
-                label: __('Small', Constants.TEXT_DOMAIN),
-                value: Constants.BUTTON_SIZE_SMALL,
-              },
-            ]}
-            onChange={size => setAttributes({ size })}
-          />
+          {attributes[ATTRIBUTE_SHOW_SIZE_OPTIONS] && (
+            <RadioControl
+              label={__('Size', Constants.TEXT_DOMAIN)}
+              selected={attributes[ATTRIBUTE_SIZE]}
+              options={[
+                { label: __('Default', Constants.TEXT_DOMAIN), value: '' },
+                {
+                  label: __('Small', Constants.TEXT_DOMAIN),
+                  value: Constants.BUTTON_SIZE_SMALL,
+                },
+              ]}
+              onChange={size => setAttributes({ [ATTRIBUTE_SIZE]: size })}
+            />
+          )}
           <ToggleControl
             label={__('Is secondary?', Constants.TEXT_DOMAIN)}
             checked={attributes.isSecondary}
@@ -86,7 +91,9 @@ export function buildButtonSave({ attributes }, { openInNewTab = false } = {}) {
 }
 
 export function buildButtonClasseName(attributes) {
-  const sizeClass = attributes.size ? `button--${attributes.size}` : '',
+  const sizeClass = attributes[ATTRIBUTE_SIZE]
+      ? `button--${attributes[ATTRIBUTE_SIZE]}`
+      : '',
     isSecondaryClass = attributes.isSecondary ? 'button--secondary' : '',
     isOutlinedClass = attributes.isOutlined ? 'button--outline' : '';
   return `${sizeClass} ${isSecondaryClass} ${isOutlinedClass}`;
