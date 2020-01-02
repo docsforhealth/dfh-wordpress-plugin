@@ -8,26 +8,23 @@ export default function LinkPicker({ onChange, url, title }) {
   const fallbackTitle = __('None', Constants.TEXT_DOMAIN);
   return (
     <div class="editor-link-picker">
-      <URLInputButton
-        url={url}
-        onChange={(url, result) =>
-          onChange({
-            url,
-            title: result ? result.title : url ? url : fallbackTitle,
-          })
-        }
-      />
-      <div className="editor-link-picker__target text text--small text--light">
-        <span className="text--bold">Target</span>: {title || fallbackTitle}
+      <div className="editor-link-picker__label text text--small text--light">
+        <span className="text--bold">Target</span>:
+        <span className="editor-link-picker__title">
+          {title || fallbackTitle}
+        </span>
+      </div>
+      <div className="editor-link-picker__control">
+        <URLInputButton
+          url={url}
+          onChange={(url, result) =>
+            onChange({
+              url,
+              title: result ? result.title : url ? url : fallbackTitle,
+            })
+          }
+        />
       </div>
     </div>
   );
 }
-
-LinkPicker.Content = function({ children, className = '', url }) {
-  return (
-    <a href={url} className={className}>
-      {children}
-    </a>
-  );
-};

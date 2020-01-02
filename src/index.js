@@ -1,6 +1,7 @@
 /**
  * Hidden helper blocks
  */
+import './js/block/helper/file-button';
 import './js/block/helper/inner-block-wrapper';
 import './js/block/helper/landing-contact';
 import './js/block/helper/landing-featured';

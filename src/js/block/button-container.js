@@ -9,14 +9,14 @@ registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
   title: __('Button Container', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
   attributes: {
-    template: { type: 'array', default: [[Constants.BLOCK_BUTTON, {}]] },
+    template: { type: 'array', default: [[Constants.BLOCK_LINK_BUTTON, {}]] },
     isLocked: { type: 'boolean', default: false },
     expandWidth: { type: 'boolean', default: false },
   },
   edit({ attributes }) {
     return (
       <InnerBlocks
-        allowedBlocks={[Constants.BLOCK_BUTTON]}
+        allowedBlocks={[Constants.BLOCK_LINK_BUTTON]}
         template={attributes.template}
         templateLock={
           attributes.isLocked

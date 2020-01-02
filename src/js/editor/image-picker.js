@@ -1,9 +1,11 @@
 import { __ } from '@wordpress/i18n';
 import { Button, Placeholder } from '@wordpress/components';
 import { Fragment } from 'react';
-import { MediaUpload } from '@wordpress/block-editor';
+import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 
 import * as Constants from '../constants';
+
+const ALLOWED_MEDIA_TYPES = ['image'];
 
 export default function ImagePicker({
   onSelect,
@@ -14,21 +16,23 @@ export default function ImagePicker({
   return (
     <div className="editor-image-picker">
       {buildImagePreview(url, description, previewClassName)}
-      <div className="editor-image-picker__control">
-        <MediaUpload
-          onSelect={onSelect}
-          type="image"
-          value={url}
-          render={({ open }) => (
-            <Button
-              className="button button--outline button--small"
-              onClick={open}
-            >
-              {__('Select image', Constants.TEXT_DOMAIN)}
-            </Button>
-          )}
-        />
-      </div>
+      <MediaUploadCheck>
+        <div className="editor-image-picker__control">
+          <MediaUpload
+            onSelect={onSelect}
+            allowedTypes={ALLOWED_MEDIA_TYPES}
+            value={url}
+            render={({ open }) => (
+              <Button
+                className="button button--outline button--small"
+                onClick={open}
+              >
+                {__('Select image', Constants.TEXT_DOMAIN)}
+              </Button>
+            )}
+          />
+        </div>
+      </MediaUploadCheck>
     </div>
   );
 }

@@ -39,7 +39,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {
                 expandWidth: true,
                 template: [
                   [
-                    Constants.BLOCK_BUTTON,
+                    Constants.BLOCK_FILE_BUTTON,
                     {
                       size: Constants.BUTTON_SIZE_SMALL,
                       isOutlined: true,

@@ -22,7 +22,12 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
           template={[
             [
               Constants.BLOCK_TITLE,
-              { mainTitle: __('Documents', Constants.TEXT_DOMAIN), level: '3' },
+              {
+                mainTitle: __('Documents', Constants.TEXT_DOMAIN),
+                level: '3',
+                showPreTitle: false,
+                showPostTitle: false,
+              },
             ],
             [
               Constants.BLOCK_INNER_BLOCK_WRAPPER,
@@ -38,6 +43,8 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
               {
                 mainTitle: __('Next steps', Constants.TEXT_DOMAIN),
                 level: '3',
+                showPreTitle: false,
+                showPostTitle: false,
               },
             ],
             [

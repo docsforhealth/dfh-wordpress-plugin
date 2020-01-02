@@ -8,11 +8,29 @@
 }
 .editor-link-picker {
     display: flex;
-    align-items: center;
-    margin-left: $baseunit * 0.5;
+    align-items: flex-start;
+    margin-top: $baseunit * 0.5;
+    padding-bottom: $baseunit * 0.5;
+    border-bottom: 1px solid $color-seafoam-dark-1;
 
-    &__target {
-        margin-left: $baseunit * 0.5;
+    &__control,
+    &__label {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+    }
+    &__control {
+        flex-shrink: 0;
+        min-height: 35px;
+    }
+    &__label {
+        margin-right: $baseunit;
+        height: 35px; // same height as URLInputButton
+    }
+    &__title {
+        @include scut-truncate;
+
+        margin-left: $baseunit * 0.25;
     }
 }
 .editor-is-clickable {
