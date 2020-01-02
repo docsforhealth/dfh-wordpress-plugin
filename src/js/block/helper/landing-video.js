@@ -4,6 +4,7 @@ import { registerBlockType } from '@wordpress/blocks';
 
 import * as Constants from '../../constants';
 import ImagePicker from '../../editor/image-picker';
+import placeholderImage from '../../../../assets/images/placeholder-headshot.png';
 import PopupPicker from '../../editor/popup-picker';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
@@ -12,7 +13,7 @@ registerBlockType(Constants.BLOCK_LANDING_VIDEO, {
   category: Constants.CATEGORY,
   supports: { inserter: false },
   attributes: {
-    videoImageUrl: { type: 'string' },
+    videoImageUrl: { type: 'string', default: placeholderImage },
     videoImageAlt: {
       type: 'string',
       default: __('Video thumbnail', Constants.TEXT_DOMAIN),

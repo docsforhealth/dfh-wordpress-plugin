@@ -1,4 +1,9 @@
 /**
+ * Helpers
+ */
+import './js/allow-only-custom-blocks.js'
+
+/**
  * Hidden helper blocks
  */
 import './js/block/helper/file-button';

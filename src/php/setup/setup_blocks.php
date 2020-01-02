@@ -21,7 +21,7 @@ function dfh_register_editor_blocks() {
     wp_enqueue_script(
         'dfh-editor-script', // label
         plugins_url('/build/index.js', DFH_PLUGIN_ROOT), // URL to script file
-        array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-block-editor', 'wp-data'), // dependencies
+        array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-block-editor', 'wp-data', 'wp-hooks'), // dependencies
         filemtime(DFH_PLUGIN_DIR . '/build/index.js'), // is a file path, set version as file last modified time
     );
     // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/

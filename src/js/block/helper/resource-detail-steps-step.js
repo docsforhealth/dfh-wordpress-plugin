@@ -26,10 +26,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {
                 wrapperClassName: 'resource-steps__step__title',
                 allowedBlocks: [Constants.BLOCK_TEXT_CONTAINER],
                 template: [
-                  [
-                    Constants.BLOCK_TEXT_CONTAINER,
-                    { onlyText: true, isLocked: true },
-                  ],
+                  [Constants.BLOCK_TEXT_CONTAINER, { onlyText: true }],
                 ],
               },
             ],

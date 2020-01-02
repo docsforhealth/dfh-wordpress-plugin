@@ -5,7 +5,7 @@ import { InnerBlocks } from '@wordpress/block-editor';
 import * as Constants from '../constants';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
-registerBlockType('dfh/hero', {
+registerBlockType(`${Constants.NAMESPACE}/hero`, {
   title: __('Hero', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
   edit() {

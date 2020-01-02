@@ -20,10 +20,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_DESCRIPTION, {
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
             [Constants.BLOCK_RESOURCE_DETAIL_INFO, {}],
-            [
-              Constants.BLOCK_TEXT_CONTAINER,
-              { onlyText: true, isLocked: true },
-            ],
+            [Constants.BLOCK_TEXT_CONTAINER, { onlyText: true }],
           ]}
         />
       </div>

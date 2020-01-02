@@ -6,25 +6,18 @@ import { ToggleControl, PanelBody } from '@wordpress/components';
 
 import * as Constants from '../constants';
 import ImagePicker from '../editor/image-picker';
+import placeholderImage from '../../../assets/images/placeholder-value.png';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
-registerBlockType('dfh/value-statement', {
+registerBlockType(`${Constants.NAMESPACE}/value-statement`, {
   title: __('Value Statement', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
   attributes: {
     reverse: { type: 'boolean', default: false },
-    valueImage: {
-      type: 'string',
-      source: 'attribute',
-      selector: '.landing-value__image img',
-      attribute: 'src',
-    },
+    valueImage: { type: 'string', default: placeholderImage },
     valueImageAlt: {
       type: 'string',
-      source: 'attribute',
-      selector: '.landing-value__image img',
-      attribute: 'alt',
-      default: 'Value illustration',
+      default: __('Value illustration', Constants.TEXT_DOMAIN),
     },
   },
   edit({ attributes, setAttributes }) {
@@ -35,7 +28,7 @@ registerBlockType('dfh/value-statement', {
             title={__('Value Statement Settings', Constants.TEXT_DOMAIN)}
           >
             <ToggleControl
-              label="Show image on left"
+              label={__('Show image on left', Constants.TEXT_DOMAIN)}
               checked={attributes.reverse}
               onChange={reverse => setAttributes({ reverse })}
             />

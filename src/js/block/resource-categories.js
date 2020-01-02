@@ -5,7 +5,7 @@ import * as Constants from '../constants';
 import LinkPicker from '../editor/link-picker';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
-registerBlockType('dfh/resource-categories', {
+registerBlockType(`${Constants.NAMESPACE}/resource-categories`, {
   title: __('Resource Categories', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY,
   edit({ attributes, setAttributes }) {

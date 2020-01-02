@@ -47,10 +47,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
                 showPostTitle: false,
               },
             ],
-            [
-              Constants.BLOCK_TEXT_CONTAINER,
-              { onlyText: true, isLocked: true },
-            ],
+            [Constants.BLOCK_TEXT_CONTAINER, { onlyText: true }],
           ]}
         />
       </div>
