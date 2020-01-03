@@ -18,10 +18,6 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_DESCRIPTION, {
     return (
       <div class="resource-detail__info">
         <InnerBlocks
-          allowedBlocks={[
-            Constants.BLOCK_RESOURCE_DETAIL_INFO,
-            Constants.BLOCK_TEXT_CONTAINER,
-          ]}
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
             [Constants.BLOCK_RESOURCE_DETAIL_INFO, {}],

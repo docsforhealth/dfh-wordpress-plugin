@@ -17,17 +17,12 @@ registerBlockType(Constants.BLOCK_LANDING_FEATURED, {
       <section className="landing-toolkits">
         <div className="landing-toolkits__featured">
           <InnerBlocks
-            allowedBlocks={[
-              Constants.BLOCK_INNER_BLOCK_WRAPPER,
-              Constants.BLOCK_BUTTON_CONTAINER,
-            ]}
             templateLock={Constants.INNER_BLOCKS_LOCKED}
             template={[
               [
                 Constants.BLOCK_INNER_BLOCK_WRAPPER,
                 {
-                  wrapperElement: 'div',
-                  wrapperClassName: 'margin-b-2',
+                  wrapperClassNames: ['margin-b-2'],
                   isLocked: true,
                   allowedBlocks: [Constants.BLOCK_TEXT_CONTAINER],
                   template: [

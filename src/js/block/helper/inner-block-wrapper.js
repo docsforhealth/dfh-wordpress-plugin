@@ -1,9 +1,9 @@
 import { __ } from '@wordpress/i18n';
-import { Fragment } from 'react';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as Constants from '../../constants';
+import RecursiveWrapper from '../../editor/recursive-wrapper';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_INNER_BLOCK_WRAPPER, {
@@ -19,15 +19,15 @@ registerBlockType(Constants.BLOCK_INNER_BLOCK_WRAPPER, {
     allowedBlocks: { type: 'array' },
     template: { type: 'array' },
     isLocked: { type: 'boolean', default: false },
-    wrapperElement: { type: 'string' },
-    wrapperClassName: { type: 'string', default: '' },
+    wrapperElements: { type: 'array', default: ['div'] },
+    wrapperClassNames: { type: 'array', default: [''] },
   },
   edit({ attributes }) {
-    const Wrapper = attributes.wrapperElement
-      ? attributes.wrapperElement
-      : Fragment;
     return (
-      <Wrapper className={attributes.wrapperClassName}>
+      <RecursiveWrapper
+        elements={attributes.wrapperElements}
+        classNames={attributes.wrapperClassNames}
+      >
         <InnerBlocks
           allowedBlocks={attributes.allowedBlocks}
           template={attributes.template}
@@ -37,17 +37,17 @@ registerBlockType(Constants.BLOCK_INNER_BLOCK_WRAPPER, {
               : Constants.INNER_BLOCKS_UNLOCKED
           }
         />
-      </Wrapper>
+      </RecursiveWrapper>
     );
   },
   save({ attributes }) {
-    const Wrapper = attributes.wrapperElement
-      ? attributes.wrapperElement
-      : Fragment;
     return (
-      <Wrapper className={attributes.wrapperClassName}>
+      <RecursiveWrapper
+        elements={attributes.wrapperElements}
+        classNames={attributes.wrapperClassNames}
+      >
         <InnerBlocks.Content />
-      </Wrapper>
+      </RecursiveWrapper>
     );
   },
 });

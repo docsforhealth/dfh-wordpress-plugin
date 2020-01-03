@@ -3,8 +3,8 @@ import { Fragment } from 'react';
 import { registerBlockType } from '@wordpress/blocks';
 import { RichText } from '@wordpress/block-editor';
 
-import * as Constants from '../../constants';
-import LinkPicker from '../../editor/link-picker';
+import * as Constants from '../../../constants';
+import LinkPicker from '../../../editor/link-picker';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_INFO, {

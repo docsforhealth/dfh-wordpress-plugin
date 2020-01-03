@@ -17,10 +17,6 @@ registerBlockType(`${Constants.NAMESPACE}/hero`, {
     return (
       <div className="landing-hero">
         <InnerBlocks
-          allowedBlocks={[
-            Constants.BLOCK_LANDING_HEADER,
-            Constants.BLOCK_LANDING_VIDEO,
-          ]}
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
             [Constants.BLOCK_LANDING_HEADER, {}],

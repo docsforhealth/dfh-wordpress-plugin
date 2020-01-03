@@ -29,7 +29,6 @@ registerBlockType(Constants.BLOCK_LANDING_VIDEO, {
       <section className="landing-video">
         <div className="landing-video__description">
           <InnerBlocks
-            allowedBlocks={[Constants.BLOCK_TEXT_CONTAINER]}
             templateLock={Constants.INNER_BLOCKS_LOCKED}
             template={[
               [

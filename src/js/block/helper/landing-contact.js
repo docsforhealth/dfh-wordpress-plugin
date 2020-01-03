@@ -23,7 +23,6 @@ registerBlockType(Constants.BLOCK_LANDING_CONTACT, {
         <div className="landing-contact__form">
           <div className="margin-b-2">
             <InnerBlocks
-              allowedBlocks={[Constants.BLOCK_TEXT_CONTAINER]}
               templateLock={Constants.INNER_BLOCKS_LOCKED}
               template={[
                 [

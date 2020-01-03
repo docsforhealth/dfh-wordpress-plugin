@@ -15,11 +15,6 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
     return (
       <div class="resource-detail__steps">
         <InnerBlocks
-          allowedBlocks={[
-            Constants.BLOCK_HEADING,
-            Constants.BLOCK_TEXT_CONTAINER,
-            Constants.BLOCK_INNER_BLOCK_WRAPPER,
-          ]}
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
             [
@@ -34,8 +29,8 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
             [
               Constants.BLOCK_INNER_BLOCK_WRAPPER,
               {
-                wrapperElement: 'ol',
-                wrapperClassName: 'resource-steps',
+                wrapperElements: ['ol'],
+                wrapperClassNames: ['resource-steps'],
                 allowedBlocks: [Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP],
                 template: [[Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {}]],
               },

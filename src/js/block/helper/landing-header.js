@@ -18,17 +18,12 @@ registerBlockType(Constants.BLOCK_LANDING_HEADER, {
       <header className="landing-header">
         <div className="landing-header__container">
           <InnerBlocks
-            allowedBlocks={[
-              Constants.BLOCK_TEXT_CONTAINER,
-              Constants.BLOCK_BUTTON_CONTAINER,
-            ]}
             templateLock={Constants.INNER_BLOCKS_LOCKED}
             template={[
               [
                 Constants.BLOCK_INNER_BLOCK_WRAPPER,
                 {
-                  wrapperElement: 'div',
-                  wrapperClassName: 'margin-b-3',
+                  wrapperClassNames: ['margin-b-3'],
                   isLocked: true,
                   template: [
                     [

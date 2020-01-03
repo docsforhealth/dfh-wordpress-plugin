@@ -4,8 +4,6 @@ import { select, dispatch } from '@wordpress/data';
 
 import * as Constants from './constants';
 
-const STORE_BLOCK_EDITOR = 'core/block-editor';
-
 export function handleForceAllAttrs(allowedBlockNames, forceAttrsObj) {
   if (
     !forceAttrsObj ||
@@ -31,11 +29,11 @@ export function setAttributesOnInnerBlocks(
   newAttributes,
   filterFn = null,
 ) {
-  const thisBlock = select(STORE_BLOCK_EDITOR).getBlocksByClientId(clientId);
+  const thisBlock = select(Constants.STORE_BLOCK_EDITOR).getBlocksByClientId(clientId);
   if (thisBlock) {
     thisBlock[0].innerBlocks.forEach(block => {
       if (!_.isFunction(filterFn) || filterFn(block)) {
-        dispatch(STORE_BLOCK_EDITOR).updateBlockAttributes(
+        dispatch(Constants.STORE_BLOCK_EDITOR).updateBlockAttributes(
           block.clientId,
           newAttributes,
         );

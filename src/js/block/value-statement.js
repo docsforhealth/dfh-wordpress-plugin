@@ -43,7 +43,6 @@ registerBlockType(`${Constants.NAMESPACE}/value-statement`, {
         <div className={`landing-value ${buildClassName(attributes)}`}>
           <div className="landing-value__description">
             <InnerBlocks
-              allowedBlocks={[Constants.BLOCK_TEXT_CONTAINER]}
               templateLock={Constants.INNER_BLOCKS_LOCKED}
               template={[
                 [

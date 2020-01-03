@@ -17,10 +17,6 @@ registerBlockType(`${Constants.NAMESPACE}/featured-and-contact`, {
     return (
       <div className="landing-featured-and-contact">
         <InnerBlocks
-          allowedBlocks={[
-            Constants.BLOCK_LANDING_FEATURED,
-            Constants.BLOCK_LANDING_CONTACT,
-          ]}
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
             [Constants.BLOCK_LANDING_FEATURED, {}],

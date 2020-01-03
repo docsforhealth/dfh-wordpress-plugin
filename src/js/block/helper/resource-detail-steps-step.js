@@ -19,17 +19,12 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {
     return (
       <li class="resource-steps__step">
         <InnerBlocks
-          allowedBlocks={[
-            Constants.BLOCK_INNER_BLOCK_WRAPPER,
-            Constants.BLOCK_BUTTON_CONTAINER,
-          ]}
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
             [
               Constants.BLOCK_INNER_BLOCK_WRAPPER,
               {
-                wrapperElement: 'div',
-                wrapperClassName: 'resource-steps__step__title',
+                wrapperClassNames: ['resource-steps__step__title'],
                 isLocked: true,
                 template: [
                   [Constants.BLOCK_TEXT_CONTAINER, { onlyText: true }],

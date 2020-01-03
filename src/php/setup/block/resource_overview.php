@@ -1,14 +1,14 @@
 <?php
 
-register_block_type('dfh/resource-categories', array(
-    'render_callback' => 'dfh_dynamic_render_resource_categories',
+register_block_type('dfh/resource-overview', array(
+    'render_callback' => 'dfh_dynamic_render_resource_overview',
     'attributes'      => array(
         'allResourcesUrl'   => array('type' => 'string', 'default' => 'javascript:history.back()'),
         'allResourcesTitle' => array('type' => 'string', 'default' => 'javascript:history.back()'),
     ),
 ));
 
-function dfh_dynamic_render_resource_categories($attributes) {
+function dfh_dynamic_render_resource_overview($attributes) {
     $all_resources_url = $attributes['allResourcesUrl'];
     // see https://wordpress.stackexchange.com/a/193000
     $terms = get_terms(array('taxonomy' => DFH_TAXONOMY_RESOURCE));

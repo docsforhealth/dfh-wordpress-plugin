@@ -2,6 +2,10 @@ export const NAMESPACE = 'dfh';
 export const CATEGORY = 'dfh';
 export const TEXT_DOMAIN = 'dfh';
 
+// documentation for stores at https://developer.wordpress.org/block-editor/data/
+export const STORE_BLOCK_EDITOR = 'core/block-editor';
+export const STORE_EDITOR = 'core/editor';
+
 export const INNER_BLOCKS_LOCKED = 'all';
 export const INNER_BLOCKS_UNLOCKED = false;
 
@@ -16,6 +20,7 @@ export const BLOCK_LANDING_FEATURED = `${NAMESPACE}/landing-featured`;
 export const BLOCK_LANDING_HEADER = `${NAMESPACE}/landing-header`;
 export const BLOCK_LANDING_VIDEO = `${NAMESPACE}/landing-video`;
 export const BLOCK_LINK_BUTTON = `${NAMESPACE}/link-button`;
+export const BLOCK_PAGE_TITLE = `${NAMESPACE}/page-title`;
 export const BLOCK_RESOURCE_DETAIL_DESCRIPTION = `${NAMESPACE}/resource-detail-description`;
 export const BLOCK_RESOURCE_DETAIL_INFO = `${NAMESPACE}/resource-detail-info`;
 export const BLOCK_RESOURCE_DETAIL_STEPS = `${NAMESPACE}/resource-detail-steps`;
