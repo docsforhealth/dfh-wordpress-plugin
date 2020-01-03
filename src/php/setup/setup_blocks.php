@@ -6,8 +6,16 @@ function dfh_block_categories($categories, $post) {
     return array_merge(
         array(
             array(
-                'slug' => DFH_BLOCK_CATEGORY_SLUG,
-                'title' => __('Docs for Health', DFH_TEXT_DOMAIN),
+                'slug'  => DFH_BLOCK_CATEGORY_COMMON,
+                'title' => __('Common', DFH_TEXT_DOMAIN),
+            ),
+            array(
+                'slug'  => DFH_BLOCK_CATEGORY_LANDING,
+                'title' => __('Landing Page', DFH_TEXT_DOMAIN),
+            ),
+            array(
+                'slug'  => DFH_BLOCK_CATEGORY_RESOURCE,
+                'title' => __('Resources', DFH_TEXT_DOMAIN),
             ),
         ),
         $categories,

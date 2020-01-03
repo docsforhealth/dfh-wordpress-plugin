@@ -8,7 +8,7 @@ import * as SharedButton from '../shared/button';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {
   title: __('Resource Detail Step', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_RESOURCE,
   icon: 'excerpt-view',
   description: __(
     'Specific step for a specific resource',

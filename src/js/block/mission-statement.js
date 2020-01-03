@@ -8,7 +8,7 @@ import * as Constants from '../constants';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(`${Constants.NAMESPACE}/mission-statement`, {
   title: __('Mission Statement', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_LANDING,
   icon: 'lightbulb',
   description: __(
     'Statement with background graphic for emphasis',

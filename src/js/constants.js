@@ -1,6 +1,9 @@
 export const NAMESPACE = 'dfh';
-export const CATEGORY = 'dfh';
 export const TEXT_DOMAIN = 'dfh';
+
+export const CATEGORY_COMMON = 'dfh-common';
+export const CATEGORY_LANDING = 'dfh-landing';
+export const CATEGORY_RESOURCE = 'dfh-resource';
 
 // documentation for stores at https://developer.wordpress.org/block-editor/data/
 export const STORE_BLOCK_EDITOR = 'core/block-editor';

@@ -7,7 +7,7 @@ import * as Constants from '../constants';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(`${Constants.NAMESPACE}/page-header`, {
   title: __('Page Header', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_COMMON,
   icon: 'schedule',
   description: __(
     'Header for a page including title and right-aligned area for more content',

@@ -10,7 +10,7 @@ import { handleForceAllAttrs } from '../../utils';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_TEXT_CONTAINER, {
   title: __('Text Container', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_COMMON,
   icon: 'media-text',
   description: __(
     'Allows adding of various text-based blocks',

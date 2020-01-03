@@ -7,7 +7,7 @@ import LinkPicker from '../../editor/link-picker';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(`${Constants.NAMESPACE}/resource-overview`, {
   title: __('Resource Overview', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_LANDING,
   icon: 'index-card',
   description: __(
     'All resource categories with examples of each',

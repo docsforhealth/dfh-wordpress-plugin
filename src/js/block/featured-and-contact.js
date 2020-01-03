@@ -7,7 +7,7 @@ import * as Constants from '../constants';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(`${Constants.NAMESPACE}/featured-and-contact`, {
   title: __('Featured & Contact', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_LANDING,
   icon: 'awards',
   description: __(
     'Featured item and contact form for the landing page',

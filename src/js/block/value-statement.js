@@ -12,7 +12,7 @@ import placeholderImage from '../../../assets/images/placeholder-value.png';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(`${Constants.NAMESPACE}/value-statement`, {
   title: __('Value Statement', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_LANDING,
   icon: 'heart',
   description: __(
     'Statement accompanied by an illustration',

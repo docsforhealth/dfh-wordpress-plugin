@@ -8,7 +8,7 @@ import * as Constants from '../../constants';
 export const ATTR_SIZE = 'size';
 export const ATTR_OPTION_SIZE = 'showSizeOptions';
 export const config = {
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_COMMON,
   parent: [Constants.BLOCK_BUTTON_CONTAINER],
   supports: { customClassName: false },
   attributes: {

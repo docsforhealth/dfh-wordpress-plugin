@@ -9,7 +9,7 @@ import FormPicker from '../../editor/form-picker';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_LANDING_CONTACT, {
   title: __('Landing Contact', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_LANDING,
   icon: 'admin-users',
   description: __('Contact form on the landing page', Constants.TEXT_DOMAIN),
   supports: { inserter: false },

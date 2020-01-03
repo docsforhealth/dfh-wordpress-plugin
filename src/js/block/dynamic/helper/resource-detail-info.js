@@ -9,7 +9,7 @@ import LinkPicker from '../../../editor/link-picker';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_INFO, {
   title: __('Resource Detail Info', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_RESOURCE,
   icon: 'networking',
   description: __(
     'Title and category of a specific resource',

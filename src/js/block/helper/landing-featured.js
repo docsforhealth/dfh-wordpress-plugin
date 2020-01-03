@@ -8,7 +8,7 @@ import * as Heading from '../heading';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_LANDING_FEATURED, {
   title: __('Landing Featured', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_LANDING,
   icon: 'awards',
   description: __('Featured item on the landing page', Constants.TEXT_DOMAIN),
   supports: { inserter: false },

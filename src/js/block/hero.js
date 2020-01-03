@@ -7,7 +7,7 @@ import * as Constants from '../constants';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(`${Constants.NAMESPACE}/hero`, {
   title: __('Hero', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_LANDING,
   icon: 'flag',
   description: __(
     'Header with overview video for the landing page',

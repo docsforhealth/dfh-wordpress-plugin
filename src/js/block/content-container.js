@@ -10,7 +10,7 @@ import * as Constants from '../constants';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType('dfh/content-container', {
   title: __('Content Container', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_COMMON,
   icon: 'grid-view',
   description: __(
     'Ensures appropriate horizontal spacing and width of content of any type',

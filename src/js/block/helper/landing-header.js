@@ -9,7 +9,7 @@ import * as Text from '../text';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_LANDING_HEADER, {
   title: __('Landing Header', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_LANDING,
   icon: 'flag',
   description: __('Header of the landing page', Constants.TEXT_DOMAIN),
   supports: { inserter: false },

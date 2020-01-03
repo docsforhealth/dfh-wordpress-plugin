@@ -20,7 +20,7 @@ const MERGE_BLOCK_PROP_NAME = 'value';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_TEXT, {
   title: __('Text', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_COMMON,
   icon: 'editor-paragraph',
   description: __('Paragraph text', Constants.TEXT_DOMAIN),
   attributes: {

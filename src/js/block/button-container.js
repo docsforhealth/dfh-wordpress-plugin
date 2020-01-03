@@ -9,7 +9,7 @@ import { handleForceAllAttrs } from '../utils';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
   title: __('Button Container', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_COMMON,
   icon: 'editor-table',
   description: __(
     'Allows adding and automatic formatting of various button blocks',

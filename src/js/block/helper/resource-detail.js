@@ -8,7 +8,7 @@ import * as Constants from '../../constants';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(`${Constants.NAMESPACE}/resource-detail`, {
   title: __('Resource Detail', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_RESOURCE,
   icon: 'networking',
   description: __(
     'Detailed information for a specific resource',

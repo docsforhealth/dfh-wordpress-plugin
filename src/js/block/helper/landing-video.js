@@ -12,7 +12,7 @@ import PopupPicker from '../../editor/popup-picker';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_LANDING_VIDEO, {
   title: __('Landing Video', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_LANDING,
   icon: 'video-alt2',
   description: __('Overview video on the landing page', Constants.TEXT_DOMAIN),
   supports: { inserter: false },

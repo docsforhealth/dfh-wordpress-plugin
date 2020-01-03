@@ -8,7 +8,7 @@ import RecursiveWrapper from '../../editor/recursive-wrapper';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_INNER_BLOCK_WRAPPER, {
   title: __('Inner Block Wrapper', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_COMMON,
   icon: 'grid-view',
   description: __(
     'Enables wrapping other blocks in custom elements',

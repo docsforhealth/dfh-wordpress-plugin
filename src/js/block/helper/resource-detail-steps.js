@@ -7,7 +7,7 @@ import * as Constants from '../../constants';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
   title: __('Resource Detail Steps', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY,
+  category: Constants.CATEGORY_RESOURCE,
   icon: 'excerpt-view',
   description: __('Next steps for a specific resource', Constants.TEXT_DOMAIN),
   supports: { inserter: false },
