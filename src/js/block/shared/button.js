@@ -5,16 +5,16 @@ import { ToggleControl, PanelBody, RadioControl } from '@wordpress/components';
 
 import * as Constants from '../../constants';
 
-export const ATTRIBUTE_SIZE = 'size';
-export const ATTRIBUTE_SHOW_SIZE_OPTIONS = 'showSizeOptions';
+export const ATTR_SIZE = 'size';
+export const ATTR_OPTION_SIZE = 'showSizeOptions';
 export const config = {
   category: Constants.CATEGORY,
   parent: [Constants.BLOCK_BUTTON_CONTAINER],
   supports: { customClassName: false },
   attributes: {
     label: { type: 'string' },
-    [ATTRIBUTE_SIZE]: { type: 'string', default: '' },
-    [ATTRIBUTE_SHOW_SIZE_OPTIONS]: { type: 'boolean', default: true },
+    [ATTR_SIZE]: { type: 'string', default: Constants.BUTTON_SIZE_DEFAULT },
+    [ATTR_OPTION_SIZE]: { type: 'boolean', default: true },
     isSecondary: { type: 'boolean', default: false },
     isOutlined: { type: 'boolean', default: false },
     url: { type: 'string' },
@@ -27,18 +27,21 @@ export function buildButtonEdit({ attributes, setAttributes }, AssetPicker) {
     <Fragment>
       <InspectorControls>
         <PanelBody title={__('Link Button Settings', Constants.TEXT_DOMAIN)}>
-          {attributes[ATTRIBUTE_SHOW_SIZE_OPTIONS] && (
+          {attributes[ATTR_OPTION_SIZE] && (
             <RadioControl
               label={__('Size', Constants.TEXT_DOMAIN)}
-              selected={attributes[ATTRIBUTE_SIZE]}
+              selected={attributes[ATTR_SIZE]}
               options={[
-                { label: __('Default', Constants.TEXT_DOMAIN), value: '' },
+                {
+                  label: __('Default', Constants.TEXT_DOMAIN),
+                  value: Constants.BUTTON_SIZE_DEFAULT,
+                },
                 {
                   label: __('Small', Constants.TEXT_DOMAIN),
                   value: Constants.BUTTON_SIZE_SMALL,
                 },
               ]}
-              onChange={size => setAttributes({ [ATTRIBUTE_SIZE]: size })}
+              onChange={size => setAttributes({ [ATTR_SIZE]: size })}
             />
           )}
           <ToggleControl
@@ -54,7 +57,7 @@ export function buildButtonEdit({ attributes, setAttributes }, AssetPicker) {
         </PanelBody>
       </InspectorControls>
       <RichText
-        className={`button-container__button button editor-is-clickable ${buildButtonClasseName(
+        className={`button-container__button button editor-is-clickable ${buildButtonClassName(
           attributes,
         )}`}
         placeholder={__('Enter button label here', Constants.TEXT_DOMAIN)}
@@ -81,7 +84,7 @@ export function buildButtonSave({ attributes }, { openInNewTab = false } = {}) {
     <a
       {...openProps}
       href={attributes.url}
-      className={`button-container__button button ${buildButtonClasseName(
+      className={`button-container__button button ${buildButtonClassName(
         attributes,
       )}`}
     >
@@ -90,9 +93,9 @@ export function buildButtonSave({ attributes }, { openInNewTab = false } = {}) {
   );
 }
 
-export function buildButtonClasseName(attributes) {
-  const sizeClass = attributes[ATTRIBUTE_SIZE]
-      ? `button--${attributes[ATTRIBUTE_SIZE]}`
+function buildButtonClassName(attributes) {
+  const sizeClass = attributes[ATTR_SIZE]
+      ? `button--${attributes[ATTR_SIZE]}`
       : '',
     isSecondaryClass = attributes.isSecondary ? 'button--secondary' : '',
     isOutlinedClass = attributes.isOutlined ? 'button--outline' : '';

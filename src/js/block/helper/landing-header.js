@@ -3,6 +3,8 @@ import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as Constants from '../../constants';
+import * as Heading from '../heading';
+import * as Text from '../text';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_LANDING_HEADER, {
@@ -12,16 +14,6 @@ registerBlockType(Constants.BLOCK_LANDING_HEADER, {
   description: __('Header of the landing page', Constants.TEXT_DOMAIN),
   supports: { inserter: false },
   edit() {
-    const titleConfig = {
-        tagName: 'h1',
-        className: 'heading heading--1',
-        placeholder: __('Enter title here', Constants.TEXT_DOMAIN),
-      },
-      subtitleConfig = {
-        tagName: 'p',
-        className: 'text text--large margin-b-3',
-        placeholder: __('Enter subtitle here', Constants.TEXT_DOMAIN),
-      };
     return (
       <header className="landing-header">
         <div className="landing-header__container">
@@ -33,13 +25,35 @@ registerBlockType(Constants.BLOCK_LANDING_HEADER, {
             templateLock={Constants.INNER_BLOCKS_LOCKED}
             template={[
               [
-                Constants.BLOCK_TEXT_CONTAINER,
+                Constants.BLOCK_INNER_BLOCK_WRAPPER,
                 {
-                  template: [
-                    [Constants.BLOCK_TEXT, titleConfig],
-                    [Constants.BLOCK_TEXT, subtitleConfig],
-                  ],
+                  wrapperElement: 'div',
+                  wrapperClassName: 'margin-b-3',
                   isLocked: true,
+                  template: [
+                    [
+                      Constants.BLOCK_TEXT_CONTAINER,
+                      {
+                        forceAttributes: {
+                          [Constants.BLOCK_HEADING]: {
+                            [Heading.ATTR_LEVEL]: Constants.HEADING_SIZE_XLARGE,
+                            [Heading.ATTR_SHOW_PRE_TITLE]: false,
+                            [Heading.ATTR_SHOW_POST_TITLE]: false,
+                            [Heading.ATTR_HIGHLIGHT_MAIN_TITLE]: false,
+
+                            [Heading.ATTR_OPTION_LEVEL]: false,
+                            [Heading.ATTR_OPTION_SHOW_PRE_TITLE]: false,
+                            [Heading.ATTR_OPTION_SHOW_POST_TITLE]: false,
+                            [Heading.ATTR_OPTION_HIGHLIGHT_MAIN_TITLE]: false,
+                          },
+                          [Constants.BLOCK_TEXT]: {
+                            [Text.ATTR_SIZE]: Constants.TEXT_SIZE_LARGE,
+                            [Text.ATTR_OPTION_SIZE]: false,
+                          },
+                        },
+                      },
+                    ],
+                  ],
                 },
               ],
               [Constants.BLOCK_BUTTON_CONTAINER, {}],

@@ -3,6 +3,7 @@ import { InnerBlocks, RichText } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as Constants from '../../constants';
+import * as Heading from '../heading';
 import FormPicker from '../../editor/form-picker';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
@@ -27,7 +28,14 @@ registerBlockType(Constants.BLOCK_LANDING_CONTACT, {
               template={[
                 [
                   Constants.BLOCK_TEXT_CONTAINER,
-                  { forceHeadingLevel: Constants.HEADING_SIZE_LARGE },
+                  {
+                    forceAttributes: {
+                      [Constants.BLOCK_HEADING]: {
+                        [Heading.ATTR_LEVEL]: Constants.HEADING_SIZE_LARGE,
+                        [Heading.ATTR_OPTION_LEVEL]: false,
+                      },
+                    },
+                  },
                 ],
               ]}
             />

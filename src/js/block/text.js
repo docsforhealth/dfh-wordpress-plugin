@@ -10,6 +10,9 @@ import { ToggleControl, PanelBody, RadioControl } from '@wordpress/components';
 
 import * as Constants from '../constants';
 
+export const ATTR_SIZE = 'size';
+export const ATTR_OPTION_SIZE = 'showOptionSize';
+
 const MERGE_BLOCK_PROP_NAME = 'value';
 
 // Since this is now the default block, we need to support spitting, replacing, merging, etc
@@ -28,7 +31,8 @@ registerBlockType(Constants.BLOCK_TEXT, {
       type: 'string',
       default: __('Enter text here', Constants.TEXT_DOMAIN),
     },
-    size: { type: 'string', default: '' },
+    [ATTR_SIZE]: { type: 'string', default: Constants.TEXT_SIZE_DEFAULT },
+    [ATTR_OPTION_SIZE]: { type: 'boolean', default: true },
     // `tagName` should not be `p` because cannot nest paragraph tags
     // see https://stackoverflow.com/a/12015809
     tagName: { type: 'string', default: 'div' },
@@ -51,22 +55,27 @@ registerBlockType(Constants.BLOCK_TEXT, {
       <Fragment>
         <InspectorControls>
           <PanelBody title={__('Text Settings', Constants.TEXT_DOMAIN)}>
-            <RadioControl
-              label={__('Size', Constants.TEXT_DOMAIN)}
-              selected={attributes.size}
-              options={[
-                {
-                  label: __('Large', Constants.TEXT_DOMAIN),
-                  value: Constants.TEXT_SIZE_LARGE,
-                },
-                { label: __('Default', Constants.TEXT_DOMAIN), value: '' },
-                {
-                  label: __('Small', Constants.TEXT_DOMAIN),
-                  value: Constants.TEXT_SIZE_SMALL,
-                },
-              ]}
-              onChange={size => setAttributes({ size })}
-            />
+            {attributes[ATTR_OPTION_SIZE] && (
+              <RadioControl
+                label={__('Size', Constants.TEXT_DOMAIN)}
+                selected={attributes[ATTR_SIZE]}
+                options={[
+                  {
+                    label: __('Large', Constants.TEXT_DOMAIN),
+                    value: Constants.TEXT_SIZE_LARGE,
+                  },
+                  {
+                    label: __('Default', Constants.TEXT_DOMAIN),
+                    value: Constants.TEXT_SIZE_DEFAULT,
+                  },
+                  {
+                    label: __('Small', Constants.TEXT_DOMAIN),
+                    value: Constants.TEXT_SIZE_SMALL,
+                  },
+                ]}
+                onChange={size => setAttributes({ [ATTR_SIZE]: size })}
+              />
+            )}
             <ToggleControl
               label={__('Force to be one line', Constants.TEXT_DOMAIN)}
               checked={attributes.oneLine}
@@ -82,7 +91,7 @@ registerBlockType(Constants.BLOCK_TEXT, {
         <RichText
           tagName={attributes.tagName}
           identifier={MERGE_BLOCK_PROP_NAME}
-          className={`${className} text ${buildClasses(attributes)}`}
+          className={`${className} text ${buildClassName(attributes)}`}
           placeholder={attributes.placeholder}
           value={attributes[MERGE_BLOCK_PROP_NAME]}
           onChange={value => setAttributes({ [MERGE_BLOCK_PROP_NAME]: value })}
@@ -113,15 +122,17 @@ registerBlockType(Constants.BLOCK_TEXT, {
     return (
       <RichText.Content
         tagName={attributes.tagName}
-        className={`text ${buildClasses(attributes)}`}
+        className={`text ${buildClassName(attributes)}`}
         value={attributes[MERGE_BLOCK_PROP_NAME]}
       />
     );
   },
 });
 
-function buildClasses(attributes) {
-  const sizeClass = attributes.size ? `text--${attributes.size}` : '',
+function buildClassName(attributes) {
+  const sizeClass = attributes[ATTR_SIZE]
+      ? `text--${attributes[ATTR_SIZE]}`
+      : '',
     oneLineClass = attributes.oneLine ? 'text--one-line' : '',
     deemphasizeClass = attributes.deemphasize ? 'text--light' : '',
     additionalClass = attributes.className ? attributes.className : '';

@@ -4,8 +4,8 @@ import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as Constants from '../../constants';
-import * as Heading from '../heading';
-import { setAttributesOnInnerBlocks } from '../../utils';
+import WithInnerBlockAttrs from '../../editor/with-inner-block-attrs';
+import { handleForceAllAttrs } from '../../utils';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_TEXT_CONTAINER, {
@@ -24,33 +24,30 @@ registerBlockType(Constants.BLOCK_TEXT_CONTAINER, {
     },
     isLocked: { type: 'boolean', default: false },
     onlyText: { type: 'boolean', default: false },
-    forceHeadingLevel: { type: 'string' },
+    forceAttributes: { type: 'object' },
   },
   edit({ attributes, clientId }) {
-    if (attributes.forceHeadingLevel) {
-      setAttributesOnInnerBlocks(
-        clientId,
-        {
-          [Heading.ATTRIBUTE_LEVEL]: attributes.forceHeadingLevel,
-          [Heading.ATTRIBUTE_SHOW_LEVEL_OPTIONS]: false,
-        },
-        block => block.name === Constants.BLOCK_HEADING,
-      );
-    }
+    const allowedBlockNames = attributes.onlyText
+      ? [Constants.BLOCK_TEXT]
+      : [Constants.BLOCK_HEADING, Constants.BLOCK_TEXT];
     return (
-      <InnerBlocks
-        allowedBlocks={
-          attributes.onlyText
-            ? [Constants.BLOCK_TEXT]
-            : [Constants.BLOCK_HEADING, Constants.BLOCK_TEXT]
-        }
-        template={filterTemplateIfOnlyText(attributes)}
-        templateLock={
-          attributes.isLocked
-            ? Constants.INNER_BLOCKS_LOCKED
-            : Constants.INNER_BLOCKS_UNLOCKED
-        }
-      />
+      <WithInnerBlockAttrs
+        clientId={clientId}
+        innerBlockAttrs={handleForceAllAttrs(
+          allowedBlockNames,
+          attributes.forceAttributes,
+        )}
+      >
+        <InnerBlocks
+          allowedBlocks={allowedBlockNames}
+          template={filterTemplateIfOnlyText(attributes)}
+          templateLock={
+            attributes.isLocked
+              ? Constants.INNER_BLOCKS_LOCKED
+              : Constants.INNER_BLOCKS_UNLOCKED
+          }
+        />
+      </WithInnerBlockAttrs>
     );
   },
   save() {

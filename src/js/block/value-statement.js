@@ -5,6 +5,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import { ToggleControl, PanelBody } from '@wordpress/components';
 
 import * as Constants from '../constants';
+import * as Heading from './heading';
 import ImagePicker from '../editor/image-picker';
 import placeholderImage from '../../../assets/images/placeholder-value.png';
 
@@ -47,7 +48,14 @@ registerBlockType(`${Constants.NAMESPACE}/value-statement`, {
               template={[
                 [
                   Constants.BLOCK_TEXT_CONTAINER,
-                  { forceHeadingLevel: Constants.HEADING_SIZE_LARGE },
+                  {
+                    forceAttributes: {
+                      [Constants.BLOCK_HEADING]: {
+                        [Heading.ATTR_LEVEL]: Constants.HEADING_SIZE_LARGE,
+                        [Heading.ATTR_OPTION_LEVEL]: false,
+                      },
+                    },
+                  },
                 ],
               ]}
             />

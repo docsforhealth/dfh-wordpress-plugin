@@ -3,6 +3,8 @@ import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as Constants from '../../constants';
+import * as Heading from '../heading';
+import * as Text from '../text';
 import ImagePicker from '../../editor/image-picker';
 import placeholderImage from '../../../../assets/images/placeholder-headshot.png';
 import PopupPicker from '../../editor/popup-picker';
@@ -23,14 +25,6 @@ registerBlockType(Constants.BLOCK_LANDING_VIDEO, {
     videoUrl: { type: 'string' },
   },
   edit({ attributes, setAttributes }) {
-    const videoTitleConfig = {
-        tagName: 'h2',
-        className: 'heading heading--3',
-        placeholder: __('Enter video title here', Constants.TEXT_DOMAIN),
-      },
-      videoSubtitleConfig = {
-        placeholder: __('Enter video subtitle here', Constants.TEXT_DOMAIN),
-      };
     return (
       <section className="landing-video">
         <div className="landing-video__description">
@@ -41,11 +35,23 @@ registerBlockType(Constants.BLOCK_LANDING_VIDEO, {
               [
                 Constants.BLOCK_TEXT_CONTAINER,
                 {
-                  template: [
-                    [Constants.BLOCK_TEXT, videoTitleConfig],
-                    [Constants.BLOCK_TEXT, videoSubtitleConfig],
-                  ],
-                  isLocked: true,
+                  forceAttributes: {
+                    [Constants.BLOCK_HEADING]: {
+                      [Heading.ATTR_LEVEL]: Constants.HEADING_SIZE_MEDIUM,
+                      [Heading.ATTR_SHOW_PRE_TITLE]: false,
+                      [Heading.ATTR_SHOW_POST_TITLE]: false,
+                      [Heading.ATTR_HIGHLIGHT_MAIN_TITLE]: false,
+
+                      [Heading.ATTR_OPTION_LEVEL]: false,
+                      [Heading.ATTR_OPTION_SHOW_PRE_TITLE]: false,
+                      [Heading.ATTR_OPTION_SHOW_POST_TITLE]: false,
+                      [Heading.ATTR_OPTION_HIGHLIGHT_MAIN_TITLE]: false,
+                    },
+                    [Constants.BLOCK_TEXT]: {
+                      [Text.ATTR_SIZE]: Constants.TEXT_SIZE_DEFAULT,
+                      [Text.ATTR_OPTION_SIZE]: false,
+                    },
+                  },
                 },
               ],
             ]}

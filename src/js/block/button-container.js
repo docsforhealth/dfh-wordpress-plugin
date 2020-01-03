@@ -3,8 +3,8 @@ import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as Constants from '../constants';
-import * as SharedButton from './shared/button';
-import { setAttributesOnInnerBlocks } from '../utils';
+import WithInnerBlockAttrs from '../editor/with-inner-block-attrs';
+import { handleForceAllAttrs } from '../utils';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
@@ -19,28 +19,31 @@ registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
     template: { type: 'array', default: [[Constants.BLOCK_LINK_BUTTON, {}]] },
     isLocked: { type: 'boolean', default: false },
     expandWidth: { type: 'boolean', default: false },
-    forceButtonSize: { type: 'string' },
+    forceAttributes: { type: 'object' },
   },
   edit({ attributes, clientId }) {
-    if (attributes.forceButtonSize) {
-      setAttributesOnInnerBlocks(clientId, {
-        [SharedButton.ATTRIBUTE_SIZE]: attributes.forceButtonSize,
-        [SharedButton.ATTRIBUTE_SHOW_SIZE_OPTIONS]: false,
-      });
-    }
+    const allowedBlockNames = [
+      Constants.BLOCK_LINK_BUTTON,
+      Constants.BLOCK_FILE_BUTTON,
+    ];
     return (
-      <InnerBlocks
-        allowedBlocks={[
-          Constants.BLOCK_LINK_BUTTON,
-          Constants.BLOCK_FILE_BUTTON,
-        ]}
-        template={attributes.template}
-        templateLock={
-          attributes.isLocked
-            ? Constants.INNER_BLOCKS_LOCKED
-            : Constants.INNER_BLOCKS_UNLOCKED
-        }
-      />
+      <WithInnerBlockAttrs
+        clientId={clientId}
+        innerBlockAttrs={handleForceAllAttrs(
+          allowedBlockNames,
+          attributes.forceAttributes,
+        )}
+      >
+        <InnerBlocks
+          allowedBlocks={allowedBlockNames}
+          template={attributes.template}
+          templateLock={
+            attributes.isLocked
+              ? Constants.INNER_BLOCKS_LOCKED
+              : Constants.INNER_BLOCKS_UNLOCKED
+          }
+        />
+      </WithInnerBlockAttrs>
     );
   },
   save({ attributes }) {

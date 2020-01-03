@@ -5,6 +5,8 @@ export const TEXT_DOMAIN = 'dfh';
 export const INNER_BLOCKS_LOCKED = 'all';
 export const INNER_BLOCKS_UNLOCKED = false;
 
+export const INNER_BLOCKS_FORCE_ATTRS_ALL = 'applyToAll';
+
 export const BLOCK_BUTTON_CONTAINER = `${NAMESPACE}/button-container`;
 export const BLOCK_FILE_BUTTON = `${NAMESPACE}/file-button`;
 export const BLOCK_HEADING = `${NAMESPACE}/heading`;
@@ -21,12 +23,14 @@ export const BLOCK_RESOURCE_DETAIL_STEPS_STEP = `${NAMESPACE}/resource-detail-st
 export const BLOCK_TEXT = `${NAMESPACE}/text`;
 export const BLOCK_TEXT_CONTAINER = `${NAMESPACE}/text-container`;
 
+export const BUTTON_SIZE_DEFAULT = '';
 export const BUTTON_SIZE_SMALL = 'small';
 
 export const TEXT_SIZE_LARGE = 'large';
+export const TEXT_SIZE_DEFAULT = '';
 export const TEXT_SIZE_SMALL = 'small';
 
-export const HEADING_SIZE_EXTRA_LARGE = '1';
+export const HEADING_SIZE_XLARGE = '1';
 export const HEADING_SIZE_LARGE = '2';
 export const HEADING_SIZE_MEDIUM = '3';
 export const HEADING_SIZE_SMALL = '4';

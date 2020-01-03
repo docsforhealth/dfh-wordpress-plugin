@@ -3,6 +3,7 @@ import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as Constants from '../../constants';
+import * as SharedButton from '../shared/button';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {
@@ -29,7 +30,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {
               {
                 wrapperElement: 'div',
                 wrapperClassName: 'resource-steps__step__title',
-                allowedBlocks: [Constants.BLOCK_TEXT_CONTAINER],
+                isLocked: true,
                 template: [
                   [Constants.BLOCK_TEXT_CONTAINER, { onlyText: true }],
                 ],
@@ -39,7 +40,12 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {
               Constants.BLOCK_BUTTON_CONTAINER,
               {
                 expandWidth: true,
-                forceButtonSize: Constants.BUTTON_SIZE_SMALL,
+                forceAttributes: {
+                  [Constants.INNER_BLOCKS_FORCE_ATTRS_ALL]: {
+                    [SharedButton.ATTR_SIZE]: Constants.BUTTON_SIZE_SMALL,
+                    [SharedButton.ATTR_OPTION_SIZE]: false,
+                  },
+                },
                 template: [
                   [
                     Constants.BLOCK_FILE_BUTTON,

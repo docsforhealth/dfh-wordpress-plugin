@@ -6,8 +6,15 @@ import { ToggleControl, PanelBody, RadioControl } from '@wordpress/components';
 
 import * as Constants from '../constants';
 
-export const ATTRIBUTE_LEVEL = 'level';
-export const ATTRIBUTE_SHOW_LEVEL_OPTIONS = 'showLevelOptions';
+export const ATTR_LEVEL = 'level';
+export const ATTR_SHOW_PRE_TITLE = 'showPreTitle';
+export const ATTR_SHOW_POST_TITLE = 'showPostTitle';
+export const ATTR_HIGHLIGHT_MAIN_TITLE = 'highlightMainTitle';
+
+export const ATTR_OPTION_LEVEL = 'showOptionLevel';
+export const ATTR_OPTION_SHOW_PRE_TITLE = 'showOptionShowPreTitle';
+export const ATTR_OPTION_SHOW_POST_TITLE = 'showOptionShowPostTitle';
+export const ATTR_OPTION_HIGHLIGHT_MAIN_TITLE = 'showOptionHighlightMainTitle';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_HEADING, {
@@ -21,74 +28,113 @@ registerBlockType(Constants.BLOCK_HEADING, {
     preTitle: { type: 'string' },
     postTitle: { type: 'string' },
     className: { type: 'string', default: '' },
-    [ATTRIBUTE_LEVEL]: {
+
+    [ATTR_LEVEL]: {
       type: 'string',
       default: Constants.HEADING_SIZE_LARGE,
     },
-    [ATTRIBUTE_SHOW_LEVEL_OPTIONS]: { type: 'boolean', default: true },
-    showPreTitle: { type: 'boolean', default: true },
-    showPostTitle: { type: 'boolean', default: true },
+    [ATTR_SHOW_PRE_TITLE]: { type: 'boolean', default: true },
+    [ATTR_SHOW_POST_TITLE]: { type: 'boolean', default: true },
+    [ATTR_HIGHLIGHT_MAIN_TITLE]: { type: 'boolean', default: true },
+
+    [ATTR_OPTION_LEVEL]: { type: 'boolean', default: true },
+    [ATTR_OPTION_SHOW_PRE_TITLE]: { type: 'boolean', default: true },
+    [ATTR_OPTION_SHOW_POST_TITLE]: { type: 'boolean', default: true },
+    [ATTR_OPTION_HIGHLIGHT_MAIN_TITLE]: { type: 'boolean', default: true },
   },
   edit({ attributes, setAttributes }) {
-    const TitleTag = `h${attributes[ATTRIBUTE_LEVEL]}`;
+    const TitleTag = `h${attributes[ATTR_LEVEL]}`;
     return (
       <Fragment>
-        <InspectorControls>
-          <PanelBody title={__('Title Settings', Constants.TEXT_DOMAIN)}>
-            {attributes[ATTRIBUTE_SHOW_LEVEL_OPTIONS] && (
-              <RadioControl
-                label={__('Size', Constants.TEXT_DOMAIN)}
-                selected={attributes[ATTRIBUTE_LEVEL]}
-                options={[
-                  {
-                    label: 'Extra large',
-                    value: Constants.HEADING_SIZE_EXTRA_LARGE,
-                  },
-                  { label: 'Large', value: Constants.HEADING_SIZE_LARGE },
-                  { label: 'Medium', value: Constants.HEADING_SIZE_MEDIUM },
-                  { label: 'Small', value: Constants.HEADING_SIZE_SMALL },
-                ]}
-                onChange={level => setAttributes({ [ATTRIBUTE_LEVEL]: level })}
-              />
-            )}
-            <ToggleControl
-              label="Show pre-title"
-              checked={attributes.showPreTitle}
-              onChange={showPreTitle => setAttributes({ showPreTitle })}
-            />
-            <ToggleControl
-              label="Show post-title"
-              checked={attributes.showPostTitle}
-              onChange={showPostTitle => setAttributes({ showPostTitle })}
-            />
-          </PanelBody>
-        </InspectorControls>
+        {(attributes[ATTR_OPTION_LEVEL] ||
+          attributes[ATTR_OPTION_SHOW_PRE_TITLE] ||
+          attributes[ATTR_OPTION_SHOW_POST_TITLE] ||
+          attributes[ATTR_OPTION_HIGHLIGHT_MAIN_TITLE]) && (
+          <InspectorControls>
+            <PanelBody title={__('Heading Settings', Constants.TEXT_DOMAIN)}>
+              {attributes[ATTR_OPTION_LEVEL] && (
+                <RadioControl
+                  label={__('Size', Constants.TEXT_DOMAIN)}
+                  selected={attributes[ATTR_LEVEL]}
+                  options={[
+                    {
+                      label: __('Extra large', Constants.TEXT_DOMAIN),
+                      value: Constants.HEADING_SIZE_XLARGE,
+                    },
+                    {
+                      label: __('Large', Constants.TEXT_DOMAIN),
+                      value: Constants.HEADING_SIZE_LARGE,
+                    },
+                    {
+                      label: __('Medium', Constants.TEXT_DOMAIN),
+                      value: Constants.HEADING_SIZE_MEDIUM,
+                    },
+                    {
+                      label: __('Small', Constants.TEXT_DOMAIN),
+                      value: Constants.HEADING_SIZE_SMALL,
+                    },
+                  ]}
+                  onChange={level => setAttributes({ [ATTR_LEVEL]: level })}
+                />
+              )}
+              {attributes[ATTR_OPTION_SHOW_PRE_TITLE] && (
+                <ToggleControl
+                  label={__('Show pre-title?', Constants.TEXT_DOMAIN)}
+                  checked={attributes[ATTR_SHOW_PRE_TITLE]}
+                  onChange={showPreTitle =>
+                    setAttributes({ [ATTR_SHOW_PRE_TITLE]: showPreTitle })
+                  }
+                />
+              )}
+              {attributes[ATTR_OPTION_SHOW_POST_TITLE] && (
+                <ToggleControl
+                  label={__('Show post-title?', Constants.TEXT_DOMAIN)}
+                  checked={attributes[ATTR_SHOW_POST_TITLE]}
+                  onChange={showPostTitle =>
+                    setAttributes({ [ATTR_SHOW_POST_TITLE]: showPostTitle })
+                  }
+                />
+              )}
+              {attributes[ATTR_OPTION_HIGHLIGHT_MAIN_TITLE] && (
+                <ToggleControl
+                  label={__('Highlight main title?', Constants.TEXT_DOMAIN)}
+                  checked={attributes[ATTR_HIGHLIGHT_MAIN_TITLE]}
+                  onChange={highlightMainTitle =>
+                    setAttributes({
+                      [ATTR_HIGHLIGHT_MAIN_TITLE]: highlightMainTitle,
+                    })
+                  }
+                />
+              )}
+            </PanelBody>
+          </InspectorControls>
+        )}
         <TitleTag
           className={`${attributes.className} heading heading--${
-            attributes[ATTRIBUTE_LEVEL]
+            attributes[ATTR_LEVEL]
           }`}
         >
-          {attributes.showPreTitle && (
+          {attributes[ATTR_SHOW_PRE_TITLE] && (
             <RichText
               tagName="span"
               className="heading__subtitle heading__subtitle--pre"
-              placeholder={__('Enter pre-heading here', Constants.TEXT_DOMAIN)}
+              placeholder={__('Enter pre-title here', Constants.TEXT_DOMAIN)}
               value={attributes.preTitle}
               onChange={preTitle => setAttributes({ preTitle })}
             />
           )}
           <RichText
             tagName="span"
-            className="heading__title"
-            placeholder={__('Enter heading here', Constants.TEXT_DOMAIN)}
+            className={buildMainTitleClassName(attributes)}
+            placeholder={__('Enter main title here', Constants.TEXT_DOMAIN)}
             value={attributes.mainTitle}
             onChange={mainTitle => setAttributes({ mainTitle })}
           />
-          {attributes.showPostTitle && (
+          {attributes[ATTR_SHOW_POST_TITLE] && (
             <RichText
               tagName="span"
               className="heading__subtitle heading__subtitle--post"
-              placeholder={__('Enter post-heading here', Constants.TEXT_DOMAIN)}
+              placeholder={__('Enter post-title here', Constants.TEXT_DOMAIN)}
               value={attributes.postTitle}
               onChange={postTitle => setAttributes({ postTitle })}
             />
@@ -98,10 +144,10 @@ registerBlockType(Constants.BLOCK_HEADING, {
     );
   },
   save({ attributes }) {
-    const TitleTag = `h${attributes[ATTRIBUTE_LEVEL]}`;
+    const TitleTag = `h${attributes[ATTR_LEVEL]}`;
     return (
-      <TitleTag className={`heading heading--${attributes[ATTRIBUTE_LEVEL]}`}>
-        {attributes.showPreTitle && (
+      <TitleTag className={`heading heading--${attributes[ATTR_LEVEL]}`}>
+        {attributes[ATTR_SHOW_PRE_TITLE] && (
           <RichText.Content
             tagName="span"
             className="heading__subtitle heading__subtitle--pre"
@@ -110,10 +156,10 @@ registerBlockType(Constants.BLOCK_HEADING, {
         )}
         <RichText.Content
           tagName="span"
-          className="heading__title"
+          className={buildMainTitleClassName(attributes)}
           value={attributes.mainTitle}
         />
-        {attributes.showPostTitle && (
+        {attributes[ATTR_SHOW_POST_TITLE] && (
           <RichText.Content
             tagName="span"
             className="heading__subtitle heading__subtitle--post"
@@ -124,3 +170,7 @@ registerBlockType(Constants.BLOCK_HEADING, {
     );
   },
 });
+
+function buildMainTitleClassName(attributes) {
+  return attributes[ATTR_HIGHLIGHT_MAIN_TITLE] ? 'heading__title' : '';
+}

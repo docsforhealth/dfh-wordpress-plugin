@@ -3,6 +3,7 @@ import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as Constants from '../../constants';
+import * as Heading from '../heading';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_LANDING_FEATURED, {
@@ -33,7 +34,12 @@ registerBlockType(Constants.BLOCK_LANDING_FEATURED, {
                     [
                       Constants.BLOCK_TEXT_CONTAINER,
                       {
-                        forceHeadingLevel: Constants.HEADING_SIZE_LARGE,
+                        forceAttributes: {
+                          [Constants.BLOCK_HEADING]: {
+                            [Heading.ATTR_LEVEL]: Constants.HEADING_SIZE_LARGE,
+                            [Heading.ATTR_OPTION_LEVEL]: false,
+                          },
+                        },
                       },
                     ],
                   ],
