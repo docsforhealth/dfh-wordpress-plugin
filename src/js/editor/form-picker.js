@@ -1,6 +1,7 @@
 import _ from 'lodash';
+import PropTypes from 'prop-types';
 import { __ } from '@wordpress/i18n';
-import { Fragment } from 'react';
+import { Fragment } from '@wordpress/element';
 import { PlainText } from '@wordpress/block-editor';
 
 import * as Constants from '../constants';
@@ -8,8 +9,8 @@ import * as Constants from '../constants';
 export default function FormPicker({ value, onChange }) {
   const inputId = _.uniqueId();
   return (
-    <div class="components-placeholder">
-      <label for={inputId} class="components-placeholder__label">
+    <div className="components-placeholder">
+      <label for={inputId} className="components-placeholder__label">
         {__('Contact Form 7 ID', Constants.TEXT_DOMAIN)}
       </label>
       <span className="components-placeholder__instructions">
@@ -31,12 +32,20 @@ export default function FormPicker({ value, onChange }) {
     </div>
   );
 }
+FormPicker.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string,
+};
 
 FormPicker.Content = function({ value, className = '' }) {
   return (
     <Fragment>
       {value &&
-        `[contact-form-7 id="${value}" html_class="form ${className}" ]`}
+        `[contact-form-7 id="${value}" html_className="form ${className}" ]`}
     </Fragment>
   );
+};
+FormPicker.Content.propTypes = {
+  value: PropTypes.string,
+  className: PropTypes.string,
 };

@@ -1,6 +1,7 @@
 import _ from 'lodash';
+import apiFetch from '@wordpress/api-fetch';
+import PropTypes from 'prop-types';
 import { Children } from 'react';
-import { select, dispatch } from '@wordpress/data';
 
 import * as Constants from './constants';
 
@@ -23,21 +24,18 @@ export function hasChildOfComponentType(children, type) {
   return Children.toArray(children).some(child => child.type === type);
 }
 
-// from https://github.com/WordPress/gutenberg/issues/15759#issuecomment-497359154
-export function setAttributesOnInnerBlocks(
-  clientId,
-  newAttributes,
-  filterFn = null,
-) {
-  const thisBlock = select(Constants.STORE_BLOCK_EDITOR).getBlocksByClientId(clientId);
-  if (thisBlock) {
-    thisBlock[0].innerBlocks.forEach(block => {
-      if (!_.isFunction(filterFn) || filterFn(block)) {
-        dispatch(Constants.STORE_BLOCK_EDITOR).updateBlockAttributes(
-          block.clientId,
-          newAttributes,
-        );
-      }
-    });
-  }
+// Need to write this because `getEntity` in `core-data` uses the `view` context which does not
+// include labels. See https://developer.wordpress.org/rest-api/reference/taxonomies/#schema
+export const fetchTaxonomyDetails = _.memoize(function(taxonomyId) {
+  return apiFetch({ path: `wp/v2/taxonomies/${taxonomyId}?context=edit` });
+});
+
+// Note that `SCRIPT_DEBUG` in `wp-config.php` needs to be set to `true` in order for
+// non-production script assets to be loaded. PropType checks only happen in React development builds
+// see https://wordpress.org/support/article/debugging-in-wordpress/#script_debug
+export function withPropTypes(propTypes, wpComponent) {
+  wpComponent.propTypes = {
+    attributes: PropTypes.shape(propTypes),
+  };
+  return wpComponent;
 }

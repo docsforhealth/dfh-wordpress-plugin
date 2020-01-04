@@ -1,4 +1,5 @@
-import { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import { Fragment } from '@wordpress/element';
 
 export default function RecursiveWrapper({ elements, classNames, children }) {
   if (elements.length !== classNames.length) {
@@ -22,3 +23,7 @@ export default function RecursiveWrapper({ elements, classNames, children }) {
     );
   }
 }
+RecursiveWrapper.propTypes = {
+  elements: PropTypes.arrayOf(PropTypes.string).isRequired,
+  classNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+};

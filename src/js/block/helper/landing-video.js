@@ -86,7 +86,7 @@ registerBlockType(Constants.BLOCK_LANDING_VIDEO, {
           className="landing-video__button"
           target={attributes.videoUrl}
         >
-          <span class="sr-only">Play introductory video</span>
+          <span className="sr-only">Play introductory video</span>
         </PopupPicker.Content>
       </section>
     );

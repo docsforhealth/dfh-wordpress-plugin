@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { Fragment } from 'react';
+import { Fragment } from '@wordpress/element';
 import { registerBlockType } from '@wordpress/blocks';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { ToggleControl, PanelBody, RadioControl } from '@wordpress/components';

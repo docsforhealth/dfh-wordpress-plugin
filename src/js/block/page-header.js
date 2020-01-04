@@ -15,7 +15,7 @@ registerBlockType(`${Constants.NAMESPACE}/page-header`, {
   ),
   edit() {
     return (
-      <div class="page-header">
+      <div className="page-header">
         <InnerBlocks
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[

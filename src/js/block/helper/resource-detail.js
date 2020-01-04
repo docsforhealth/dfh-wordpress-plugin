@@ -21,7 +21,7 @@ registerBlockType(`${Constants.NAMESPACE}/resource-detail`, {
     // set a timeout because block editor sometimes takes longer to load when reating a new resource
     setTimeout(() => dispatch('core/block-editor').setTemplateValidity(true));
   })(() => (
-    <div class="resource-detail">
+    <div className="resource-detail">
       <InnerBlocks
         templateLock={Constants.INNER_BLOCKS_LOCKED}
         template={[

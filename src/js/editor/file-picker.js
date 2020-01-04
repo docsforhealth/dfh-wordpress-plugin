@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { __ } from '@wordpress/i18n';
 import { Button } from '@wordpress/components';
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
@@ -28,3 +29,8 @@ export default function FilePicker({ onChange, url, title }) {
     </MediaUploadCheck>
   );
 }
+FilePicker.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  url: PropTypes.string,
+  title: PropTypes.string,
+};

@@ -15,6 +15,7 @@
         "concurrently": "^5.0.2",
         "lity": "^2.4.0",
         "node-sass": "^4.13.0",
+        "prop-types": "^15.7.2",
         "scut": "^1.4.0",
         "slick-carousel": "^1.8.1",
         "url-loader": "^3.0.0"

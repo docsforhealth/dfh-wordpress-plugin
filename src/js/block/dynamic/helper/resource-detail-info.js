@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { Fragment } from 'react';
+import { Fragment } from '@wordpress/element';
 import { registerBlockType } from '@wordpress/blocks';
 import { RichText } from '@wordpress/block-editor';
 

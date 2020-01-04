@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-import { select } from '@wordpress/data';
+import { useSelect } from '@wordpress/data';
 
 import * as Constants from '../../../constants';
 
@@ -12,8 +12,12 @@ registerBlockType(Constants.BLOCK_PAGE_TITLE, {
   description: __('Title for the current page', Constants.TEXT_DOMAIN),
   supports: { inserter: false },
   edit() {
-    const currentPost = select(Constants.STORE_EDITOR).getCurrentPost();
-    return currentPost ? currentPost.title : '';
+    const currentPost = useSelect(select =>
+      select(Constants.STORE_EDITOR).getCurrentPost(),
+    );
+    return currentPost
+      ? currentPost.title
+      : __('Loading...', Constants.TEXT_DOMAIN);
   },
   save() {
     return null;

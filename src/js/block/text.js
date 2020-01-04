@@ -4,7 +4,7 @@ import {
   getBlockAttributes,
   registerBlockType,
 } from '@wordpress/blocks';
-import { Fragment } from 'react';
+import { Fragment } from '@wordpress/element';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { ToggleControl, PanelBody, RadioControl } from '@wordpress/components';
 

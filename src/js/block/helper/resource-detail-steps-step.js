@@ -17,7 +17,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {
   parent: [Constants.BLOCK_RESOURCE_DETAIL_STEPS],
   edit({ attributes, setAttributes }) {
     return (
-      <li class="resource-steps__step">
+      <li className="resource-steps__step">
         <InnerBlocks
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
@@ -59,7 +59,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {
   },
   save({ attributes }) {
     return (
-      <li class="resource-steps__step">
+      <li className="resource-steps__step">
         <InnerBlocks.Content />
       </li>
     );

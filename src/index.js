@@ -8,6 +8,7 @@ import './js/allow-only-custom-blocks.js';
  */
 import './js/block/dynamic/helper/page-title';
 import './js/block/dynamic/helper/resource-detail-info';
+import './js/block/dynamic/helper/taxonomy-count';
 import './js/block/helper/file-button';
 import './js/block/helper/inner-block-wrapper';
 import './js/block/helper/landing-contact';

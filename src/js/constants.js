@@ -7,6 +7,7 @@ export const CATEGORY_RESOURCE = 'dfh-resource';
 
 // documentation for stores at https://developer.wordpress.org/block-editor/data/
 export const STORE_BLOCK_EDITOR = 'core/block-editor';
+export const STORE_CORE = 'core';
 export const STORE_EDITOR = 'core/editor';
 
 export const INNER_BLOCKS_LOCKED = 'all';

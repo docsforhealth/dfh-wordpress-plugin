@@ -13,7 +13,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
   supports: { inserter: false },
   edit() {
     return (
-      <div class="resource-detail__steps">
+      <div className="resource-detail__steps">
         <InnerBlocks
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[

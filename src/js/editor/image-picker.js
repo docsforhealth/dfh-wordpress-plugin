@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import { __ } from '@wordpress/i18n';
 import { Button, Placeholder } from '@wordpress/components';
-import { Fragment } from 'react';
+import { Fragment } from '@wordpress/element';
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 
 import * as Constants from '../constants';
@@ -36,9 +37,20 @@ export default function ImagePicker({
     </div>
   );
 }
+ImagePicker.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  url: PropTypes.string,
+  description: PropTypes.string,
+  previewClassName: PropTypes.string,
+};
 
 ImagePicker.Content = function({ url, description, className = '' }) {
   return <img className={className} src={url} alt={description} />;
+};
+ImagePicker.Content.propTypes = {
+  url: PropTypes.string,
+  description: PropTypes.string,
+  className: PropTypes.string,
 };
 
 function buildImagePreview(src, alt, className) {
