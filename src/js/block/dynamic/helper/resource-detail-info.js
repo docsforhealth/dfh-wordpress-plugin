@@ -21,7 +21,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_INFO, {
       <Fragment>
         <RichText
           tagName="a"
-          className="link editor-is-clickable"
+          className="link dfh-editor-is-clickable"
           value={attributes.allResourcesLabel}
           placeholder={__(
             'Enter all resources label here',

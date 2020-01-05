@@ -44,11 +44,11 @@ registerBlockType(Constants.BLOCK_LANDING_CONTACT, {
             onChange={formId => setAttributes({ formId })}
           />
           <p className="text text-center">
-            Or email us directly at
+            {__('Or email us directly at', Constants.TEXT_DOMAIN)}
             <br />
             <RichText
               tagName="a"
-              className="link editor-is-clickable"
+              className="link dfh-editor-is-clickable"
               value={attributes.email}
               placeholder={__(
                 'Enter email address here',
@@ -76,7 +76,7 @@ registerBlockType(Constants.BLOCK_LANDING_CONTACT, {
           />
           {attributes.email && (
             <p className="text text-center">
-              Or email us directly at
+              {__('Or email us directly at', Constants.TEXT_DOMAIN)}
               <br />
               <a className="link" href={`mailto:${attributes.email}`}>
                 {attributes.email}

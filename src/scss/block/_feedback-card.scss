@@ -1,0 +1,47 @@
+.feedback-card {
+    @extend .container;
+    @include full-width-bg(transparent) {
+        @include card-bg;
+
+        left: 0;
+        margin-left: 0;
+        border-radius: 0;
+    }
+
+    display: flex;
+    flex-direction: column;
+    padding: ($baseunit * 2) 0;
+
+    &__info {
+        margin-bottom: $baseunit * 2;
+    }
+
+    @media (min-width: $media-width-tablet) {
+        flex-direction: row;
+        align-items: flex-start;
+        margin-bottom: $baseunit * 3;
+        padding-bottom: $baseunit * 0.5;
+
+        &:before {
+            width: calc(100% + #{$unit-horizontal-overhang-small * 2});
+            margin-left: $unit-horizontal-overhang-small * -1;
+            border-radius: $border-radius;
+        }
+
+        &__info {
+            flex-shrink: 0;
+            width: 40%;
+            padding-right: $baseunit * 2;
+            margin-bottom: $baseunit * 1;
+        }
+    }
+    @media (min-width: $media-width-laptop) {
+        &:before {
+            width: calc(100% + #{$unit-horizontal-overhang * 2});
+            margin-left: $unit-horizontal-overhang * -1;
+        }
+        &__info {
+            padding-right: $baseunit * 3;
+        }
+    }
+}

@@ -55,11 +55,10 @@ function dfh_register_frontend_blocks() {
     // Styles and scripts needed for ONLY the frontend
     // see https://github.com/WordPress/gutenberg/issues/1893#issuecomment-315240663
     if (!is_admin()) {
-        wp_enqueue_script('jquery');
         wp_enqueue_script(
             'dfh-frontend-script', // label
             plugins_url('/build/frontend.js', DFH_PLUGIN_ROOT), // URL to script file
-            array(), // dependencies
+            array('lodash', 'jquery'), // dependencies
             filemtime(DFH_PLUGIN_DIR . '/build/frontend.js'), // is a file path, set version as file last modified time
         );
         // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/
@@ -90,7 +89,7 @@ function dfh_register_dynamic_blocks() {
     // in these files, we only need to specify the render_callback AND attributes
     // see https://github.com/WordPress/gutenberg/issues/6187#issuecomment-381446732
     require DFH_PLUGIN_DIR . '/src/php/setup/block/page_title.php';
-    require DFH_PLUGIN_DIR . '/src/php/setup/block/resource_overview.php';
+    require DFH_PLUGIN_DIR . '/src/php/setup/block/resource_category_filter.php';
     require DFH_PLUGIN_DIR . '/src/php/setup/block/resource_detail_info.php';
-    require DFH_PLUGIN_DIR . '/src/php/setup/block/taxonomy_count.php';
+    require DFH_PLUGIN_DIR . '/src/php/setup/block/resource_overview.php';
 }

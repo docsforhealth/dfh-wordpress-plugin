@@ -1,4 +1,4 @@
-.editor-image-picker {
+.dfh-editor-image-picker {
     .components-placeholder {
         margin-bottom: 0;
     }
@@ -6,7 +6,8 @@
         margin-top: $baseunit * 0.5;
     }
 }
-.editor-link-picker {
+
+.dfh-editor-link-picker {
     display: flex;
     align-items: flex-start;
     margin-top: $baseunit * 0.5;
@@ -32,7 +33,4 @@
 
         margin-left: $baseunit * 0.25;
     }
-}
-.editor-is-clickable {
-    cursor: text !important;
 }

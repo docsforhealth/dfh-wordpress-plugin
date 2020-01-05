@@ -13,6 +13,7 @@ registerBlockType(`${Constants.NAMESPACE}/resource-overview`, {
     'All resource categories with examples of each',
     Constants.TEXT_DOMAIN,
   ),
+  supports: { multiple: false },
   edit({ attributes, setAttributes }) {
     return (
       <LinkPicker

@@ -15,10 +15,10 @@ export default function ImagePicker({
   previewClassName = '',
 }) {
   return (
-    <div className="editor-image-picker">
+    <div className="dfh-editor-image-picker">
       {buildImagePreview(url, description, previewClassName)}
       <MediaUploadCheck>
-        <div className="editor-image-picker__control">
+        <div className="dfh-editor-image-picker__control">
           <MediaUpload
             onSelect={onSelect}
             allowedTypes={ALLOWED_MEDIA_TYPES}

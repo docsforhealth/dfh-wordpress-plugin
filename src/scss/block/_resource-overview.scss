@@ -14,7 +14,7 @@
         display: flex;
         flex-direction: column;
     }
-    &__category {
+    & &__category {
         @include scut_truncate;
 
         height: $height-control;
@@ -89,7 +89,8 @@
     padding-top: $baseunit;
 
     // Cover the bottom border for the bottom row
-    &:after {
+    // Need to use `:before` because the Ajax Load More plugin uses `after` for clearfix
+    &:before {
         content: '';
         position: absolute;
         bottom: 0;
@@ -97,17 +98,28 @@
         height: $baseunit;
         width: 100%;
         background-color: $color-white;
+        z-index: $z-index-front-1;
     }
 
+    &__none {
+        @extend .container;
+        @extend .container--narrow;
+        @extend .text;
+        @extend .text--light;
+
+        text-align: center;
+        padding-top: $baseunit * 2;
+    }
     &__preview {
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        width: 100%; // so that flexbox truncating works
         padding: $baseunit 0;
         margin-bottom: $baseunit;
 
-        &:after {
+        &:before {
             content: '';
             position: absolute;
             bottom: $baseunit * -0.5;
@@ -121,6 +133,8 @@
         }
         &__tags {
             @include scut-list-unstyled;
+
+            display: flex; // so that tags don't wrap
         }
     }
 

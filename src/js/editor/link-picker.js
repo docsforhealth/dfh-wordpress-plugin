@@ -8,14 +8,14 @@ import * as Constants from '../constants';
 export default function LinkPicker({ onChange, url, title }) {
   const fallbackTitle = __('None', Constants.TEXT_DOMAIN);
   return (
-    <div className="editor-link-picker">
-      <div className="editor-link-picker__label text text--small text--light">
+    <div className="dfh-editor-link-picker">
+      <div className="dfh-editor-link-picker__label text text--small text--light">
         <span className="text--bold">Target</span>:
-        <span className="editor-link-picker__title">
+        <span className="dfh-editor-link-picker__title">
           {title || fallbackTitle}
         </span>
       </div>
-      <div className="editor-link-picker__control">
+      <div className="dfh-editor-link-picker__control">
         <URLInputButton
           url={url}
           onChange={(url, result) =>

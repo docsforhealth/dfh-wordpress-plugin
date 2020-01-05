@@ -9,10 +9,10 @@ export default function FilePicker({ onChange, url, title }) {
   const fallbackTitle = __('None', Constants.TEXT_DOMAIN);
   return (
     <MediaUploadCheck>
-      <div className="editor-link-picker">
-        <div className="editor-link-picker__label text text--small text--light">
+      <div className="dfh-editor-link-picker">
+        <div className="dfh-editor-link-picker__label text text--small text--light">
           <span className="text--bold">Target</span>:
-          <span className="editor-link-picker__title">
+          <span className="dfh-editor-link-picker__title">
             {title || fallbackTitle}
           </span>
         </div>
@@ -20,7 +20,7 @@ export default function FilePicker({ onChange, url, title }) {
           onSelect={onChange}
           value={url}
           render={({ open }) => (
-            <Button className="link editor-link-picker__control" onClick={open}>
+            <Button className="link dfh-editor-link-picker__control" onClick={open}>
               {__('Select file', Constants.TEXT_DOMAIN)}
             </Button>
           )}

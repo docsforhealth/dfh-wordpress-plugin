@@ -9,4 +9,8 @@
             @include scut-truncate;
         }
     }
+    // RichText links needs to have proper link styling
+    a {
+        @extend .link;
+    }
 }

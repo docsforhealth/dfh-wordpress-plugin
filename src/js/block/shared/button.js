@@ -57,7 +57,7 @@ export function buildButtonEdit({ attributes, setAttributes }, AssetPicker) {
         </PanelBody>
       </InspectorControls>
       <RichText
-        className={`button-container__button button editor-is-clickable ${buildButtonClassName(
+        className={`button-container__button button dfh-editor-is-clickable ${buildButtonClassName(
           attributes,
         )}`}
         placeholder={__('Enter button label here', Constants.TEXT_DOMAIN)}

@@ -5,7 +5,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import * as Constants from '../constants';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
-registerBlockType(`${Constants.NAMESPACE}/page-header`, {
+registerBlockType(Constants.BLOCK_PAGE_HEADER, {
   title: __('Page Header', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY_COMMON,
   icon: 'schedule',
@@ -13,7 +13,12 @@ registerBlockType(`${Constants.NAMESPACE}/page-header`, {
     'Header for a page including title and right-aligned area for more content',
     Constants.TEXT_DOMAIN,
   ),
-  edit() {
+  attributes: {
+    template: { type: 'array' },
+    isLocked: { type: 'boolean', default: false },
+    hideInnerBlocksInEdit: { type: 'boolean', default: false },
+  },
+  edit({ attributes }) {
     return (
       <div className="page-header">
         <InnerBlocks
@@ -35,9 +40,12 @@ registerBlockType(`${Constants.NAMESPACE}/page-header`, {
             [
               Constants.BLOCK_INNER_BLOCK_WRAPPER,
               {
+                isLocked: attributes.isLocked,
+                hideInEdit: attributes.hideInnerBlocksInEdit,
                 wrapperClassNames: [
                   'page-header__section page-header__section--right',
                 ],
+                template: attributes.template,
               },
             ],
           ]}
