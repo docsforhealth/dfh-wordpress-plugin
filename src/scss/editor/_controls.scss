@@ -1,9 +1,35 @@
+// Only controls displayed inline in editor, not in Inspector
+[data-block] .components-base-control {
+    margin-bottom: $baseunit;
+    padding-bottom: $baseunit;
+    border-bottom: 1px solid $color-seafoam-dark-1;
+}
+
 .dfh-editor-image-picker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: $baseunit * 15;
+    width: 100%;
+    border-bottom: 1px solid $color-seafoam-dark-1;
+    text-align: center;
+
+    img {
+        height: auto !important;
+        max-height: 100% !important;
+        max-width: 100% !important;
+    }
     .components-placeholder {
+        height: 100%;
         margin-bottom: 0;
+        padding: 0;
+        background-color: transparent;
     }
     &__control {
-        margin-top: $baseunit * 0.5;
+        position: absolute;
+        top: $baseunit;
+        left: 0;
     }
 }
 
@@ -15,8 +41,8 @@
     border-bottom: 1px solid $color-seafoam-dark-1;
 
     &__control,
-    &__label {
-        display: flex;
+    &__title-container {
+        display: inline-flex;
         align-items: center;
         min-width: 0;
     }
@@ -24,13 +50,22 @@
         flex-shrink: 0;
         min-height: 35px;
     }
-    &__label {
-        margin-right: $baseunit;
+    &__title-container {
         height: 35px; // same height as URLInputButton
+        margin-bottom: 0 !important;
+    }
+    &__label {
+        @include scut-truncate;
+        @extend .tag;
+
+        flex-shrink: 2;
+        display: inline-block;
+        font-weight: $font-weight-bold;
+        cursor: pointer;
     }
     &__title {
         @include scut-truncate;
 
-        margin-left: $baseunit * 0.25;
+        margin: 0 $baseunit;
     }
 }

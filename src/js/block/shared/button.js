@@ -67,6 +67,7 @@ export function buildButtonEdit({ attributes, setAttributes }, AssetPicker) {
       <AssetPicker
         url={attributes.url}
         title={attributes.urlTitle}
+        label={__('Button target', Constants.TEXT_DOMAIN)}
         onChange={({ url, title }) => setAttributes({ url, urlTitle: title })}
       />
     </Fragment>

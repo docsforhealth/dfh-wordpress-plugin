@@ -1,8 +1,13 @@
 import { __ } from '@wordpress/i18n';
 import { Fragment } from '@wordpress/element';
+import {
+  PanelBody,
+  RadioControl,
+  TextControl,
+  ToggleControl,
+} from '@wordpress/components';
 import { registerBlockType } from '@wordpress/blocks';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
-import { ToggleControl, PanelBody, RadioControl } from '@wordpress/components';
 
 import * as Constants from '../constants';
 
@@ -28,6 +33,7 @@ registerBlockType(Constants.BLOCK_HEADING, {
     preTitle: { type: 'string' },
     postTitle: { type: 'string' },
     className: { type: 'string', default: '' },
+    customId: { type: 'string' },
 
     [ATTR_LEVEL]: {
       type: 'string',
@@ -46,69 +52,73 @@ registerBlockType(Constants.BLOCK_HEADING, {
     const TitleTag = `h${attributes[ATTR_LEVEL]}`;
     return (
       <Fragment>
-        {(attributes[ATTR_OPTION_LEVEL] ||
-          attributes[ATTR_OPTION_SHOW_PRE_TITLE] ||
-          attributes[ATTR_OPTION_SHOW_POST_TITLE] ||
-          attributes[ATTR_OPTION_HIGHLIGHT_MAIN_TITLE]) && (
-          <InspectorControls>
-            <PanelBody title={__('Heading Settings', Constants.TEXT_DOMAIN)}>
-              {attributes[ATTR_OPTION_LEVEL] && (
-                <RadioControl
-                  label={__('Size', Constants.TEXT_DOMAIN)}
-                  selected={attributes[ATTR_LEVEL]}
-                  options={[
-                    {
-                      label: __('Extra large', Constants.TEXT_DOMAIN),
-                      value: Constants.HEADING_SIZE_XLARGE,
-                    },
-                    {
-                      label: __('Large', Constants.TEXT_DOMAIN),
-                      value: Constants.HEADING_SIZE_LARGE,
-                    },
-                    {
-                      label: __('Medium', Constants.TEXT_DOMAIN),
-                      value: Constants.HEADING_SIZE_MEDIUM,
-                    },
-                    {
-                      label: __('Small', Constants.TEXT_DOMAIN),
-                      value: Constants.HEADING_SIZE_SMALL,
-                    },
-                  ]}
-                  onChange={level => setAttributes({ [ATTR_LEVEL]: level })}
-                />
+        <InspectorControls>
+          <PanelBody title={__('Heading Settings', Constants.TEXT_DOMAIN)}>
+            {attributes[ATTR_OPTION_LEVEL] && (
+              <RadioControl
+                label={__('Size', Constants.TEXT_DOMAIN)}
+                selected={attributes[ATTR_LEVEL]}
+                options={[
+                  {
+                    label: __('Extra large', Constants.TEXT_DOMAIN),
+                    value: Constants.HEADING_SIZE_XLARGE,
+                  },
+                  {
+                    label: __('Large', Constants.TEXT_DOMAIN),
+                    value: Constants.HEADING_SIZE_LARGE,
+                  },
+                  {
+                    label: __('Medium', Constants.TEXT_DOMAIN),
+                    value: Constants.HEADING_SIZE_MEDIUM,
+                  },
+                  {
+                    label: __('Small', Constants.TEXT_DOMAIN),
+                    value: Constants.HEADING_SIZE_SMALL,
+                  },
+                ]}
+                onChange={level => setAttributes({ [ATTR_LEVEL]: level })}
+              />
+            )}
+            {attributes[ATTR_OPTION_SHOW_PRE_TITLE] && (
+              <ToggleControl
+                label={__('Show pre-title?', Constants.TEXT_DOMAIN)}
+                checked={attributes[ATTR_SHOW_PRE_TITLE]}
+                onChange={showPreTitle =>
+                  setAttributes({ [ATTR_SHOW_PRE_TITLE]: showPreTitle })
+                }
+              />
+            )}
+            {attributes[ATTR_OPTION_SHOW_POST_TITLE] && (
+              <ToggleControl
+                label={__('Show post-title?', Constants.TEXT_DOMAIN)}
+                checked={attributes[ATTR_SHOW_POST_TITLE]}
+                onChange={showPostTitle =>
+                  setAttributes({ [ATTR_SHOW_POST_TITLE]: showPostTitle })
+                }
+              />
+            )}
+            {attributes[ATTR_OPTION_HIGHLIGHT_MAIN_TITLE] && (
+              <ToggleControl
+                label={__('Highlight main title?', Constants.TEXT_DOMAIN)}
+                checked={attributes[ATTR_HIGHLIGHT_MAIN_TITLE]}
+                onChange={highlightMainTitle =>
+                  setAttributes({
+                    [ATTR_HIGHLIGHT_MAIN_TITLE]: highlightMainTitle,
+                  })
+                }
+              />
+            )}
+            <TextControl
+              label={__('HTML anchor', Constants.TEXT_DOMAIN)}
+              help={__(
+                'Anchors let you link directly to this heading on the page',
+                Constants.TEXT_DOMAIN,
               )}
-              {attributes[ATTR_OPTION_SHOW_PRE_TITLE] && (
-                <ToggleControl
-                  label={__('Show pre-title?', Constants.TEXT_DOMAIN)}
-                  checked={attributes[ATTR_SHOW_PRE_TITLE]}
-                  onChange={showPreTitle =>
-                    setAttributes({ [ATTR_SHOW_PRE_TITLE]: showPreTitle })
-                  }
-                />
-              )}
-              {attributes[ATTR_OPTION_SHOW_POST_TITLE] && (
-                <ToggleControl
-                  label={__('Show post-title?', Constants.TEXT_DOMAIN)}
-                  checked={attributes[ATTR_SHOW_POST_TITLE]}
-                  onChange={showPostTitle =>
-                    setAttributes({ [ATTR_SHOW_POST_TITLE]: showPostTitle })
-                  }
-                />
-              )}
-              {attributes[ATTR_OPTION_HIGHLIGHT_MAIN_TITLE] && (
-                <ToggleControl
-                  label={__('Highlight main title?', Constants.TEXT_DOMAIN)}
-                  checked={attributes[ATTR_HIGHLIGHT_MAIN_TITLE]}
-                  onChange={highlightMainTitle =>
-                    setAttributes({
-                      [ATTR_HIGHLIGHT_MAIN_TITLE]: highlightMainTitle,
-                    })
-                  }
-                />
-              )}
-            </PanelBody>
-          </InspectorControls>
-        )}
+              value={attributes.customId}
+              onChange={customId => setAttributes({ customId })}
+            />
+          </PanelBody>
+        </InspectorControls>
         <TitleTag
           className={`${attributes.className} heading heading--${
             attributes[ATTR_LEVEL]
@@ -147,6 +157,7 @@ registerBlockType(Constants.BLOCK_HEADING, {
     const TitleTag = `h${attributes[ATTR_LEVEL]}`;
     return (
       <TitleTag className={`heading heading--${attributes[ATTR_LEVEL]}`}>
+        <span id={attributes.customId} class="heading__scroll-anchor" />
         {attributes[ATTR_SHOW_PRE_TITLE] && (
           <RichText.Content
             tagName="span"

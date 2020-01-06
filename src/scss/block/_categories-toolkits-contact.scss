@@ -1,7 +1,3 @@
-.landing-featured-and-contact {
-    overflow: hidden;
-}
-
 .landing {
     $ellipse-height: $baseunit * 10;
 
@@ -190,10 +186,10 @@
 
         @media (min-width: $media-width-tablet) {
             &:after {
-                top: 0;
-                height: 85vw;
+                top: 5vh;
+                height: 65vw;
                 width: 60vw;
-                margin-left: -70vw;
+                margin-left: -75vw;
                 opacity: 0.8;
             }
             &__featured {
@@ -218,7 +214,8 @@
             }
 
             position: relative; // so z-index works
-            padding: ($baseunit * 2) 0 ($baseunit * 5);
+            min-height: $baseunit * 20; // in case the form ID hasn't been provided yet
+            padding: ($baseunit * 2) 0;
             z-index: $z-index-front-1;
         }
 

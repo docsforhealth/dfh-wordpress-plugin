@@ -1,12 +1,15 @@
 import { __ } from '@wordpress/i18n';
+import { Fragment } from '@wordpress/element';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as Constants from '../constants';
 
+const title = __('Featured & Contact', Constants.TEXT_DOMAIN);
+
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(`${Constants.NAMESPACE}/featured-and-contact`, {
-  title: __('Featured & Contact', Constants.TEXT_DOMAIN),
+  title,
   category: Constants.CATEGORY_LANDING,
   icon: 'awards',
   description: __(
@@ -15,7 +18,8 @@ registerBlockType(`${Constants.NAMESPACE}/featured-and-contact`, {
   ),
   edit() {
     return (
-      <div className="landing-featured-and-contact">
+      <Fragment>
+        <div className="dfh-editor-block-title">{title}</div>
         <InnerBlocks
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
@@ -23,14 +27,10 @@ registerBlockType(`${Constants.NAMESPACE}/featured-and-contact`, {
             [Constants.BLOCK_LANDING_CONTACT, {}],
           ]}
         />
-      </div>
+      </Fragment>
     );
   },
   save({ attributes }) {
-    return (
-      <div className="landing-featured-and-contact">
-        <InnerBlocks.Content />
-      </div>
-    );
+    return <InnerBlocks.Content />;
   },
 });

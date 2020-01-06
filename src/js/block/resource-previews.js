@@ -7,9 +7,11 @@ import { TextareaControl } from '@wordpress/components';
 
 import * as Constants from '../constants';
 
+const title = __('Resource Previews', Constants.TEXT_DOMAIN);
+
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(`${Constants.NAMESPACE}/resource-previews`, {
-  title: __('Resource Previews', Constants.TEXT_DOMAIN),
+  title,
   category: Constants.CATEGORY_RESOURCE,
   icon: 'welcome-view-site',
   description: __(
@@ -29,6 +31,7 @@ registerBlockType(`${Constants.NAMESPACE}/resource-previews`, {
   edit({ attributes, setAttributes }) {
     return (
       <Fragment>
+        <div className="dfh-editor-block-title">{title}</div>
         <InnerBlocks
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
@@ -36,9 +39,12 @@ registerBlockType(`${Constants.NAMESPACE}/resource-previews`, {
               Constants.BLOCK_PAGE_HEADER,
               {
                 isLocked: true,
+                hideBlockTitleInEdit: true,
                 hideInnerBlocksInEdit: true,
                 template: [
-                  buildMessageAreaInfo('page-header__metadata page-header__metadata--secondary'),
+                  buildMessageAreaInfo(
+                    'page-header__metadata page-header__metadata--secondary',
+                  ),
                   [
                     Constants.BLOCK_INNER_BLOCK_WRAPPER,
                     {

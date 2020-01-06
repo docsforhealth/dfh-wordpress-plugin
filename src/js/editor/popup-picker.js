@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 
 import LinkPicker from './link-picker';
 
-export default function PopupPicker({ target, onChange }) {
+export default function PopupPicker({ target, onChange, label }) {
   return (
     <LinkPicker
       url={target}
       title={target}
+      label={label}
       onChange={({ url }) =>
         _.isFunction(onChange) && onChange({ target: url })
       }
@@ -30,4 +31,5 @@ PopupPicker.Content = function({ className = '', target, children }) {
 PopupPicker.Content.propTypes = {
   className: PropTypes.string,
   target: PropTypes.string,
+  label: PropTypes.string,
 };

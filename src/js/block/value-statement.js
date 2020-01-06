@@ -9,9 +9,11 @@ import * as Heading from './heading';
 import ImagePicker from '../editor/image-picker';
 import placeholderImage from '../../../assets/images/placeholder-value.png';
 
+const title = __('Value Statement', Constants.TEXT_DOMAIN);
+
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(`${Constants.NAMESPACE}/value-statement`, {
-  title: __('Value Statement', Constants.TEXT_DOMAIN),
+  title,
   category: Constants.CATEGORY_LANDING,
   icon: 'heart',
   description: __(
@@ -40,6 +42,7 @@ registerBlockType(`${Constants.NAMESPACE}/value-statement`, {
             />
           </PanelBody>
         </InspectorControls>
+        <div className="dfh-editor-block-title">{title}</div>
         <div className={`landing-value ${buildClassName(attributes)}`}>
           <div className="landing-value__description">
             <InnerBlocks

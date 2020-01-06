@@ -12,6 +12,7 @@ export default function ImagePicker({
   onSelect,
   url,
   description,
+  label,
   previewClassName = '',
 }) {
   return (
@@ -25,10 +26,10 @@ export default function ImagePicker({
             value={url}
             render={({ open }) => (
               <Button
-                className="button button--outline button--small"
+                className="button button--secondary button--small"
                 onClick={open}
               >
-                {__('Select image', Constants.TEXT_DOMAIN)}
+                {label || __('Select image', Constants.TEXT_DOMAIN)}
               </Button>
             )}
           />
@@ -41,6 +42,7 @@ ImagePicker.propTypes = {
   onSelect: PropTypes.func.isRequired,
   url: PropTypes.string,
   description: PropTypes.string,
+  label: PropTypes.string,
   previewClassName: PropTypes.string,
 };
 

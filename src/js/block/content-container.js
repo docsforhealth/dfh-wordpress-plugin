@@ -7,9 +7,11 @@ import { ToggleControl, PanelBody } from '@wordpress/components';
 
 import * as Constants from '../constants';
 
+const title = __('Content Container', Constants.TEXT_DOMAIN);
+
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType('dfh/content-container', {
-  title: __('Content Container', Constants.TEXT_DOMAIN),
+  title,
   category: Constants.CATEGORY_COMMON,
   icon: 'grid-view',
   description: __(
@@ -20,8 +22,6 @@ registerBlockType('dfh/content-container', {
     isNarrow: { type: 'boolean', default: false },
   },
   edit({ attributes, setAttributes }) {
-    // TODO how to make content container more visible in the editor to show inspector options?
-    //      maybe try adding a title to each component?
     // Do not apply `container` classes in the editor because of limited width
     return (
       <Fragment>
@@ -36,15 +36,18 @@ registerBlockType('dfh/content-container', {
             />
           </PanelBody>
         </InspectorControls>
-        <div>
-          <InnerBlocks templateLock={false} />
-        </div>
+        <div className="dfh-editor-block-title">{title}</div>
+        <InnerBlocks templateLock={false} />
       </Fragment>
     );
   },
   save({ attributes }) {
     return (
-      <div className={`container ${buildClassName(attributes)}`}>
+      <div
+        className={`container container--user-content ${buildClassName(
+          attributes,
+        )}`}
+      >
         <InnerBlocks.Content />
       </div>
     );

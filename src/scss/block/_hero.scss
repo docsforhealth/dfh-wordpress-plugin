@@ -159,7 +159,7 @@
             );
 
             &:before {
-                $drawing-size-multiple: 7.5;
+                $drawing-size-multiple: 5.5;
 
                 top: -35vh;
                 height: $drawing-size-multiple * 10vw;
@@ -171,7 +171,7 @@
     @media (min-width: $media-width-tablet) {
         &-header {
             &__container {
-                width: 60%;
+                width: 65%;
             }
         }
         &-video {
