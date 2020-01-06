@@ -21,6 +21,7 @@ define('DFH_PLUGIN_DIR', untrailingslashit(dirname(DFH_PLUGIN_ROOT)));
 define('DFH_REQUIRED_PLUGINS', array(
     'Contact Form 7' => 'contact-form-7/wp-contact-form-7.php',
     'Ajax Load More' => 'ajax-load-more/ajax-load-more.php',
+    '404page' => '404page/404page.php', // Theme does not have a 404 page
 ));
 
 define('DFH_BLOCK_CATEGORY_COMMON', 'dfh-common');

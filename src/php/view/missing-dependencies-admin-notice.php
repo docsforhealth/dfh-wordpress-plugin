@@ -13,8 +13,10 @@ if (!defined('ABSPATH')) {
     <p>
         <strong>Error:</strong>
         The <em>Docs for Health</em> plugin won't execute
-        because the following required plugins are not active:
-        <?php echo esc_html(implode(', ', $missing_plugin_names)) ?>.
-        Please activate these plugins.
+        because the following required plugin(s) are not active:
+        <strong>
+            <?php echo esc_html(implode(', ', $missing_plugin_names)); ?>.
+        </strong>
+        Please activate these plugin(s).
     </p>
 </div>
