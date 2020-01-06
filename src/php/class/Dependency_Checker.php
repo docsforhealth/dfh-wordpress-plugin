@@ -3,15 +3,6 @@
 // from https://waclawjacek.com/check-wordpress-plugin-dependencies/
 
 class DFH_Dependency_Checker {
-
-    /**
-     * Define the plugins that our plugin requires to function.
-     * Array format: 'Plugin Name' => 'Path to main plugin file'
-     */
-    const REQUIRED_PLUGINS = array(
-        'Contact Form 7' => 'contact-form-7/wp-contact-form-7.php',
-    );
-
     /**
      * Check if all required plugins are active, otherwise throw an exception.
      *
@@ -29,7 +20,7 @@ class DFH_Dependency_Checker {
      */
     private function get_missing_plugins_list() {
         $missing_plugins = array();
-        foreach (self::REQUIRED_PLUGINS as $plugin_name => $main_file_path) {
+        foreach (DFH_REQUIRED_PLUGINS as $plugin_name => $main_file_path) {
             if (!$this->is_plugin_active($main_file_path)) {
                 $missing_plugins[] = $plugin_name;
             }
@@ -38,7 +29,7 @@ class DFH_Dependency_Checker {
     }
 
     /**
-     * @param string $main_file_path Path to main plugin file, as defined in self::REQUIRED_PLUGINS.
+     * @param string $main_file_path Path to main plugin file, as defined in DFH_REQUIRED_PLUGINS
      *
      * @return bool
      */

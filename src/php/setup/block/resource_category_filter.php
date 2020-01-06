@@ -36,21 +36,21 @@ function dfh_dynamic_render_resource_category_filter($attributes) {
     /* BEGIN HTML OUTPUT */
     ?>
     <ul
-        class="<?php echo $attributes['listClassName']; ?>"
-        data-name="<?php echo $name; ?>"
-        data-singular-name="<?php echo $singular_name; ?>"
-        data-item-class="<?php echo $item_class; ?>"
-        data-active-class="<?php echo $active_class; ?>"
-        data-taxonomy="<?php echo $tax_id; ?>"
+        class="<?php echo esc_attr($attributes['listClassName']); ?>"
+        data-name="<?php echo esc_attr($name); ?>"
+        data-singular-name="<?php echo esc_attr($singular_name); ?>"
+        data-item-class="<?php echo esc_attr($item_class); ?>"
+        data-active-class="<?php echo esc_attr($active_class); ?>"
+        data-taxonomy="<?php echo esc_attr($tax_id); ?>"
     >
         <?php foreach ($terms as $term): ?>
             <li>
                 <button
                     type="button"
-                    class="<?php echo $item_class; ?> <?php echo $active_class; ?>"
-                    data-taxonomy-slug="<?php echo $term->slug; ?>"
+                    class="<?php echo esc_attr($item_class); ?> <?php echo esc_attr($active_class); ?>"
+                    data-taxonomy-slug="<?php echo esc_attr($term->slug); ?>"
                 >
-                    <?php echo $term->name; ?>
+                    <?php echo esc_html($term->name); ?>
                 </button>
             </li>
         <?php endforeach ?>

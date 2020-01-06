@@ -30,7 +30,7 @@
             height: $nav-height + $divider-height;
             padding-top: $divider-height;
 
-            &__arrow {
+            & &__arrow {
                 flex-shrink: 0;
                 height: $nav-height;
                 width: $nav-height;
@@ -135,6 +135,9 @@
 
             &__examples {
                 display: none;
+            }
+            &__description {
+                width: 100%;
             }
 
             @media (min-width: $media-width-tablet) {

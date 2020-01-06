@@ -35,7 +35,9 @@ class DFH_Setup {
     }
 
     private function setup_plugin() {
+        require_once DFH_PLUGIN_DIR . '/src/php/setup/helpers.php';
         require_once DFH_PLUGIN_DIR . '/src/php/setup/remove_default_post_type.php';
+        require_once DFH_PLUGIN_DIR . '/src/php/setup/setup_ajax_load_more.php';
         require_once DFH_PLUGIN_DIR . '/src/php/setup/setup_blocks.php';
         require_once DFH_PLUGIN_DIR . '/src/php/setup/setup_content_types.php';
         require_once DFH_PLUGIN_DIR . '/src/php/setup/setup_textdomain.php';

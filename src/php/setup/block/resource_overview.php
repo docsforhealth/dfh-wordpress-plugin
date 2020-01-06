@@ -3,13 +3,12 @@
 register_block_type('dfh/resource-overview', array(
     'render_callback' => 'dfh_dynamic_render_resource_overview',
     'attributes'      => array(
-        'allResourcesUrl'   => array('type' => 'string', 'default' => 'javascript:history.back()'),
-        'allResourcesTitle' => array('type' => 'string', 'default' => 'javascript:history.back()'),
+        'allResourcesLabel' => array('type' => 'string', 'default' => __('View all resources', DFH_TEXT_DOMAIN)),
     ),
 ));
 
 function dfh_dynamic_render_resource_overview($attributes) {
-    $all_resources_url = $attributes['allResourcesUrl'];
+    $all_resources_label = $attributes['allResourcesLabel'];
     // see https://wordpress.stackexchange.com/a/193000
     $terms = get_terms(array('taxonomy' => DFH_TAXONOMY_RESOURCE));
     $terms_resources = array();
@@ -39,13 +38,13 @@ function dfh_dynamic_render_resource_overview($attributes) {
                 <?php foreach ($terms as $index => $term): ?>
                     <li class="landing-categories__nav__item"
                         data-slick-nav-target-id="landing-categories"
-                        data-slick-nav-target-index="<?php echo $index; ?>"
+                        data-slick-nav-target-index="<?php echo esc_attr($index); ?>"
                     >
                         <button
                             type="button"
                             class="landing-categories__nav__item__control"
                         >
-                            <?php echo $term->name; ?>
+                            <?php echo esc_html($term->name); ?>
                         </button>
                     </li>
                 <?php endforeach ?>
@@ -55,28 +54,28 @@ function dfh_dynamic_render_resource_overview($attributes) {
         <div id="landing-categories"
             class="landing-categories__slide-container"
             data-slick-active-class="landing-categories__nav__item--active"
-            data-slick='<?php echo json_encode(array(
+            data-slick='<?php echo esc_attr(json_encode(array(
                 "adaptiveHeight" => true,
                 "arrows"         => true,
                 "prevArrow"      => "#landing-categories-nav .landing-categories__nav__arrow--back",
                 "nextArrow"      => "#landing-categories-nav .landing-categories__nav__arrow",
-            )); ?>'
+            ))); ?>'
         >
             <?php foreach ($terms as $term): ?>
                 <div><div class="landing-categories__slide">
                     <div class="landing-categories__slide__description">
                         <h3 class="heading heading--2">
                             <span class="heading__title">
-                                <?php echo $term->name; ?>
+                                <?php echo esc_html($term->name); ?>
                             </span>
                         </h3>
                         <p class="text margin-b-2">
-                            <?php echo $term->description; ?>
+                            <?php echo esc_html($term->description); ?>
                         </p>
                         <div class="button-container">
-                            <a href="<?php echo $all_resources_url; ?>"
+                            <a href="<?php echo dfh_get_resources_overview_url(); ?>"
                                 class="button-container__button button button--outline">
-                                View all resources
+                                <?php echo esc_html($all_resources_label); ?>
                             </a>
                         </div>
                     </div>
@@ -85,13 +84,13 @@ function dfh_dynamic_render_resource_overview($attributes) {
                             <?php foreach ($terms_resources[$term->name] as $resource): ?>
                                 <li class="landing-categories__slide__example">
                                     <h4 class="heading heading--3">
-                                        <a href="<?php echo get_permalink($resource->ID); ?>" class="link"
-                                            ><?php echo $resource->post_title; ?></a
+                                        <a href="<?php echo esc_url(get_permalink($resource->ID)); ?>" class="link"
+                                            ><?php echo esc_html($resource->post_title); ?></a
                                         >
                                     </h4>
                                     <?php if (strlen($resource->post_excerpt) > 0): ?>
                                         <p class="text">
-                                            <?php echo $resource->post_excerpt; ?>
+                                            <?php echo esc_html($resource->post_excerpt); ?>
                                         </p>
                                     <?php endif ?>
                                 </li>

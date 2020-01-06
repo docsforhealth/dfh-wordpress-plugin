@@ -1,10 +1,8 @@
 import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
 import { registerBlockType } from '@wordpress/blocks';
-import { RichText } from '@wordpress/block-editor';
+import { TextControl } from '@wordpress/components';
 
 import * as Constants from '../../../constants';
-import LinkPicker from '../../../editor/link-picker';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_INFO, {
@@ -18,27 +16,15 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_INFO, {
   supports: { inserter: false },
   edit({ attributes, setAttributes }) {
     return (
-      <Fragment>
-        <RichText
-          tagName="a"
-          className="link dfh-editor-is-clickable"
-          value={attributes.allResourcesLabel}
-          placeholder={__(
-            'Enter all resources label here',
-            Constants.TEXT_DOMAIN,
-          )}
-          onChange={allResourcesLabel => setAttributes({ allResourcesLabel })}
-          multiline={false}
-          withoutInteractiveFormatting={true}
-        />
-        <LinkPicker
-          url={attributes.allResourcesUrl}
-          title={attributes.allResourcesTitle}
-          onChange={({ url, title }) =>
-            setAttributes({ allResourcesUrl: url, allResourcesTitle: title })
-          }
-        />
-      </Fragment>
+      <TextControl
+        label={__('Back to all resources label', Constants.TEXT_DOMAIN)}
+        help={__(
+          'This label is shown on mobile devices only',
+          Constants.TEXT_DOMAIN,
+        )}
+        value={attributes.allResourcesLabel}
+        onChange={allResourcesLabel => setAttributes({ allResourcesLabel })}
+      />
     );
   },
   save() {

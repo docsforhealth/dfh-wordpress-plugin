@@ -3,14 +3,11 @@
 register_block_type('dfh/resource-detail-info', array(
     'render_callback' => 'dfh_dynamic_render_resource_detail_info',
     'attributes'      => array(
-        'allResourcesUrl'   => array('type' => 'string', 'default' => 'javascript:history.back()'),
-        'allResourcesTitle' => array('type' => 'string', 'default' => 'javascript:history.back()'),
-        'allResourcesLabel' => array('type' => 'string', 'default' => 'All resources'),
+        'allResourcesLabel' => array('type' => 'string', 'default' => __('All resources', DFH_TEXT_DOMAIN)),
     ),
 ));
 
 function dfh_dynamic_render_resource_detail_info($attributes) {
-    $all_resources_url = $attributes['allResourcesUrl'];
     $all_resources_label = $attributes['allResourcesLabel'];
     // see https://developer.wordpress.org/reference/functions/get_post/
     $resource = get_post();
@@ -21,21 +18,21 @@ function dfh_dynamic_render_resource_detail_info($attributes) {
     /* BEGIN HTML OUTPUT */
     ?>
     <h1 class="heading heading--2">
-        <a href="<?php echo $all_resources_url; ?>" class="heading__nav">
-            <img src="<?php echo plugins_url('/assets/images/icon-arrow.svg', DFH_PLUGIN_ROOT); ?>"
+        <a href="<?php echo dfh_get_resources_overview_url(); ?>" class="heading__nav">
+            <img src="<?php echo esc_url(plugins_url('/assets/images/icon-arrow.svg', DFH_PLUGIN_ROOT)); ?>"
                 class="heading__nav__image"
                 alt="Back arrow to return to previous page">
             <span class="heading__nav__text">
-                <?php echo $all_resources_label; ?>
+                <?php echo esc_html($all_resources_label); ?>
             </span>
         </a>
-        <?php echo $resource->post_title; ?>
+        <?php echo esc_html($resource->post_title); ?>
     </h1>
     <?php if (count($terms) > 0): ?>
         <ul class="list list--unstyled margin-b-1">
             <?php foreach ($terms as $term): ?>
                 <li class="tag">
-                    <?php echo $term->name; ?>
+                    <?php echo esc_html($term->name); ?>
                 </li>
             <?php endforeach ?>
         </ul>
