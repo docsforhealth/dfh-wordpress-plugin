@@ -25,6 +25,8 @@ define('DFH_REQUIRED_PLUGINS', array(
 
 define('DFH_BLOCK_CATEGORY_COMMON', 'dfh-common');
 define('DFH_BLOCK_CATEGORY_LANDING', 'dfh-landing');
+define('DFH_BLOCK_CATEGORY_LAYOUT', 'dfh-layout');
+define('DFH_BLOCK_CATEGORY_MEDIA', 'dfh-media');
 define('DFH_BLOCK_CATEGORY_RESOURCE', 'dfh-resource');
 
 // Can be defined by either the Docs for Health theme or plugin

@@ -12,7 +12,7 @@ const title = __('Content Container', Constants.TEXT_DOMAIN);
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType('dfh/content-container', {
   title,
-  category: Constants.CATEGORY_COMMON,
+  category: Constants.CATEGORY_LAYOUT,
   icon: 'grid-view',
   description: __(
     'Ensures appropriate horizontal spacing and width of content of any type',

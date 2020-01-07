@@ -3,11 +3,20 @@
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#managing-block-categories
 add_filter('block_categories', 'dfh_block_categories', 10, 2);
 function dfh_block_categories($categories, $post) {
+    // Note that the order specified here is the order the categories will display
     return array_merge(
         array(
             array(
                 'slug'  => DFH_BLOCK_CATEGORY_COMMON,
                 'title' => __('Common', DFH_TEXT_DOMAIN),
+            ),
+            array(
+                'slug'  => DFH_BLOCK_CATEGORY_LAYOUT,
+                'title' => __('Layout', DFH_TEXT_DOMAIN),
+            ),
+            array(
+                'slug'  => DFH_BLOCK_CATEGORY_MEDIA,
+                'title' => __('Media', DFH_TEXT_DOMAIN),
             ),
             array(
                 'slug'  => DFH_BLOCK_CATEGORY_LANDING,

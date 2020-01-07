@@ -10,11 +10,30 @@ addFilter(
   'blocks.registerBlockType',
   Constants.NAMESPACE,
   (blockSettings, blockName) => {
-    return _.startsWith(blockName, Constants.NAMESPACE)
-      ? blockSettings
-      : _.assign({}, blockSettings, {
-          supports: _.assign({}, blockSettings.supports, { inserter: false }),
-        });
+    const allowedCoreBlocks = {
+      'core/list': Constants.CATEGORY_COMMON,
+
+      'core/columns': Constants.CATEGORY_LAYOUT,
+      'core/separator': Constants.CATEGORY_LAYOUT,
+      'core/spacer': Constants.CATEGORY_LAYOUT,
+
+      'core/audio': Constants.CATEGORY_MEDIA,
+      'core/gallery': Constants.CATEGORY_MEDIA,
+      'core/image': Constants.CATEGORY_MEDIA,
+      'core/video': Constants.CATEGORY_MEDIA,
+    };
+    if (allowedCoreBlocks[blockName]) {
+      return _.assign({}, blockSettings, {
+        category: allowedCoreBlocks[blockName],
+      });
+    } else {
+      // If not special whitelisted core blocks, then only allow custom DFH blocks
+      return _.startsWith(blockName, Constants.NAMESPACE)
+        ? blockSettings
+        : _.assign({}, blockSettings, {
+            supports: _.assign({}, blockSettings.supports, { inserter: false }),
+          });
+    }
   },
 );
 // sets the default block to the `dfh/text` block

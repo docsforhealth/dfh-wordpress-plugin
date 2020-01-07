@@ -1,0 +1,38 @@
+// For `core/list`
+// Selectors to constrain to frontend and editor views
+#content,
+[data-block] {
+    ul {
+        li {
+            @extend .text;
+
+            margin-bottom: 0 !important;
+        }
+        a {
+            @extend .link;
+        }
+    }
+}
+
+// For `core/audio`, `core/image`, `core/video`, `core/gallery`
+[data-block] .components-placeholder {
+    .components-form-file-upload {
+        margin-right: $baseunit;
+    }
+}
+
+// For `core/separator`
+.wp-block-separator {
+    border-color: $color-seafoam-dark-1;
+
+    &:not(.is-style-wide):not(.is-style-dots) {
+        max-width: 50%;
+        border-width: 1px;
+    }
+    &.is-style-dots:before {
+        color: $color-seafoam-dark-2;
+        font-weight: $font-weight-bold;
+        font-size: 2em;
+        letter-spacing: 1.5em;
+    }
+}
