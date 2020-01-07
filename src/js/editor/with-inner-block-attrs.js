@@ -32,8 +32,11 @@ function WithInnerBlockAttrs({ foundBlocks, innerBlockAttrs, children }) {
   );
 }
 WithInnerBlockAttrs.propTypes = {
-  foundBlocks: PropTypes.array.isRequired,
+  clientId: PropTypes.string.isRequired,
   innerBlockAttrs: PropTypes.object,
+
+  // Provided by `withSelect`, not by user
+  foundBlocks: PropTypes.array.isRequired,
 };
 
 function updateInnerBlocks(foundBlocks, innerBlockAttrs) {

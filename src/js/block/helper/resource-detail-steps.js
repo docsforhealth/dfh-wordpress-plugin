@@ -32,7 +32,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
                 wrapperElements: ['ol'],
                 wrapperClassNames: ['resource-steps'],
                 allowedBlocks: [Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP],
-                template: [[Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {}]],
+                template: [[Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP]],
               },
             ],
             [

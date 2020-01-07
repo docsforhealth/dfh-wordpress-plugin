@@ -26,6 +26,10 @@ function dfh_block_categories($categories, $post) {
                 'slug'  => DFH_BLOCK_CATEGORY_RESOURCE,
                 'title' => __('Resources', DFH_TEXT_DOMAIN),
             ),
+            array(
+                'slug'  => DFH_BLOCK_CATEGORY_TOOLKIT,
+                'title' => __('Toolkits', DFH_TEXT_DOMAIN),
+            ),
         ),
         $categories,
     );

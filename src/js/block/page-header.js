@@ -42,7 +42,7 @@ registerBlockType(Constants.BLOCK_PAGE_HEADER, {
                     'heading__title',
                   ],
                   isLocked: true,
-                  template: [[Constants.BLOCK_PAGE_TITLE, {}]],
+                  template: [[Constants.BLOCK_PAGE_TITLE]],
                 },
               ],
               [

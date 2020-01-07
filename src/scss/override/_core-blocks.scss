@@ -1,7 +1,7 @@
-// For `core/list`
 // Selectors to constrain to frontend and editor views
 #content,
 [data-block] {
+    // For `core/list`
     ul {
         li {
             @extend .text;
@@ -11,6 +11,12 @@
         a {
             @extend .link;
         }
+    }
+
+    // For core media blocks
+    figcaption {
+        @extend .text;
+        @extend .text--small;
     }
 }
 

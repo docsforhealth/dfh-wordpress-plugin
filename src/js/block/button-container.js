@@ -21,7 +21,7 @@ registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
     Constants.TEXT_DOMAIN,
   ),
   attributes: {
-    template: { type: 'array', default: [[Constants.BLOCK_LINK_BUTTON, {}]] },
+    template: { type: 'array', default: [[Constants.BLOCK_LINK_BUTTON]] },
     isLocked: { type: 'boolean', default: false },
     expandWidth: { type: 'boolean', default: false },
     forceAttributes: { type: 'object' },

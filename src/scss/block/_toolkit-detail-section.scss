@@ -1,0 +1,33 @@
+.toolkit-detail-section {
+    &__header {
+        margin-bottom: $baseunit;
+
+        &__presenter {
+            @extend .text;
+            @extend .text--light;
+            @include scut-truncate;
+        }
+    }
+    &__controls {
+        display: block;
+        margin: ($baseunit * 3) 0 ($baseunit * 2);
+    }
+
+    @media (min-width: $media-width-tablet) {
+        &__header {
+            display: flex;
+            align-items: baseline;
+
+            & > * {
+                min-width: 0;
+            }
+            &__presenter {
+                flex-shrink: 0;
+                margin-left: $baseunit;
+            }
+        }
+        &__controls {
+            display: none;
+        }
+    }
+}

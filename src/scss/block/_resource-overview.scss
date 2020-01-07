@@ -15,7 +15,7 @@
         flex-direction: column;
     }
     & &__category {
-        @include scut_truncate;
+        @include scut-truncate;
 
         height: $height-control;
         width: 100%;

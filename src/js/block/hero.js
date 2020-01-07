@@ -24,8 +24,8 @@ registerBlockType(`${Constants.NAMESPACE}/hero`, {
           <InnerBlocks
             templateLock={Constants.INNER_BLOCKS_LOCKED}
             template={[
-              [Constants.BLOCK_LANDING_HEADER, {}],
-              [Constants.BLOCK_LANDING_VIDEO, {}],
+              [Constants.BLOCK_LANDING_HEADER],
+              [Constants.BLOCK_LANDING_VIDEO],
             ]}
           />
         </div>

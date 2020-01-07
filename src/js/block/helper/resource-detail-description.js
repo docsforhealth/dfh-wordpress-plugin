@@ -20,7 +20,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_DESCRIPTION, {
         <InnerBlocks
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
-            [Constants.BLOCK_RESOURCE_DETAIL_INFO, {}],
+            [Constants.BLOCK_RESOURCE_DETAIL_INFO],
             [Constants.BLOCK_CONTENT_CONTAINER, { noHeadings: true }],
           ]}
         />

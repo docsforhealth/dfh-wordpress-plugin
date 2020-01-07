@@ -28,6 +28,7 @@ define('DFH_BLOCK_CATEGORY_LANDING', 'dfh-landing');
 define('DFH_BLOCK_CATEGORY_LAYOUT', 'dfh-layout');
 define('DFH_BLOCK_CATEGORY_MEDIA', 'dfh-media');
 define('DFH_BLOCK_CATEGORY_RESOURCE', 'dfh-resource');
+define('DFH_BLOCK_CATEGORY_TOOLKIT', 'dfh-toolkit');
 
 // Can be defined by either the Docs for Health theme or plugin
 if (!defined('DFH_TEXT_DOMAIN')) {
@@ -35,6 +36,9 @@ if (!defined('DFH_TEXT_DOMAIN')) {
 }
 if (!defined('DFH_CONTENT_TYPE_RESOURCE')) {
     define('DFH_CONTENT_TYPE_RESOURCE', 'dfh_resource');
+}
+if (!defined('DFH_CONTENT_TYPE_TOOLKIT')) {
+    define('DFH_CONTENT_TYPE_TOOLKIT', 'dfh_toolkit');
 }
 if (!defined('DFH_TAXONOMY_RESOURCE')) {
     define('DFH_TAXONOMY_RESOURCE', 'dfh_resource_classification');

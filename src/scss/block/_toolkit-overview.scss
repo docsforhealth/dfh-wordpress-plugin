@@ -1,0 +1,108 @@
+.toolkit-preview {
+    display: flex;
+    flex-direction: column;
+    margin-top: $baseunit;
+    padding-bottom: $baseunit;
+    border-bottom: 1px solid $color-seafoam-dark-2;
+
+    &:first-of-type {
+        margin-top: $baseunit * 2;
+    }
+    &:last-of-type {
+        padding-bottom: 0;
+        border-bottom-width: 0;
+    }
+
+    &__info {
+        margin-bottom: $baseunit;
+    }
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        margin-bottom: $baseunit * 0.5;
+
+        &__metadata {
+            @include scut-list-unstyled;
+        }
+    }
+    // TODO integrate with video-thumbnail block styles
+    &__video {
+        position: relative;
+        min-width: 30%;
+        background-color: $color-seafoam;
+
+        &:hover &__control,
+        &:focus &__control,
+        &:active &__control {
+            opacity: 1;
+        }
+
+        &__image {
+            height: 100%;
+            width: 100%;
+            max-height: 50vh;
+            object-fit: contain;
+        }
+        &__control {
+            @extend .button;
+            @extend .button--secondary;
+            @include scut-center-transform;
+
+            opacity: 0;
+            transition: opacity 0.1s;
+        }
+    }
+
+    @media (min-width: $media-width-landscape-medium-mobile) {
+        position: relative;
+        flex-direction: row;
+        left: $unit-horizontal-overhang-small * -1;
+        width: calc(100% + #{$unit-horizontal-overhang-small * 2});
+        padding-bottom: 0;
+        border: 1px solid $color-seafoam-dark-2;
+        border-radius: $border-radius;
+        overflow: hidden;
+
+        &:not(:first-of-type) {
+            margin-top: 0;
+            border-top-width: 0;
+        }
+        &:last-of-type {
+            border-bottom-width: 1px;
+        }
+
+        &__info {
+            flex-grow: 1;
+            padding: $baseunit $unit-horizontal-overhang-small;
+            margin-bottom: 0;
+        }
+        &__header {
+            flex-direction: row;
+            margin-bottom: 0;
+
+            &__metadata {
+                // `inline-flex` for proper baseline alignment
+                // see: https://www.kizu.ru/flex-baseline/;
+                display: inline-flex;
+                margin-left: $baseunit;
+            }
+        }
+    }
+    @media (min-width: $media-width-tablet) {
+        &:not(:first-of-type) {
+            margin-top: $baseunit;
+            border-top-width: 1px;
+        }
+    }
+    @media (min-width: $media-width-laptop) {
+        left: $unit-horizontal-overhang * -1;
+        width: calc(100% + #{$unit-horizontal-overhang * 2});
+
+        &__info {
+            flex-grow: 1;
+            padding: $baseunit $unit-horizontal-overhang;
+            margin-bottom: 0;
+        }
+    }
+}

@@ -24,7 +24,7 @@ registerBlockType(Constants.BLOCK_CONTENT_CONTAINER, {
   attributes: {
     template: {
       type: 'array',
-      default: [[Constants.BLOCK_HEADING, {}], [Constants.BLOCK_TEXT, {}]],
+      default: [[Constants.BLOCK_HEADING], [Constants.BLOCK_TEXT]],
     },
     isLocked: { type: 'boolean', default: false },
     noHeadings: { type: 'boolean', default: false },
@@ -38,13 +38,24 @@ registerBlockType(Constants.BLOCK_CONTENT_CONTAINER, {
       forceAttributes: PropTypes.objectOf(PropTypes.object),
     },
     ({ attributes, clientId }) => {
+      const alwaysAllowed = [
+        Constants.BLOCK_TEXT,
+        Constants.BLOCK_VIDEO_THUMBNAIL,
+        Constants.CORE_BLOCK_LIST,
+        Constants.CORE_BLOCK_SEPARATOR,
+        Constants.CORE_BLOCK_SPACER,
+        // NOTE Wordpress 5.2 bug prevents core/video block from working if isLocked
+        // see https://github.com/WordPress/gutenberg/issues/19311#issue-541875999
+        Constants.CORE_BLOCK_VIDEO,
+        Constants.CORE_BLOCK_AUDIO,
+        Constants.CORE_BLOCK_GALLERY,
+        Constants.CORE_BLOCK_IMAGE,
+        // NOTE core media blocks will transform into core embed block after processing
+        ...Constants.CORE_EMBED_BLOCKS,
+      ];
       const allowedBlockNames = attributes.noHeadings
-        ? [Constants.BLOCK_TEXT, Constants.BLOCK_VIDEO_THUMBNAIL]
-        : [
-            Constants.BLOCK_HEADING,
-            Constants.BLOCK_TEXT,
-            Constants.BLOCK_VIDEO_THUMBNAIL,
-          ];
+        ? alwaysAllowed
+        : [...alwaysAllowed, Constants.BLOCK_HEADING];
       return (
         <WithInnerBlockAttrs
           clientId={clientId}

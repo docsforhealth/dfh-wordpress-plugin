@@ -3,6 +3,7 @@
 // see https://www.smashingmagazine.com/2015/04/extending-wordpress-custom-content-types/
 // see https://www.billerickson.net/gutenberg-block-templates/
 // see https://developer.wordpress.org/block-editor/developers/block-api/block-templates/#custom-post-types
+
 add_action('init', 'dfh_register_resource_type');
 function dfh_register_resource_type() {
     // see https://developer.wordpress.org/plugins/post-types/registering-custom-post-types/
@@ -18,7 +19,7 @@ function dfh_register_resource_type() {
         'query_var'           => true,
         'can_export'          => true,
         'rewrite'             => array('slug' => 'resources', 'with_front' => false),
-        'menu_icon'           => 'dashicons-rest-api',
+        'menu_icon'           => 'dashicons-image-filter',
         'template'            => array(array('dfh/resource-detail', array())),
         'template_lock'       => 'all',
         'labels'              => array(
@@ -60,5 +61,41 @@ function dfh_register_resource_type() {
             'menu_name'                  => __('Categories', DFH_TEXT_DOMAIN),
             'back_to_items'              => __('Back to Categories', DFH_TEXT_DOMAIN),
         ),
-      ));
+    ));
+}
+
+
+add_action('init', 'dfh_register_toolkit_type');
+function dfh_register_toolkit_type() {
+    // see https://developer.wordpress.org/plugins/post-types/registering-custom-post-types/
+    register_post_type(DFH_CONTENT_TYPE_TOOLKIT, array(
+        'hierarchical'        => false,
+        'supports'            => array('title', 'editor', 'excerpt'),
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_rest'        => true,
+        'publicly_queryable'  => true,
+        'exclude_from_search' => true,
+        'has_archive'         => false,
+        'query_var'           => true,
+        'can_export'          => true,
+        'rewrite'             => array('slug' => 'toolkits', 'with_front' => false),
+        'menu_icon'           => 'dashicons-portfolio',
+        // TODO
+        // 'template'            => array(array('dfh/toolkit-detail', array())),
+        // 'template_lock'       => 'all',
+        'labels'              => array(
+            'name'               => __('Toolkits', DFH_TEXT_DOMAIN),
+            'singular_name'      => __('Toolkit', DFH_TEXT_DOMAIN),
+            'add_new'            => __('Add New', DFH_TEXT_DOMAIN),
+            'add_new_item'       => __('Add New Toolkit', DFH_TEXT_DOMAIN),
+            'edit_item'          => __('Edit Toolkit', DFH_TEXT_DOMAIN),
+            'new_item'           => __('New Toolkit', DFH_TEXT_DOMAIN),
+            'view_item'          => __('View Toolkit', DFH_TEXT_DOMAIN),
+            'search_items'       => __('Search Toolkits', DFH_TEXT_DOMAIN),
+            'not_found'          => __('No Toolkits found', DFH_TEXT_DOMAIN),
+            'not_found_in_trash' => __('No Toolkits found in Trash', DFH_TEXT_DOMAIN),
+            'menu_name'          => __('Toolkits', DFH_TEXT_DOMAIN),
+        ),
+    ));
 }

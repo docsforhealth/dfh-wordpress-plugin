@@ -40,7 +40,7 @@ registerBlockType(Constants.BLOCK_LANDING_FEATURED, {
                   ],
                 },
               ],
-              [Constants.BLOCK_BUTTON_CONTAINER, {}],
+              [Constants.BLOCK_BUTTON_CONTAINER],
             ]}
           />
         </div>

@@ -8,3 +8,4 @@ import 'lity';
  */
 import './js/frontend/setup-resource-previews';
 import './js/frontend/setup-slick';
+import './js/frontend/setup-toolkit-mobile-nav';

@@ -75,7 +75,7 @@ registerBlockType(`${Constants.NAMESPACE}/resource-previews`, {
                 isLocked: true,
                 template: [
                   buildMessageAreaInfo('resource-categories__metadata'),
-                  [Constants.BLOCK_RESOURCE_CATEGORY_FILTER, {}],
+                  [Constants.BLOCK_RESOURCE_CATEGORY_FILTER],
                 ],
               },
             ],

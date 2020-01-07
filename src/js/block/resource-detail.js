@@ -32,8 +32,8 @@ registerBlockType(`${Constants.NAMESPACE}/resource-detail`, {
           <InnerBlocks
             templateLock={Constants.INNER_BLOCKS_LOCKED}
             template={[
-              [Constants.BLOCK_RESOURCE_DETAIL_DESCRIPTION, {}],
-              [Constants.BLOCK_RESOURCE_DETAIL_STEPS, {}],
+              [Constants.BLOCK_RESOURCE_DETAIL_DESCRIPTION],
+              [Constants.BLOCK_RESOURCE_DETAIL_STEPS],
             ]}
           />
         </div>

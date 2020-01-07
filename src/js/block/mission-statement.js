@@ -39,7 +39,7 @@ registerBlockType(`${Constants.NAMESPACE}/mission-statement`, {
           />
           <InnerBlocks
             allowedBlocks={[Constants.BLOCK_TEXT]}
-            template={[[Constants.BLOCK_TEXT, {}]]}
+            template={[[Constants.BLOCK_TEXT]]}
           />
         </div>
       </Fragment>

@@ -23,8 +23,8 @@ registerBlockType(`${Constants.NAMESPACE}/featured-and-contact`, {
         <InnerBlocks
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
-            [Constants.BLOCK_LANDING_FEATURED, {}],
-            [Constants.BLOCK_LANDING_CONTACT, {}],
+            [Constants.BLOCK_LANDING_FEATURED],
+            [Constants.BLOCK_LANDING_CONTACT],
           ]}
         />
       </Fragment>
