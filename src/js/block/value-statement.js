@@ -49,7 +49,7 @@ registerBlockType(`${Constants.NAMESPACE}/value-statement`, {
               templateLock={Constants.INNER_BLOCKS_LOCKED}
               template={[
                 [
-                  Constants.BLOCK_TEXT_CONTAINER,
+                  Constants.BLOCK_CONTENT_CONTAINER,
                   {
                     forceAttributes: {
                       [Constants.BLOCK_HEADING]: {

@@ -18,6 +18,7 @@
         "prop-types": "^15.7.2",
         "scut": "^1.4.0",
         "slick-carousel": "^1.8.1",
+        "thumbnail-youtube-vimeo": "^1.1.0",
         "url-loader": "^3.0.0"
     }
 }

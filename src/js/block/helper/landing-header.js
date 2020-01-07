@@ -27,7 +27,7 @@ registerBlockType(Constants.BLOCK_LANDING_HEADER, {
                   isLocked: true,
                   template: [
                     [
-                      Constants.BLOCK_TEXT_CONTAINER,
+                      Constants.BLOCK_CONTENT_CONTAINER,
                       {
                         forceAttributes: {
                           [Constants.BLOCK_HEADING]: {

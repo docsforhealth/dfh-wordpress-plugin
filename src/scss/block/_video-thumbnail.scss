@@ -1,0 +1,29 @@
+.video-thumbnail {
+    display: block;
+    position: relative;
+    width: $baseunit * 15;
+    max-width: 70%;
+    margin: ($baseunit * 2) 0;
+
+    &:hover &__control,
+    &:focus &__control,
+    &:active &__control {
+        opacity: 1;
+    }
+
+    &__image {
+        width: 100%;
+        border: 1px solid $color-seafoam-dark-1;
+        border-radius: $border-radius;
+        object-fit: contain;
+    }
+    & &__control {
+        @extend .button;
+        @extend .button--secondary;
+        @include scut-center-transform;
+
+        max-width: 90%;
+        opacity: 0;
+        transition: opacity 0.1s;
+    }
+}

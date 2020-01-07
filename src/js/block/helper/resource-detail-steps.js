@@ -44,7 +44,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
                 showPostTitle: false,
               },
             ],
-            [Constants.BLOCK_TEXT_CONTAINER, { onlyText: true }],
+            [Constants.BLOCK_CONTENT_CONTAINER, { noHeadings: true }],
           ]}
         />
       </div>

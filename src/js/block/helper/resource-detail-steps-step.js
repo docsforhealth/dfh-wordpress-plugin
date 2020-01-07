@@ -27,7 +27,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {
                 wrapperClassNames: ['resource-steps__step__title'],
                 isLocked: true,
                 template: [
-                  [Constants.BLOCK_TEXT_CONTAINER, { onlyText: true }],
+                  [Constants.BLOCK_CONTENT_CONTAINER, { noHeadings: true }],
                 ],
               },
             ],

@@ -24,6 +24,7 @@ export const INNER_BLOCKS_UNLOCKED = false;
 export const INNER_BLOCKS_FORCE_ATTRS_ALL = 'applyToAll';
 
 export const BLOCK_BUTTON_CONTAINER = `${NAMESPACE}/button-container`;
+export const BLOCK_CONTENT_CONTAINER = `${NAMESPACE}/content-container`;
 export const BLOCK_FILE_BUTTON = `${NAMESPACE}/file-button`;
 export const BLOCK_HEADING = `${NAMESPACE}/heading`;
 export const BLOCK_INNER_BLOCK_WRAPPER = `${NAMESPACE}/inner-block-wrapper`;
@@ -41,7 +42,7 @@ export const BLOCK_RESOURCE_DETAIL_STEPS = `${NAMESPACE}/resource-detail-steps`;
 export const BLOCK_RESOURCE_DETAIL_STEPS_STEP = `${NAMESPACE}/resource-detail-steps-step`;
 export const BLOCK_SEARCH_INPUT = `${NAMESPACE}/search-input`;
 export const BLOCK_TEXT = `${NAMESPACE}/text`;
-export const BLOCK_TEXT_CONTAINER = `${NAMESPACE}/text-container`;
+export const BLOCK_VIDEO_THUMBNAIL = `${NAMESPACE}/video-thumbnail`;
 
 export const BUTTON_SIZE_DEFAULT = '';
 export const BUTTON_SIZE_SMALL = 'small';

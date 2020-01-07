@@ -39,3 +39,7 @@ export function withPropTypes(propTypes, wpComponent) {
   };
   return wpComponent;
 }
+
+export function filterInnerBlockTemplate(allowedBlockNames, template) {
+  return _.filter(template, spec => allowedBlockNames.includes(spec[0]));
+}

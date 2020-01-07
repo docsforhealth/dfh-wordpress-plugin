@@ -5,7 +5,11 @@ import { registerBlockType } from '@wordpress/blocks';
 
 import * as Constants from '../constants';
 import WithInnerBlockAttrs from '../editor/with-inner-block-attrs';
-import { handleForceAllAttrs, withPropTypes } from '../utils';
+import {
+  filterInnerBlockTemplate,
+  handleForceAllAttrs,
+  withPropTypes,
+} from '../utils';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
@@ -24,7 +28,7 @@ registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
   },
   edit: withPropTypes(
     {
-      template: PropTypes.array,
+      template: PropTypes.arrayOf(PropTypes.array),
       isLocked: PropTypes.bool,
       expandWidth: PropTypes.bool,
       forceAttributes: PropTypes.objectOf(PropTypes.object),
@@ -44,7 +48,10 @@ registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
         >
           <InnerBlocks
             allowedBlocks={allowedBlockNames}
-            template={attributes.template}
+            template={filterInnerBlockTemplate(
+              allowedBlockNames,
+              attributes.template,
+            )}
             templateLock={
               attributes.isLocked
                 ? Constants.INNER_BLOCKS_LOCKED

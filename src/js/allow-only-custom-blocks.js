@@ -13,7 +13,6 @@ addFilter(
     const allowedCoreBlocks = {
       'core/list': Constants.CATEGORY_COMMON,
 
-      'core/columns': Constants.CATEGORY_LAYOUT,
       'core/separator': Constants.CATEGORY_LAYOUT,
       'core/spacer': Constants.CATEGORY_LAYOUT,
 

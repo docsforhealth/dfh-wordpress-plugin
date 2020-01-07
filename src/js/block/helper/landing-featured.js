@@ -24,10 +24,10 @@ registerBlockType(Constants.BLOCK_LANDING_FEATURED, {
                 {
                   wrapperClassNames: ['margin-b-2'],
                   isLocked: true,
-                  allowedBlocks: [Constants.BLOCK_TEXT_CONTAINER],
+                  allowedBlocks: [Constants.BLOCK_CONTENT_CONTAINER],
                   template: [
                     [
-                      Constants.BLOCK_TEXT_CONTAINER,
+                      Constants.BLOCK_CONTENT_CONTAINER,
                       {
                         forceAttributes: {
                           [Constants.BLOCK_HEADING]: {
