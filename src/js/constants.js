@@ -56,6 +56,7 @@ export const BLOCK_RESOURCE_DETAIL_STEPS = `${NAMESPACE}/resource-detail-steps`;
 export const BLOCK_RESOURCE_DETAIL_STEPS_STEP = `${NAMESPACE}/resource-detail-steps-step`;
 
 export const BLOCK_TOOLKIT_DETAIL_LIST = `${NAMESPACE}/toolkit-detail-list`;
+export const BLOCK_TOOLKIT_DETAIL_LIST_LINK = `${NAMESPACE}/toolkit-detail-list-link`;
 export const BLOCK_TOOLKIT_DETAIL_SECTION = `${NAMESPACE}/toolkit-detail-section`;
 export const BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER = `${NAMESPACE}/toolkit-detail-section-container`;
 export const BLOCK_TOOLKIT_DETAIL_SECTION_INFO = `${NAMESPACE}/toolkit-detail-section-info`;

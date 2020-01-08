@@ -5,6 +5,10 @@ import { TextControl } from '@wordpress/components';
 
 import * as Constants from '../../constants';
 
+export const ATTR_INDEX = 'index';
+export const ATTR_PRESENTER = 'presenter';
+export const ATTR_TITLE = 'title';
+
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION_INFO, {
   title: __('Toolkit Section Info', Constants.TEXT_DOMAIN),
@@ -12,22 +16,22 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION_INFO, {
   // TODO icon and description
   supports: { inserter: false },
   attributes: {
-    index: { type: 'number' },
-    title: { type: 'string' },
-    presenter: { type: 'string' },
+    [ATTR_INDEX]: { type: 'number' },
+    [ATTR_TITLE]: { type: 'string' },
+    [ATTR_PRESENTER]: { type: 'string' },
   },
   edit({ attributes, setAttributes }) {
     return (
       <Fragment>
         <TextControl
           label={__('Section title', Constants.TEXT_DOMAIN)}
-          value={attributes.title}
-          onChange={title => setAttributes({ title })}
+          value={attributes[ATTR_TITLE]}
+          onChange={title => setAttributes({ [ATTR_TITLE]: title })}
         />
         <TextControl
           label={__('Presenter', Constants.TEXT_DOMAIN)}
-          value={attributes.presenter}
-          onChange={presenter => setAttributes({ presenter })}
+          value={attributes[ATTR_PRESENTER]}
+          onChange={presenter => setAttributes({ [ATTR_PRESENTER]: presenter })}
         />
       </Fragment>
     );
@@ -36,10 +40,10 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION_INFO, {
     return (
       <div className="toolkit-detail-container__header toolkit-detail-section__header">
         <h2 className="heading heading--3 heading--one-line">
-          {attributes.index + 1}. {attributes.title}
+          {attributes[ATTR_INDEX] + 1}. {attributes[ATTR_TITLE]}
         </h2>
         <p className="toolkit-detail-section__header__presenter">
-          {attributes.presenter}
+          {attributes[ATTR_PRESENTER]}
         </p>
       </div>
     );

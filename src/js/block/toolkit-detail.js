@@ -4,6 +4,8 @@ import { registerBlockType } from '@wordpress/blocks';
 import { TextControl } from '@wordpress/components';
 
 import * as Constants from '../constants';
+import * as DetailList from './helper/toolkit-detail-list';
+import * as Section from './helper/toolkit-detail-section';
 import WithInnerBlockAttrs from '../editor/with-inner-block-attrs';
 
 const title = __('Toolkit Detail', Constants.TEXT_DOMAIN);
@@ -29,13 +31,13 @@ registerBlockType(`${Constants.NAMESPACE}/toolkit-detail`, {
         clientId={clientId}
         innerBlockAttrs={{
           [Constants.BLOCK_TOOLKIT_DETAIL_LIST]: {
-            overallMarkupId: clientId,
-            parentClientId: clientId,
+            [DetailList.ATTR_OVERALL_MARKUP_ID]: clientId,
+            [DetailList.ATTR_PARENT_CLIENT_ID]: clientId,
           },
           [Constants.BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER]: {
-            overallMarkupId: clientId,
-            backButtonLabel: attributes.backButtonLabel,
-            nextButtonLabel: attributes.nextButtonLabel,
+            [Section.ATTR_OVERALL_MARKUP_ID]: clientId,
+            [Section.ATTR_BACK_BUTTON_LABEL]: attributes.backButtonLabel,
+            [Section.ATTR_NEXT_BUTTON_LABEL]: attributes.nextButtonLabel,
           },
         }}
       >
@@ -59,7 +61,7 @@ registerBlockType(`${Constants.NAMESPACE}/toolkit-detail`, {
           onChange={nextButtonLabel => setAttributes({ nextButtonLabel })}
         />
         <InnerBlocks
-          isLocked={true}
+          templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
             [Constants.BLOCK_TOOLKIT_DETAIL_LIST],
             [Constants.BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER],

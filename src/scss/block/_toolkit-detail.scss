@@ -80,6 +80,12 @@
         &__unsequenced-list &__section--unsequenced {
             margin: 0;
         }
+        &__unsequenced-list &__section--unsequenced &__section__control {
+            &__title {
+                font-weight: $font-weight-normal;
+            }
+        }
+
         &__list {
             @include scut-list-unstyled;
 

@@ -61,6 +61,7 @@ import './js/block/helper/resource-detail-steps-step';
 import './js/block/toolkit-detail';
 // Helpers
 import './js/block/helper/toolkit-detail-list';
-import './js/block/helper/toolkit-detail-section-container';
+import './js/block/helper/toolkit-detail-list-link';
 import './js/block/helper/toolkit-detail-section';
+import './js/block/helper/toolkit-detail-section-container';
 import './js/block/helper/toolkit-detail-section-info';

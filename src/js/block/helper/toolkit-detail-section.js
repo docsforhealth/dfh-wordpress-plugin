@@ -8,6 +8,11 @@ import * as Constants from '../../constants';
 import * as Heading from '../heading';
 import WithInnerBlockAttrs from '../../editor/with-inner-block-attrs';
 
+export const ATTR_OVERALL_MARKUP_ID = 'overallMarkupId';
+export const ATTR_PARENT_CLIENT_ID = 'parentClientId';
+export const ATTR_BACK_BUTTON_LABEL = 'backButtonLabel';
+export const ATTR_NEXT_BUTTON_LABEL = 'nextButtonLabel';
+
 const title = __('Toolkit Section', Constants.TEXT_DOMAIN);
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
@@ -17,10 +22,10 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION, {
   // TODO icon and description
   parent: [Constants.BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER],
   attributes: {
-    overallMarkupId: { type: 'string' },
-    parentClientId: { type: 'string' },
-    backButtonLabel: { type: 'string' },
-    nextButtonLabel: { type: 'string' },
+    [ATTR_OVERALL_MARKUP_ID]: { type: 'string' },
+    [ATTR_PARENT_CLIENT_ID]: { type: 'string' },
+    [ATTR_BACK_BUTTON_LABEL]: { type: 'string' },
+    [ATTR_NEXT_BUTTON_LABEL]: { type: 'string' },
     index: { type: 'number' },
     isLastBlock: { type: 'boolean' },
   },
@@ -28,7 +33,7 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION, {
     const store = select(Constants.STORE_BLOCK_EDITOR);
     return {
       // see https://developer.wordpress.org/block-editor/data/data-core-block-editor/#getBlockIndex
-      index: store.getBlockIndex(clientId, attributes.parentClientId),
+      index: store.getBlockIndex(clientId, attributes[ATTR_PARENT_CLIENT_ID]),
       // see https://developer.wordpress.org/block-editor/data/data-core-block-editor/#getNextBlockClientId
       isLastBlock: !store.getNextBlockClientId(clientId),
     };
@@ -100,20 +105,20 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION, {
               <button
                 type="button"
                 className="button-container__button button button--outline"
-                data-slick-nav-target-id={attributes.overallMarkupId}
+                data-slick-nav-target-id={attributes[ATTR_OVERALL_MARKUP_ID]}
                 data-slick-nav-method="slickPrev"
               >
-                {attributes.backButtonLabel}
+                {attributes[ATTR_BACK_BUTTON_LABEL]}
               </button>
             )}
             {!attributes.isLastBlock && (
               <button
                 type="button"
                 className="button-container__button button button--secondary"
-                data-slick-nav-target-id={attributes.overallMarkupId}
+                data-slick-nav-target-id={attributes[ATTR_OVERALL_MARKUP_ID]}
                 data-slick-nav-method="slickNext"
               >
-                {attributes.nextButtonLabel}
+                {attributes[ATTR_NEXT_BUTTON_LABEL]}
               </button>
             )}
           </div>
@@ -122,3 +127,28 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION, {
     );
   },
 });
+
+function tryUpdateSectionData(innerBlockData, attributes, setAttributes) {
+  const sectionInfoList = [],
+    linkInfoList = [];
+  innerBlockData.forEach(({ name, attributes }) => {
+    if (name === Constants.BLOCK_TOOLKIT_DETAIL_SECTION_INFO) {
+      sectionInfoList.push({
+        [INT_SECTION_TITLE]: attributes[SectionInfo.ATTR_TITLE],
+        [INT_SECTION_PRESENTER]: attributes[SectionInfo.ATTR_PRESENTER],
+      });
+    } else if (name === Constants.BLOCK_TOOLKIT_DETAIL_LIST_LINK) {
+      linkInfoList.push({
+        [INT_LINK_TITLE]: attributes[LinkList.ATTR_TITLE],
+        [INT_LINK_URL]: attributes[LinkList.ATTR_URL],
+        [INT_LINK_SHOWATEND]: attributes[LinkList.ATTR_SHOW_AT_END],
+      });
+    }
+  });
+  if (
+    !_.isEqual(sectionInfoList, attributes.sectionInfoList) ||
+    !_.isEqual(linkInfoList, attributes.linkInfoList)
+  ) {
+    setAttributes({ sectionInfoList, linkInfoList });
+  }
+}
