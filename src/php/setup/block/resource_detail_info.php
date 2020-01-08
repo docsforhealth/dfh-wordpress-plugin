@@ -21,7 +21,7 @@ function dfh_dynamic_render_resource_detail_info($attributes) {
         <a href="<?php echo dfh_get_resources_overview_url(); ?>" class="heading__nav">
             <img src="<?php echo esc_url(plugins_url('/assets/images/icon-arrow.svg', DFH_PLUGIN_ROOT)); ?>"
                 class="heading__nav__image"
-                alt="Back arrow to return to previous page">
+                alt="Back arrow to return to all resources page">
             <span class="heading__nav__text">
                 <?php echo esc_html($all_resources_label); ?>
             </span>

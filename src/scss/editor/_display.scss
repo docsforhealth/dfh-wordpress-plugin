@@ -43,9 +43,16 @@
     &__label {
         display: block;
         padding: $baseunit * 0.15;
-        margin-bottom: $baseunit * 0.25;
+        margin: ($baseunit * 0.25) 0;
         background-color: $color-seafoam-dark-1;
         border-radius: $border-radius;
         text-align: center;
+
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }

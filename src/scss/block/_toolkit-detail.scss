@@ -176,6 +176,7 @@
             & &__control {
                 display: block;
                 width: 100%;
+                min-height: $height-control;
                 padding: $control-padding-size;
                 font-weight: $font-weight-normal;
                 text-align: left;

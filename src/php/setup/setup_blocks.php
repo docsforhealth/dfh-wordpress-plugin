@@ -105,4 +105,5 @@ function dfh_register_dynamic_blocks() {
     require DFH_PLUGIN_DIR . '/src/php/setup/block/resource_category_filter.php';
     require DFH_PLUGIN_DIR . '/src/php/setup/block/resource_detail_info.php';
     require DFH_PLUGIN_DIR . '/src/php/setup/block/resource_overview.php';
+    require DFH_PLUGIN_DIR . '/src/php/setup/block/toolkit_detail_header.php';
 }

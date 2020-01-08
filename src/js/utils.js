@@ -5,7 +5,7 @@ import { Children } from 'react';
 
 import * as Constants from './constants';
 
-export function handleForceAllAttrs(allowedBlockNames, forceAttrsObj) {
+export function handleForceAllAttrs(forceAttrsObj, allowedBlockNames = null) {
   if (
     !forceAttrsObj ||
     !forceAttrsObj[Constants.INNER_BLOCKS_FORCE_ATTRS_ALL]
@@ -14,8 +14,12 @@ export function handleForceAllAttrs(allowedBlockNames, forceAttrsObj) {
   }
   const allAttrs = forceAttrsObj[Constants.INNER_BLOCKS_FORCE_ATTRS_ALL],
     newAttrsObj = {};
-  allowedBlockNames.forEach(blockName => {
-    newAttrsObj[blockName] = _.assign({}, allAttrs, forceAttrsObj[blockName]);
+  // If not `allowedBlockNames` are specified, then we just copy all attribute in the force all
+  // object to the keys that are currently in the object
+  (allowedBlockNames || Object.keys(forceAttrsObj)).forEach(blockName => {
+    if (blockName !== Constants.INNER_BLOCKS_FORCE_ATTRS_ALL) {
+      newAttrsObj[blockName] = _.assign({}, allAttrs, forceAttrsObj[blockName]);
+    }
   });
   return newAttrsObj;
 }

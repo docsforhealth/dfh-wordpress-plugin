@@ -32,7 +32,11 @@ export function buildSaveElement(title, url) {
 registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_LIST_LINK, {
   title: __('Toolkit Link', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY_TOOLKIT,
-  // TODO icon and description
+  icon: 'admin-links',
+  description: __(
+    'Relevant link for a specific toolkit',
+    Constants.TEXT_DOMAIN,
+  ),
   parent: [Constants.BLOCK_TOOLKIT_DETAIL_LIST],
   attributes: {
     [ATTR_TITLE]: { type: 'string' },

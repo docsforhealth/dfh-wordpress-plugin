@@ -42,8 +42,8 @@ registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
         <WithInnerBlockAttrs
           clientId={clientId}
           innerBlockAttrs={handleForceAllAttrs(
-            allowedBlockNames,
             attributes.forceAttributes,
+            allowedBlockNames,
           )}
         >
           <InnerBlocks

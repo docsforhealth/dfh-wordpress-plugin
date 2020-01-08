@@ -13,7 +13,11 @@ export const ATTR_TITLE = 'title';
 registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION_INFO, {
   title: __('Toolkit Section Info', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY_TOOLKIT,
-  // TODO icon and description
+  icon: 'analytics',
+  description: __(
+    'Title and presenter for a particular section of a toolkit',
+    Constants.TEXT_DOMAIN,
+  ),
   supports: { inserter: false },
   attributes: {
     [ATTR_INDEX]: { type: 'number' },

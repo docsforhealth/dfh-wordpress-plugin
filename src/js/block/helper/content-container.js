@@ -60,8 +60,8 @@ registerBlockType(Constants.BLOCK_CONTENT_CONTAINER, {
         <WithInnerBlockAttrs
           clientId={clientId}
           innerBlockAttrs={handleForceAllAttrs(
-            allowedBlockNames,
             attributes.forceAttributes,
+            allowedBlockNames,
           )}
         >
           <InnerBlocks

@@ -13,13 +13,15 @@ export const ATTR_PARENT_CLIENT_ID = 'parentClientId';
 export const ATTR_BACK_BUTTON_LABEL = 'backButtonLabel';
 export const ATTR_NEXT_BUTTON_LABEL = 'nextButtonLabel';
 
-const title = __('Toolkit Section', Constants.TEXT_DOMAIN);
-
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION, {
-  title,
+  title: __('Toolkit Section', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY_TOOLKIT,
-  // TODO icon and description
+  icon: 'analytics',
+  description: __(
+    'Text and rich media content for a particular section of a toolkit',
+    Constants.TEXT_DOMAIN,
+  ),
   parent: [Constants.BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER],
   attributes: {
     [ATTR_OVERALL_MARKUP_ID]: { type: 'string' },
@@ -45,8 +47,8 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION, {
     return (
       <Fragment>
         <div className="dfh-editor-block-title dfh-editor-block-title--nested">
+          <div>{__('Section', Constants.TEXT_DOMAIN)}</div>
           <span className="dfh-editor-block-title__label">{index + 1}</span>
-          {title}
         </div>
         <div className="toolkit-detail-section">
           <WithInnerBlockAttrs

@@ -27,7 +27,11 @@ const debouncedTryUpdateInnerBlockData = _.debounce(
 registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_LIST, {
   title: __('Toolkit Detail List', Constants.TEXT_DOMAIN),
   category: Constants.CATEGORY_TOOLKIT,
-  // TODO icon and description
+  icon: 'excerpt-view',
+  description: __(
+    'Links and navigation for a specific toolkit',
+    Constants.TEXT_DOMAIN,
+  ),
   supports: { inserter: false },
   attributes: {
     [ATTR_OVERALL_MARKUP_ID]: { type: 'string' },
@@ -64,48 +68,45 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_LIST, {
     const { sectionInfoList, linkInfoList } = attributes,
       numSections = sectionInfoList.length;
     return (
-      <div className="toolkit-detail-container__list">
-        <div className="toolkit-detail-container__header" />
-        <div className="toolkit-topics">
-          <ol className="toolkit-topics__unsequenced-list">
-            <InnerBlocks.Content />
-          </ol>
-          <button
-            type="button"
-            className="toolkit-topics__toggle button button--small button--outline button--secondary"
-          >
-            Show all {numSections} sections
-          </button>
-          <ol className="toolkit-topics__list">
-            {linkInfoList
-              // Show at end is false
-              .filter(info => !info[INT_LINK_SHOWATEND])
-              .map(info =>
-                LinkList.buildSaveElement(
-                  info[INT_LINK_TITLE],
-                  info[INT_LINK_URL],
-                ),
-              )}
-            {[...Array(numSections).keys()].map(index =>
-              // Toolkit sections are in the middle
-              buildSectionItem(
-                attributes[ATTR_OVERALL_MARKUP_ID],
-                sectionInfoList[index],
-                numSections,
-                index,
+      <div className="toolkit-topics">
+        <ol className="toolkit-topics__unsequenced-list">
+          <InnerBlocks.Content />
+        </ol>
+        <button
+          type="button"
+          className="toolkit-topics__toggle button button--small button--outline button--secondary"
+        >
+          Show all {numSections} sections
+        </button>
+        <ol className="toolkit-topics__list">
+          {linkInfoList
+            // Show at end is false
+            .filter(info => !info[INT_LINK_SHOWATEND])
+            .map(info =>
+              LinkList.buildSaveElement(
+                info[INT_LINK_TITLE],
+                info[INT_LINK_URL],
               ),
             )}
-            {linkInfoList
-              // Show at end is true
-              .filter(info => info[INT_LINK_SHOWATEND])
-              .map(info =>
-                LinkList.buildSaveElement(
-                  info[INT_LINK_TITLE],
-                  info[INT_LINK_URL],
-                ),
-              )}
-          </ol>
-        </div>
+          {[...Array(numSections).keys()].map(index =>
+            // Toolkit sections are in the middle
+            buildSectionItem(
+              attributes[ATTR_OVERALL_MARKUP_ID],
+              sectionInfoList[index],
+              numSections,
+              index,
+            ),
+          )}
+          {linkInfoList
+            // Show at end is true
+            .filter(info => info[INT_LINK_SHOWATEND])
+            .map(info =>
+              LinkList.buildSaveElement(
+                info[INT_LINK_TITLE],
+                info[INT_LINK_URL],
+              ),
+            )}
+        </ol>
       </div>
     );
   },

@@ -1,6 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
+import { TextControl } from '@wordpress/components';
 
 import * as Constants from '../../constants';
 import * as Section from './toolkit-detail-section';
@@ -10,16 +11,30 @@ import WithInnerBlockAttrs from '../../editor/with-inner-block-attrs';
 // Section. Also, this block ensures that the index calculations in the Section block will
 // always be correct because the only children that can be inserted are Section blocks
 
+const title = __('Toolkit Sections', Constants.TEXT_DOMAIN);
+
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER, {
-  title: __('Toolkit Sections', Constants.TEXT_DOMAIN),
+  title,
   category: Constants.CATEGORY_TOOLKIT,
-  // TODO icon and description
+  icon: 'book-alt',
+  description: __(
+    'The sections that form the heart of this toolkit',
+    Constants.TEXT_DOMAIN,
+  ),
   supports: { inserter: false },
   attributes: {
     [Section.ATTR_OVERALL_MARKUP_ID]: { type: 'string' },
+    backButtonLabel: {
+      type: 'string',
+      default: __('Back', Constants.TEXT_DOMAIN),
+    },
+    nextButtonLabel: {
+      type: 'string',
+      default: __('Next', Constants.TEXT_DOMAIN),
+    },
   },
-  edit({ attributes, clientId }) {
+  edit({ clientId, attributes, setAttributes }) {
     return (
       <WithInnerBlockAttrs
         clientId={clientId}
@@ -28,15 +43,32 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER, {
             [Section.ATTR_OVERALL_MARKUP_ID]:
               attributes[Section.ATTR_OVERALL_MARKUP_ID],
             [Section.ATTR_PARENT_CLIENT_ID]: clientId,
-            // Because these attribute aren't used in THIS block's save hook, these can be passed
-            // through to directly child blocks
-            [Section.ATTR_BACK_BUTTON_LABEL]:
-              attributes[Section.ATTR_BACK_BUTTON_LABEL],
-            [Section.ATTR_NEXT_BUTTON_LABEL]:
-              attributes[Section.ATTR_NEXT_BUTTON_LABEL],
+            [Section.ATTR_BACK_BUTTON_LABEL]: attributes.backButtonLabel,
+            [Section.ATTR_NEXT_BUTTON_LABEL]: attributes.nextButtonLabel,
           },
         }}
       >
+        <div className="dfh-editor-block-title dfh-editor-block-title--nested">
+          {title}
+        </div>
+        <TextControl
+          label={__('Previous section button label', Constants.TEXT_DOMAIN)}
+          help={__(
+            'Navigation buttons only shown on mobile devices',
+            Constants.TEXT_DOMAIN,
+          )}
+          value={attributes.backButtonLabel}
+          onChange={backButtonLabel => setAttributes({ backButtonLabel })}
+        />
+        <TextControl
+          label={__('Next section button label', Constants.TEXT_DOMAIN)}
+          help={__(
+            'Navigation buttons only shown on mobile devices',
+            Constants.TEXT_DOMAIN,
+          )}
+          value={attributes.nextButtonLabel}
+          onChange={nextButtonLabel => setAttributes({ nextButtonLabel })}
+        />
         <InnerBlocks
           allowedBlocks={[Constants.BLOCK_TOOLKIT_DETAIL_SECTION]}
           // If parent InnerBlocks is locked, then we explicitly need to unlock this

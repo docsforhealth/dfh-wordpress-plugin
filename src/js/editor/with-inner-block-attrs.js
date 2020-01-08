@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 import { dispatch, withSelect } from '@wordpress/data';
 import { InnerBlocks } from '@wordpress/block-editor';
@@ -16,7 +17,15 @@ export default withSelect((select, { clientId }) => {
 })(WithInnerBlockAttrs);
 
 function WithInnerBlockAttrs({ foundBlocks, innerBlockAttrs, children }) {
-  const updateHandler = () => updateInnerBlocks(foundBlocks, innerBlockAttrs);
+  // Don't need to try to override inner block attributes if none are specified
+  if (!innerBlockAttrs) {
+    return children;
+  }
+  // Only try to update inner blocks if `innerBlockAttrs` is specified
+  const updateHandler = _.debounce(
+    () => updateInnerBlocks(foundBlocks, innerBlockAttrs),
+    500,
+  );
   // ensure attributes are applied on initial render even if this block does not receive focus
   updateHandler();
   // check that one top-level child is an `InnerBlocks`
