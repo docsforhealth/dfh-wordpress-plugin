@@ -9,7 +9,7 @@ function dfh_register_resource_type() {
     // see https://developer.wordpress.org/plugins/post-types/registering-custom-post-types/
     register_post_type(DFH_CONTENT_TYPE_RESOURCE, array(
         'hierarchical'        => false,
-        'supports'            => array('title', 'editor', 'excerpt'),
+        'supports'            => array('title', 'editor', 'excerpt'), // TODO remove excerpt?
         'public'              => true,
         'show_ui'             => true,
         'show_in_rest'        => true,
@@ -20,8 +20,8 @@ function dfh_register_resource_type() {
         'can_export'          => true,
         'rewrite'             => array('slug' => 'resources', 'with_front' => false),
         'menu_icon'           => 'dashicons-image-filter',
-        'template'            => array(array('dfh/resource-detail', array())),
-        'template_lock'       => 'all',
+        'template'            => array(array(DFH_REQUIRED_BLOCK_RESOURCE)),
+        // 'template_lock'       => 'all', // TODO restore
         'labels'              => array(
             'name'               => __('Resources', DFH_TEXT_DOMAIN),
             'singular_name'      => __('Resource', DFH_TEXT_DOMAIN),
@@ -70,7 +70,7 @@ function dfh_register_toolkit_type() {
     // see https://developer.wordpress.org/plugins/post-types/registering-custom-post-types/
     register_post_type(DFH_CONTENT_TYPE_TOOLKIT, array(
         'hierarchical'        => false,
-        'supports'            => array('title', 'editor', 'excerpt'),
+        'supports'            => array('title', 'editor'),
         'public'              => true,
         'show_ui'             => true,
         'show_in_rest'        => true,
@@ -81,9 +81,8 @@ function dfh_register_toolkit_type() {
         'can_export'          => true,
         'rewrite'             => array('slug' => 'toolkits', 'with_front' => false),
         'menu_icon'           => 'dashicons-portfolio',
-        // TODO
-        // 'template'            => array(array('dfh/toolkit-detail', array())),
-        // 'template_lock'       => 'all',
+        'template'            => array(array(DFH_REQUIRED_BLOCK_TOOLKIT)),
+        // 'template_lock'       => 'all', // TODO restore
         'labels'              => array(
             'name'               => __('Toolkits', DFH_TEXT_DOMAIN),
             'singular_name'      => __('Toolkit', DFH_TEXT_DOMAIN),

@@ -59,10 +59,12 @@ import './js/block/helper/resource-detail-steps-step';
  * Toolkit blocks
  */
 import './js/block/toolkit-detail';
+import './js/block/toolkit-previews';
 // Helpers
 import './js/block/dynamic/helper/toolkit-detail-header';
 import './js/block/helper/toolkit-detail-list';
 import './js/block/helper/toolkit-detail-list-link';
+import './js/block/helper/toolkit-detail-metadata';
 import './js/block/helper/toolkit-detail-section';
 import './js/block/helper/toolkit-detail-section-container';
 import './js/block/helper/toolkit-detail-section-info';

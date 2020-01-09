@@ -2,9 +2,9 @@ import { __ } from '@wordpress/i18n';
 import { Fragment } from '@wordpress/element';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-import { withDispatch } from '@wordpress/data';
 
 import * as Constants from '../constants';
+import { withValidTemplate } from '../utils';
 
 const title = __('Resource Detail', Constants.TEXT_DOMAIN);
 
@@ -17,14 +17,7 @@ registerBlockType(`${Constants.NAMESPACE}/resource-detail`, {
     'Detailed information for a specific resource',
     Constants.TEXT_DOMAIN,
   ),
-  // [FUTURE] This hack forces the template to appear valid when locking template containing InnerBlocks
-  // See https://github.com/WordPress/gutenberg/issues/11681
-  edit: withDispatch(dispatch => {
-    // set a timeout because block editor sometimes takes longer to load when reating a new resource
-    setTimeout(() =>
-      dispatch(Constants.STORE_BLOCK_EDITOR).setTemplateValidity(true),
-    );
-  })(() => {
+  edit: withValidTemplate(() => {
     return (
       <Fragment>
         <div className="dfh-editor-block-title">{title}</div>

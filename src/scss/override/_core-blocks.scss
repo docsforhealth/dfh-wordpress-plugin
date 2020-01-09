@@ -25,6 +25,9 @@
     .components-form-file-upload {
         margin-right: $baseunit;
     }
+    .components-placeholder__input + .components-button {
+        margin-left: $baseunit;
+    }
 }
 
 // For `core/separator`

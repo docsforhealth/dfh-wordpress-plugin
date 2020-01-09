@@ -34,8 +34,9 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_LIST, {
   ),
   supports: { inserter: false },
   attributes: {
+    // NOTE do not need to save `ATTR_PARENT_CLIENT_ID` because this changes with every page load
+    // [ATTR_PARENT_CLIENT_ID]: { type: 'string' },
     [ATTR_OVERALL_MARKUP_ID]: { type: 'string' },
-    [ATTR_PARENT_CLIENT_ID]: { type: 'string' },
     sectionInfoList: { type: 'array', default: [] },
     linkInfoList: { type: 'array', default: [] },
   },
@@ -59,7 +60,6 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_LIST, {
           allowedBlocks={[Constants.BLOCK_TOOLKIT_DETAIL_LIST_LINK]}
           // If parent InnerBlocks is locked, then we explicitly need to unlock this
           templateLock={Constants.INNER_BLOCKS_UNLOCKED}
-          template={[[Constants.BLOCK_TOOLKIT_DETAIL_LIST_LINK]]}
         />
       </Fragment>
     );

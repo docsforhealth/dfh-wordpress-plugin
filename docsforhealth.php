@@ -37,8 +37,17 @@ if (!defined('DFH_TEXT_DOMAIN')) {
 if (!defined('DFH_CONTENT_TYPE_RESOURCE')) {
     define('DFH_CONTENT_TYPE_RESOURCE', 'dfh_resource');
 }
+if (!defined('DFH_REQUIRED_BLOCK_RESOURCE')) {
+    define('DFH_REQUIRED_BLOCK_RESOURCE', 'dfh/resource-detail');
+}
 if (!defined('DFH_CONTENT_TYPE_TOOLKIT')) {
     define('DFH_CONTENT_TYPE_TOOLKIT', 'dfh_toolkit');
+}
+if (!defined('DFH_REQUIRED_BLOCK_TOOLKIT')) {
+    define('DFH_REQUIRED_BLOCK_TOOLKIT', 'dfh/toolkit-detail');
+}
+if (!defined('DFH_REQUIRED_BLOCK_TOOLKIT_METADATA')) {
+    define('DFH_REQUIRED_BLOCK_TOOLKIT_METADATA', 'dfh/toolkit-detail-metadata');
 }
 if (!defined('DFH_TAXONOMY_RESOURCE')) {
     define('DFH_TAXONOMY_RESOURCE', 'dfh_resource_classification');

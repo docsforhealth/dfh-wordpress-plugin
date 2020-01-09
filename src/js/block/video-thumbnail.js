@@ -1,13 +1,13 @@
 import _ from 'lodash';
-import getThumbnail from 'thumbnail-youtube-vimeo';
 import { __ } from '@wordpress/i18n';
 import { Fragment } from '@wordpress/element';
 import { registerBlockType } from '@wordpress/blocks';
 import { TextControl } from '@wordpress/components';
 
 import * as Constants from '../constants';
+import { fetchVideoThumbnail } from '../utils';
 
-const wrappedUpdateThumbnail = _.debounce(updateThumbnail, 250);
+const wrappedUpdateThumbnail = _.debounce(updateThumbnail, 200);
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_VIDEO_THUMBNAIL, {
@@ -73,9 +73,8 @@ registerBlockType(Constants.BLOCK_VIDEO_THUMBNAIL, {
   },
 });
 
-// see https://github.com/De-Luxis/thumbnail-youtube-vimeo#readme
 function updateThumbnail(videoUrl, setAttributes) {
-  getThumbnail(videoUrl).then(
+  fetchVideoThumbnail(videoUrl).then(
     thumbnailUrl => setAttributes({ thumbnailUrl }),
     () => setAttributes({ thumbnailUrl: null }),
   );

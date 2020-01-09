@@ -101,15 +101,6 @@
         z-index: $z-index-front-1;
     }
 
-    &__none {
-        @extend .container;
-        @extend .container--narrow;
-        @extend .text;
-        @extend .text--light;
-
-        text-align: center;
-        padding-top: $baseunit * 2;
-    }
     &__preview {
         position: relative;
         display: flex;

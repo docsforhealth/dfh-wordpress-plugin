@@ -4,8 +4,10 @@ import { registerBlockType } from '@wordpress/blocks';
 
 import * as Constants from '../constants';
 import * as DetailList from './helper/toolkit-detail-list';
+import * as Metadata from './helper/toolkit-detail-metadata';
 import * as Section from './helper/toolkit-detail-section';
 import WithInnerBlockAttrs from '../editor/with-inner-block-attrs';
+import { withValidTemplate } from '../utils';
 
 const title = __('Toolkit Detail', Constants.TEXT_DOMAIN);
 
@@ -18,13 +20,13 @@ registerBlockType(`${Constants.NAMESPACE}/toolkit-detail`, {
     'Video, text, and link resources that form a toolkit',
     Constants.TEXT_DOMAIN,
   ),
-  edit({ clientId }) {
+  edit: withValidTemplate(({ clientId }) => {
     return (
       <WithInnerBlockAttrs
         clientId={clientId}
         innerBlockAttrs={{
-          [Constants.BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER]: {
-            [Section.ATTR_OVERALL_MARKUP_ID]: clientId,
+          [Constants.BLOCK_TOOLKIT_DETAIL_METADATA]: {
+            [Metadata.ATTR_PARENT_CLIENT_ID]: clientId,
           },
           // Need to do this because we want to dynamically set the attributes to force via
           // the inner block wrapper every time because the clientId changes every time
@@ -36,12 +38,16 @@ registerBlockType(`${Constants.NAMESPACE}/toolkit-detail`, {
               },
             },
           },
+          [Constants.BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER]: {
+            [Section.ATTR_OVERALL_MARKUP_ID]: clientId,
+          },
         }}
       >
         <div className="dfh-editor-block-title">{title}</div>
         <InnerBlocks
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
+            [Constants.BLOCK_TOOLKIT_DETAIL_METADATA],
             [
               Constants.BLOCK_INNER_BLOCK_WRAPPER,
               {
@@ -58,7 +64,7 @@ registerBlockType(`${Constants.NAMESPACE}/toolkit-detail`, {
         />
       </WithInnerBlockAttrs>
     );
-  },
+  }),
   save() {
     return (
       <div className="toolkit-detail-container">

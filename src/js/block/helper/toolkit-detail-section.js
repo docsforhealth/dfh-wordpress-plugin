@@ -24,8 +24,9 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION, {
   ),
   parent: [Constants.BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER],
   attributes: {
+    // NOTE do not need to save `ATTR_PARENT_CLIENT_ID` because this changes with every page load
+    // [ATTR_PARENT_CLIENT_ID]: { type: 'string' },
     [ATTR_OVERALL_MARKUP_ID]: { type: 'string' },
-    [ATTR_PARENT_CLIENT_ID]: { type: 'string' },
     [ATTR_BACK_BUTTON_LABEL]: { type: 'string' },
     [ATTR_NEXT_BUTTON_LABEL]: { type: 'string' },
     index: { type: 'number' },
@@ -74,7 +75,7 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION, {
                       },
                     },
                     template: [
-                      [Constants.CORE_BLOCK_VIDEO],
+                      [Constants.CORE_BLOCK_EMBED],
                       [Constants.BLOCK_TEXT],
                       [Constants.CORE_BLOCK_SEPARATOR],
                       [

@@ -17,6 +17,7 @@ addFilter(
       'core/spacer': Constants.CATEGORY_LAYOUT,
 
       'core/audio': Constants.CATEGORY_MEDIA,
+      'core/embed': Constants.CATEGORY_MEDIA,
       'core/gallery': Constants.CATEGORY_MEDIA,
       'core/image': Constants.CATEGORY_MEDIA,
       'core/video': Constants.CATEGORY_MEDIA,

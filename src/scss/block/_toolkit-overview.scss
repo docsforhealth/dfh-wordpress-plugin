@@ -22,35 +22,39 @@
         align-items: baseline;
         margin-bottom: $baseunit * 0.5;
 
+        &__title,
+        &__metadata {
+            flex-grow: 1;
+            min-width: 0;
+        }
+        &__title {
+            @include scut-truncate;
+        }
         &__metadata {
             @include scut-list-unstyled;
+
+            width: 100%;
+            white-space: nowrap;
+            overflow-x: scroll;
+            overflow-y: hidden;
         }
     }
-    // TODO integrate with video-thumbnail block styles
-    &__video {
+    & &__video {
         position: relative;
-        min-width: 30%;
         background-color: $color-seafoam;
+        text-align: center;
 
-        &:hover &__control,
-        &:focus &__control,
-        &:active &__control {
-            opacity: 1;
+        &__thumbnail {
+            margin: 0;
+            width: auto;
+            max-width: none;
         }
-
         &__image {
             height: 100%;
             width: 100%;
             max-height: 50vh;
-            object-fit: contain;
-        }
-        &__control {
-            @extend .button;
-            @extend .button--secondary;
-            @include scut-center-transform;
-
-            opacity: 0;
-            transition: opacity 0.1s;
+            border-width: 0;
+            border-radius: 0;
         }
     }
 
@@ -74,17 +78,27 @@
 
         &__info {
             flex-grow: 1;
+            min-width: 0;
             padding: $baseunit $unit-horizontal-overhang-small;
             margin-bottom: 0;
+        }
+        &__video {
+            flex-shrink: 0;
+            width: 30%;
         }
         &__header {
             flex-direction: row;
             margin-bottom: 0;
 
+            &__title,
+            &__metadata {
+                flex-grow: 0;
+            }
             &__metadata {
                 // `inline-flex` for proper baseline alignment
                 // see: https://www.kizu.ru/flex-baseline/;
                 display: inline-flex;
+                width: auto;
                 margin-left: $baseunit;
             }
         }
@@ -100,9 +114,7 @@
         width: calc(100% + #{$unit-horizontal-overhang * 2});
 
         &__info {
-            flex-grow: 1;
             padding: $baseunit $unit-horizontal-overhang;
-            margin-bottom: 0;
         }
     }
 }

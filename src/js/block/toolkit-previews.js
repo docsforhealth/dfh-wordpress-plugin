@@ -7,15 +7,15 @@ import { TextareaControl } from '@wordpress/components';
 
 import * as Constants from '../constants';
 
-const title = __('Resource Previews', Constants.TEXT_DOMAIN);
+const title = __('Toolkit Previews', Constants.TEXT_DOMAIN);
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
-registerBlockType(`${Constants.NAMESPACE}/resource-previews`, {
+registerBlockType(`${Constants.NAMESPACE}/toolkit-previews`, {
   title,
-  category: Constants.CATEGORY_RESOURCE,
+  category: Constants.CATEGORY_TOOLKIT,
   icon: 'welcome-view-site',
   description: __(
-    'Displays, searches, and filters previews of all resources',
+    'Displays and searches previews of all toolkits',
     Constants.TEXT_DOMAIN,
   ),
   attributes: {
@@ -23,7 +23,7 @@ registerBlockType(`${Constants.NAMESPACE}/resource-previews`, {
     noResultsMessage: {
       type: 'string',
       default: __(
-        "No resources found. Please try another search or let us know what we're missing.",
+        "No toolkits found. Please try another search or let us know what we're missing.",
         Constants.TEXT_DOMAIN,
       ),
     },
@@ -42,9 +42,6 @@ registerBlockType(`${Constants.NAMESPACE}/resource-previews`, {
                 hideBlockTitleInEdit: true,
                 hideInnerBlocksInEdit: true,
                 template: [
-                  buildMessageAreaInfo(
-                    'page-header__metadata page-header__metadata--secondary',
-                  ),
                   [
                     Constants.BLOCK_INNER_BLOCK_WRAPPER,
                     {
@@ -57,7 +54,7 @@ registerBlockType(`${Constants.NAMESPACE}/resource-previews`, {
                           Constants.BLOCK_SEARCH_INPUT,
                           {
                             placeholder: __(
-                              'Search for a resource...',
+                              'Search for a toolkit...',
                               Constants.TEXT_DOMAIN,
                             ),
                           },
@@ -65,17 +62,6 @@ registerBlockType(`${Constants.NAMESPACE}/resource-previews`, {
                       ],
                     },
                   ],
-                ],
-              },
-            ],
-            [
-              Constants.BLOCK_INNER_BLOCK_WRAPPER,
-              {
-                wrapperClassNames: ['resource-categories'],
-                isLocked: true,
-                template: [
-                  buildMessageAreaInfo('resource-categories__metadata'),
-                  [Constants.BLOCK_RESOURCE_CATEGORY_FILTER],
                 ],
               },
             ],
@@ -94,34 +80,18 @@ registerBlockType(`${Constants.NAMESPACE}/resource-previews`, {
       <Fragment>
         <InnerBlocks.Content />
         <RawHTML>
-          {
-            // See `alm_templates/default.php` in the THEME for resource markup
-            `[ajax_load_more
-              id="${Constants.AJAX_ID_RESOURCE}"
+          {// See `alm_templates/default.php` in the THEME for toolkit markup
+          `[ajax_load_more
+              id="${Constants.AJAX_ID_TOOLKIT}"
               container_type="div"
-              transition_container_classes="resource-previews"
-              post_type="${Constants.CONTENT_TYPE_RESOURCE}"
+              transition_container_classes="container"
+              post_type="${Constants.CONTENT_TYPE_TOOLKIT}"
               no_results_text="<div class='ajax-loader-none'>${_.escape(
                 attributes.noResultsMessage,
               )}</div>"
-              posts_per_page="12"]`
-          }
+              posts_per_page="8"]`}
         </RawHTML>
       </Fragment>
     );
   },
 });
-
-// Insert wrapper `span`s for the frontend script to dynamically update with
-// message of the number of categories currently selected
-function buildMessageAreaInfo(additionalClassName = '') {
-  return [
-    Constants.BLOCK_INNER_BLOCK_WRAPPER,
-    {
-      wrapperClassNames: [
-        `${Constants.CLASS_RESOURCE_MESSAGE_AREA} ${additionalClassName}`,
-      ],
-      isLocked: true,
-    },
-  ];
-}
