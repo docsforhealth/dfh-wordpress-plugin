@@ -1,8 +1,10 @@
 import { __ } from '@wordpress/i18n';
+import { Fragment } from '@wordpress/element';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as Constants from '../../constants';
+import * as Heading from '../heading';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
@@ -13,7 +15,10 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
   supports: { inserter: false },
   edit() {
     return (
-      <div className="resource-detail__steps">
+      <Fragment>
+        <div className="dfh-editor-block-title dfh-editor-block-title--nested">
+          {__('Documents & Steps', Constants.TEXT_DOMAIN)}
+        </div>
         <InnerBlocks
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
@@ -21,9 +26,10 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
               Constants.BLOCK_HEADING,
               {
                 mainTitle: __('Documents', Constants.TEXT_DOMAIN),
-                level: Constants.HEADING_SIZE_MEDIUM,
-                showPreTitle: false,
-                showPostTitle: false,
+                [Heading.ATTR_LEVEL]: Constants.HEADING_SIZE_MEDIUM,
+                [Heading.ATTR_OPTION_LEVEL]: false,
+                [Heading.ATTR_SHOW_PRE_TITLE]: false,
+                [Heading.ATTR_SHOW_POST_TITLE]: false,
               },
             ],
             [
@@ -39,15 +45,16 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
               Constants.BLOCK_HEADING,
               {
                 mainTitle: __('Next steps', Constants.TEXT_DOMAIN),
-                level: Constants.HEADING_SIZE_MEDIUM,
-                showPreTitle: false,
-                showPostTitle: false,
+                [Heading.ATTR_LEVEL]: Constants.HEADING_SIZE_MEDIUM,
+                [Heading.ATTR_OPTION_LEVEL]: false,
+                [Heading.ATTR_SHOW_PRE_TITLE]: false,
+                [Heading.ATTR_SHOW_POST_TITLE]: false,
               },
             ],
             [Constants.BLOCK_CONTENT_CONTAINER, { noHeadings: true }],
           ]}
         />
-      </div>
+      </Fragment>
     );
   },
   save() {

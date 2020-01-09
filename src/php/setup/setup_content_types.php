@@ -4,12 +4,28 @@
 // see https://www.billerickson.net/gutenberg-block-templates/
 // see https://developer.wordpress.org/block-editor/developers/block-api/block-templates/#custom-post-types
 
+// Need to flush URL rewrite rules when plugin is re-activated in order to get custom post type
+// URL rewriting rules to work as intended
+// see https://developer.wordpress.org/reference/functions/register_post_type/#flushing-rewrite-on-activation
+register_activation_hook(__FILE__, 'dfh_activation_rewrite_flush');
+function dfh_activation_rewrite_flush() {
+    // First, we "add" the custom post type via the above written function.
+    // Note: "add" is written with quotes, as CPTs don't get added to the DB,
+    // They are only referenced in the post_type column with a post entry,
+    // when you add a post of this CPT.
+    dfh_register_resource_type();
+    dfh_register_toolkit_type();
+    // ATTENTION: This is *only* done during plugin activation hook
+    // You should *NEVER EVER* do this on every page load!
+    flush_rewrite_rules();
+}
+
 add_action('init', 'dfh_register_resource_type');
 function dfh_register_resource_type() {
     // see https://developer.wordpress.org/plugins/post-types/registering-custom-post-types/
     register_post_type(DFH_CONTENT_TYPE_RESOURCE, array(
         'hierarchical'        => false,
-        'supports'            => array('title', 'editor', 'excerpt'), // TODO remove excerpt?
+        'supports'            => array('title', 'editor'),
         'public'              => true,
         'show_ui'             => true,
         'show_in_rest'        => true,
@@ -20,8 +36,8 @@ function dfh_register_resource_type() {
         'can_export'          => true,
         'rewrite'             => array('slug' => 'resources', 'with_front' => false),
         'menu_icon'           => 'dashicons-image-filter',
-        'template'            => array(array(DFH_REQUIRED_BLOCK_RESOURCE)),
-        // 'template_lock'       => 'all', // TODO restore
+        'template'            => array(array(DFH_TEMPLATE_BLOCK_RESOURCE)),
+        'template_lock'       => 'all',
         'labels'              => array(
             'name'               => __('Resources', DFH_TEXT_DOMAIN),
             'singular_name'      => __('Resource', DFH_TEXT_DOMAIN),
@@ -64,7 +80,6 @@ function dfh_register_resource_type() {
     ));
 }
 
-
 add_action('init', 'dfh_register_toolkit_type');
 function dfh_register_toolkit_type() {
     // see https://developer.wordpress.org/plugins/post-types/registering-custom-post-types/
@@ -81,8 +96,8 @@ function dfh_register_toolkit_type() {
         'can_export'          => true,
         'rewrite'             => array('slug' => 'toolkits', 'with_front' => false),
         'menu_icon'           => 'dashicons-portfolio',
-        'template'            => array(array(DFH_REQUIRED_BLOCK_TOOLKIT)),
-        // 'template_lock'       => 'all', // TODO restore
+        'template'            => array(array(DFH_TEMPLATE_BLOCK_TOOLKIT)),
+        'template_lock'       => 'all',
         'labels'              => array(
             'name'               => __('Toolkits', DFH_TEXT_DOMAIN),
             'singular_name'      => __('Toolkit', DFH_TEXT_DOMAIN),

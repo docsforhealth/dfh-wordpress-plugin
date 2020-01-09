@@ -22,6 +22,7 @@ registerBlockType(Constants.BLOCK_CONTENT_CONTAINER, {
   ),
   supports: { inserter: false },
   attributes: {
+    title: { type: 'string' },
     template: {
       type: 'array',
       default: [[Constants.BLOCK_HEADING], [Constants.BLOCK_TEXT]],
@@ -32,6 +33,7 @@ registerBlockType(Constants.BLOCK_CONTENT_CONTAINER, {
   },
   edit: withPropTypes(
     {
+      title: PropTypes.string,
       template: PropTypes.arrayOf(PropTypes.array),
       isLocked: PropTypes.bool,
       noHeadings: PropTypes.bool,
@@ -64,6 +66,11 @@ registerBlockType(Constants.BLOCK_CONTENT_CONTAINER, {
             allowedBlockNames,
           )}
         >
+          {attributes.title && (
+            <div className="dfh-editor-block-title dfh-editor-block-title--nested">
+              {attributes.title}
+            </div>
+          )}
           <InnerBlocks
             allowedBlocks={allowedBlockNames}
             template={filterInnerBlockTemplate(

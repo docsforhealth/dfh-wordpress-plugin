@@ -51,7 +51,7 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_METADATA, {
     debouncedTryUpdateVideoPreview(innerBlockObjs, attributes, setAttributes);
     return (
       <TextareaControl
-        label={__('Toolkit description', Constants.TEXT_DOMAIN)}
+        label={__('Toolkit summary', Constants.TEXT_DOMAIN)}
         help={__(
           'This short description is used when displaying this toolkit in other parts of the site',
           Constants.TEXT_DOMAIN,

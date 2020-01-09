@@ -1,6 +1,8 @@
 import { __ } from '@wordpress/i18n';
+import { Fragment } from '@wordpress/element';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
+import { TextareaControl } from '@wordpress/components';
 
 import * as Constants from '../../constants';
 
@@ -14,17 +16,35 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_DESCRIPTION, {
     Constants.TEXT_DOMAIN,
   ),
   supports: { inserter: false },
-  edit() {
+  attributes: {
+    description: { type: 'string' },
+  },
+  edit({ attributes, setAttributes }) {
     return (
-      <div className="resource-detail__info">
+      <Fragment>
+        <TextareaControl
+          label={__('Resource summary', Constants.TEXT_DOMAIN)}
+          help={__(
+            'This short description is used when displaying this resource in other parts of the site',
+            Constants.TEXT_DOMAIN,
+          )}
+          value={attributes.description}
+          onChange={description => setAttributes({ description })}
+        />
         <InnerBlocks
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
             [Constants.BLOCK_RESOURCE_DETAIL_INFO],
-            [Constants.BLOCK_CONTENT_CONTAINER, { noHeadings: true }],
+            [
+              Constants.BLOCK_CONTENT_CONTAINER,
+              {
+                noHeadings: true,
+                title: __('Resource Description', Constants.TEXT_DOMAIN),
+              },
+            ],
           ]}
         />
-      </div>
+      </Fragment>
     );
   },
   save() {
