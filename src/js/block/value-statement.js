@@ -29,6 +29,37 @@ registerBlockType(`${Constants.NAMESPACE}/value-statement`, {
     },
   },
   edit({ attributes, setAttributes }) {
+    const Description = (
+        <div className="landing-value__description">
+          <InnerBlocks
+            templateLock={Constants.INNER_BLOCKS_LOCKED}
+            template={[
+              [
+                Constants.BLOCK_CONTENT_CONTAINER,
+                {
+                  forceAttributes: {
+                    [Constants.BLOCK_HEADING]: {
+                      [Heading.ATTR_LEVEL]: Constants.HEADING_SIZE_LARGE,
+                      [Heading.ATTR_OPTION_LEVEL]: false,
+                    },
+                  },
+                },
+              ],
+            ]}
+          />
+        </div>
+      ),
+      Image = (
+        <div className="landing-value__image">
+          <ImagePicker
+            onSelect={({ url, alt }) =>
+              setAttributes({ valueImage: url, valueImageAlt: alt })
+            }
+            url={attributes.valueImage}
+            description={attributes.valueImageAlt}
+          />
+        </div>
+      );
     return (
       <Fragment>
         <InspectorControls>
@@ -44,33 +75,17 @@ registerBlockType(`${Constants.NAMESPACE}/value-statement`, {
         </InspectorControls>
         <div className="dfh-editor-block-title">{title}</div>
         <div className={`landing-value ${buildClassName(attributes)}`}>
-          <div className="landing-value__description">
-            <InnerBlocks
-              templateLock={Constants.INNER_BLOCKS_LOCKED}
-              template={[
-                [
-                  Constants.BLOCK_CONTENT_CONTAINER,
-                  {
-                    forceAttributes: {
-                      [Constants.BLOCK_HEADING]: {
-                        [Heading.ATTR_LEVEL]: Constants.HEADING_SIZE_LARGE,
-                        [Heading.ATTR_OPTION_LEVEL]: false,
-                      },
-                    },
-                  },
-                ],
-              ]}
-            />
-          </div>
-          <div className="landing-value__image">
-            <ImagePicker
-              onSelect={({ url, alt }) =>
-                setAttributes({ valueImage: url, valueImageAlt: alt })
-              }
-              url={attributes.valueImage}
-              description={attributes.valueImageAlt}
-            />
-          </div>
+          {attributes.reverse ? (
+            <Fragment>
+              {Image}
+              {Description}
+            </Fragment>
+          ) : (
+            <Fragment>
+              {Description}
+              {Image}
+            </Fragment>
+          )}
         </div>
       </Fragment>
     );
