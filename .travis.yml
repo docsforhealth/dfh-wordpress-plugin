@@ -23,9 +23,9 @@ deploy:
     token: $GITHUB_TOKEN
     file_glob: true
     file:
-      - ./assets/**/*
-      - ./build/**/*
-      - ./inc/**/*
+      - ./assets
+      - ./build
+      - ./inc
       - ./*.php
     skip_cleanup: true
     overwrite: true
