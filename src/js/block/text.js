@@ -1,9 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import {
-  createBlock,
-  getBlockAttributes,
-  registerBlockType,
-} from '@wordpress/blocks';
+import { createBlock, registerBlockType } from '@wordpress/blocks';
 import { Fragment } from '@wordpress/element';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { ToggleControl, PanelBody, RadioControl } from '@wordpress/components';
@@ -23,6 +19,25 @@ registerBlockType(Constants.BLOCK_TEXT, {
   category: Constants.CATEGORY_COMMON,
   icon: 'editor-paragraph',
   description: __('Paragraph text', Constants.TEXT_DOMAIN),
+  transforms: {
+    // Include a transform from raw DOM nodes so that pasting HTML content will create blocks of this type
+    // instead of defaulting to the fallback `core/paragraph` block
+    // see https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/paragraph/transforms.js
+    // see https://developer.wordpress.org/block-editor/developers/block-api/block-registration/#transforms-optional
+    // see https://github.com/WordPress/gutenberg/blob/03928a55a3b0b88b29573a0fd2389d0e1f28fc7d/packages/blocks/src/api/raw-handling/paste-handler.js#L83
+    from: [
+      {
+        type: 'raw',
+        priority: 10, // `core/paragraph` is a fallback and has lower priority of 20
+        selector: 'p', // select the `p` tags in the Wordpress-generated custom paste markup
+        transform(node) {
+          return createBlock(Constants.BLOCK_TEXT, {
+            [MERGE_BLOCK_PROP_NAME]: node.outerHTML,
+          });
+        },
+      },
+    ],
+  },
   attributes: {
     className: { type: 'string', default: '' },
     deemphasize: { type: 'boolean', default: false },
