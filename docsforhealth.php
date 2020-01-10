@@ -56,7 +56,7 @@ if (!defined('DFH_TAXONOMY_RESOURCE')) {
 
 // from https://waclawjacek.com/check-wordpress-plugin-dependencies/
 if (!class_exists('DFH_Setup')) {
-    require_once DFH_PLUGIN_DIR . '/src/php/class/Setup.php';
+    require_once DFH_PLUGIN_DIR . '/inc/php/class/Setup.php';
     $dfh_setup = new DFH_Setup();
     $dfh_setup->init();
 }

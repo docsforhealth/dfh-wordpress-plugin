@@ -1,0 +1,25 @@
+language: node_js
+os: linux
+branches:
+  only:
+    - master
+cache: yarn
+before_install:
+  - npm config set spin false
+  - npm install --global yarn
+install:
+  - yarn install
+before_deploy:
+  - yarn build
+deploy:
+  - provider: releases
+    token: $GITHUB_TOKEN
+    file_glob: true
+    file:
+      - ./assets/**/*
+      - ./build/**/*
+      - ./inc/**/*
+      - ./*.php
+    skip_cleanup: true
+    on:
+      tags: true

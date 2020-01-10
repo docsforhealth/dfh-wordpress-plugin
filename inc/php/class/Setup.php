@@ -23,10 +23,10 @@ class DFH_Setup {
 
     private function load_classes() {
         // exceptions
-        require_once DFH_PLUGIN_DIR . '/src/php/class/exception/Missing_Dependencies_Exception.php';
+        require_once DFH_PLUGIN_DIR . '/inc/php/class/exception/Missing_Dependencies_Exception.php';
         // dependency checker
-        require_once DFH_PLUGIN_DIR . '/src/php/class/Dependency_Checker.php';
-        require_once DFH_PLUGIN_DIR . '/src/php/class/Missing_Dependency_Reporter.php';
+        require_once DFH_PLUGIN_DIR . '/inc/php/class/Dependency_Checker.php';
+        require_once DFH_PLUGIN_DIR . '/inc/php/class/Missing_Dependency_Reporter.php';
     }
 
     private function report_missing_dependencies($missing_plugin_names) {
@@ -35,13 +35,13 @@ class DFH_Setup {
     }
 
     private function setup_plugin() {
-        require_once DFH_PLUGIN_DIR . '/src/php/setup/helpers.php';
-        require_once DFH_PLUGIN_DIR . '/src/php/setup/remove_comments.php';
-        require_once DFH_PLUGIN_DIR . '/src/php/setup/remove_default_post_type.php';
-        require_once DFH_PLUGIN_DIR . '/src/php/setup/remove_default_taxonomies.php';
-        require_once DFH_PLUGIN_DIR . '/src/php/setup/setup_ajax_load_more.php';
-        require_once DFH_PLUGIN_DIR . '/src/php/setup/setup_blocks.php';
-        require_once DFH_PLUGIN_DIR . '/src/php/setup/setup_content_types.php';
-        require_once DFH_PLUGIN_DIR . '/src/php/setup/setup_textdomain.php';
+        require_once DFH_PLUGIN_DIR . '/inc/php/setup/helpers.php';
+        require_once DFH_PLUGIN_DIR . '/inc/php/setup/remove_comments.php';
+        require_once DFH_PLUGIN_DIR . '/inc/php/setup/remove_default_post_type.php';
+        require_once DFH_PLUGIN_DIR . '/inc/php/setup/remove_default_taxonomies.php';
+        require_once DFH_PLUGIN_DIR . '/inc/php/setup/setup_ajax_load_more.php';
+        require_once DFH_PLUGIN_DIR . '/inc/php/setup/setup_blocks.php';
+        require_once DFH_PLUGIN_DIR . '/inc/php/setup/setup_content_types.php';
+        require_once DFH_PLUGIN_DIR . '/inc/php/setup/setup_textdomain.php';
     }
 }
