@@ -4,7 +4,15 @@ branches:
   only:
     - master
 cache: yarn
+# Handle git submodules yourself
+# see https://stackoverflow.com/a/24600210
+git:
+  submodules: false
+# Use sed to replace the SSH URL with the public URL, then initialize submodules
+# see https://stackoverflow.com/a/24600210
 before_install:
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - git submodule update --init --recursive
   - npm config set spin false
   - npm install --global yarn
 install:
