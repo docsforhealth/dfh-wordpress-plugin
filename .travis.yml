@@ -22,7 +22,8 @@ install:
 script:
   - yarn build
 before_deploy:
-  - zip -r /tmp/dfh-wordpress-plugin-${TRAVIS_TAG}.zip assets build inc *.php
+  # see https://superuser.com/a/496903
+  - zip -r /tmp/dfh-wordpress-plugin-${TRAVIS_TAG}.zip . -x 'node_modules/*' 'src/*' '.git*' '*.log' '*.DS_Store*' '*.sublime*'
 deploy:
   - provider: releases
     token: ${GITHUB_TOKEN}
