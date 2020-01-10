@@ -1,4 +1,6 @@
 language: node_js
+node_js:
+  - 10
 os: linux
 branches:
   only:
@@ -29,5 +31,6 @@ deploy:
       - ./inc/**/*
       - ./*.php
     skip_cleanup: true
+    overwrite: true
     on:
       tags: true
