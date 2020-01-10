@@ -19,11 +19,11 @@ install:
 script:
   - yarn build
 before_deploy:
-  - tar -czf /tmp/dfh-plugin-${TRAVIS_TAG}.tar.gz assets build inc *.php
+  - tar -czf /tmp/dfh-wordpress-plugin-${TRAVIS_TAG}.tar.gz assets build inc *.php
 deploy:
   - provider: releases
     token: ${GITHUB_TOKEN}
-    file: /tmp/dfh-plugin-${TRAVIS_TAG}.tar.gz
+    file: /tmp/dfh-wordpress-plugin-${TRAVIS_TAG}.tar.gz
     skip_cleanup: true
     overwrite: true
     on:
