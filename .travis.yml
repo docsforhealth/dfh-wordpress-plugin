@@ -19,7 +19,7 @@ before_install:
   - npm install --global yarn
 install:
   - yarn install
-before_deploy:
+script:
   - yarn build
 deploy:
   - provider: releases
