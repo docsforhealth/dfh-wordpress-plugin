@@ -3,13 +3,14 @@
  * Plugin Name: Docs for Health
  * Author: Eric Bai
  * Author URI: https://github.com/ericbai
+ * Plugin URI: ericbai/dfh-wordpress-plugin
  * GitHub Plugin URI: ericbai/dfh-wordpress-plugin
  * Release Asset: true
  * Description: Custom block plugin for the Docs for Health website
- * Version: 0.0.1
+ * Version: 0.0.11
  * License: Apache-2.0
  * License URI: https://www.apache.org/licenses/LICENSE-2.0.txt
- * Text Domain: docsforhealth
+ * Text Domain: dfh
  */
 
 defined('ABSPATH') || exit;
