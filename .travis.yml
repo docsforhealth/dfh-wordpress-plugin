@@ -2,6 +2,9 @@ language: node_js
 node_js:
   - 10
 os: linux
+# Only build for tags, not for untagged commits
+# see https://github.com/travis-ci/travis-ci/issues/6893#issuecomment-354967391
+if: tag IS present
 cache: yarn
 # Handle git submodules yourself
 # see https://stackoverflow.com/a/24600210
@@ -19,11 +22,11 @@ install:
 script:
   - yarn build
 before_deploy:
-  - tar -czf /tmp/dfh-wordpress-plugin-${TRAVIS_TAG}.tar.gz assets build inc *.php
+  - zip -r /tmp/dfh-wordpress-plugin-${TRAVIS_TAG}.zip assets build inc *.php
 deploy:
   - provider: releases
     token: ${GITHUB_TOKEN}
-    file: /tmp/dfh-wordpress-plugin-${TRAVIS_TAG}.tar.gz
+    file: /tmp/dfh-wordpress-plugin-${TRAVIS_TAG}.zip
     skip_cleanup: true
     overwrite: true
     on:
