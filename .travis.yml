@@ -18,14 +18,12 @@ install:
   - yarn install
 script:
   - yarn build
-# Package all files into an archive file
-# see https://github.com/afragen/github-updater/blob/develop/.travis.yml
 before_deploy:
-  - git archive -o /tmp/dfh-plugin-${TRAVIS_TAG}.zip --prefix=dfh-plugin/ ${TRAVIS_COMMIT}
+  - tar -czf /tmp/dfh-plugin-${TRAVIS_TAG}.tar.gz assets build inc *.php
 deploy:
   - provider: releases
-    token: $GITHUB_TOKEN
-    file: /tmp/dfh-plugin-${TRAVIS_TAG}.zip
+    token: ${GITHUB_TOKEN}
+    file: /tmp/dfh-plugin-${TRAVIS_TAG}.tar.gz
     skip_cleanup: true
     overwrite: true
     on:
