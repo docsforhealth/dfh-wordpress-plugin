@@ -428,6 +428,8 @@
     flex-grow: 1; }
     .root__contents__content {
       height: 100%; }
+  .root__footer {
+    flex-shrink: 0; }
 
 .nav {
   position: relative;
@@ -627,9 +629,10 @@
       font-weight: 600; }
   @media (min-width: 768px) {
     .footer {
-      flex-wrap: nowrap; }
+      flex-wrap: nowrap;
+      justify-content: space-between; }
       .footer__content {
-        width: 50%;
+        width: calc(50% - 1rem);
         min-width: 0; }
         .footer__content + .footer__content {
           margin-top: 0; }

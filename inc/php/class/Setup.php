@@ -43,6 +43,7 @@ class DFH_Setup {
         require_once DFH_PLUGIN_DIR . '/inc/php/setup/setup_ajax_load_more.php';
         require_once DFH_PLUGIN_DIR . '/inc/php/setup/setup_blocks.php';
         require_once DFH_PLUGIN_DIR . '/inc/php/setup/setup_content_types.php';
+        require_once DFH_PLUGIN_DIR . '/inc/php/setup/setup_security.php';
         require_once DFH_PLUGIN_DIR . '/inc/php/setup/setup_textdomain.php';
     }
 }
