@@ -29,10 +29,33 @@ FormPicker.propTypes = {
 
 FormPicker.Content = function({ value, className = '' }) {
   return (
-    <Fragment>
+    <div>
       {value &&
         `[contact-form-7 id="${value}" html_class="form ${className}" ]`}
-    </Fragment>
+      {value && (
+        <div className="text text--small text--light">
+          This site is protected by reCAPTCHA and the Google{' '}
+          <a
+            className="link"
+            href="https://policies.google.com/privacy"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Privacy Policy
+          </a>{' '}
+          and{' '}
+          <a
+            className="link"
+            href="https://policies.google.com/terms"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Terms of Service
+          </a>{' '}
+          apply.
+        </div>
+      )}
+    </div>
   );
 };
 FormPicker.Content.propTypes = {
