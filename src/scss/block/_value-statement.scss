@@ -7,13 +7,14 @@
     display: flex;
     position: relative;
     padding-top: abs($value-image-vertical-offset);
+    overflow: hidden;
 
     &__description {
         padding-bottom: abs($value-image-vertical-offset) * 1.5;
     }
     &__image {
         position: absolute;
-        top: $value-image-vertical-offset;
+        top: 0;
         left: calc(100% - #{$value-image-space * 1.5});
         width: $value-image-space * 2.5;
         opacity: 0.4;

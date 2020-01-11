@@ -2011,12 +2011,13 @@
 .landing-value {
   display: flex;
   position: relative;
-  padding-top: 2rem; }
+  padding-top: 2rem;
+  overflow: hidden; }
   .landing-value__description {
     padding-bottom: 3rem; }
   .landing-value__image {
     position: absolute;
-    top: -2rem;
+    top: 0;
     left: calc(100% - 6rem);
     width: 10rem;
     opacity: 0.4; }
