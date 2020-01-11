@@ -21,3 +21,25 @@ function dfh_get_toolkits_overview_url() {
         return $fallback;
     }
 }
+
+// depth-first search for block by name given array of blocks in a post's content
+// see https://developer.wordpress.org/reference/functions/parse_blocks/#user-contributed-notes
+function dfh_get_block(string $block_name, array $blocks) {
+    $found_block = null;
+    foreach ($blocks as $block) {
+        if ($found_block) {
+            return $found_block;
+        }
+        if ($block_name == $block['blockName']) {
+            $found_block = $block;
+        }
+        else if ($block['innerBlocks']) {
+            $found_block = dfh_get_block($block_name, $block['innerBlocks']);
+        }
+    }
+    return $found_block;
+}
+
+function dfh_pluralize(int $num, string $singular, string $plural) {
+    return esc_html($num == 1 ? $singular : $plural);
+}

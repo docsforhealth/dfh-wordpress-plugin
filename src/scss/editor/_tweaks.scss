@@ -2,3 +2,15 @@
 .block-editor-inserter__main-area {
     width: 100%;
 }
+
+// Greater top spacing for room for block title
+.editor-styles-wrapper [data-block] {
+    margin-top: 40px;
+}
+
+// Only controls displayed inline in editor, not in Inspector
+[data-block] .components-base-control {
+    margin-bottom: $baseunit;
+    padding-bottom: $baseunit;
+    border-bottom: 1px solid $color-seafoam-dark-1;
+}

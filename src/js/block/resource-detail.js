@@ -4,7 +4,6 @@ import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as Constants from '../constants';
-import { withValidTemplate } from '../utils';
 
 const title = __('Resource Detail', Constants.TEXT_DOMAIN);
 
@@ -17,7 +16,7 @@ registerBlockType(`${Constants.NAMESPACE}/resource-detail`, {
     'Detailed information for a specific resource',
     Constants.TEXT_DOMAIN,
   ),
-  edit: withValidTemplate(() => {
+  edit() {
     return (
       <Fragment>
         <div className="dfh-editor-block-title">{title}</div>
@@ -32,7 +31,7 @@ registerBlockType(`${Constants.NAMESPACE}/resource-detail`, {
         </div>
       </Fragment>
     );
-  }),
+  },
   save() {
     return (
       <div className="resource-detail">

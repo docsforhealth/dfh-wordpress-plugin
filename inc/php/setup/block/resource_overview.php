@@ -25,6 +25,10 @@ function dfh_dynamic_render_resource_overview($attributes) {
             )
         ));
     }
+    // Do not display anything if no terms
+    if (!$terms) {
+        return;
+    }
     // see https://davidyeiser.com/tutorial/creating-custom-dynamic-gutenberg-block-wordpress-part1#6-setting-up-a-dynamic-block
     ob_start(); // Turn on output buffering
     /* BEGIN HTML OUTPUT */
@@ -81,17 +85,20 @@ function dfh_dynamic_render_resource_overview($attributes) {
                     </div>
                     <?php if (count($terms_resources[$term->name]) > 0): ?>
                         <ul class="landing-categories__slide__examples">
-                            <?php foreach ($terms_resources[$term->name] as $resource): ?>
+                            <?php foreach ($terms_resources[$term->name] as $resource):
+                                $info_block = dfh_get_block(DFH_REQUIRED_BLOCK_RESOURCE, parse_blocks($resource->post_content));
+                                $metadata = $info_block ? $info_block['attrs'] : null;
+                            ?>
                                 <li class="landing-categories__slide__example">
                                     <h4 class="heading heading--3">
                                         <a href="<?php echo esc_url(get_permalink($resource->ID)); ?>" class="link"
                                             ><?php echo esc_html($resource->post_title); ?></a
                                         >
                                     </h4>
-                                    <?php if (strlen($resource->post_excerpt) > 0): ?>
-                                        <p class="text">
-                                            <?php echo esc_html($resource->post_excerpt); ?>
-                                        </p>
+                                    <?php if ($metadata && $metadata['description']): ?>
+                                        <div>
+                                            <?php echo esc_html($metadata['description']); ?>
+                                        </div>
                                     <?php endif ?>
                                 </li>
                             <?php endforeach ?>

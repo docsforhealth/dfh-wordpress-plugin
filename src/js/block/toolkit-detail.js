@@ -7,7 +7,6 @@ import * as DetailList from './helper/toolkit-detail-list';
 import * as Metadata from './helper/toolkit-detail-metadata';
 import * as Section from './helper/toolkit-detail-section';
 import WithInnerBlockAttrs from '../editor/with-inner-block-attrs';
-import { withValidTemplate } from '../utils';
 
 const title = __('Toolkit Detail', Constants.TEXT_DOMAIN);
 
@@ -20,7 +19,7 @@ registerBlockType(`${Constants.NAMESPACE}/toolkit-detail`, {
     'Video, text, and link resources that form a toolkit',
     Constants.TEXT_DOMAIN,
   ),
-  edit: withValidTemplate(({ clientId }) => {
+  edit({ clientId }) {
     return (
       <WithInnerBlockAttrs
         clientId={clientId}
@@ -64,7 +63,7 @@ registerBlockType(`${Constants.NAMESPACE}/toolkit-detail`, {
         />
       </WithInnerBlockAttrs>
     );
-  }),
+  },
   save() {
     return (
       <div className="toolkit-detail-container">

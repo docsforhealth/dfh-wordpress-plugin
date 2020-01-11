@@ -3,7 +3,6 @@ import apiFetch from '@wordpress/api-fetch';
 import getThumbnail from 'thumbnail-youtube-vimeo';
 import PropTypes from 'prop-types';
 import { Children } from 'react';
-import { withDispatch } from '@wordpress/data';
 
 import * as Constants from './constants';
 
@@ -52,17 +51,6 @@ export function withPropTypes(propTypes, wpComponent) {
     attributes: PropTypes.shape(propTypes),
   };
   return wpComponent;
-}
-
-// [FUTURE] This hack forces the template to appear valid when locking template containing InnerBlocks
-// See https://github.com/WordPress/gutenberg/issues/11681
-export function withValidTemplate(component) {
-  return withDispatch(dispatch => {
-    // set a timeout because block editor sometimes takes longer to load when creating new entity
-    setTimeout(() =>
-      dispatch(Constants.STORE_BLOCK_EDITOR).setTemplateValidity(true),
-    );
-  })(component);
 }
 
 export function filterInnerBlockTemplate(allowedBlockNames, template) {

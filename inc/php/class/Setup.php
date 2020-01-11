@@ -35,6 +35,7 @@ class DFH_Setup {
     }
 
     private function setup_plugin() {
+        require_once DFH_PLUGIN_DIR . '/inc/php/setup/add_analytics.php';
         require_once DFH_PLUGIN_DIR . '/inc/php/setup/helpers.php';
         require_once DFH_PLUGIN_DIR . '/inc/php/setup/remove_comments.php';
         require_once DFH_PLUGIN_DIR . '/inc/php/setup/remove_default_post_type.php';

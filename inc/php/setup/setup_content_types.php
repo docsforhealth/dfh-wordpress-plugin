@@ -37,7 +37,6 @@ function dfh_register_resource_type() {
         'rewrite'             => array('slug' => 'resources', 'with_front' => false),
         'menu_icon'           => 'dashicons-image-filter',
         'template'            => array(array(DFH_TEMPLATE_BLOCK_RESOURCE)),
-        'template_lock'       => 'all',
         'labels'              => array(
             'name'               => __('Resources', DFH_TEXT_DOMAIN),
             'singular_name'      => __('Resource', DFH_TEXT_DOMAIN),
@@ -97,7 +96,6 @@ function dfh_register_toolkit_type() {
         'rewrite'             => array('slug' => 'toolkits', 'with_front' => false),
         'menu_icon'           => 'dashicons-portfolio',
         'template'            => array(array(DFH_TEMPLATE_BLOCK_TOOLKIT)),
-        'template_lock'       => 'all',
         'labels'              => array(
             'name'               => __('Toolkits', DFH_TEXT_DOMAIN),
             'singular_name'      => __('Toolkit', DFH_TEXT_DOMAIN),
