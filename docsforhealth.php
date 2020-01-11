@@ -4,10 +4,10 @@
  * Author: Eric Bai
  * Author URI: https://github.com/ericbai
  * Plugin URI: https://github.com/ericbai/dfh-wordpress-plugin
- * GitHub Plugin URI: ericbai/dfh-wordpress-plugin
+ * GitHub Plugin URI: https://github.com/ericbai/dfh-wordpress-plugin
  * Release Asset: true
  * Description: Custom plugin for the Docs for Health website
- * Version: 0.0.15
+ * Version: 0.0.16
  * License: Apache-2.0
  * License URI: https://www.apache.org/licenses/LICENSE-2.0.txt
  * Text Domain: dfh
