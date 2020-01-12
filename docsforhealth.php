@@ -7,7 +7,7 @@
  * GitHub Plugin URI: https://github.com/ericbai/dfh-wordpress-plugin
  * Release Asset: true
  * Description: Custom plugin for the Docs for Health website
- * Version: 0.0.18
+ * Version: 0.0.19
  * License: Apache-2.0
  * License URI: https://www.apache.org/licenses/LICENSE-2.0.txt
  * Text Domain: dfh
