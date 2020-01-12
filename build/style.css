@@ -336,6 +336,7 @@
   .form--inline .form__control {
     margin-left: 0; }
   .form__item {
+    position: relative;
     width: 100%;
     min-width: 0;
     margin-bottom: 1rem; }
@@ -1075,8 +1076,25 @@ so that we don't get mixed content errors when serving over HTTPS
   transition: opacity 0.2s ease;
   display: none; }
 
-.wpcf7 .ajax-loader {
-  display: none !important; }
+.wpcf7 .form .ajax-loader {
+  position: absolute;
+  top: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  background-image: url("../assets/images/ajax-load-more/loader-fading-circles.gif");
+  background-color: rgba(0, 0, 0, 0.03);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 3px;
+  cursor: progress; }
 
 .wpcf7 .wpcf7-not-valid-tip {
   margin-top: 0.5rem;
