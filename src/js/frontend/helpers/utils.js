@@ -9,14 +9,24 @@ export function getResourceOverviewData() {
   return $categories.data();
 }
 
+export function getResourceCategoryStatuses(data = null) {
+  if (data) {
+    const { itemClass, activeClass } = data,
+      $items = $('.' + itemClass),
+      numTotal = $items.length,
+      numActive = $items.filter('.' + activeClass).length;
+    return { $items, numTotal, numActive };
+  } else {
+    return {};
+  }
+}
+
 export const updateResourceStatusLabel = _.debounce((data = null) => {
   if (!data) {
     return;
   }
-  const { itemClass, activeClass, singularName, name } = data,
-    $items = $('.' + itemClass),
-    numTotal = $items.length,
-    numActive = $items.filter('.' + activeClass).length;
+  const { singularName, name } = data,
+    { numTotal, numActive } = getResourceCategoryStatuses(data);
   if (numTotal) {
     $('.' + Constants.CLASS_RESOURCE_MESSAGE_AREA).text(
       `Showing ${numActive} of ${numTotal} ${

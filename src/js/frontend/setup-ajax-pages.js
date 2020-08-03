@@ -8,9 +8,27 @@ $(function() {
     $search = $('.page-header__form input');
   // Set up resource category filter toggle buttons
   if (resourceData) {
-    $('.' + resourceData.itemClass).on('click', function({ currentTarget }) {
+    const { itemClass, activeClass } = resourceData;
+    $('.' + itemClass).on('click', function({ currentTarget }) {
       // Note that `currentTarget` is the element the event listener is attached to
-      $(currentTarget).toggleClass(resourceData.activeClass);
+      const $current = $(currentTarget),
+        isCurrentActive = $current.hasClass(activeClass),
+        { $items, numTotal, numActive } = Utils.getResourceCategoryStatuses(
+          resourceData,
+        );
+      // if all categories are selected, then select only this category
+      if (numActive === numTotal) {
+        $items.not($current).removeClass(activeClass);
+      }
+      // if only this current category is selected, then select all categories
+      else if (numActive === 1 && isCurrentActive) {
+        $items.addClass(activeClass);
+      }
+      // otherwise, just toggle class
+      else {
+        $current.toggleClass(activeClass);
+      }
+      // Once resource category statuses are updated, then attempt to search and update label
       Utils.searchWithParams($search.val(), resourceData);
       Utils.updateResourceStatusLabel(resourceData);
     });
