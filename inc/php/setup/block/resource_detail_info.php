@@ -12,7 +12,8 @@ function dfh_dynamic_render_resource_detail_info($attributes) {
     // see https://developer.wordpress.org/reference/functions/get_post/
     $resource = get_post();
     // see https://developer.wordpress.org/reference/functions/wp_get_post_terms/
-    $terms = wp_get_post_terms($resource->ID, DFH_TAXONOMY_RESOURCE);
+    $categories = wp_get_post_terms($resource->ID, DFH_TAXONOMY_RESOURCE);
+    $types = wp_get_post_terms($resource->ID, DFH_TAXONOMY_RESOURCE_TYPE);
     // see https://davidyeiser.com/tutorial/creating-custom-dynamic-gutenberg-block-wordpress-part1#6-setting-up-a-dynamic-block
     ob_start(); // Turn on output buffering
     /* BEGIN HTML OUTPUT */
@@ -28,12 +29,17 @@ function dfh_dynamic_render_resource_detail_info($attributes) {
         </a>
         <?php echo esc_html($resource->post_title); ?>
     </h1>
-    <?php if (count($terms) > 0): ?>
+    <?php if (count($categories) + count($types) > 0): ?>
         <ul class="list list--unstyled margin-b-1">
-            <?php foreach ($terms as $term): ?>
-                <li class="tag">
-                    <?php echo esc_html($term->name); ?>
-                </li>
+            <?php foreach ($categories as $category):?>
+                <?php
+                    // Closing `li` tag is optional. Omit closing tag to solve `inline-block` extra spacing issue
+                    // see. https://stackoverflow.com/a/5078297
+                ?>
+                <li class="tag"><?php echo esc_html($category->name); ?>
+            <?php endforeach ?>
+            <?php foreach ($types as $type): ?>
+                <li class="tag tag--notable"><?php echo esc_html($type->name); ?>
             <?php endforeach ?>
         </ul>
     <?php endif ?>

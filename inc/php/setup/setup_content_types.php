@@ -77,6 +77,31 @@ function dfh_register_resource_type() {
             'back_to_items'              => __('Back to Categories', DFH_TEXT_DOMAIN),
         ),
     ));
+    register_taxonomy(DFH_TAXONOMY_RESOURCE_TYPE, DFH_CONTENT_TYPE_RESOURCE, array(
+        'hierarchical'          => false,
+        'show_ui'               => true,
+        'show_admin_column'     => true,
+        'query_var'             => true,
+        'show_in_rest'          => true,
+        'rewrite'               => array('slug' => 'types'),
+        'labels'                => array(
+            'name'                       => __('Content Types', DFH_TEXT_DOMAIN),
+            'singular_name'              => __('Content Type', DFH_TEXT_DOMAIN),
+            'search_items'               => __('Content Types', DFH_TEXT_DOMAIN),
+            'popular_items'              => __('Popular Content Types', DFH_TEXT_DOMAIN),
+            'all_items'                  => __('All Content Types', DFH_TEXT_DOMAIN),
+            'edit_item'                  => __('Edit Content Type', DFH_TEXT_DOMAIN),
+            'update_item'                => __('Update Content Type', DFH_TEXT_DOMAIN),
+            'add_new_item'               => __('Add New Content Type', DFH_TEXT_DOMAIN),
+            'new_item_name'              => __('New Content Type Name', DFH_TEXT_DOMAIN),
+            'separate_items_with_commas' => __('Separate Content Types with commas', DFH_TEXT_DOMAIN),
+            'add_or_remove_items'        => __('Add or remove Content Types', DFH_TEXT_DOMAIN),
+            'choose_from_most_used'      => __('Choose from most used Content Types', DFH_TEXT_DOMAIN),
+            'not_found'                  => __('No Content Types found', DFH_TEXT_DOMAIN),
+            'menu_name'                  => __('Content Types', DFH_TEXT_DOMAIN),
+            'back_to_items'              => __('Back to Content Types', DFH_TEXT_DOMAIN),
+        ),
+    ));
 }
 
 add_action('init', 'dfh_register_toolkit_type');

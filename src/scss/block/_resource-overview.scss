@@ -125,7 +125,22 @@
         &__tags {
             @include scut-list-unstyled;
 
-            display: flex; // so that tags don't wrap
+            display: flex;
+            align-items: center;
+
+            // see https://iamsteve.me/blog/entry/using-flexbox-for-horizontal-scrolling-navigation
+            // [2]: Automatic overflow means a scroll bar won’t be present if it isn’t needed
+            // [3]: Make it smooth scrolling on iOS devices
+            // [4]: Hide the ugly scrollbars in Edge until the scrollable area is hovered
+            flex-wrap: nowrap; /* [1] */
+            overflow-x: auto; /* [2] */
+            -webkit-overflow-scrolling: touch; /* [3] */
+            -ms-overflow-style: -ms-autohiding-scrollbar; /* [4] */
+
+            // see https://iamsteve.me/blog/entry/using-flexbox-for-horizontal-scrolling-navigation
+            &__tag {
+                flex-shrink: 0;
+            }
         }
     }
 

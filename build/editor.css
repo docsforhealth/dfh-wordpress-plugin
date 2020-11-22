@@ -406,12 +406,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
+  margin-right: 0.2rem;
   padding: 0.1rem 0.5rem 0.15rem;
   color: #595959;
   border: 1px solid #aed6c9;
   border-radius: 3px; }
-  .tag + .tag, .dfh-editor-link-picker__label + .tag, .tag + .dfh-editor-link-picker__label, .dfh-editor-link-picker__label + .dfh-editor-link-picker__label {
-    margin-left: 0.2rem; }
+  .tag:last-of-type, .dfh-editor-link-picker__label:last-of-type {
+    margin-right: 0; }
   .tag--notable {
     border-color: #8fabc7;
     background-color: #eaeff4; }
