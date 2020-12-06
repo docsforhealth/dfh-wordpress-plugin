@@ -1251,6 +1251,9 @@ so that we don't get mixed content errors when serving over HTTPS
   padding-bottom: 1rem;
   border-bottom: 1px solid #d1e6df; }
 
+.edit-post-visual-editor.editor-styles-wrapper {
+  height: auto; }
+
 .dfh-editor-hide {
   display: none !important; }
 

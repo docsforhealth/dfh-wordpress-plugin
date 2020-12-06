@@ -14,3 +14,8 @@
     padding-bottom: $baseunit;
     border-bottom: 1px solid $color-seafoam-dark-1;
 }
+
+// Default stylesheet has `height: 100%` which causes editor to only span viewport height
+.edit-post-visual-editor.editor-styles-wrapper {
+    height: auto;
+}
