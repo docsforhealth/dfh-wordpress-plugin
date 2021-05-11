@@ -14,7 +14,7 @@
         "@wordpress/scripts": "^6.1.0",
         "concurrently": "^5.0.2",
         "lity": "^2.4.0",
-        "node-sass": "^4.13.0",
+        "node-sass": "^4.13.1",
         "prop-types": "^15.7.2",
         "scut": "^1.4.0",
         "slick-carousel": "^1.8.1",
