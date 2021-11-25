@@ -1,1 +1,6235 @@
-!function(e){var t={};function n(r){if(t[r])return t[r].exports;var A=t[r]={i:r,l:!1,exports:{}};return e[r].call(A.exports,A,A.exports,n),A.l=!0,A.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var A in e)n.d(r,A,function(t){return e[t]}.bind(null,A));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=28)}([function(e,t,n){"use strict";n.d(t,"kb",(function(){return a})),n.d(t,"nb",(function(){return o})),n.d(t,"F",(function(){return c})),n.d(t,"G",(function(){return i})),n.d(t,"H",(function(){return l})),n.d(t,"I",(function(){return s})),n.d(t,"J",(function(){return u})),n.d(t,"K",(function(){return b})),n.d(t,"M",(function(){return d})),n.d(t,"N",(function(){return p})),n.d(t,"a",(function(){return g})),n.d(t,"b",(function(){return m})),n.d(t,"L",(function(){return f})),n.d(t,"lb",(function(){return O})),n.d(t,"mb",(function(){return v})),n.d(t,"ib",(function(){return j})),n.d(t,"jb",(function(){return h})),n.d(t,"hb",(function(){return C})),n.d(t,"O",(function(){return B})),n.d(t,"P",(function(){return E})),n.d(t,"Q",(function(){return w})),n.d(t,"R",(function(){return k})),n.d(t,"S",(function(){return I})),n.d(t,"T",(function(){return Q})),n.d(t,"U",(function(){return q})),n.d(t,"V",(function(){return P})),n.d(t,"c",(function(){return y})),n.d(t,"d",(function(){return U})),n.d(t,"e",(function(){return T})),n.d(t,"f",(function(){return N})),n.d(t,"g",(function(){return D})),n.d(t,"l",(function(){return F})),n.d(t,"m",(function(){return V})),n.d(t,"n",(function(){return H})),n.d(t,"t",(function(){return R})),n.d(t,"u",(function(){return X})),n.d(t,"C",(function(){return K})),n.d(t,"h",(function(){return x})),n.d(t,"i",(function(){return L})),n.d(t,"j",(function(){return S})),n.d(t,"k",(function(){return z})),n.d(t,"o",(function(){return W})),n.d(t,"p",(function(){return M})),n.d(t,"q",(function(){return J})),n.d(t,"r",(function(){return G})),n.d(t,"s",(function(){return Y})),n.d(t,"v",(function(){return Z})),n.d(t,"w",(function(){return _})),n.d(t,"x",(function(){return $})),n.d(t,"y",(function(){return ee})),n.d(t,"z",(function(){return te})),n.d(t,"A",(function(){return ne})),n.d(t,"B",(function(){return re})),n.d(t,"D",(function(){return Ae})),n.d(t,"E",(function(){return ae})),n.d(t,"pb",(function(){return oe})),n.d(t,"ob",(function(){return ce})),n.d(t,"qb",(function(){return ie})),n.d(t,"gb",(function(){return le})),n.d(t,"db",(function(){return se})),n.d(t,"eb",(function(){return ue})),n.d(t,"fb",(function(){return be})),n.d(t,"rb",(function(){return de})),n.d(t,"W",(function(){return pe})),n.d(t,"Y",(function(){return ge})),n.d(t,"Z",(function(){return me})),n.d(t,"ab",(function(){return fe})),n.d(t,"bb",(function(){return Oe})),n.d(t,"cb",(function(){return ve})),n.d(t,"X",(function(){return je}));var r=n(8),A=n.n(r),a="dfh",o="dfh",c="dfh-common",i="dfh-landing",l="dfh-layout",s="dfh-media",u="dfh-resource",b="dfh-toolkit",d="dfh_resource",p="dfh_toolkit",g="dfh_ajax_resource_previews",m="dfh_ajax_toolkit_previews",f="resource-previews-label",O="core/block-editor",v="core/editor",j="all",h=!1,C="applyToAll",B="core/audio",E="core/embed",w="core/gallery",k="core/image",I="core/list",Q="core/separator",q="core/spacer",P="core/video",y="".concat(a,"/button-container"),U="".concat(a,"/content-container"),T="".concat(a,"/file-button"),N="".concat(a,"/heading"),D="".concat(a,"/inner-block-wrapper"),F="".concat(a,"/link-button"),V="".concat(a,"/page-header"),H="".concat(a,"/page-title"),R="".concat(a,"/search-input"),X="".concat(a,"/text"),K="".concat(a,"/video-thumbnail"),x="".concat(a,"/landing-contact"),L="".concat(a,"/landing-featured"),S="".concat(a,"/landing-header"),z="".concat(a,"/landing-video"),W="".concat(a,"/resource-category-filter"),M="".concat(a,"/resource-detail-description"),J="".concat(a,"/resource-detail-info"),G="".concat(a,"/resource-detail-steps"),Y="".concat(a,"/resource-detail-steps-step"),Z="".concat(a,"/toolkit-detail-header"),_="".concat(a,"/toolkit-detail-list"),$="".concat(a,"/toolkit-detail-list-link"),ee="".concat(a,"/toolkit-detail-metadata"),te="".concat(a,"/toolkit-detail-section"),ne="".concat(a,"/toolkit-detail-section-container"),re="".concat(a,"/toolkit-detail-section-info"),Ae="",ae="small",oe="large",ce="",ie="small",le="1",se="2",ue="3",be="4",de=["core-embed/vimeo","core-embed/youtube"],pe=["core-embed/mixcloud","core-embed/reverbnation","core-embed/soundcloud","core-embed/speaker","core-embed/spotify","core/embed"],ge=["core-embed/amazon-kindle","core-embed/issuu","core-embed/scribd","core/embed"],me=["core-embed/imgur","core-embed/instagram","core-embed/smugmug","core-embed/tumblr","core/embed"],fe=["core-embed/cloudup","core-embed/crowdsignal","core-embed/polldaddy","core/embed"],Oe=["core-embed/slideshare","core-embed/speaker-deck","core/embed"],ve=["core-embed/animoto","core-embed/collegehumor","core-embed/dailymotion","core-embed/facebook","core-embed/flickr","core-embed/hulu","core-embed/instagram","core-embed/kickstarter","core-embed/screencast","core-embed/ted","core-embed/tumblr","core-embed/videopress","core-embed/vimeo","core-embed/wordpress-tv","core-embed/youtube","core/embed"],je=A.a.uniq([].concat(pe,ge,me,fe,Oe,ve,["core-embed/meetup-com","core-embed/reddit","core-embed/twitter","core-embed/wordpress","core/embed"]))},function(e,t){!function(){e.exports=this.wp.element}()},function(e,t){!function(){e.exports=this.wp.i18n}()},function(e,t){e.exports=function(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}},function(e,t){!function(){e.exports=this.wp.blockEditor}()},function(e,t){!function(){e.exports=this.wp.blocks}()},function(e,t,n){e.exports=n(18)()},function(e,t){!function(){e.exports=this.wp.components}()},function(e,t){!function(){e.exports=this.lodash}()},,function(e,t){!function(){e.exports=this.wp.data}()},function(e,t,n){var r=n(23),A=n(24),a=n(25);e.exports=function(e){return r(e)||A(e)||a()}},function(e,t){!function(){e.exports=this.wp.hooks}()},function(e,t,n){var r=n(20),A=n(21),a=n(22);e.exports=function(e,t){return r(e)||A(e,t)||a()}},function(e,t){!function(){e.exports=this.wp.apiFetch}()},function(e,t){e.exports=function(e,t){var n={ytimg:"0",vmimg:"large",patterns:[{regex:/youtu\.be\/([\w\-.]+)/,type:"youtube",url:"//img.youtube.com/vi/%1"},{regex:/youtube\.com(.+)v=([^&]+)/,type:"youtube",url:"//img.youtube.com/vi/%2"},{regex:/vimeo\.com\/([0-9]+)/,type:"vimeo",url:"//vimeo.com/api/v2/video/%1.json"},{regex:/vimeo\.com\/(.*)\/([0-9]+)/,type:"vimeo",url:"//vimeo.com/api/v2/video/%2.json"}]};if("object"==typeof t){var r,A,a=Object.keys(t);for(r in a)A=a[r],n[A]=t[A]}return new Promise((function(t,r){for(var A,a,o,c,i,l=0;l<n.patterns.length;l++)if(o=n.patterns[l],(c=e.match(o.regex))&&c){i=o.url.match(/%([0-9]+)/)[1],A=o.type,a=o.url.replace(/%([0-9]+)/,c[i]);break}A?"youtube"==A?t(a+"/"+n.ytimg+".jpg"):"vimeo"==A&&fetch(a).then((function(e){return e.json()})).then((function(e){t(e[0]["thumbnail_"+n.vmimg])})).catch((function(e){r(e.statusText)})):r("Not found pattern.")}))}},function(e,t){!function(){e.exports=this.React}()},function(e,t){function n(){return e.exports=n=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},n.apply(this,arguments)}e.exports=n},function(e,t,n){"use strict";var r=n(19);function A(){}function a(){}a.resetWarningCache=A,e.exports=function(){function e(e,t,n,A,a,o){if(o!==r){var c=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");throw c.name="Invariant Violation",c}}function t(){return e}e.isRequired=e;var n={array:e,bool:e,func:e,number:e,object:e,string:e,symbol:e,any:e,arrayOf:t,element:e,elementType:e,instanceOf:t,node:e,objectOf:t,oneOf:t,oneOfType:t,shape:t,exact:t,checkPropTypes:a,resetWarningCache:A};return n.PropTypes=n,n}},function(e,t,n){"use strict";e.exports="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED"},function(e,t){e.exports=function(e){if(Array.isArray(e))return e}},function(e,t){e.exports=function(e,t){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e)){var n=[],r=!0,A=!1,a=void 0;try{for(var o,c=e[Symbol.iterator]();!(r=(o=c.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){A=!0,a=e}finally{try{r||null==c.return||c.return()}finally{if(A)throw a}}return n}}},function(e,t){e.exports=function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}},function(e,t){e.exports=function(e){if(Array.isArray(e)){for(var t=0,n=new Array(e.length);t<e.length;t++)n[t]=e[t];return n}}},function(e,t){e.exports=function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}},function(e,t){e.exports=function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}},,,function(e,t,n){"use strict";n.r(t);var r=n(8),A=n.n(r),a=n(12),o=n(5),c=n(0);Object(a.addFilter)("blocks.registerBlockType",c.kb,(function(e,t){var n={"core/list":c.F,"core/separator":c.H,"core/spacer":c.H,"core/audio":c.I,"core/embed":c.I,"core/gallery":c.I,"core/image":c.I,"core/video":c.I};return n[t]?A.a.assign({},e,{category:n[t]}):A.a.startsWith(t,c.kb)?e:A.a.assign({},e,{supports:A.a.assign({},e.supports,{inserter:!1})})})),window.onload=function(){Object(o.setDefaultBlockName)(c.u)};var i=n(1),l=n(6),s=n.n(l),u=n(2),b=n(4),d=n(13),p=n.n(d),g=n(10),m=n(14),f=n.n(m),O=n(15),v=n.n(O),j=n(16);function h(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null;if(!e||!e[c.hb])return e;var n=e[c.hb],r={};return(t||Object.keys(e)).forEach((function(t){t!==c.hb&&(r[t]=A.a.assign({},n,e[t]))})),r}var C=A.a.memoize((function(e){return v()(e,{ytimg:"mqdefault"})}));A.a.memoize((function(e){return f()({path:"wp/v2/taxonomies/".concat(e,"?context=edit")})}));function B(e,t){return t.propTypes={attributes:s.a.shape(e)},t}function E(e,t){return A.a.filter(t,(function(t){return e.includes(t[0])}))}var w=Object(g.withSelect)((function(e,t){var n=t.clientId;return{foundBlocks:e(c.lb).getBlocksByClientId(n)}}))(k);function k(e){var t=e.foundBlocks,n=e.innerBlockAttrs,r=e.children;if(!n)return r;var a=A.a.debounce((function(){return function(e,t){if(e&&e[0]&&t)for(var n=function(){var t=p()(A[r],2),n=t[0],a=t[1];e[0].innerBlocks.forEach((function(e){e.name===n&&Object(g.dispatch)(c.lb).updateBlockAttributes(e.clientId,a)}))},r=0,A=Object.entries(t);r<A.length;r++)n()}(t,n)}),500);if(a(),!function(e,t){return j.Children.toArray(e).some((function(e){return e.type===t}))}(r,b.InnerBlocks))throw new Error("`WithInnerBlockAttrs` requires one top-level child to be an `InnerBlocks` component");return Object(i.createElement)("div",{onFocus:a,onBlur:a},r)}function I(e){return e.expandWidth?"button-container--expand-width":""}k.propTypes={clientId:s.a.string.isRequired,innerBlockAttrs:s.a.object,foundBlocks:s.a.array.isRequired},Object(o.registerBlockType)(c.c,{title:Object(u.__)("Buttons",c.nb),category:c.F,icon:"editor-table",description:Object(u.__)("Allows adding and automatic formatting of various button blocks",c.nb),attributes:{template:{type:"array",default:[[c.l]]},isLocked:{type:"boolean",default:!1},expandWidth:{type:"boolean",default:!1},forceAttributes:{type:"object"}},edit:B({template:s.a.arrayOf(s.a.array),isLocked:s.a.bool,expandWidth:s.a.bool,forceAttributes:s.a.objectOf(s.a.object)},(function(e){var t=e.attributes,n=e.clientId,r=[c.l,c.e];return Object(i.createElement)(w,{clientId:n,innerBlockAttrs:h(t.forceAttributes,r)},Object(i.createElement)(b.InnerBlocks,{allowedBlocks:r,template:E(r,t.template),templateLock:t.isLocked?c.ib:c.jb}))})),save:function(e){var t=e.attributes;return Object(i.createElement)("div",{className:"button-container ".concat(I(t))},Object(i.createElement)(b.InnerBlocks.Content,null))}});var Q,q=n(3),P=n.n(q),y=n(7),U="highlightMainTitle";function T(e){return e[U]?"heading__title":""}function N(e){var t=e.value,n=e.onChange;return Object(i.createElement)(y.TextControl,{label:Object(u.__)("Contact Form 7 ID",c.nb),help:Object(u.__)("Find the ID of the form you wish to display from the Contact page of the admin dashboard",c.nb),placeholder:Object(u.__)("Enter the form ID for the Contact Form 7 form",c.nb),value:t,onChange:n})}Object(o.registerBlockType)(c.f,{title:Object(u.__)("Heading",c.nb),category:c.F,icon:"heading",description:Object(u.__)("Titles of varying sizes",c.nb),attributes:(Q={mainTitle:{type:"string"},preTitle:{type:"string"},postTitle:{type:"string"},className:{type:"string",default:""},customId:{type:"string"}},P()(Q,"level",{type:"string",default:c.db}),P()(Q,"showPreTitle",{type:"boolean",default:!0}),P()(Q,"showPostTitle",{type:"boolean",default:!0}),P()(Q,U,{type:"boolean",default:!0}),P()(Q,"showOptionLevel",{type:"boolean",default:!0}),P()(Q,"showOptionShowPreTitle",{type:"boolean",default:!0}),P()(Q,"showOptionShowPostTitle",{type:"boolean",default:!0}),P()(Q,"showOptionHighlightMainTitle",{type:"boolean",default:!0}),Q),edit:function(e){var t=e.attributes,n=e.setAttributes,r="h".concat(t.level);return Object(i.createElement)(i.Fragment,null,Object(i.createElement)(b.InspectorControls,null,Object(i.createElement)(y.PanelBody,{title:Object(u.__)("Heading Settings",c.nb)},t.showOptionLevel&&Object(i.createElement)(y.RadioControl,{label:Object(u.__)("Size",c.nb),selected:t.level,options:[{label:Object(u.__)("Extra large",c.nb),value:c.gb},{label:Object(u.__)("Large",c.nb),value:c.db},{label:Object(u.__)("Medium",c.nb),value:c.eb},{label:Object(u.__)("Small",c.nb),value:c.fb}],onChange:function(e){return n(P()({},"level",e))}}),t.showOptionShowPreTitle&&Object(i.createElement)(y.ToggleControl,{label:Object(u.__)("Show pre-title?",c.nb),checked:t.showPreTitle,onChange:function(e){return n(P()({},"showPreTitle",e))}}),t.showOptionShowPostTitle&&Object(i.createElement)(y.ToggleControl,{label:Object(u.__)("Show post-title?",c.nb),checked:t.showPostTitle,onChange:function(e){return n(P()({},"showPostTitle",e))}}),t.showOptionHighlightMainTitle&&Object(i.createElement)(y.ToggleControl,{label:Object(u.__)("Highlight main title?",c.nb),checked:t[U],onChange:function(e){return n(P()({},U,e))}}),Object(i.createElement)(y.TextControl,{label:Object(u.__)("HTML anchor",c.nb),help:Object(u.__)("Anchors let you link directly to this heading on the page",c.nb),value:t.customId,onChange:function(e){return n({customId:e})}}))),Object(i.createElement)(r,{className:"".concat(t.className," heading heading--").concat(t.level)},t.showPreTitle&&Object(i.createElement)(b.RichText,{tagName:"span",className:"heading__subtitle heading__subtitle--pre",placeholder:Object(u.__)("Enter pre-title here",c.nb),value:t.preTitle,onChange:function(e){return n({preTitle:e})}}),Object(i.createElement)(b.RichText,{tagName:"span",className:T(t),placeholder:Object(u.__)("Enter main title here",c.nb),value:t.mainTitle,onChange:function(e){return n({mainTitle:e})}}),t.showPostTitle&&Object(i.createElement)(b.RichText,{tagName:"span",className:"heading__subtitle heading__subtitle--post",placeholder:Object(u.__)("Enter post-title here",c.nb),value:t.postTitle,onChange:function(e){return n({postTitle:e})}})))},save:function(e){var t=e.attributes,n="h".concat(t.level);return Object(i.createElement)(n,{className:"heading heading--".concat(t.level)},Object(i.createElement)("span",{id:t.customId,class:"heading__scroll-anchor"}),t.showPreTitle&&Object(i.createElement)(b.RichText.Content,{tagName:"span",className:"heading__subtitle heading__subtitle--pre",value:t.preTitle}),Object(i.createElement)(b.RichText.Content,{tagName:"span",className:T(t),value:t.mainTitle}),t.showPostTitle&&Object(i.createElement)(b.RichText.Content,{tagName:"span",className:"heading__subtitle heading__subtitle--post",value:t.postTitle}))}}),N.propTypes={onChange:s.a.func.isRequired,value:s.a.string},N.Content=function(e){var t=e.value,n=e.className,r=void 0===n?"":n;return Object(i.createElement)("div",null,t&&'[contact-form-7 id="'.concat(t,'" html_class="form ').concat(r,'" ]'),t&&Object(i.createElement)("div",{className:"text text--small text--light"},"This site is protected by reCAPTCHA and the Google"," ",Object(i.createElement)("a",{className:"link",href:"https://policies.google.com/privacy",rel:"noopener noreferrer",target:"_blank"},"Privacy Policy")," ","and"," ",Object(i.createElement)("a",{className:"link",href:"https://policies.google.com/terms",rel:"noopener noreferrer",target:"_blank"},"Terms of Service")," ","apply."))},N.Content.propTypes={value:s.a.string,className:s.a.string};var D=Object(u.__)("Form Card",c.nb);Object(o.registerBlockType)("".concat(c.kb,"/form-card"),{title:D,category:c.F,icon:"format-status",description:Object(u.__)("Card that displays a message and a form",c.nb),attributes:{formId:{type:"string"}},edit:function(e){var t,n=e.attributes,r=e.setAttributes;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)("div",{className:"dfh-editor-block-title"},D),Object(i.createElement)("div",{className:"feedback-card"},Object(i.createElement)("div",{className:"feedback-card__info"},Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.d,{forceAttributes:P()({},c.f,(t={},P()(t,"level",c.eb),P()(t,"showOptionLevel",!1),t))}]]})),Object(i.createElement)(N,{value:n.formId,onChange:function(e){return r({formId:e})}})))},save:function(e){var t=e.attributes;return Object(i.createElement)("div",{className:"feedback-card"},Object(i.createElement)("div",{className:"feedback-card__info"},Object(i.createElement)(b.InnerBlocks.Content,null)),Object(i.createElement)(N.Content,{value:t.formId}))}});var F,V=Object(u.__)("Page Header",c.nb);function H(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}Object(o.registerBlockType)(c.m,{title:V,category:c.F,icon:"schedule",description:Object(u.__)("Header for a page including title and right-aligned area for more content",c.nb),attributes:{template:{type:"array"},isLocked:{type:"boolean",default:!1},hideBlockTitleInEdit:{type:"boolean",default:!1},hideInnerBlocksInEdit:{type:"boolean",default:!1}},edit:function(e){var t=e.attributes;return Object(i.createElement)(i.Fragment,null,!t.hideBlockTitleInEdit&&Object(i.createElement)("div",{className:"dfh-editor-block-title"},V),Object(i.createElement)("div",{className:"page-header"},Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.g,{wrapperElements:["div","h1","span"],wrapperClassNames:["page-header__section","heading heading--2","heading__title"],isLocked:!0,template:[[c.n]]}],[c.g,{isLocked:t.isLocked,hideInEdit:t.hideInnerBlocksInEdit,wrapperClassNames:["page-header__section page-header__section--right"],template:t.template}]]})))},save:function(){return Object(i.createElement)("div",{className:"page-header"},Object(i.createElement)(b.InnerBlocks.Content,null))}});var R="size";function X(e){var t=e[R]?"text--".concat(e[R]):"",n=e.oneLine?"text--one-line":"",r=e.deemphasize?"text--light":"",A=e.className?e.className:"";return"".concat(t," ").concat(n," ").concat(r," ").concat(A)}Object(o.registerBlockType)(c.u,{title:Object(u.__)("Text",c.nb),category:c.F,icon:"editor-paragraph",description:Object(u.__)("Paragraph text",c.nb),transforms:{from:[{type:"raw",priority:10,selector:"p",transform:function(e){return Object(o.createBlock)(c.u,P()({},"value",e.outerHTML))}}]},attributes:(F={className:{type:"string",default:""},deemphasize:{type:"boolean",default:!1},oneLine:{type:"boolean",default:!1},placeholder:{type:"string",default:Object(u.__)("Enter text here",c.nb)}},P()(F,R,{type:"string",default:c.ob}),P()(F,"showOptionSize",{type:"boolean",default:!0}),P()(F,"tagName",{type:"string",default:"div"}),P()(F,"value",{type:"string"}),F),merge:function(e,t){return P()({},"value",(e.value||"")+(t.value||""))},edit:function(e){var t=e.className,n=e.attributes,r=e.setAttributes,A=e.mergeBlocks,a=e.onReplace;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)(b.InspectorControls,null,Object(i.createElement)(y.PanelBody,{title:Object(u.__)("Text Settings",c.nb)},n.showOptionSize&&Object(i.createElement)(y.RadioControl,{label:Object(u.__)("Size",c.nb),selected:n[R],options:[{label:Object(u.__)("Large",c.nb),value:c.pb},{label:Object(u.__)("Default",c.nb),value:c.ob},{label:Object(u.__)("Small",c.nb),value:c.qb}],onChange:function(e){return r(P()({},R,e))}}),Object(i.createElement)(y.ToggleControl,{label:Object(u.__)("Force to be one line",c.nb),checked:n.oneLine,onChange:function(e){return r({oneLine:e})}}),Object(i.createElement)(y.ToggleControl,{label:Object(u.__)("De-emphasize",c.nb),checked:n.deemphasize,onChange:function(e){return r({deemphasize:e})}}))),Object(i.createElement)(b.RichText,{tagName:n.tagName,identifier:"value",className:"".concat(t," text ").concat(X(n)),placeholder:n.placeholder,value:n.value,onChange:function(e){return r(P()({},"value",e))},onSplit:function(e){return e?Object(o.createBlock)(c.u,function(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?H(Object(n),!0).forEach((function(t){P()(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):H(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}({},n,P()({},"value",e))):Object(o.createBlock)(c.u)},onMerge:A,onReplace:a,onRemove:a?function(){return a([])}:void 0,"aria-label":n.value?Object(u.__)("Text block",c.nb):Object(u.__)("Empty block; start writing or type forward slash to choose a block",c.nb)}))},save:function(e){var t=e.attributes;return Object(i.createElement)(b.RichText.Content,{tagName:t.tagName,className:"text ".concat(X(t)),value:t.value})}}),Object(o.registerBlockType)(c.n,{title:Object(u.__)("Page Title",c.nb),category:c.F,icon:"format-aside",description:Object(u.__)("Title for the current page",c.nb),supports:{inserter:!1},edit:function(){var e=Object(g.useSelect)((function(e){return e(c.mb).getCurrentPost()}));return e?e.title:Object(u.__)("Loading...",c.nb)},save:function(){return null}});var K=n(11),x=n.n(K);Object(o.registerBlockType)(c.d,{title:Object(u.__)("Content Container",c.nb),category:c.F,icon:"media-text",description:Object(u.__)("Allows adding of various text and media content blocks",c.nb),supports:{inserter:!1},attributes:{title:{type:"string"},template:{type:"array",default:[[c.f],[c.u]]},isLocked:{type:"boolean",default:!1},noHeadings:{type:"boolean",default:!1},forceAttributes:{type:"object"}},edit:B({title:s.a.string,template:s.a.arrayOf(s.a.array),isLocked:s.a.bool,noHeadings:s.a.bool,forceAttributes:s.a.objectOf(s.a.object)},(function(e){var t=e.attributes,n=e.clientId,r=[c.u,c.C,c.S,c.T,c.U,c.V,c.O,c.Q,c.R].concat(x()(c.X)),A=t.noHeadings?r:[].concat(x()(r),[c.f]);return Object(i.createElement)(w,{clientId:n,innerBlockAttrs:h(t.forceAttributes,A)},t.title&&Object(i.createElement)("div",{className:"dfh-editor-block-title dfh-editor-block-title--nested"},t.title),Object(i.createElement)(b.InnerBlocks,{allowedBlocks:A,template:E(A,t.template),templateLock:t.isLocked?c.ib:c.jb}))})),save:function(){return Object(i.createElement)(b.InnerBlocks.Content,null)}});var L,S=n(17),z=n.n(S),W="size",M="showSizeOptions",J={category:c.F,parent:[c.c],supports:{customClassName:!1},attributes:(L={label:{type:"string"}},P()(L,W,{type:"string",default:c.D}),P()(L,M,{type:"boolean",default:!0}),P()(L,"isSecondary",{type:"boolean",default:!1}),P()(L,"isOutlined",{type:"boolean",default:!1}),P()(L,"url",{type:"string"}),P()(L,"urlTitle",{type:"string"}),L)};function G(e,t){var n=e.attributes,r=e.setAttributes;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)(b.InspectorControls,null,Object(i.createElement)(y.PanelBody,{title:Object(u.__)("Link Button Settings",c.nb)},n[M]&&Object(i.createElement)(y.RadioControl,{label:Object(u.__)("Size",c.nb),selected:n[W],options:[{label:Object(u.__)("Default",c.nb),value:c.D},{label:Object(u.__)("Small",c.nb),value:c.E}],onChange:function(e){return r(P()({},W,e))}}),Object(i.createElement)(y.ToggleControl,{label:Object(u.__)("Is secondary?",c.nb),checked:n.isSecondary,onChange:function(e){return r({isSecondary:e})}}),Object(i.createElement)(y.ToggleControl,{label:Object(u.__)("Is outlined?",c.nb),checked:n.isOutlined,onChange:function(e){return r({isOutlined:e})}}))),Object(i.createElement)(b.RichText,{className:"button-container__button button dfh-editor-is-clickable ".concat(Z(n)),placeholder:Object(u.__)("Enter button label here",c.nb),value:n.label,onChange:function(e){return r({label:e})}}),Object(i.createElement)(t,{url:n.url,title:n.urlTitle,label:Object(u.__)("Button target",c.nb),onChange:function(e){var t=e.url,n=e.title;return r({url:t,urlTitle:n})}}))}function Y(e){var t=e.attributes,n=(arguments.length>1&&void 0!==arguments[1]?arguments[1]:{}).openInNewTab,r=void 0!==n&&n?{rel:"noopener noreferrer",target:"_blank"}:{};return Object(i.createElement)("a",z()({},r,{href:t.url,className:"button-container__button button ".concat(Z(t))}),t.label)}function Z(e){var t=e[W]?"button--".concat(e[W]):"",n=e.isSecondary?"button--secondary":"",r=e.isOutlined?"button--outline":"";return"".concat(t," ").concat(n," ").concat(r)}function $(e){var t=e.onChange,n=e.url,r=e.title,a=e.label,o=Object(u.__)("None",c.nb),l=Object(u.__)("Target",c.nb),s=A.a.uniqueId();return Object(i.createElement)("div",{className:"dfh-editor-link-picker"},Object(i.createElement)("div",{className:"dfh-editor-link-picker__title-container text text--small text--light"},Object(i.createElement)("label",{className:"dfh-editor-link-picker__label",htmlFor:s},a||l),Object(i.createElement)("span",{className:"dfh-editor-link-picker__title"},r||o)),Object(i.createElement)(b.MediaUploadCheck,null,Object(i.createElement)(b.MediaUpload,{onSelect:t,value:n,render:function(e){var t=e.open;return Object(i.createElement)(y.Button,{className:"link dfh-editor-link-picker__control",onClick:t},Object(u.__)("Select file",c.nb))}})))}function ee(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function te(e){var t=e.elements,n=e.classNames,r=e.children;if(t.length!==n.length)throw new Error("Wrapper elements and wrapper class names must be arrays of the same length");if(0===t.length)return r;var A=t[0]?t[0]:i.Fragment;return Object(i.createElement)(A,{className:n[0]},Object(i.createElement)(te,{elements:t.slice(1),classNames:n.slice(1)},r))}function ne(e){var t=e.className,n=e.children;return t?Object(i.createElement)("div",{className:t},n):Object(i.createElement)(i.Fragment,null,n)}function re(e){var t=e.onChange,n=e.url,r=e.title,a=e.label,o=Object(u.__)("None",c.nb),l=Object(u.__)("Target",c.nb),s=A.a.uniqueId();return Object(i.createElement)("div",{className:"dfh-editor-link-picker"},Object(i.createElement)("div",{className:"dfh-editor-link-picker__title-container text text--small text--light"},Object(i.createElement)("label",{className:"dfh-editor-link-picker__label",htmlFor:s},a||l),Object(i.createElement)("span",{className:"dfh-editor-link-picker__title"},r||o)),Object(i.createElement)("div",{className:"dfh-editor-link-picker__control"},Object(i.createElement)(b.URLInputButton,{id:s,url:n,onChange:function(e,n){return t({url:e,title:n?n.title:e||o})}})))}function Ae(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}$.propTypes={onChange:s.a.func.isRequired,url:s.a.string,title:s.a.string,label:s.a.string},Object(o.registerBlockType)(c.e,function(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?ee(Object(n),!0).forEach((function(t){P()(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):ee(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}({},J,{title:Object(u.__)("File Button",c.nb),icon:"category",description:Object(u.__)("Button that points to a file",c.nb),edit:function(e){return G(e,$)},save:function(e){return Y(e,{openInNewTab:!0})}})),te.propTypes={elements:s.a.arrayOf(s.a.string).isRequired,classNames:s.a.arrayOf(s.a.string).isRequired},ne.propTypes={className:s.a.string},Object(o.registerBlockType)(c.g,{title:Object(u.__)("Inner Block Wrapper",c.nb),category:c.F,icon:"grid-view",description:Object(u.__)("Enables wrapping other blocks in custom elements",c.nb),supports:{inserter:!1},attributes:{allowedBlocks:{type:"array"},template:{type:"array"},isLocked:{type:"boolean",default:!1},hideInEdit:{type:"boolean",default:!1},wrapperElements:{type:"array",default:["div"]},wrapperClassNames:{type:"array",default:[""]},forceAttributes:{type:"object"}},edit:B({allowedBlocks:s.a.arrayOf(s.a.string),template:s.a.arrayOf(s.a.array),isLocked:s.a.bool,hideInEdit:s.a.bool,wrapperElements:s.a.arrayOf(s.a.string),wrapperClassNames:s.a.arrayOf(s.a.string),forceAttributes:s.a.objectOf(s.a.object)},(function(e){var t=e.clientId,n=e.attributes;return Object(i.createElement)(ne,{className:n.hideInEdit?"dfh-editor-hide":""},Object(i.createElement)(te,{elements:n.wrapperElements,classNames:n.wrapperClassNames},Object(i.createElement)(w,{clientId:t,innerBlockAttrs:n.forceAttributes},Object(i.createElement)(b.InnerBlocks,{allowedBlocks:n.allowedBlocks,template:n.template,templateLock:n.isLocked?c.ib:c.jb}))))})),save:function(e){var t=e.attributes;return Object(i.createElement)(te,{elements:t.wrapperElements,classNames:t.wrapperClassNames},Object(i.createElement)(b.InnerBlocks.Content,null))}}),re.propTypes={onChange:s.a.func.isRequired,url:s.a.string,title:s.a.string,label:s.a.string},Object(o.registerBlockType)(c.l,function(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?Ae(Object(n),!0).forEach((function(t){P()(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):Ae(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}({},J,{title:Object(u.__)("Link Button",c.nb),icon:"admin-links",description:Object(u.__)("Button that points to a link, whether internal or external",c.nb),edit:function(e){return G(e,re)},save:function(e){return Y(e)}})),Object(o.registerBlockType)(c.t,{title:Object(u.__)("Search Input",c.nb),category:c.F,icon:"search",description:Object(u.__)("Text input styled as a search bar",c.nb),supports:{inserter:!1},attributes:{placeholder:{type:"string",default:Object(u.__)("Search here...",c.nb)}},edit:function(e){var t=e.attributes;return Object(i.createElement)("input",{type:"text",className:"form__control form__control--search",placeholder:t.placeholder})},save:function(e){var t=e.attributes;return Object(i.createElement)("input",{type:"text",className:"form__control form__control--search",placeholder:t.placeholder})}});var ae=A.a.debounce((function(e,t){C(e).then((function(e){return t({thumbnailUrl:e})}),(function(){return t({thumbnailUrl:null})}))}),200);Object(o.registerBlockType)(c.C,{title:Object(u.__)("Video Thumbnail",c.nb),category:c.I,icon:"format-video",description:Object(u.__)("Thumnail preview of a video that opens into a pop-up video",c.nb),attributes:{label:{type:"string",default:Object(u.__)("Play",c.nb)},videoUrl:{type:"string"},thumbnailUrl:{type:"string"}},edit:function(e){var t=e.attributes,n=e.setAttributes;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)(y.TextControl,{label:Object(u.__)("Video URL",c.nb),help:Object(u.__)("Only YouTube and Vimeo links are supported",c.nb),value:t.videoUrl,onChange:function(e){n({videoUrl:e}),ae(e,n)}}),Object(i.createElement)(y.TextControl,{label:Object(u.__)("Hover button label",c.nb),help:Object(u.__)("Button shows up when hovering over thumbnail",c.nb),value:t.label,onChange:function(e){return n({label:e})}}),t.thumbnailUrl&&Object(i.createElement)("img",{className:"dfh-editor-rounded-corners",src:t.thumbnailUrl,alt:"Video thumbnail"}))},save:function(e){var t=e.attributes;return t.thumbnailUrl?Object(i.createElement)("a",{href:t.videoUrl,className:"video-thumbnail","data-lity":!0},Object(i.createElement)("img",{className:"video-thumbnail__image",src:t.thumbnailUrl,alt:"Video thumbnail"}),Object(i.createElement)("button",{type:"button",className:"video-thumbnail__control"},t.label)):null}});var oe=Object(u.__)("Content Width Container",c.nb);function ce(e){return e.isNarrow?"container--narrow":""}Object(o.registerBlockType)("dfh/content-width-container",{title:oe,category:c.H,icon:"grid-view",description:Object(u.__)("Ensures appropriate horizontal spacing and width of content of any type",c.nb),attributes:{isNarrow:{type:"boolean",default:!1}},edit:function(e){var t=e.attributes,n=e.setAttributes;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)(b.InspectorControls,null,Object(i.createElement)(y.PanelBody,{title:Object(u.__)("Content Container Settings",c.nb)},Object(i.createElement)(y.ToggleControl,{label:Object(u.__)("Is narrow width?",c.nb),checked:t.isNarrow,onChange:function(e){return n({isNarrow:e})}}))),Object(i.createElement)("div",{className:"dfh-editor-block-title"},oe),Object(i.createElement)(b.InnerBlocks,{templateLock:!1}))},save:function(e){var t=e.attributes;return Object(i.createElement)("div",{className:"container container--user-content ".concat(ce(t))},Object(i.createElement)(b.InnerBlocks.Content,null))}});var ie=Object(u.__)("Resource Overview",c.nb);Object(o.registerBlockType)("".concat(c.kb,"/resource-overview"),{title:ie,category:c.G,icon:"index-card",description:Object(u.__)("All resource categories with examples of each",c.nb),supports:{multiple:!1},edit:function(e){var t=e.attributes,n=e.setAttributes;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)("div",{className:"dfh-editor-block-title"},ie),Object(i.createElement)(y.TextControl,{label:Object(u.__)("All resources button label",c.nb),help:Object(u.__)("Label for the button in each category to go to the resource overview page",c.nb),value:t.allResourcesLabel,onChange:function(e){return n({allResourcesLabel:e})}}))},save:function(){return null}});var le=Object(u.__)("Featured & Contact",c.nb);Object(o.registerBlockType)("".concat(c.kb,"/featured-and-contact"),{title:le,category:c.G,icon:"awards",description:Object(u.__)("Featured item and contact form for the landing page",c.nb),edit:function(){return Object(i.createElement)(i.Fragment,null,Object(i.createElement)("div",{className:"dfh-editor-block-title"},le),Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.i],[c.h]]}))},save:function(e){e.attributes;return Object(i.createElement)(b.InnerBlocks.Content,null)}});var se=Object(u.__)("Hero",c.nb);Object(o.registerBlockType)("".concat(c.kb,"/hero"),{title:se,category:c.G,icon:"flag",description:Object(u.__)("Header with overview video for the landing page",c.nb),edit:function(){return Object(i.createElement)(i.Fragment,null,Object(i.createElement)("div",{className:"dfh-editor-block-title"},se),Object(i.createElement)("div",{className:"landing-hero"},Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.j],[c.k]]})))},save:function(){return Object(i.createElement)("div",{className:"landing-hero"},Object(i.createElement)(b.InnerBlocks.Content,null))}});var ue=Object(u.__)("Mission Statement",c.nb);Object(o.registerBlockType)("".concat(c.kb,"/mission-statement"),{title:ue,category:c.G,icon:"lightbulb",description:Object(u.__)("Statement with background graphic for emphasis",c.nb),attributes:{hiddenTitle:{type:"string",default:Object(u.__)("Our mission",c.nb)}},edit:function(e){var t=e.attributes,n=e.setAttributes;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)("div",{className:"dfh-editor-block-title"},ue),Object(i.createElement)("div",{className:"landing-mission"},Object(i.createElement)(y.TextControl,{label:Object(u.__)("Hidden title text",c.nb),help:Object(u.__)("Title will only be visible to screen readers",c.nb),value:t.hiddenTitle,onChange:function(e){return n({hiddenTitle:e})}}),Object(i.createElement)(b.InnerBlocks,{allowedBlocks:[c.u],template:[[c.u]]})))},save:function(e){var t=e.attributes;return Object(i.createElement)("div",{className:"landing-mission"},Object(i.createElement)("h2",{className:"landing-mission__title"},t.hiddenTitle),Object(i.createElement)(b.InnerBlocks.Content,null))}});var be=["image"];function de(e){var t,n,r,A=e.onSelect,a=e.url,o=e.description,l=e.label,s=e.previewClassName,d=void 0===s?"":s;return Object(i.createElement)("div",{className:"dfh-editor-image-picker"},(n=o,r=d,(t=a)?Object(i.createElement)("img",{className:r,src:t,alt:n}):Object(i.createElement)(y.Placeholder,{icon:"format-image",label:"No image selected"})),Object(i.createElement)(b.MediaUploadCheck,null,Object(i.createElement)("div",{className:"dfh-editor-image-picker__control"},Object(i.createElement)(b.MediaUpload,{onSelect:A,allowedTypes:be,value:a,render:function(e){var t=e.open;return Object(i.createElement)(y.Button,{className:"button button--secondary button--small",onClick:t},l||Object(u.__)("Select image",c.nb))}}))))}de.propTypes={onSelect:s.a.func.isRequired,url:s.a.string,description:s.a.string,label:s.a.string,previewClassName:s.a.string},de.Content=function(e){var t=e.url,n=e.description,r=e.className,A=void 0===r?"":r;return Object(i.createElement)("img",{className:A,src:t,alt:n})},de.Content.propTypes={url:s.a.string,description:s.a.string,className:s.a.string};var pe=Object(u.__)("Value Statement",c.nb);function ge(e){return e.reverse?"landing-value--reversed":""}Object(o.registerBlockType)("".concat(c.kb,"/value-statement"),{title:pe,category:c.G,icon:"heart",description:Object(u.__)("Statement accompanied by an illustration",c.nb),attributes:{reverse:{type:"boolean",default:!1},valueImage:{type:"string",default:"data:image/png;base64,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"},valueImageAlt:{type:"string",default:Object(u.__)("Value illustration",c.nb)}},edit:function(e){var t,n=e.attributes,r=e.setAttributes,A=Object(i.createElement)("div",{className:"landing-value__description"},Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.d,{forceAttributes:P()({},c.f,(t={},P()(t,"level",c.db),P()(t,"showOptionLevel",!1),t))}]]})),a=Object(i.createElement)("div",{className:"landing-value__image"},Object(i.createElement)(de,{onSelect:function(e){var t=e.url,n=e.alt;return r({valueImage:t,valueImageAlt:n})},url:n.valueImage,description:n.valueImageAlt}));return Object(i.createElement)(i.Fragment,null,Object(i.createElement)(b.InspectorControls,null,Object(i.createElement)(y.PanelBody,{title:Object(u.__)("Value Statement Settings",c.nb)},Object(i.createElement)(y.ToggleControl,{label:Object(u.__)("Show image on left",c.nb),checked:n.reverse,onChange:function(e){return r({reverse:e})}}))),Object(i.createElement)("div",{className:"dfh-editor-block-title"},pe),Object(i.createElement)("div",{className:"landing-value ".concat(ge(n))},n.reverse?Object(i.createElement)(i.Fragment,null,a,A):Object(i.createElement)(i.Fragment,null,A,a)))},save:function(e){var t=e.attributes;return Object(i.createElement)("div",{className:"landing-value ".concat(ge(t))},Object(i.createElement)("div",{className:"landing-value__description"},Object(i.createElement)(b.InnerBlocks.Content,null)),Object(i.createElement)("div",{className:"landing-value__image"},Object(i.createElement)(de.Content,{url:t.valueImage,description:t.valueImageAlt})))}});var me=Object(u.__)("Landing Contact Form",c.nb);Object(o.registerBlockType)(c.h,{title:me,category:c.G,icon:"admin-users",description:Object(u.__)("Contact form on the landing page",c.nb),supports:{inserter:!1},attributes:{formId:{type:"string"},email:{type:"string"},emailInvite:{type:"string",default:Object(u.__)("Or email us directly at",c.nb)}},edit:function(e){var t,n=e.attributes,r=e.setAttributes;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)("div",{className:"dfh-editor-block-title dfh-editor-block-title--nested"},me),Object(i.createElement)("section",{className:"landing-contact"},Object(i.createElement)("div",{className:"landing-contact__form"},Object(i.createElement)("div",{className:"margin-b-2"},Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.d,{forceAttributes:P()({},c.f,(t={},P()(t,"level",c.db),P()(t,"showOptionLevel",!1),t))}]]})),Object(i.createElement)(N,{value:n.formId,onChange:function(e){return r({formId:e})}}),Object(i.createElement)(y.TextControl,{label:Object(u.__)("Email address invitation",c.nb),help:Object(u.__)("Provide context about the purpose of the email address",c.nb),value:n.emailInvite,onChange:function(e){return r({emailInvite:e})}}),Object(i.createElement)(y.TextControl,{label:Object(u.__)("Alternate email address",c.nb),placeholder:Object(u.__)("Enter email address here",c.nb),value:n.email,onChange:function(e){return r({email:e})}}))))},save:function(e){var t=e.attributes;return Object(i.createElement)("section",{className:"landing-contact"},Object(i.createElement)("div",{className:"landing-contact__form"},Object(i.createElement)("div",{className:"margin-b-2"},Object(i.createElement)(b.InnerBlocks.Content,null)),Object(i.createElement)(N.Content,{value:t.formId}),t.emailInvite&&t.email&&Object(i.createElement)("div",{className:"margin-t-2"},Object(i.createElement)("p",{className:"text text-center"},t.emailInvite,Object(i.createElement)("br",null),Object(i.createElement)("a",{className:"link",href:"mailto:".concat(t.email)},t.email)))))}}),Object(o.registerBlockType)(c.i,{title:Object(u.__)("Landing Featured",c.nb),category:c.G,icon:"awards",description:Object(u.__)("Featured item on the landing page",c.nb),supports:{inserter:!1},edit:function(){var e;return Object(i.createElement)("section",{className:"landing-toolkits"},Object(i.createElement)("div",{className:"landing-toolkits__featured"},Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.g,{wrapperClassNames:["margin-b-2"],isLocked:!0,allowedBlocks:[c.d],template:[[c.d,{forceAttributes:P()({},c.f,(e={},P()(e,"level",c.db),P()(e,"showOptionLevel",!1),e))}]]}],[c.c]]})))},save:function(){return Object(i.createElement)("section",{className:"landing-toolkits"},Object(i.createElement)("div",{className:"landing-toolkits__featured"},Object(i.createElement)(b.InnerBlocks.Content,null)))}}),Object(o.registerBlockType)(c.j,{title:Object(u.__)("Landing Header",c.nb),category:c.G,icon:"flag",description:Object(u.__)("Header of the landing page",c.nb),supports:{inserter:!1},edit:function(){var e,t,n;return Object(i.createElement)("header",{className:"landing-header"},Object(i.createElement)("div",{className:"landing-header__container"},Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.g,{wrapperClassNames:["margin-b-3"],isLocked:!0,template:[[c.d,{forceAttributes:(n={},P()(n,c.f,(e={},P()(e,"level",c.gb),P()(e,"showPreTitle",!1),P()(e,"showPostTitle",!1),P()(e,U,!1),P()(e,"showOptionLevel",!1),P()(e,"showOptionShowPreTitle",!1),P()(e,"showOptionShowPostTitle",!1),P()(e,"showOptionHighlightMainTitle",!1),e)),P()(n,c.u,(t={},P()(t,R,c.pb),P()(t,"showOptionSize",!1),t)),n)}]]}],[c.c]]})))},save:function(){return Object(i.createElement)("header",{className:"landing-header"},Object(i.createElement)("div",{className:"landing-header__container"},Object(i.createElement)(b.InnerBlocks.Content,null)))}});function fe(e){var t=e.target,n=e.onChange,r=e.label;return Object(i.createElement)(re,{url:t,title:t,label:r,onChange:function(e){var t=e.url;return A.a.isFunction(n)&&n({target:t})}})}fe.propTypes={onChange:s.a.func.isRequired,target:s.a.string},fe.Content=function(e){var t=e.className,n=void 0===t?"":t,r=e.target,A=e.children;return Object(i.createElement)("a",{href:r,className:n,"data-lity":!0},A)},fe.Content.propTypes={className:s.a.string,target:s.a.string,label:s.a.string};var Oe=Object(u.__)("Landing Video",c.nb);Object(o.registerBlockType)(c.k,{title:Oe,category:c.G,icon:"video-alt2",description:Object(u.__)("Overview video on the landing page",c.nb),supports:{inserter:!1},attributes:{videoImageUrl:{type:"string",default:"data:image/png;base64,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"},videoImageAlt:{type:"string",default:Object(u.__)("Video thumbnail",c.nb)},videoUrl:{type:"string"}},edit:function(e){var t,n,r,A=e.attributes,a=e.setAttributes;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)("div",{className:"dfh-editor-block-title dfh-editor-block-title--nested"},Oe),Object(i.createElement)("section",{className:"landing-video"},Object(i.createElement)("div",{className:"landing-video__description"},Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.d,{forceAttributes:(r={},P()(r,c.f,(t={},P()(t,"level",c.eb),P()(t,"showPreTitle",!1),P()(t,"showPostTitle",!1),P()(t,U,!1),P()(t,"showOptionLevel",!1),P()(t,"showOptionShowPreTitle",!1),P()(t,"showOptionShowPostTitle",!1),P()(t,"showOptionHighlightMainTitle",!1),t)),P()(r,c.u,(n={},P()(n,R,c.ob),P()(n,"showOptionSize",!1),n)),r)}]]})),Object(i.createElement)(de,{label:Object(u.__)("Select landing video preview",c.nb),onSelect:function(e){var t=e.url,n=e.alt;return a({videoImageUrl:t,videoImageAlt:n})},previewClassName:"landing-video__preview",url:A.videoImageUrl,description:A.videoImageAlt}),Object(i.createElement)(fe,{label:Object(u.__)("Landing video URL",c.nb),target:A.videoUrl,onChange:function(e){var t=e.target;return a({videoUrl:t})}})))},save:function(e){var t=e.attributes;return Object(i.createElement)("section",{className:"landing-video"},Object(i.createElement)("div",{className:"landing-video__description"},Object(i.createElement)(b.InnerBlocks.Content,null)),Object(i.createElement)(de.Content,{className:"landing-video__preview",url:t.videoImageUrl,description:t.videoImageAlt}),t.videoUrl&&Object(i.createElement)(fe.Content,{className:"landing-video__button",target:t.videoUrl},Object(i.createElement)("span",{className:"sr-only"},"Play introductory video")))}});var ve=Object(u.__)("Resource Detail",c.nb);Object(o.registerBlockType)("".concat(c.kb,"/resource-detail"),{title:ve,category:c.J,icon:"networking",description:Object(u.__)("Detailed information for a specific resource",c.nb),edit:function(){return Object(i.createElement)(i.Fragment,null,Object(i.createElement)("div",{className:"dfh-editor-block-title"},ve),Object(i.createElement)("div",{className:"resource-detail"},Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.p],[c.r]]})))},save:function(){return Object(i.createElement)("div",{className:"resource-detail"},Object(i.createElement)(b.InnerBlocks.Content,null))}});var je,he=Object(u.__)("Resource Previews",c.nb);function Ce(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"";return[c.g,{wrapperClassNames:["".concat(c.L," ").concat(e)],isLocked:!0}]}Object(o.registerBlockType)("".concat(c.kb,"/resource-previews"),{title:he,category:c.J,icon:"welcome-view-site",description:Object(u.__)("Displays, searches, and filters previews of all resources",c.nb),attributes:{noResultsMessage:{type:"string",default:Object(u.__)("No resources found. Please try another search or let us know what we're missing.",c.nb)}},edit:function(e){var t=e.attributes,n=e.setAttributes;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)("div",{className:"dfh-editor-block-title"},he),Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.m,{isLocked:!0,hideBlockTitleInEdit:!0,hideInnerBlocksInEdit:!0,template:[Ce("page-header__metadata page-header__metadata--secondary"),[c.g,{wrapperClassNames:["form form--inline page-header__form"],isLocked:!0,template:[[c.t,{placeholder:Object(u.__)("Search for a resource...",c.nb)}]]}]]}],[c.g,{wrapperClassNames:["resource-categories"],isLocked:!0,template:[Ce("resource-categories__metadata"),[c.o]]}]]}),Object(i.createElement)(y.TextareaControl,{label:Object(u.__)("No results message",c.nb),value:t.noResultsMessage,onChange:function(e){return n({noResultsMessage:e})}}))},save:function(e){var t=e.attributes;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)(b.InnerBlocks.Content,null),Object(i.createElement)(i.RawHTML,null,'[ajax_load_more\n              id="'.concat(c.a,'"\n              container_type="div"\n              transition_container_classes="resource-previews"\n              post_type="').concat(c.M,"\"\n              no_results_text=\"<div class='ajax-loader-none'>").concat(A.a.escape(t.noResultsMessage),'</div>"\n              posts_per_page="12"]')))}}),Object(o.registerBlockType)(c.o,{title:Object(u.__)("Resource Category Filter",c.nb),category:c.J,icon:"filter",description:Object(u.__)("Filter buttons for selecting which resource categories to show",c.nb),supports:{inserter:!1},edit:function(e){var t=e.attributes,n=e.setAttributes,r=_.range(1,13).map((function(e){return{value:String(e),label:String(e)}}));return Object(i.createElement)(y.SelectControl,{label:Object(u.__)("Max number of categories to show in filter",c.nb),value:t.maxNumToShow,onChange:function(e){return n({maxNumToShow:e})},options:[{value:null,label:"Select a max number of categories",disabled:!0}].concat(x()(r))})},save:function(){return null}}),Object(o.registerBlockType)(c.q,{title:Object(u.__)("Resource Detail Info",c.nb),category:c.J,icon:"networking",description:Object(u.__)("Title and category of a specific resource",c.nb),supports:{inserter:!1},edit:function(e){var t=e.attributes,n=e.setAttributes;return Object(i.createElement)(y.TextControl,{label:Object(u.__)("Back to all resources label",c.nb),help:Object(u.__)("This label is shown on mobile devices only",c.nb),value:t.allResourcesLabel,onChange:function(e){return n({allResourcesLabel:e})}})},save:function(){return null}}),Object(o.registerBlockType)(c.p,{title:Object(u.__)("Resource Detail Description",c.nb),category:c.J,icon:"networking",description:Object(u.__)("Title, category, and description of a specific resource",c.nb),supports:{inserter:!1},attributes:{description:{type:"string"}},edit:function(e){var t=e.attributes,n=e.setAttributes;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)(y.TextareaControl,{label:Object(u.__)("Resource summary",c.nb),help:Object(u.__)("This short description is used when displaying this resource in other parts of the site",c.nb),value:t.description,onChange:function(e){return n({description:e})}}),Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.q],[c.d,{noHeadings:!0,title:Object(u.__)("Resource Description",c.nb)}]]}))},save:function(){return Object(i.createElement)("div",{className:"resource-detail__info"},Object(i.createElement)(b.InnerBlocks.Content,null))}}),Object(o.registerBlockType)(c.r,{title:Object(u.__)("Resource Detail Steps",c.nb),category:c.J,icon:"excerpt-view",description:Object(u.__)("Next steps for a specific resource",c.nb),supports:{inserter:!1},edit:function(){var e,t;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)("div",{className:"dfh-editor-block-title dfh-editor-block-title--nested"},Object(u.__)("Documents & Steps",c.nb)),Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.f,(e={mainTitle:Object(u.__)("Documents",c.nb)},P()(e,"level",c.eb),P()(e,"showOptionLevel",!1),P()(e,"showPreTitle",!1),P()(e,"showPostTitle",!1),e)],[c.g,{wrapperElements:["ol"],wrapperClassNames:["resource-steps"],allowedBlocks:[c.s],template:[[c.s]]}],[c.f,(t={mainTitle:Object(u.__)("Next steps",c.nb)},P()(t,"level",c.eb),P()(t,"showOptionLevel",!1),P()(t,"showPreTitle",!1),P()(t,"showPostTitle",!1),t)],[c.d,{noHeadings:!0}]]}))},save:function(){return Object(i.createElement)("div",{className:"resource-detail__steps"},Object(i.createElement)(b.InnerBlocks.Content,null))}}),Object(o.registerBlockType)(c.s,{title:Object(u.__)("Resource Detail Step",c.nb),category:c.J,icon:"excerpt-view",description:Object(u.__)("Specific step for a specific resource",c.nb),parent:[c.r],edit:function(e){var t,n=e.clientId;e.attributes,e.setAttributes;return Object(i.createElement)("li",{key:n,className:"resource-steps__step"},Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.g,{wrapperClassNames:["resource-steps__step__title"],isLocked:!0,template:[[c.d,{noHeadings:!0}]]}],[c.c,{expandWidth:!0,forceAttributes:P()({},c.hb,(t={},P()(t,W,c.E),P()(t,M,!1),t)),template:[[c.e,{isOutlined:!0,label:Object(u.__)("Download file",c.nb)}]]}]]}))},save:function(e){var t=e.clientId;e.attributes;return Object(i.createElement)("li",{key:t,className:"resource-steps__step"},Object(i.createElement)(b.InnerBlocks.Content,null))}});var Be,Ee="title",we="url",ke="showAtEnd";function Ie(e,t){return Object(i.createElement)("li",{key:t,className:"toolkit-topics__section toolkit-topics__section--unsequenced"},Object(i.createElement)("a",{href:t,className:"link toolkit-topics__section__control",rel:"noopener noreferrer",target:"_blank"},Object(i.createElement)("p",{className:"toolkit-topics__section__control__title"},e)))}Object(o.registerBlockType)(c.x,{title:Object(u.__)("Toolkit Link",c.nb),category:c.K,icon:"admin-links",description:Object(u.__)("Relevant link for a specific toolkit",c.nb),parent:[c.w],attributes:(je={},P()(je,Ee,{type:"string"}),P()(je,we,{type:"string"}),P()(je,"urlTitle",{type:"string"}),P()(je,ke,{type:"boolean",default:!1}),je),edit:function(e){var t=e.attributes,n=e.setAttributes;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)(y.TextControl,{label:Object(u.__)("Link title",c.nb),value:t[Ee],onChange:function(e){return n(P()({},Ee,e))}}),Object(i.createElement)(y.ToggleControl,{label:Object(u.__)("Show after all sections?",c.nb),help:Object(u.__)("Links are usually shown before toolkit sections but can also be shown after all sections",c.nb),checked:t[ke],onChange:function(e){return n(P()({},ke,e))}}),Object(i.createElement)(re,{url:t[we],title:t.urlTitle,label:Object(u.__)("Link target",c.nb),onChange:function(e){var t,r=e.url,A=e.title;return n((t={},P()(t,we,r),P()(t,"urlTitle",A),t))}}))},save:function(e){var t=e.attributes;return Ie(t[Ee],t[we])}});var Qe,qe="presenter",Pe="title";Object(o.registerBlockType)(c.B,{title:Object(u.__)("Toolkit Section Info",c.nb),category:c.K,icon:"analytics",description:Object(u.__)("Title and presenter for a particular section of a toolkit",c.nb),supports:{inserter:!1},attributes:(Be={},P()(Be,"index",{type:"number"}),P()(Be,Pe,{type:"string"}),P()(Be,qe,{type:"string"}),Be),edit:function(e){var t=e.attributes,n=e.setAttributes;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)(y.TextControl,{label:Object(u.__)("Section title",c.nb),value:t[Pe],onChange:function(e){return n(P()({},Pe,e))}}),Object(i.createElement)(y.TextControl,{label:Object(u.__)("Presenter",c.nb),value:t[qe],onChange:function(e){return n(P()({},qe,e))}}))},save:function(e){var t=e.attributes;return Object(i.createElement)("div",{className:"toolkit-detail-container__header toolkit-detail-section__header"},Object(i.createElement)("h2",{className:"heading heading--3 heading--one-line"},t.index+1,". ",t[Pe]),Object(i.createElement)("p",{className:"toolkit-detail-section__header__presenter"},t[qe]))}});var ye="title",Ue="presenter",Te="title",Ne="url",De="showAtEnd",Fe=A.a.debounce((function(e,t,n){var r=[],a=[];e.forEach((function(e){var t,n=e.name,A=e.attributes;if(n===c.B)r.push((t={},P()(t,ye,A[Pe]),P()(t,Ue,A[qe]),t));else if(n===c.x){var o;a.push((o={},P()(o,Te,A[Ee]),P()(o,Ne,A[we]),P()(o,De,A[ke]),o))}})),A.a.isEqual(r,t.sectionInfoList)&&A.a.isEqual(a,t.linkInfoList)||n({sectionInfoList:r,linkInfoList:a})}),500);Object(o.registerBlockType)(c.w,{title:Object(u.__)("Toolkit Detail List",c.nb),category:c.K,icon:"excerpt-view",description:Object(u.__)("Links and navigation for a specific toolkit",c.nb),supports:{inserter:!1},attributes:(Qe={},P()(Qe,"overallMarkupId",{type:"string"}),P()(Qe,"sectionInfoList",{type:"array",default:[]}),P()(Qe,"linkInfoList",{type:"array",default:[]}),Qe),edit:Object(g.withSelect)((function(e,t){var n=t.attributes,r=e(c.lb),A=r.getClientIdsOfDescendants([n.parentClientId]);return{innerBlockObjs:r.getBlocksByClientId(A)}}))((function(e){var t=e.innerBlockObjs,n=e.attributes,r=e.setAttributes;return Fe(t,n,r),Object(i.createElement)(i.Fragment,null,Object(i.createElement)("div",{className:"dfh-editor-block-title dfh-editor-block-title--nested"},Object(u.__)("Toolkit Links",c.nb)),Object(i.createElement)(b.InnerBlocks,{allowedBlocks:[c.x],templateLock:c.jb}))})),save:function(e){var t=e.attributes,n=t.sectionInfoList,r=t.linkInfoList,A=n.length;return Object(i.createElement)("div",{className:"toolkit-topics"},Object(i.createElement)("ol",{className:"toolkit-topics__unsequenced-list"},Object(i.createElement)(b.InnerBlocks.Content,null)),Object(i.createElement)("button",{type:"button",className:"toolkit-topics__toggle button button--small button--outline button--secondary"},"Show all ",A," sections"),Object(i.createElement)("ol",{className:"toolkit-topics__list"},r.filter((function(e){return!e[De]})).map((function(e){return Ie(e[Te],e[Ne])})),x()(Array(A).keys()).map((function(e){return function(e,t,n,r){var A=t[ye],a=t[Ue];return Object(i.createElement)("li",{key:"".concat(A,"-").concat(a),className:"toolkit-topics__section ".concat(r===n-1?"toolkit-topics__section--last-in-sequence":""),"data-slick-nav-target-id":e,"data-slick-nav-target-index":r},Object(i.createElement)("div",{className:"toolkit-topics__section__indicator-wrapper"},Object(i.createElement)("button",{type:"button",className:"toolkit-topics__section__control"},Object(i.createElement)("div",{className:"toolkit-topics__section__control__title"},A),Object(i.createElement)("div",{className:"toolkit-topics__section__control__subtitle"},a))))}(t.overallMarkupId,n[e],A,e)})),r.filter((function(e){return e[De]})).map((function(e){return Ie(e[Te],e[Ne])}))))}});var Ve,He=A.a.debounce((function(e,t,n){var r=0,a=0,o=0,i=0,l=0,s=0;e.forEach((function(e){var t=e.name;e.attributes;c.X.includes(t)&&(c.W.includes(t)?r++:c.Y.includes(t)?a++:c.Z.includes(t)?o++:c.ab.includes(t)?i++:c.bb.includes(t)?l++:c.cb.includes(t)&&s++)})),A.a.isEqual(r,t.numAudio)&&A.a.isEqual(a,t.numDocuments)&&A.a.isEqual(o,t.numImages)&&A.a.isEqual(i,t.numPolls)&&A.a.isEqual(l,t.numSlideshows)&&A.a.isEqual(s,t.numVideos)||n({numAudio:r,numDocuments:a,numImages:o,numPolls:i,numSlideshows:l,numVideos:s})}),200),Re=A.a.debounce((function(e,t,n){var r;e.forEach((function(e){var t=e.name,n=e.attributes;!r&&c.rb.includes(t)&&(r=n.url)})),A.a.isEqual(r,t.previewVideoUrl)||C(r).then((function(e){return n({previewVideoUrl:r,previewImageUrl:e})}),(function(){return n({previewVideoUrl:null,previewImageUrl:null})}))}),200);Object(o.registerBlockType)(c.y,{title:Object(u.__)("Toolkit Detail Metadata",c.nb),category:c.K,icon:"portfolio",description:Object(u.__)("Metadata information describing a toolkit",c.nb),supports:{inserter:!1},attributes:{description:{type:"string"},previewVideoUrl:{type:"string"},previewImageUrl:{type:"string"},numAudio:{type:"integer"},numDocuments:{type:"integer"},numImages:{type:"integer"},numPolls:{type:"integer"},numSlideshows:{type:"integer"},numVideos:{type:"integer"}},edit:Object(g.withSelect)((function(e,t){var n=t.attributes,r=e(c.lb),A=r.getClientIdsOfDescendants([n.parentClientId]);return{innerBlockObjs:r.getBlocksByClientId(A)}}))((function(e){var t=e.innerBlockObjs,n=e.attributes,r=e.setAttributes;return He(t,n,r),Re(t,n,r),Object(i.createElement)(y.TextareaControl,{label:Object(u.__)("Toolkit summary",c.nb),help:Object(u.__)("This short description is used when displaying this toolkit in other parts of the site",c.nb),value:n.description,onChange:function(e){return r({description:e})}})})),save:function(){return null}});Object(o.registerBlockType)(c.z,{title:Object(u.__)("Toolkit Section",c.nb),category:c.K,icon:"analytics",description:Object(u.__)("Text and rich media content for a particular section of a toolkit",c.nb),parent:[c.A],attributes:(Ve={},P()(Ve,"overallMarkupId",{type:"string"}),P()(Ve,"backButtonLabel",{type:"string"}),P()(Ve,"nextButtonLabel",{type:"string"}),P()(Ve,"index",{type:"number"}),P()(Ve,"isLastBlock",{type:"boolean"}),Ve),edit:Object(g.withSelect)((function(e,t){var n=t.clientId,r=t.attributes,A=e(c.lb);return{index:A.getBlockIndex(n,r.parentClientId),isLastBlock:!A.getNextBlockClientId(n)}}))((function(e){var t,n=e.index,r=e.isLastBlock,A=e.clientId,a=e.attributes,o=e.setAttributes;return n===a.index&&r===a.isLastBlock||o({index:n,isLastBlock:r}),Object(i.createElement)(i.Fragment,null,Object(i.createElement)("div",{className:"dfh-editor-block-title dfh-editor-block-title--nested"},Object(i.createElement)("div",null,Object(u.__)("Section",c.nb)),Object(i.createElement)("span",{className:"dfh-editor-block-title__label"},n+1)),Object(i.createElement)("div",{className:"toolkit-detail-section"},Object(i.createElement)(w,{clientId:A,innerBlockAttrs:P()({},c.B,{index:n})},Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.B],[c.d,{forceAttributes:P()({},c.f,(t={},P()(t,"level",c.eb),P()(t,"showOptionLevel",!1),P()(t,U,!1),P()(t,"showOptionHighlightMainTitle",!1),t)),template:[[c.P],[c.u],[c.T],[c.f,{mainTitle:Object(u.__)("Further reading",c.nb)}],[c.S]]}]]}))))})),save:function(e){var t=e.attributes;return Object(i.createElement)("div",{className:"toolkit-detail-section"},Object(i.createElement)(b.InnerBlocks.Content,null),Object(i.createElement)("div",{className:"toolkit-detail-section__controls"},Object(i.createElement)("div",{className:"button-container button-container--expand-width"},t.index>0&&Object(i.createElement)("button",{type:"button",className:"button-container__button button button--outline","data-slick-nav-target-id":t.overallMarkupId,"data-slick-nav-method":"slickPrev"},t.backButtonLabel),!t.isLastBlock&&Object(i.createElement)("button",{type:"button",className:"button-container__button button button--secondary","data-slick-nav-target-id":t.overallMarkupId,"data-slick-nav-method":"slickNext"},t.nextButtonLabel))))}});var Xe=Object(u.__)("Toolkit Detail",c.nb);Object(o.registerBlockType)("".concat(c.kb,"/toolkit-detail"),{title:Xe,category:c.K,icon:"portfolio",description:Object(u.__)("Video, text, and link resources that form a toolkit",c.nb),edit:function(e){var t,n,r=e.clientId;return Object(i.createElement)(w,{clientId:r,innerBlockAttrs:(n={},P()(n,c.y,P()({},"parentClientId",r)),P()(n,c.g,{forceAttributes:P()({},c.w,(t={},P()(t,"overallMarkupId",r),P()(t,"parentClientId",r),t))}),P()(n,c.A,P()({},"overallMarkupId",r)),n)},Object(i.createElement)("div",{className:"dfh-editor-block-title"},Xe),Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.y],[c.g,{wrapperClassNames:["toolkit-detail-container__list"],isLocked:!0,template:[[c.v],[c.w]]}],[c.A]]}))},save:function(){return Object(i.createElement)("div",{className:"toolkit-detail-container"},Object(i.createElement)(b.InnerBlocks.Content,null))}});var Ke,xe=Object(u.__)("Toolkit Previews",c.nb);Object(o.registerBlockType)("".concat(c.kb,"/toolkit-previews"),{title:xe,category:c.K,icon:"welcome-view-site",description:Object(u.__)("Displays and searches previews of all toolkits",c.nb),attributes:{noResultsMessage:{type:"string",default:Object(u.__)("No toolkits found. Please try another search or let us know what we're missing.",c.nb)}},edit:function(e){var t=e.attributes,n=e.setAttributes;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)("div",{className:"dfh-editor-block-title"},xe),Object(i.createElement)(b.InnerBlocks,{templateLock:c.ib,template:[[c.m,{isLocked:!0,hideBlockTitleInEdit:!0,hideInnerBlocksInEdit:!0,template:[[c.g,{wrapperClassNames:["form form--inline page-header__form"],isLocked:!0,template:[[c.t,{placeholder:Object(u.__)("Search for a toolkit...",c.nb)}]]}]]}]]}),Object(i.createElement)(y.TextareaControl,{label:Object(u.__)("No results message",c.nb),value:t.noResultsMessage,onChange:function(e){return n({noResultsMessage:e})}}))},save:function(e){var t=e.attributes;return Object(i.createElement)(i.Fragment,null,Object(i.createElement)(b.InnerBlocks.Content,null),Object(i.createElement)(i.RawHTML,null,'[ajax_load_more\n              id="'.concat(c.b,'"\n              container_type="div"\n              transition_container_classes="container"\n              post_type="').concat(c.N,"\"\n              no_results_text=\"<div class='ajax-loader-none'>").concat(A.a.escape(t.noResultsMessage),'</div>"\n              posts_per_page="8"]')))}}),Object(o.registerBlockType)(c.v,{title:Object(u.__)("Toolkit Detail Header",c.nb),category:c.K,icon:"portfolio",description:Object(u.__)("Title and navigation for a specific toolkit",c.nb),supports:{inserter:!1},edit:function(e){var t=e.attributes,n=e.setAttributes;return Object(i.createElement)(y.TextControl,{label:Object(u.__)("Back to all toolkits label",c.nb),help:Object(u.__)("This label is shown on mobile devices only",c.nb),value:t.allToolkitsLabel,onChange:function(e){return n({allToolkitsLabel:e})}})},save:function(){return null}});var Le=Object(u.__)("Toolkit Sections",c.nb);Object(o.registerBlockType)(c.A,{title:Le,category:c.K,icon:"book-alt",description:Object(u.__)("The sections that form the heart of this toolkit",c.nb),supports:{inserter:!1},attributes:(Ke={},P()(Ke,"overallMarkupId",{type:"string"}),P()(Ke,"backButtonLabel",{type:"string",default:Object(u.__)("Back",c.nb)}),P()(Ke,"nextButtonLabel",{type:"string",default:Object(u.__)("Next",c.nb)}),Ke),edit:function(e){var t,n=e.clientId,r=e.attributes,A=e.setAttributes;return Object(i.createElement)(w,{clientId:n,innerBlockAttrs:P()({},c.z,(t={},P()(t,"overallMarkupId",r.overallMarkupId),P()(t,"parentClientId",n),P()(t,"backButtonLabel",r.backButtonLabel),P()(t,"nextButtonLabel",r.nextButtonLabel),t))},Object(i.createElement)("div",{className:"dfh-editor-block-title dfh-editor-block-title--nested"},Le),Object(i.createElement)(y.TextControl,{label:Object(u.__)("Previous section button label",c.nb),help:Object(u.__)("Navigation buttons only shown on mobile devices",c.nb),value:r.backButtonLabel,onChange:function(e){return A({backButtonLabel:e})}}),Object(i.createElement)(y.TextControl,{label:Object(u.__)("Next section button label",c.nb),help:Object(u.__)("Navigation buttons only shown on mobile devices",c.nb),value:r.nextButtonLabel,onChange:function(e){return A({nextButtonLabel:e})}}),Object(i.createElement)(b.InnerBlocks,{allowedBlocks:[c.z],templateLock:c.jb,template:[[c.z]]}))},save:function(e){var t=e.attributes;return Object(i.createElement)("div",{id:t.overallMarkupId,className:"toolkit-detail-container__item-container","data-slick-active-class":"toolkit-topics__section--active","data-slick":JSON.stringify({adaptiveHeight:!0,arrows:!1})},Object(i.createElement)(b.InnerBlocks.Content,null))}})}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./assets/images/placeholder-headshot.png":
+/*!************************************************!*\
+  !*** ./assets/images/placeholder-headshot.png ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("data:image/png;base64,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");
+
+/***/ }),
+
+/***/ "./assets/images/placeholder-value.png":
+/*!*********************************************!*\
+  !*** ./assets/images/placeholder-value.png ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("data:image/png;base64,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");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayLikeToArray.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+module.exports = _arrayLikeToArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithHoles.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+module.exports = _arrayWithHoles;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return arrayLikeToArray(arr);
+}
+
+module.exports = _arrayWithoutHoles;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/defineProperty.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/defineProperty.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+module.exports = _defineProperty;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/extends.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/extends.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _extends() {
+  module.exports = _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  module.exports["default"] = module.exports, module.exports.__esModule = true;
+  return _extends.apply(this, arguments);
+}
+
+module.exports = _extends;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+
+module.exports = _iterableToArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _iterableToArrayLimit(arr, i) {
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+
+  if (_i == null) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+
+  var _s, _e;
+
+  try {
+    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+module.exports = _iterableToArrayLimit;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableRest.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableRest.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+module.exports = _nonIterableRest;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+module.exports = _nonIterableSpread;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/slicedToArray.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/slicedToArray.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayWithHoles = __webpack_require__(/*! ./arrayWithHoles.js */ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js");
+
+var iterableToArrayLimit = __webpack_require__(/*! ./iterableToArrayLimit.js */ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js");
+
+var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
+
+var nonIterableRest = __webpack_require__(/*! ./nonIterableRest.js */ "./node_modules/@babel/runtime/helpers/nonIterableRest.js");
+
+function _slicedToArray(arr, i) {
+  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+}
+
+module.exports = _slicedToArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/toConsumableArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles.js */ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
+
+var iterableToArray = __webpack_require__(/*! ./iterableToArray.js */ "./node_modules/@babel/runtime/helpers/iterableToArray.js");
+
+var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
+
+var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread.js */ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js");
+
+function _toConsumableArray(arr) {
+  return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();
+}
+
+module.exports = _toConsumableArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+}
+
+module.exports = _unsupportedIterableToArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/object-assign/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/object-assign/index.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+
+/* eslint-disable no-unused-vars */
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+function toObject(val) {
+	if (val === null || val === undefined) {
+		throw new TypeError('Object.assign cannot be called with null or undefined');
+	}
+
+	return Object(val);
+}
+
+function shouldUseNative() {
+	try {
+		if (!Object.assign) {
+			return false;
+		}
+
+		// Detect buggy property enumeration order in older V8 versions.
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
+		test1[5] = 'de';
+		if (Object.getOwnPropertyNames(test1)[0] === '5') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test2 = {};
+		for (var i = 0; i < 10; i++) {
+			test2['_' + String.fromCharCode(i)] = i;
+		}
+		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+			return test2[n];
+		});
+		if (order2.join('') !== '0123456789') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test3 = {};
+		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+			test3[letter] = letter;
+		});
+		if (Object.keys(Object.assign({}, test3)).join('') !==
+				'abcdefghijklmnopqrst') {
+			return false;
+		}
+
+		return true;
+	} catch (err) {
+		// We don't expect any of the above to throw, but better to be safe.
+		return false;
+	}
+}
+
+module.exports = shouldUseNative() ? Object.assign : function (target, source) {
+	var from;
+	var to = toObject(target);
+	var symbols;
+
+	for (var s = 1; s < arguments.length; s++) {
+		from = Object(arguments[s]);
+
+		for (var key in from) {
+			if (hasOwnProperty.call(from, key)) {
+				to[key] = from[key];
+			}
+		}
+
+		if (getOwnPropertySymbols) {
+			symbols = getOwnPropertySymbols(from);
+			for (var i = 0; i < symbols.length; i++) {
+				if (propIsEnumerable.call(from, symbols[i])) {
+					to[symbols[i]] = from[symbols[i]];
+				}
+			}
+		}
+	}
+
+	return to;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/checkPropTypes.js":
+/*!***************************************************!*\
+  !*** ./node_modules/prop-types/checkPropTypes.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var printWarning = function() {};
+
+if (true) {
+  var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ "./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+  var loggedTypeFailures = {};
+  var has = Function.call.bind(Object.prototype.hasOwnProperty);
+
+  printWarning = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */
+function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+  if (true) {
+    for (var typeSpecName in typeSpecs) {
+      if (has(typeSpecs, typeSpecName)) {
+        var error;
+        // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+        try {
+          // This is intentionally an invariant that gets caught. It's the same
+          // behavior as without this statement except with a better message.
+          if (typeof typeSpecs[typeSpecName] !== 'function') {
+            var err = Error(
+              (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +
+              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.'
+            );
+            err.name = 'Invariant Violation';
+            throw err;
+          }
+          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+        } catch (ex) {
+          error = ex;
+        }
+        if (error && !(error instanceof Error)) {
+          printWarning(
+            (componentName || 'React class') + ': type specification of ' +
+            location + ' `' + typeSpecName + '` is invalid; the type checker ' +
+            'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +
+            'You may have forgotten to pass an argument to the type checker ' +
+            'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' +
+            'shape all require an argument).'
+          );
+        }
+        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+          // Only monitor this failure once because there tends to be a lot of the
+          // same error.
+          loggedTypeFailures[error.message] = true;
+
+          var stack = getStack ? getStack() : '';
+
+          printWarning(
+            'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')
+          );
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Resets warning cache when testing.
+ *
+ * @private
+ */
+checkPropTypes.resetWarningCache = function() {
+  if (true) {
+    loggedTypeFailures = {};
+  }
+}
+
+module.exports = checkPropTypes;
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/factoryWithTypeCheckers.js":
+/*!************************************************************!*\
+  !*** ./node_modules/prop-types/factoryWithTypeCheckers.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactIs = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
+var assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
+
+var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ "./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+var checkPropTypes = __webpack_require__(/*! ./checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
+
+var has = Function.call.bind(Object.prototype.hasOwnProperty);
+var printWarning = function() {};
+
+if (true) {
+  printWarning = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+function emptyFunctionThatReturnsNull() {
+  return null;
+}
+
+module.exports = function(isValidElement, throwOnDirectAccess) {
+  /* global Symbol */
+  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+
+  /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */
+  function getIteratorFn(maybeIterable) {
+    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+    if (typeof iteratorFn === 'function') {
+      return iteratorFn;
+    }
+  }
+
+  /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */
+
+  var ANONYMOUS = '<<anonymous>>';
+
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+  var ReactPropTypes = {
+    array: createPrimitiveTypeChecker('array'),
+    bool: createPrimitiveTypeChecker('boolean'),
+    func: createPrimitiveTypeChecker('function'),
+    number: createPrimitiveTypeChecker('number'),
+    object: createPrimitiveTypeChecker('object'),
+    string: createPrimitiveTypeChecker('string'),
+    symbol: createPrimitiveTypeChecker('symbol'),
+
+    any: createAnyTypeChecker(),
+    arrayOf: createArrayOfTypeChecker,
+    element: createElementTypeChecker(),
+    elementType: createElementTypeTypeChecker(),
+    instanceOf: createInstanceTypeChecker,
+    node: createNodeChecker(),
+    objectOf: createObjectOfTypeChecker,
+    oneOf: createEnumTypeChecker,
+    oneOfType: createUnionTypeChecker,
+    shape: createShapeTypeChecker,
+    exact: createStrictShapeTypeChecker,
+  };
+
+  /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */
+  /*eslint-disable no-self-compare*/
+  function is(x, y) {
+    // SameValue algorithm
+    if (x === y) {
+      // Steps 1-5, 7-10
+      // Steps 6.b-6.e: +0 != -0
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      // Step 6.a: NaN == NaN
+      return x !== x && y !== y;
+    }
+  }
+  /*eslint-enable no-self-compare*/
+
+  /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */
+  function PropTypeError(message) {
+    this.message = message;
+    this.stack = '';
+  }
+  // Make `instanceof Error` still work for returned errors.
+  PropTypeError.prototype = Error.prototype;
+
+  function createChainableTypeChecker(validate) {
+    if (true) {
+      var manualPropTypeCallCache = {};
+      var manualPropTypeWarningCount = 0;
+    }
+    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+      componentName = componentName || ANONYMOUS;
+      propFullName = propFullName || propName;
+
+      if (secret !== ReactPropTypesSecret) {
+        if (throwOnDirectAccess) {
+          // New behavior only for users of `prop-types` package
+          var err = new Error(
+            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+            'Use `PropTypes.checkPropTypes()` to call them. ' +
+            'Read more at http://fb.me/use-check-prop-types'
+          );
+          err.name = 'Invariant Violation';
+          throw err;
+        } else if ( true && typeof console !== 'undefined') {
+          // Old behavior for people using React.PropTypes
+          var cacheKey = componentName + ':' + propName;
+          if (
+            !manualPropTypeCallCache[cacheKey] &&
+            // Avoid spamming the console because they are often not actionable except for lib authors
+            manualPropTypeWarningCount < 3
+          ) {
+            printWarning(
+              'You are manually calling a React.PropTypes validation ' +
+              'function for the `' + propFullName + '` prop on `' + componentName  + '`. This is deprecated ' +
+              'and will throw in the standalone `prop-types` package. ' +
+              'You may be seeing this warning due to a third-party PropTypes ' +
+              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
+            );
+            manualPropTypeCallCache[cacheKey] = true;
+            manualPropTypeWarningCount++;
+          }
+        }
+      }
+      if (props[propName] == null) {
+        if (isRequired) {
+          if (props[propName] === null) {
+            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+          }
+          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+        }
+        return null;
+      } else {
+        return validate(props, propName, componentName, location, propFullName);
+      }
+    }
+
+    var chainedCheckType = checkType.bind(null, false);
+    chainedCheckType.isRequired = checkType.bind(null, true);
+
+    return chainedCheckType;
+  }
+
+  function createPrimitiveTypeChecker(expectedType) {
+    function validate(props, propName, componentName, location, propFullName, secret) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== expectedType) {
+        // `propValue` being instance of, say, date/regexp, pass the 'object'
+        // check, but we can offer a more precise error message here rather than
+        // 'of type `object`'.
+        var preciseType = getPreciseType(propValue);
+
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createAnyTypeChecker() {
+    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+  }
+
+  function createArrayOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+      }
+      var propValue = props[propName];
+      if (!Array.isArray(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+      }
+      for (var i = 0; i < propValue.length; i++) {
+        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+        if (error instanceof Error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!isValidElement(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!ReactIs.isValidElementType(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createInstanceTypeChecker(expectedClass) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!(props[propName] instanceof expectedClass)) {
+        var expectedClassName = expectedClass.name || ANONYMOUS;
+        var actualClassName = getClassName(props[propName]);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createEnumTypeChecker(expectedValues) {
+    if (!Array.isArray(expectedValues)) {
+      if (true) {
+        if (arguments.length > 1) {
+          printWarning(
+            'Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' +
+            'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).'
+          );
+        } else {
+          printWarning('Invalid argument supplied to oneOf, expected an array.');
+        }
+      }
+      return emptyFunctionThatReturnsNull;
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      for (var i = 0; i < expectedValues.length; i++) {
+        if (is(propValue, expectedValues[i])) {
+          return null;
+        }
+      }
+
+      var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+        var type = getPreciseType(value);
+        if (type === 'symbol') {
+          return String(value);
+        }
+        return value;
+      });
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createObjectOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+      }
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+      }
+      for (var key in propValue) {
+        if (has(propValue, key)) {
+          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+          if (error instanceof Error) {
+            return error;
+          }
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createUnionTypeChecker(arrayOfTypeCheckers) {
+    if (!Array.isArray(arrayOfTypeCheckers)) {
+       true ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : undefined;
+      return emptyFunctionThatReturnsNull;
+    }
+
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+      if (typeof checker !== 'function') {
+        printWarning(
+          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
+          'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.'
+        );
+        return emptyFunctionThatReturnsNull;
+      }
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+        var checker = arrayOfTypeCheckers[i];
+        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
+          return null;
+        }
+      }
+
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createNodeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!isNode(props[propName])) {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      for (var key in shapeTypes) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          continue;
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createStrictShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      // We need to check all keys in case some are required but missing from
+      // props.
+      var allKeys = assign({}, props[propName], shapeTypes);
+      for (var key in allKeys) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          return new PropTypeError(
+            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
+            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
+            '\nValid keys: ' +  JSON.stringify(Object.keys(shapeTypes), null, '  ')
+          );
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function isNode(propValue) {
+    switch (typeof propValue) {
+      case 'number':
+      case 'string':
+      case 'undefined':
+        return true;
+      case 'boolean':
+        return !propValue;
+      case 'object':
+        if (Array.isArray(propValue)) {
+          return propValue.every(isNode);
+        }
+        if (propValue === null || isValidElement(propValue)) {
+          return true;
+        }
+
+        var iteratorFn = getIteratorFn(propValue);
+        if (iteratorFn) {
+          var iterator = iteratorFn.call(propValue);
+          var step;
+          if (iteratorFn !== propValue.entries) {
+            while (!(step = iterator.next()).done) {
+              if (!isNode(step.value)) {
+                return false;
+              }
+            }
+          } else {
+            // Iterator will provide entry [k,v] tuples rather than values.
+            while (!(step = iterator.next()).done) {
+              var entry = step.value;
+              if (entry) {
+                if (!isNode(entry[1])) {
+                  return false;
+                }
+              }
+            }
+          }
+        } else {
+          return false;
+        }
+
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  function isSymbol(propType, propValue) {
+    // Native Symbol.
+    if (propType === 'symbol') {
+      return true;
+    }
+
+    // falsy value can't be a Symbol
+    if (!propValue) {
+      return false;
+    }
+
+    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+    if (propValue['@@toStringTag'] === 'Symbol') {
+      return true;
+    }
+
+    // Fallback for non-spec compliant Symbols which are polyfilled.
+    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+      return true;
+    }
+
+    return false;
+  }
+
+  // Equivalent of `typeof` but with special handling for array and regexp.
+  function getPropType(propValue) {
+    var propType = typeof propValue;
+    if (Array.isArray(propValue)) {
+      return 'array';
+    }
+    if (propValue instanceof RegExp) {
+      // Old webkits (at least until Android 4.0) return 'function' rather than
+      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+      // passes PropTypes.object.
+      return 'object';
+    }
+    if (isSymbol(propType, propValue)) {
+      return 'symbol';
+    }
+    return propType;
+  }
+
+  // This handles more types than `getPropType`. Only used for error messages.
+  // See `createPrimitiveTypeChecker`.
+  function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
+    var propType = getPropType(propValue);
+    if (propType === 'object') {
+      if (propValue instanceof Date) {
+        return 'date';
+      } else if (propValue instanceof RegExp) {
+        return 'regexp';
+      }
+    }
+    return propType;
+  }
+
+  // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+      default:
+        return type;
+    }
+  }
+
+  // Returns class name of the object, if any.
+  function getClassName(propValue) {
+    if (!propValue.constructor || !propValue.constructor.name) {
+      return ANONYMOUS;
+    }
+    return propValue.constructor.name;
+  }
+
+  ReactPropTypes.checkPropTypes = checkPropTypes;
+  ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/prop-types/index.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (true) {
+  var ReactIs = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(/*! ./factoryWithTypeCheckers */ "./node_modules/prop-types/factoryWithTypeCheckers.js")(ReactIs.isElement, throwOnDirectAccess);
+} else {}
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+
+
+/***/ }),
+
+/***/ "./node_modules/react-is/cjs/react-is.development.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-is/cjs/react-is.development.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+
+
+if (true) {
+  (function() {
+'use strict';
+
+// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// nor polyfill, then a plain number is used for performance.
+var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+// (unstable) APIs that have been removed. Can we remove the symbols?
+
+var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+
+function isValidElementType(type) {
+  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+}
+
+function typeOf(object) {
+  if (typeof object === 'object' && object !== null) {
+    var $$typeof = object.$$typeof;
+
+    switch ($$typeof) {
+      case REACT_ELEMENT_TYPE:
+        var type = object.type;
+
+        switch (type) {
+          case REACT_ASYNC_MODE_TYPE:
+          case REACT_CONCURRENT_MODE_TYPE:
+          case REACT_FRAGMENT_TYPE:
+          case REACT_PROFILER_TYPE:
+          case REACT_STRICT_MODE_TYPE:
+          case REACT_SUSPENSE_TYPE:
+            return type;
+
+          default:
+            var $$typeofType = type && type.$$typeof;
+
+            switch ($$typeofType) {
+              case REACT_CONTEXT_TYPE:
+              case REACT_FORWARD_REF_TYPE:
+              case REACT_LAZY_TYPE:
+              case REACT_MEMO_TYPE:
+              case REACT_PROVIDER_TYPE:
+                return $$typeofType;
+
+              default:
+                return $$typeof;
+            }
+
+        }
+
+      case REACT_PORTAL_TYPE:
+        return $$typeof;
+    }
+  }
+
+  return undefined;
+} // AsyncMode is deprecated along with isAsyncMode
+
+var AsyncMode = REACT_ASYNC_MODE_TYPE;
+var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+var ContextConsumer = REACT_CONTEXT_TYPE;
+var ContextProvider = REACT_PROVIDER_TYPE;
+var Element = REACT_ELEMENT_TYPE;
+var ForwardRef = REACT_FORWARD_REF_TYPE;
+var Fragment = REACT_FRAGMENT_TYPE;
+var Lazy = REACT_LAZY_TYPE;
+var Memo = REACT_MEMO_TYPE;
+var Portal = REACT_PORTAL_TYPE;
+var Profiler = REACT_PROFILER_TYPE;
+var StrictMode = REACT_STRICT_MODE_TYPE;
+var Suspense = REACT_SUSPENSE_TYPE;
+var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+
+function isAsyncMode(object) {
+  {
+    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+
+      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+    }
+  }
+
+  return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+}
+function isConcurrentMode(object) {
+  return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+}
+function isContextConsumer(object) {
+  return typeOf(object) === REACT_CONTEXT_TYPE;
+}
+function isContextProvider(object) {
+  return typeOf(object) === REACT_PROVIDER_TYPE;
+}
+function isElement(object) {
+  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+}
+function isForwardRef(object) {
+  return typeOf(object) === REACT_FORWARD_REF_TYPE;
+}
+function isFragment(object) {
+  return typeOf(object) === REACT_FRAGMENT_TYPE;
+}
+function isLazy(object) {
+  return typeOf(object) === REACT_LAZY_TYPE;
+}
+function isMemo(object) {
+  return typeOf(object) === REACT_MEMO_TYPE;
+}
+function isPortal(object) {
+  return typeOf(object) === REACT_PORTAL_TYPE;
+}
+function isProfiler(object) {
+  return typeOf(object) === REACT_PROFILER_TYPE;
+}
+function isStrictMode(object) {
+  return typeOf(object) === REACT_STRICT_MODE_TYPE;
+}
+function isSuspense(object) {
+  return typeOf(object) === REACT_SUSPENSE_TYPE;
+}
+
+exports.AsyncMode = AsyncMode;
+exports.ConcurrentMode = ConcurrentMode;
+exports.ContextConsumer = ContextConsumer;
+exports.ContextProvider = ContextProvider;
+exports.Element = Element;
+exports.ForwardRef = ForwardRef;
+exports.Fragment = Fragment;
+exports.Lazy = Lazy;
+exports.Memo = Memo;
+exports.Portal = Portal;
+exports.Profiler = Profiler;
+exports.StrictMode = StrictMode;
+exports.Suspense = Suspense;
+exports.isAsyncMode = isAsyncMode;
+exports.isConcurrentMode = isConcurrentMode;
+exports.isContextConsumer = isContextConsumer;
+exports.isContextProvider = isContextProvider;
+exports.isElement = isElement;
+exports.isForwardRef = isForwardRef;
+exports.isFragment = isFragment;
+exports.isLazy = isLazy;
+exports.isMemo = isMemo;
+exports.isPortal = isPortal;
+exports.isProfiler = isProfiler;
+exports.isStrictMode = isStrictMode;
+exports.isSuspense = isSuspense;
+exports.isValidElementType = isValidElementType;
+exports.typeOf = typeOf;
+  })();
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/react-is/index.js":
+/*!****************************************!*\
+  !*** ./node_modules/react-is/index.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if (false) {} else {
+  module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/react-is/cjs/react-is.development.js");
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/thumbnail-youtube-vimeo/index.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/thumbnail-youtube-vimeo/index.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function getThumbnailURL(link, setParams) {
+    var params = {
+        /**
+         * quality of youtube's video thumbnail. Default 0. Can be: 0 (full-size) | 1 | 2 | 3 | default | hqdefault | mqdefault | sddefault | maxresdefault (max-resolution)
+         */
+        ytimg: '0',
+        /**
+         * quality of vimeo's video thumbnail. Default large. Can be: small | medium | large
+         */
+        vmimg: 'large',
+        patterns: [
+            {regex: /youtu\.be\/([\w\-.]+)/, type: 'youtube', url: '//img.youtube.com/vi/%1'},
+            {regex: /youtube\.com(.+)v=([^&]+)/, type: 'youtube', url: '//img.youtube.com/vi/%2'},
+            {regex: /vimeo\.com\/([0-9]+)/, type: 'vimeo', url: '//vimeo.com/api/v2/video/%1.json'},
+            {regex: /vimeo\.com\/(.*)\/([0-9]+)/, type: 'vimeo', url: '//vimeo.com/api/v2/video/%2.json'}
+        ]
+    };
+
+    if (typeof setParams == 'object') {
+        var n, key, keys = Object.keys(setParams);
+
+        for (n in keys) {
+            key = keys[n];
+
+            params[key] = setParams[key];
+        }
+    }
+
+    return new Promise(function(resolve, reject) {
+        var type, url, pattern, match, position;
+
+        for(var i=0; i < params.patterns.length; i++) {
+            pattern = params.patterns[i];
+
+            if ((match = link.match(pattern.regex)) && match) {
+                position = pattern.url.match(/%([0-9]+)/)[1];
+
+                type = pattern.type;
+                url = pattern.url.replace(/%([0-9]+)/, match[position]);
+
+                break;
+            }
+        }
+
+        if (!type)
+            reject('Not found pattern.');
+        else if (type == 'youtube')
+            resolve(url + '/' + params.ytimg + '.jpg');
+        else if (type == 'vimeo'){
+            fetch(url)
+                .then(function(response){return response.json()})
+                .then(function(data){resolve(data[0]['thumbnail_' + params.vmimg])})
+                .catch(function(err){reject(err.statusText)})
+        }
+    });
+}
+
+module.exports = getThumbnailURL;
+
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _js_allow_only_custom_blocks_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/allow-only-custom-blocks.js */ "./src/js/allow-only-custom-blocks.js");
+/* harmony import */ var _js_block_button_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/block/button-container */ "./src/js/block/button-container.js");
+/* harmony import */ var _js_block_form_card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/block/form-card */ "./src/js/block/form-card.js");
+/* harmony import */ var _js_block_heading__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/block/heading */ "./src/js/block/heading.js");
+/* harmony import */ var _js_block_page_header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/block/page-header */ "./src/js/block/page-header.js");
+/* harmony import */ var _js_block_text__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/block/text */ "./src/js/block/text.js");
+/* harmony import */ var _js_block_dynamic_helper_page_title__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/block/dynamic/helper/page-title */ "./src/js/block/dynamic/helper/page-title.js");
+/* harmony import */ var _js_block_helper_content_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/block/helper/content-container */ "./src/js/block/helper/content-container.js");
+/* harmony import */ var _js_block_helper_file_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./js/block/helper/file-button */ "./src/js/block/helper/file-button.js");
+/* harmony import */ var _js_block_helper_inner_block_wrapper__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/block/helper/inner-block-wrapper */ "./src/js/block/helper/inner-block-wrapper.js");
+/* harmony import */ var _js_block_helper_link_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./js/block/helper/link-button */ "./src/js/block/helper/link-button.js");
+/* harmony import */ var _js_block_helper_search_input__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./js/block/helper/search-input */ "./src/js/block/helper/search-input.js");
+/* harmony import */ var _js_block_video_thumbnail__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./js/block/video-thumbnail */ "./src/js/block/video-thumbnail.js");
+/* harmony import */ var _js_block_content_width_container__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./js/block/content-width-container */ "./src/js/block/content-width-container.js");
+/* harmony import */ var _js_block_dynamic_resource_overview__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./js/block/dynamic/resource-overview */ "./src/js/block/dynamic/resource-overview.js");
+/* harmony import */ var _js_block_featured_and_contact__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./js/block/featured-and-contact */ "./src/js/block/featured-and-contact.js");
+/* harmony import */ var _js_block_hero__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./js/block/hero */ "./src/js/block/hero.js");
+/* harmony import */ var _js_block_mission_statement__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./js/block/mission-statement */ "./src/js/block/mission-statement.js");
+/* harmony import */ var _js_block_value_statement__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./js/block/value-statement */ "./src/js/block/value-statement.js");
+/* harmony import */ var _js_block_helper_landing_contact__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./js/block/helper/landing-contact */ "./src/js/block/helper/landing-contact.js");
+/* harmony import */ var _js_block_helper_landing_featured__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./js/block/helper/landing-featured */ "./src/js/block/helper/landing-featured.js");
+/* harmony import */ var _js_block_helper_landing_header__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./js/block/helper/landing-header */ "./src/js/block/helper/landing-header.js");
+/* harmony import */ var _js_block_helper_landing_video__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./js/block/helper/landing-video */ "./src/js/block/helper/landing-video.js");
+/* harmony import */ var _js_block_resource_detail__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./js/block/resource-detail */ "./src/js/block/resource-detail.js");
+/* harmony import */ var _js_block_resource_previews__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./js/block/resource-previews */ "./src/js/block/resource-previews.js");
+/* harmony import */ var _js_block_dynamic_helper_resource_category_filter__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./js/block/dynamic/helper/resource-category-filter */ "./src/js/block/dynamic/helper/resource-category-filter.js");
+/* harmony import */ var _js_block_dynamic_helper_resource_detail_info__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./js/block/dynamic/helper/resource-detail-info */ "./src/js/block/dynamic/helper/resource-detail-info.js");
+/* harmony import */ var _js_block_helper_resource_detail_description__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./js/block/helper/resource-detail-description */ "./src/js/block/helper/resource-detail-description.js");
+/* harmony import */ var _js_block_helper_resource_detail_steps__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./js/block/helper/resource-detail-steps */ "./src/js/block/helper/resource-detail-steps.js");
+/* harmony import */ var _js_block_helper_resource_detail_steps_step__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./js/block/helper/resource-detail-steps-step */ "./src/js/block/helper/resource-detail-steps-step.js");
+/* harmony import */ var _js_block_toolkit_detail__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./js/block/toolkit-detail */ "./src/js/block/toolkit-detail.js");
+/* harmony import */ var _js_block_toolkit_previews__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./js/block/toolkit-previews */ "./src/js/block/toolkit-previews.js");
+/* harmony import */ var _js_block_dynamic_helper_toolkit_detail_header__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./js/block/dynamic/helper/toolkit-detail-header */ "./src/js/block/dynamic/helper/toolkit-detail-header.js");
+/* harmony import */ var _js_block_helper_toolkit_detail_list__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./js/block/helper/toolkit-detail-list */ "./src/js/block/helper/toolkit-detail-list.js");
+/* harmony import */ var _js_block_helper_toolkit_detail_list_link__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./js/block/helper/toolkit-detail-list-link */ "./src/js/block/helper/toolkit-detail-list-link.js");
+/* harmony import */ var _js_block_helper_toolkit_detail_metadata__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./js/block/helper/toolkit-detail-metadata */ "./src/js/block/helper/toolkit-detail-metadata.js");
+/* harmony import */ var _js_block_helper_toolkit_detail_section__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./js/block/helper/toolkit-detail-section */ "./src/js/block/helper/toolkit-detail-section.js");
+/* harmony import */ var _js_block_helper_toolkit_detail_section_container__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./js/block/helper/toolkit-detail-section-container */ "./src/js/block/helper/toolkit-detail-section-container.js");
+/* harmony import */ var _js_block_helper_toolkit_detail_section_info__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./js/block/helper/toolkit-detail-section-info */ "./src/js/block/helper/toolkit-detail-section-info.js");
+/**
+ * Helpers
+ */
+
+/**
+ * Basic blocks
+ */
+
+
+
+
+
+ // Helpers
+
+
+
+
+
+
+
+/**
+ * Media blocks
+ */
+
+
+/**
+ * Layout blocks
+ */
+
+
+/**
+ * Landing page blocks
+ */
+
+
+
+
+
+ // Helpers
+
+
+
+
+
+/**
+ * Resource blocks
+ */
+
+
+ // Helpers
+
+
+
+
+
+
+/**
+ * Toolkit blocks
+ */
+
+
+ // Helpers
+
+
+
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./src/js/allow-only-custom-blocks.js":
+/*!********************************************!*\
+  !*** ./src/js/allow-only-custom-blocks.js ***!
+  \********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/hooks */ "@wordpress/hooks");
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./constants */ "./src/js/constants.js");
+
+
+
+ // hides all non-DFH blocks
+// from https://github.com/WordPress/gutenberg/issues/11723#issuecomment-441828833
+
+Object(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_1__["addFilter"])('blocks.registerBlockType', _constants__WEBPACK_IMPORTED_MODULE_3__["NAMESPACE"], function (blockSettings, blockName) {
+  var allowedCoreBlocks = {
+    'core/list': _constants__WEBPACK_IMPORTED_MODULE_3__["CATEGORY_COMMON"],
+    'core/separator': _constants__WEBPACK_IMPORTED_MODULE_3__["CATEGORY_LAYOUT"],
+    'core/spacer': _constants__WEBPACK_IMPORTED_MODULE_3__["CATEGORY_LAYOUT"],
+    'core/audio': _constants__WEBPACK_IMPORTED_MODULE_3__["CATEGORY_MEDIA"],
+    'core/embed': _constants__WEBPACK_IMPORTED_MODULE_3__["CATEGORY_MEDIA"],
+    'core/gallery': _constants__WEBPACK_IMPORTED_MODULE_3__["CATEGORY_MEDIA"],
+    'core/image': _constants__WEBPACK_IMPORTED_MODULE_3__["CATEGORY_MEDIA"],
+    'core/video': _constants__WEBPACK_IMPORTED_MODULE_3__["CATEGORY_MEDIA"]
+  };
+
+  if (allowedCoreBlocks[blockName]) {
+    return lodash__WEBPACK_IMPORTED_MODULE_0___default.a.assign({}, blockSettings, {
+      category: allowedCoreBlocks[blockName]
+    });
+  } else {
+    // If not special whitelisted core blocks, then only allow custom DFH blocks
+    return lodash__WEBPACK_IMPORTED_MODULE_0___default.a.startsWith(blockName, _constants__WEBPACK_IMPORTED_MODULE_3__["NAMESPACE"]) ? blockSettings : lodash__WEBPACK_IMPORTED_MODULE_0___default.a.assign({}, blockSettings, {
+      supports: lodash__WEBPACK_IMPORTED_MODULE_0___default.a.assign({}, blockSettings.supports, {
+        inserter: false
+      })
+    });
+  }
+}); // sets the default block to the `dfh/text` block
+// see https://developer.wordpress.org/block-editor/packages/packages-blocks/#setDefaultBlockName
+
+window.onload = function () {
+  Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__["setDefaultBlockName"])(_constants__WEBPACK_IMPORTED_MODULE_3__["BLOCK_TEXT"]);
+};
+
+/***/ }),
+
+/***/ "./src/js/block/button-container.js":
+/*!******************************************!*\
+  !*** ./src/js/block/button-container.js ***!
+  \******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+/* harmony import */ var _editor_with_inner_block_attrs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../editor/with-inner-block-attrs */ "./src/js/editor/with-inner-block-attrs.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+
+
+
+
+
+
+
+ // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_BUTTON_CONTAINER"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Buttons', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORY_COMMON"],
+  icon: 'editor-table',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Allows adding and automatic formatting of various button blocks', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  attributes: {
+    template: {
+      type: 'array',
+      default: [[_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_LINK_BUTTON"]]]
+    },
+    isLocked: {
+      type: 'boolean',
+      default: false
+    },
+    expandWidth: {
+      type: 'boolean',
+      default: false
+    },
+    forceAttributes: {
+      type: 'object'
+    }
+  },
+  edit: Object(_utils__WEBPACK_IMPORTED_MODULE_7__["withPropTypes"])({
+    template: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array),
+    isLocked: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+    expandWidth: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+    forceAttributes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.objectOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object)
+  }, function (_ref) {
+    var attributes = _ref.attributes,
+        clientId = _ref.clientId;
+    var allowedBlockNames = [_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_LINK_BUTTON"], _constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_FILE_BUTTON"]];
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_editor_with_inner_block_attrs__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      clientId: clientId,
+      innerBlockAttrs: Object(_utils__WEBPACK_IMPORTED_MODULE_7__["handleForceAllAttrs"])(attributes.forceAttributes, allowedBlockNames)
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"], {
+      allowedBlocks: allowedBlockNames,
+      template: Object(_utils__WEBPACK_IMPORTED_MODULE_7__["filterInnerBlockTemplate"])(allowedBlockNames, attributes.template),
+      templateLock: attributes.isLocked ? _constants__WEBPACK_IMPORTED_MODULE_5__["INNER_BLOCKS_LOCKED"] : _constants__WEBPACK_IMPORTED_MODULE_5__["INNER_BLOCKS_UNLOCKED"]
+    }));
+  }),
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "button-container ".concat(buildClassName(attributes))
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null));
+  }
+});
+
+function buildClassName(attributes) {
+  return attributes.expandWidth ? 'button-container--expand-width' : '';
+}
+
+/***/ }),
+
+/***/ "./src/js/block/content-width-container.js":
+/*!*************************************************!*\
+  !*** ./src/js/block/content-width-container.js ***!
+  \*************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+
+
+
+
+
+
+
+
+
+var title = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Content Width Container', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__["registerBlockType"])('dfh/content-width-container', {
+  title: title,
+  category: _constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORY_LAYOUT"],
+  icon: 'grid-view',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Ensures appropriate horizontal spacing and width of content of any type', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  attributes: {
+    isNarrow: {
+      type: 'boolean',
+      default: false
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    // Do not apply `container` classes in the editor because of limited width
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["PanelBody"], {
+      title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Content Container Settings', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"])
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["ToggleControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Is narrow width?', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      checked: attributes.isNarrow,
+      onChange: function onChange(isNarrow) {
+        return setAttributes({
+          isNarrow: isNarrow
+        });
+      }
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "dfh-editor-block-title"
+    }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"], {
+      templateLock: false
+    }));
+  },
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "container container--user-content ".concat(buildClassName(attributes))
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"].Content, null));
+  }
+});
+
+function buildClassName(attributes) {
+  return attributes.isNarrow ? 'container--narrow' : '';
+}
+
+/***/ }),
+
+/***/ "./src/js/block/dynamic/helper/page-title.js":
+/*!***************************************************!*\
+  !*** ./src/js/block/dynamic/helper/page-title.js ***!
+  \***************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../constants */ "./src/js/constants.js");
+
+
+
+ // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_3__["BLOCK_PAGE_TITLE"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Page Title', _constants__WEBPACK_IMPORTED_MODULE_3__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_3__["CATEGORY_COMMON"],
+  icon: 'format-aside',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Title for the current page', _constants__WEBPACK_IMPORTED_MODULE_3__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  edit: function edit() {
+    var currentPost = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["useSelect"])(function (select) {
+      return select(_constants__WEBPACK_IMPORTED_MODULE_3__["STORE_EDITOR"]).getCurrentPost();
+    });
+    return currentPost ? currentPost.title : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Loading...', _constants__WEBPACK_IMPORTED_MODULE_3__["TEXT_DOMAIN"]);
+  },
+  save: function save() {
+    return null;
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/dynamic/helper/resource-category-filter.js":
+/*!*****************************************************************!*\
+  !*** ./src/js/block/dynamic/helper/resource-category-filter.js ***!
+  \*****************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../constants */ "./src/js/constants.js");
+
+
+
+
+
+ // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_RESOURCE_CATEGORY_FILTER"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Resource Category Filter', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORY_RESOURCE"],
+  icon: 'filter',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Filter buttons for selecting which resource categories to show', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+
+    var opts = _.range(1, 13).map(function (num) {
+      return {
+        value: String(num),
+        label: String(num)
+      };
+    });
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["SelectControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Max number of categories to show in filter', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      value: attributes.maxNumToShow,
+      onChange: function onChange(maxNumToShow) {
+        return setAttributes({
+          maxNumToShow: maxNumToShow
+        });
+      },
+      options: [{
+        value: null,
+        label: 'Select a max number of categories',
+        disabled: true
+      }].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(opts))
+    });
+  },
+  save: function save() {
+    return null;
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/dynamic/helper/resource-detail-info.js":
+/*!*************************************************************!*\
+  !*** ./src/js/block/dynamic/helper/resource-detail-info.js ***!
+  \*************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../constants */ "./src/js/constants.js");
+
+
+
+
+ // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_4__["BLOCK_RESOURCE_DETAIL_INFO"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Resource Detail Info', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_4__["CATEGORY_RESOURCE"],
+  icon: 'networking',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Title and category of a specific resource', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Back to all resources label', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+      help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('This label is shown on mobile devices only', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+      value: attributes.allResourcesLabel,
+      onChange: function onChange(allResourcesLabel) {
+        return setAttributes({
+          allResourcesLabel: allResourcesLabel
+        });
+      }
+    });
+  },
+  save: function save() {
+    return null;
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/dynamic/helper/toolkit-detail-header.js":
+/*!**************************************************************!*\
+  !*** ./src/js/block/dynamic/helper/toolkit-detail-header.js ***!
+  \**************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../constants */ "./src/js/constants.js");
+
+
+
+
+ // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_4__["BLOCK_TOOLKIT_DETAIL_HEADER"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Toolkit Detail Header', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_4__["CATEGORY_TOOLKIT"],
+  icon: 'portfolio',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Title and navigation for a specific toolkit', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Back to all toolkits label', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+      help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('This label is shown on mobile devices only', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+      value: attributes.allToolkitsLabel,
+      onChange: function onChange(allToolkitsLabel) {
+        return setAttributes({
+          allToolkitsLabel: allToolkitsLabel
+        });
+      }
+    });
+  },
+  save: function save() {
+    return null;
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/dynamic/resource-overview.js":
+/*!***************************************************!*\
+  !*** ./src/js/block/dynamic/resource-overview.js ***!
+  \***************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+
+
+
+
+
+
+
+var title = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Resource Overview', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__["registerBlockType"])("".concat(_constants__WEBPACK_IMPORTED_MODULE_4__["NAMESPACE"], "/resource-overview"), {
+  title: title,
+  category: _constants__WEBPACK_IMPORTED_MODULE_4__["CATEGORY_LANDING"],
+  icon: 'index-card',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('All resource categories with examples of each', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+  supports: {
+    multiple: false
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "dfh-editor-block-title"
+    }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('All resources button label', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+      help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Label for the button in each category to go to the resource overview page', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+      value: attributes.allResourcesLabel,
+      onChange: function onChange(allResourcesLabel) {
+        return setAttributes({
+          allResourcesLabel: allResourcesLabel
+        });
+      }
+    }));
+  },
+  save: function save() {
+    return null;
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/featured-and-contact.js":
+/*!**********************************************!*\
+  !*** ./src/js/block/featured-and-contact.js ***!
+  \**********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+
+
+
+
+
+
+
+var title = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Featured & Contact', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__["registerBlockType"])("".concat(_constants__WEBPACK_IMPORTED_MODULE_4__["NAMESPACE"], "/featured-and-contact"), {
+  title: title,
+  category: _constants__WEBPACK_IMPORTED_MODULE_4__["CATEGORY_LANDING"],
+  icon: 'awards',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Featured item and contact form for the landing page', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+  edit: function edit() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "dfh-editor-block-title"
+    }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_4__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_4__["BLOCK_LANDING_FEATURED"]], [_constants__WEBPACK_IMPORTED_MODULE_4__["BLOCK_LANDING_CONTACT"]]]
+    }));
+  },
+  save: function save(_ref) {
+    var attributes = _ref.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"].Content, null);
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/form-card.js":
+/*!***********************************!*\
+  !*** ./src/js/block/form-card.js ***!
+  \***********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+/* harmony import */ var _heading__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./heading */ "./src/js/block/heading.js");
+/* harmony import */ var _editor_form_picker__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../editor/form-picker */ "./src/js/editor/form-picker.js");
+
+
+
+
+
+
+
+
+
+
+var title = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Form Card', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockType"])("".concat(_constants__WEBPACK_IMPORTED_MODULE_5__["NAMESPACE"], "/form-card"), {
+  title: title,
+  category: _constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORY_COMMON"],
+  icon: 'format-status',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Card that displays a message and a form', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  attributes: {
+    formId: {
+      type: 'string'
+    }
+  },
+  edit: function edit(_ref) {
+    var _Constants$BLOCK_HEAD;
+
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "dfh-editor-block-title"
+    }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "feedback-card"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "feedback-card__info"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_5__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_CONTENT_CONTAINER"], {
+        forceAttributes: _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, _constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_HEADING"], (_Constants$BLOCK_HEAD = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_LEVEL"], _constants__WEBPACK_IMPORTED_MODULE_5__["HEADING_SIZE_MEDIUM"]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_OPTION_LEVEL"], false), _Constants$BLOCK_HEAD))
+      }]]
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_editor_form_picker__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      value: attributes.formId,
+      onChange: function onChange(formId) {
+        return setAttributes({
+          formId: formId
+        });
+      }
+    })));
+  },
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "feedback-card"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "feedback-card__info"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_editor_form_picker__WEBPACK_IMPORTED_MODULE_7__["default"].Content, {
+      value: attributes.formId
+    }));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/heading.js":
+/*!*********************************!*\
+  !*** ./src/js/block/heading.js ***!
+  \*********************************/
+/*! exports provided: ATTR_LEVEL, ATTR_SHOW_PRE_TITLE, ATTR_SHOW_POST_TITLE, ATTR_HIGHLIGHT_MAIN_TITLE, ATTR_OPTION_LEVEL, ATTR_OPTION_SHOW_PRE_TITLE, ATTR_OPTION_SHOW_POST_TITLE, ATTR_OPTION_HIGHLIGHT_MAIN_TITLE */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_LEVEL", function() { return ATTR_LEVEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_SHOW_PRE_TITLE", function() { return ATTR_SHOW_PRE_TITLE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_SHOW_POST_TITLE", function() { return ATTR_SHOW_POST_TITLE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_HIGHLIGHT_MAIN_TITLE", function() { return ATTR_HIGHLIGHT_MAIN_TITLE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_OPTION_LEVEL", function() { return ATTR_OPTION_LEVEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_OPTION_SHOW_PRE_TITLE", function() { return ATTR_OPTION_SHOW_PRE_TITLE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_OPTION_SHOW_POST_TITLE", function() { return ATTR_OPTION_SHOW_POST_TITLE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_OPTION_HIGHLIGHT_MAIN_TITLE", function() { return ATTR_OPTION_HIGHLIGHT_MAIN_TITLE; });
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+
+
+var _attributes;
+
+
+
+
+
+
+
+
+var ATTR_LEVEL = 'level';
+var ATTR_SHOW_PRE_TITLE = 'showPreTitle';
+var ATTR_SHOW_POST_TITLE = 'showPostTitle';
+var ATTR_HIGHLIGHT_MAIN_TITLE = 'highlightMainTitle';
+var ATTR_OPTION_LEVEL = 'showOptionLevel';
+var ATTR_OPTION_SHOW_PRE_TITLE = 'showOptionShowPreTitle';
+var ATTR_OPTION_SHOW_POST_TITLE = 'showOptionShowPostTitle';
+var ATTR_OPTION_HIGHLIGHT_MAIN_TITLE = 'showOptionHighlightMainTitle'; // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_HEADING"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Heading', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_6__["CATEGORY_COMMON"],
+  // not listed in Dashicon page, but documented at https://iconify.design/icon-sets/dashicons/
+  icon: 'heading',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Titles of varying sizes', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+  attributes: (_attributes = {
+    mainTitle: {
+      type: 'string'
+    },
+    preTitle: {
+      type: 'string'
+    },
+    postTitle: {
+      type: 'string'
+    },
+    className: {
+      type: 'string',
+      default: ''
+    },
+    customId: {
+      type: 'string'
+    }
+  }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_LEVEL, {
+    type: 'string',
+    default: _constants__WEBPACK_IMPORTED_MODULE_6__["HEADING_SIZE_LARGE"]
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_SHOW_PRE_TITLE, {
+    type: 'boolean',
+    default: true
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_SHOW_POST_TITLE, {
+    type: 'boolean',
+    default: true
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_HIGHLIGHT_MAIN_TITLE, {
+    type: 'boolean',
+    default: true
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_OPTION_LEVEL, {
+    type: 'boolean',
+    default: true
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_OPTION_SHOW_PRE_TITLE, {
+    type: 'boolean',
+    default: true
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_OPTION_SHOW_POST_TITLE, {
+    type: 'boolean',
+    default: true
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_OPTION_HIGHLIGHT_MAIN_TITLE, {
+    type: 'boolean',
+    default: true
+  }), _attributes),
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    var TitleTag = "h".concat(attributes[ATTR_LEVEL]);
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
+      title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Heading Settings', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"])
+    }, attributes[ATTR_OPTION_LEVEL] && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["RadioControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Size', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      selected: attributes[ATTR_LEVEL],
+      options: [{
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Extra large', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+        value: _constants__WEBPACK_IMPORTED_MODULE_6__["HEADING_SIZE_XLARGE"]
+      }, {
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Large', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+        value: _constants__WEBPACK_IMPORTED_MODULE_6__["HEADING_SIZE_LARGE"]
+      }, {
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Medium', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+        value: _constants__WEBPACK_IMPORTED_MODULE_6__["HEADING_SIZE_MEDIUM"]
+      }, {
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Small', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+        value: _constants__WEBPACK_IMPORTED_MODULE_6__["HEADING_SIZE_SMALL"]
+      }],
+      onChange: function onChange(level) {
+        return setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, ATTR_LEVEL, level));
+      }
+    }), attributes[ATTR_OPTION_SHOW_PRE_TITLE] && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["ToggleControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Show pre-title?', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      checked: attributes[ATTR_SHOW_PRE_TITLE],
+      onChange: function onChange(showPreTitle) {
+        return setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, ATTR_SHOW_PRE_TITLE, showPreTitle));
+      }
+    }), attributes[ATTR_OPTION_SHOW_POST_TITLE] && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["ToggleControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Show post-title?', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      checked: attributes[ATTR_SHOW_POST_TITLE],
+      onChange: function onChange(showPostTitle) {
+        return setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, ATTR_SHOW_POST_TITLE, showPostTitle));
+      }
+    }), attributes[ATTR_OPTION_HIGHLIGHT_MAIN_TITLE] && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["ToggleControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Highlight main title?', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      checked: attributes[ATTR_HIGHLIGHT_MAIN_TITLE],
+      onChange: function onChange(highlightMainTitle) {
+        return setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, ATTR_HIGHLIGHT_MAIN_TITLE, highlightMainTitle));
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('HTML anchor', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Anchors let you link directly to this heading on the page', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      value: attributes.customId,
+      onChange: function onChange(customId) {
+        return setAttributes({
+          customId: customId
+        });
+      }
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(TitleTag, {
+      className: "".concat(attributes.className, " heading heading--").concat(attributes[ATTR_LEVEL])
+    }, attributes[ATTR_SHOW_PRE_TITLE] && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["RichText"], {
+      tagName: "span",
+      className: "heading__subtitle heading__subtitle--pre",
+      placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Enter pre-title here', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      value: attributes.preTitle,
+      onChange: function onChange(preTitle) {
+        return setAttributes({
+          preTitle: preTitle
+        });
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["RichText"], {
+      tagName: "span",
+      className: buildMainTitleClassName(attributes),
+      placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Enter main title here', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      value: attributes.mainTitle,
+      onChange: function onChange(mainTitle) {
+        return setAttributes({
+          mainTitle: mainTitle
+        });
+      }
+    }), attributes[ATTR_SHOW_POST_TITLE] && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["RichText"], {
+      tagName: "span",
+      className: "heading__subtitle heading__subtitle--post",
+      placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Enter post-title here', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      value: attributes.postTitle,
+      onChange: function onChange(postTitle) {
+        return setAttributes({
+          postTitle: postTitle
+        });
+      }
+    })));
+  },
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+    var TitleTag = "h".concat(attributes[ATTR_LEVEL]);
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(TitleTag, {
+      className: "heading heading--".concat(attributes[ATTR_LEVEL])
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", {
+      id: attributes.customId,
+      class: "heading__scroll-anchor"
+    }), attributes[ATTR_SHOW_PRE_TITLE] && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["RichText"].Content, {
+      tagName: "span",
+      className: "heading__subtitle heading__subtitle--pre",
+      value: attributes.preTitle
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["RichText"].Content, {
+      tagName: "span",
+      className: buildMainTitleClassName(attributes),
+      value: attributes.mainTitle
+    }), attributes[ATTR_SHOW_POST_TITLE] && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["RichText"].Content, {
+      tagName: "span",
+      className: "heading__subtitle heading__subtitle--post",
+      value: attributes.postTitle
+    }));
+  }
+});
+
+function buildMainTitleClassName(attributes) {
+  return attributes[ATTR_HIGHLIGHT_MAIN_TITLE] ? 'heading__title' : '';
+}
+
+/***/ }),
+
+/***/ "./src/js/block/helper/content-container.js":
+/*!**************************************************!*\
+  !*** ./src/js/block/helper/content-container.js ***!
+  \**************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+/* harmony import */ var _editor_with_inner_block_attrs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../editor/with-inner-block-attrs */ "./src/js/editor/with-inner-block-attrs.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils */ "./src/js/utils.js");
+
+
+
+
+
+
+
+
+ // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_5__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_CONTENT_CONTAINER"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Content Container', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_6__["CATEGORY_COMMON"],
+  icon: 'media-text',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Allows adding of various text and media content blocks', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  attributes: {
+    title: {
+      type: 'string'
+    },
+    template: {
+      type: 'array',
+      default: [[_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_HEADING"]], [_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TEXT"]]]
+    },
+    isLocked: {
+      type: 'boolean',
+      default: false
+    },
+    noHeadings: {
+      type: 'boolean',
+      default: false
+    },
+    forceAttributes: {
+      type: 'object'
+    }
+  },
+  edit: Object(_utils__WEBPACK_IMPORTED_MODULE_8__["withPropTypes"])({
+    title: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+    template: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.array),
+    isLocked: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
+    noHeadings: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
+    forceAttributes: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.objectOf(prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object)
+  }, function (_ref) {
+    var attributes = _ref.attributes,
+        clientId = _ref.clientId;
+    var alwaysAllowed = [_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TEXT"], _constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_VIDEO_THUMBNAIL"], _constants__WEBPACK_IMPORTED_MODULE_6__["CORE_BLOCK_LIST"], _constants__WEBPACK_IMPORTED_MODULE_6__["CORE_BLOCK_SEPARATOR"], _constants__WEBPACK_IMPORTED_MODULE_6__["CORE_BLOCK_SPACER"], // NOTE Wordpress 5.2 bug prevents core/video block from working if isLocked
+    // see https://github.com/WordPress/gutenberg/issues/19311#issue-541875999
+    _constants__WEBPACK_IMPORTED_MODULE_6__["CORE_BLOCK_VIDEO"], _constants__WEBPACK_IMPORTED_MODULE_6__["CORE_BLOCK_AUDIO"], _constants__WEBPACK_IMPORTED_MODULE_6__["CORE_BLOCK_GALLERY"], _constants__WEBPACK_IMPORTED_MODULE_6__["CORE_BLOCK_IMAGE"]].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(_constants__WEBPACK_IMPORTED_MODULE_6__["CORE_EMBED_BLOCKS"]));
+    var allowedBlockNames = attributes.noHeadings ? alwaysAllowed : [].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(alwaysAllowed), [_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_HEADING"]]);
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_editor_with_inner_block_attrs__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      clientId: clientId,
+      innerBlockAttrs: Object(_utils__WEBPACK_IMPORTED_MODULE_8__["handleForceAllAttrs"])(attributes.forceAttributes, allowedBlockNames)
+    }, attributes.title && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "dfh-editor-block-title dfh-editor-block-title--nested"
+    }, attributes.title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["InnerBlocks"], {
+      allowedBlocks: allowedBlockNames,
+      template: Object(_utils__WEBPACK_IMPORTED_MODULE_8__["filterInnerBlockTemplate"])(allowedBlockNames, attributes.template),
+      templateLock: attributes.isLocked ? _constants__WEBPACK_IMPORTED_MODULE_6__["INNER_BLOCKS_LOCKED"] : _constants__WEBPACK_IMPORTED_MODULE_6__["INNER_BLOCKS_UNLOCKED"]
+    }));
+  }),
+  save: function save() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["InnerBlocks"].Content, null);
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/helper/file-button.js":
+/*!********************************************!*\
+  !*** ./src/js/block/helper/file-button.js ***!
+  \********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+/* harmony import */ var _shared_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/button */ "./src/js/block/shared/button.js");
+/* harmony import */ var _editor_file_picker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../editor/file-picker */ "./src/js/editor/file-picker.js");
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+
+
+
+
+ // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_3__["BLOCK_FILE_BUTTON"], _objectSpread(_objectSpread({}, _shared_button__WEBPACK_IMPORTED_MODULE_4__["config"]), {}, {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('File Button', _constants__WEBPACK_IMPORTED_MODULE_3__["TEXT_DOMAIN"]),
+  icon: 'category',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Button that points to a file', _constants__WEBPACK_IMPORTED_MODULE_3__["TEXT_DOMAIN"]),
+  edit: function edit(props) {
+    return _shared_button__WEBPACK_IMPORTED_MODULE_4__["buildButtonEdit"](props, _editor_file_picker__WEBPACK_IMPORTED_MODULE_5__["default"]);
+  },
+  save: function save(props) {
+    return _shared_button__WEBPACK_IMPORTED_MODULE_4__["buildButtonSave"](props, {
+      openInNewTab: true
+    });
+  }
+}));
+
+/***/ }),
+
+/***/ "./src/js/block/helper/inner-block-wrapper.js":
+/*!****************************************************!*\
+  !*** ./src/js/block/helper/inner-block-wrapper.js ***!
+  \****************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+/* harmony import */ var _editor_recursive_wrapper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../editor/recursive-wrapper */ "./src/js/editor/recursive-wrapper.js");
+/* harmony import */ var _editor_with_inner_block_attrs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../editor/with-inner-block-attrs */ "./src/js/editor/with-inner-block-attrs.js");
+/* harmony import */ var _editor_wrap_only_if_has_class__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../editor/wrap-only-if-has-class */ "./src/js/editor/wrap-only-if-has-class.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils */ "./src/js/utils.js");
+
+
+
+
+
+
+
+
+
+ // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_INNER_BLOCK_WRAPPER"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Inner Block Wrapper', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORY_COMMON"],
+  icon: 'grid-view',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Enables wrapping other blocks in custom elements', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  attributes: {
+    allowedBlocks: {
+      type: 'array'
+    },
+    template: {
+      type: 'array'
+    },
+    isLocked: {
+      type: 'boolean',
+      default: false
+    },
+    hideInEdit: {
+      type: 'boolean',
+      default: false
+    },
+    wrapperElements: {
+      type: 'array',
+      default: ['div']
+    },
+    wrapperClassNames: {
+      type: 'array',
+      default: ['']
+    },
+    forceAttributes: {
+      type: 'object'
+    }
+  },
+  edit: Object(_utils__WEBPACK_IMPORTED_MODULE_9__["withPropTypes"])({
+    allowedBlocks: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string),
+    template: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array),
+    isLocked: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+    hideInEdit: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+    wrapperElements: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string),
+    wrapperClassNames: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string),
+    forceAttributes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.objectOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object)
+  }, function (_ref) {
+    var clientId = _ref.clientId,
+        attributes = _ref.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_editor_wrap_only_if_has_class__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      className: attributes.hideInEdit ? 'dfh-editor-hide' : ''
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_editor_recursive_wrapper__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      elements: attributes.wrapperElements,
+      classNames: attributes.wrapperClassNames
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_editor_with_inner_block_attrs__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      clientId: clientId,
+      innerBlockAttrs: attributes.forceAttributes
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"], {
+      allowedBlocks: attributes.allowedBlocks,
+      template: attributes.template,
+      templateLock: attributes.isLocked ? _constants__WEBPACK_IMPORTED_MODULE_5__["INNER_BLOCKS_LOCKED"] : _constants__WEBPACK_IMPORTED_MODULE_5__["INNER_BLOCKS_UNLOCKED"]
+    }))));
+  }),
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_editor_recursive_wrapper__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      elements: attributes.wrapperElements,
+      classNames: attributes.wrapperClassNames
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/helper/landing-contact.js":
+/*!************************************************!*\
+  !*** ./src/js/block/helper/landing-contact.js ***!
+  \************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+/* harmony import */ var _heading__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../heading */ "./src/js/block/heading.js");
+/* harmony import */ var _editor_form_picker__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../editor/form-picker */ "./src/js/editor/form-picker.js");
+
+
+
+
+
+
+
+
+
+
+
+var title = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Landing Contact Form', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_LANDING_CONTACT"], {
+  title: title,
+  category: _constants__WEBPACK_IMPORTED_MODULE_6__["CATEGORY_LANDING"],
+  icon: 'admin-users',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Contact form on the landing page', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  attributes: {
+    formId: {
+      type: 'string'
+    },
+    email: {
+      type: 'string'
+    },
+    emailInvite: {
+      type: 'string',
+      default: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Or email us directly at', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"])
+    }
+  },
+  edit: function edit(_ref) {
+    var _Constants$BLOCK_HEAD;
+
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "dfh-editor-block-title dfh-editor-block-title--nested"
+    }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("section", {
+      className: "landing-contact"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "landing-contact__form"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "margin-b-2"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_6__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_CONTENT_CONTAINER"], {
+        forceAttributes: _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, _constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_HEADING"], (_Constants$BLOCK_HEAD = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_7__["ATTR_LEVEL"], _constants__WEBPACK_IMPORTED_MODULE_6__["HEADING_SIZE_LARGE"]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_7__["ATTR_OPTION_LEVEL"], false), _Constants$BLOCK_HEAD))
+      }]]
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_editor_form_picker__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      value: attributes.formId,
+      onChange: function onChange(formId) {
+        return setAttributes({
+          formId: formId
+        });
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["TextControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Email address invitation', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Provide context about the purpose of the email address', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      value: attributes.emailInvite,
+      onChange: function onChange(emailInvite) {
+        return setAttributes({
+          emailInvite: emailInvite
+        });
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["TextControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Alternate email address', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Enter email address here', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      value: attributes.email,
+      onChange: function onChange(email) {
+        return setAttributes({
+          email: email
+        });
+      }
+    }))));
+  },
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("section", {
+      className: "landing-contact"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "landing-contact__form"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "margin-b-2"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_editor_form_picker__WEBPACK_IMPORTED_MODULE_8__["default"].Content, {
+      value: attributes.formId
+    }), attributes.emailInvite && attributes.email && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "margin-t-2"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", {
+      className: "text text-center"
+    }, attributes.emailInvite, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("br", null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
+      className: "link",
+      href: "mailto:".concat(attributes.email)
+    }, attributes.email)))));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/helper/landing-featured.js":
+/*!*************************************************!*\
+  !*** ./src/js/block/helper/landing-featured.js ***!
+  \*************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+/* harmony import */ var _heading__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../heading */ "./src/js/block/heading.js");
+
+
+
+
+
+
+ // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_LANDING_FEATURED"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Landing Featured', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORY_LANDING"],
+  icon: 'awards',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Featured item on the landing page', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  edit: function edit() {
+    var _Constants$BLOCK_HEAD;
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("section", {
+      className: "landing-toolkits"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "landing-toolkits__featured"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_5__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_INNER_BLOCK_WRAPPER"], {
+        wrapperClassNames: ['margin-b-2'],
+        isLocked: true,
+        allowedBlocks: [_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_CONTENT_CONTAINER"]],
+        template: [[_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_CONTENT_CONTAINER"], {
+          forceAttributes: _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, _constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_HEADING"], (_Constants$BLOCK_HEAD = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_LEVEL"], _constants__WEBPACK_IMPORTED_MODULE_5__["HEADING_SIZE_LARGE"]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_OPTION_LEVEL"], false), _Constants$BLOCK_HEAD))
+        }]]
+      }], [_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_BUTTON_CONTAINER"]]]
+    })));
+  },
+  save: function save() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("section", {
+      className: "landing-toolkits"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "landing-toolkits__featured"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null)));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/helper/landing-header.js":
+/*!***********************************************!*\
+  !*** ./src/js/block/helper/landing-header.js ***!
+  \***********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+/* harmony import */ var _heading__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../heading */ "./src/js/block/heading.js");
+/* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../text */ "./src/js/block/text.js");
+
+
+
+
+
+
+
+ // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_LANDING_HEADER"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Landing Header', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORY_LANDING"],
+  icon: 'flag',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Header of the landing page', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  edit: function edit() {
+    var _Constants$BLOCK_HEAD, _Constants$BLOCK_TEXT, _forceAttributes;
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("header", {
+      className: "landing-header"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "landing-header__container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_5__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_INNER_BLOCK_WRAPPER"], {
+        wrapperClassNames: ['margin-b-3'],
+        isLocked: true,
+        template: [[_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_CONTENT_CONTAINER"], {
+          forceAttributes: (_forceAttributes = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_forceAttributes, _constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_HEADING"], (_Constants$BLOCK_HEAD = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_LEVEL"], _constants__WEBPACK_IMPORTED_MODULE_5__["HEADING_SIZE_XLARGE"]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_SHOW_PRE_TITLE"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_SHOW_POST_TITLE"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_HIGHLIGHT_MAIN_TITLE"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_OPTION_LEVEL"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_OPTION_SHOW_PRE_TITLE"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_OPTION_SHOW_POST_TITLE"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_OPTION_HIGHLIGHT_MAIN_TITLE"], false), _Constants$BLOCK_HEAD)), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_forceAttributes, _constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_TEXT"], (_Constants$BLOCK_TEXT = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_TEXT, _text__WEBPACK_IMPORTED_MODULE_7__["ATTR_SIZE"], _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_SIZE_LARGE"]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_TEXT, _text__WEBPACK_IMPORTED_MODULE_7__["ATTR_OPTION_SIZE"], false), _Constants$BLOCK_TEXT)), _forceAttributes)
+        }]]
+      }], [_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_BUTTON_CONTAINER"]]]
+    })));
+  },
+  save: function save() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("header", {
+      className: "landing-header"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "landing-header__container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null)));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/helper/landing-video.js":
+/*!**********************************************!*\
+  !*** ./src/js/block/helper/landing-video.js ***!
+  \**********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+/* harmony import */ var _heading__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../heading */ "./src/js/block/heading.js");
+/* harmony import */ var _text__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../text */ "./src/js/block/text.js");
+/* harmony import */ var _editor_image_picker__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../editor/image-picker */ "./src/js/editor/image-picker.js");
+/* harmony import */ var _assets_images_placeholder_headshot_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../assets/images/placeholder-headshot.png */ "./assets/images/placeholder-headshot.png");
+/* harmony import */ var _editor_popup_picker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../editor/popup-picker */ "./src/js/editor/popup-picker.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+var title = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Landing Video', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_LANDING_VIDEO"], {
+  title: title,
+  category: _constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORY_LANDING"],
+  icon: 'video-alt2',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Overview video on the landing page', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  attributes: {
+    videoImageUrl: {
+      type: 'string',
+      default: _assets_images_placeholder_headshot_png__WEBPACK_IMPORTED_MODULE_9__["default"]
+    },
+    videoImageAlt: {
+      type: 'string',
+      default: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Video thumbnail', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"])
+    },
+    videoUrl: {
+      type: 'string'
+    }
+  },
+  edit: function edit(_ref) {
+    var _Constants$BLOCK_HEAD, _Constants$BLOCK_TEXT, _forceAttributes;
+
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "dfh-editor-block-title dfh-editor-block-title--nested"
+    }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("section", {
+      className: "landing-video"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "landing-video__description"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_5__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_CONTENT_CONTAINER"], {
+        forceAttributes: (_forceAttributes = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_forceAttributes, _constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_HEADING"], (_Constants$BLOCK_HEAD = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_LEVEL"], _constants__WEBPACK_IMPORTED_MODULE_5__["HEADING_SIZE_MEDIUM"]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_SHOW_PRE_TITLE"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_SHOW_POST_TITLE"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_HIGHLIGHT_MAIN_TITLE"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_OPTION_LEVEL"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_OPTION_SHOW_PRE_TITLE"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_OPTION_SHOW_POST_TITLE"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_OPTION_HIGHLIGHT_MAIN_TITLE"], false), _Constants$BLOCK_HEAD)), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_forceAttributes, _constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_TEXT"], (_Constants$BLOCK_TEXT = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_TEXT, _text__WEBPACK_IMPORTED_MODULE_7__["ATTR_SIZE"], _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_SIZE_DEFAULT"]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_TEXT, _text__WEBPACK_IMPORTED_MODULE_7__["ATTR_OPTION_SIZE"], false), _Constants$BLOCK_TEXT)), _forceAttributes)
+      }]]
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_editor_image_picker__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Select landing video preview', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      onSelect: function onSelect(_ref2) {
+        var url = _ref2.url,
+            alt = _ref2.alt;
+        return setAttributes({
+          videoImageUrl: url,
+          videoImageAlt: alt
+        });
+      },
+      previewClassName: "landing-video__preview",
+      url: attributes.videoImageUrl,
+      description: attributes.videoImageAlt
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_editor_popup_picker__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Landing video URL', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      target: attributes.videoUrl,
+      onChange: function onChange(_ref3) {
+        var target = _ref3.target;
+        return setAttributes({
+          videoUrl: target
+        });
+      }
+    })));
+  },
+  save: function save(_ref4) {
+    var attributes = _ref4.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("section", {
+      className: "landing-video"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "landing-video__description"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_editor_image_picker__WEBPACK_IMPORTED_MODULE_8__["default"].Content, {
+      className: "landing-video__preview",
+      url: attributes.videoImageUrl,
+      description: attributes.videoImageAlt
+    }), attributes.videoUrl && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_editor_popup_picker__WEBPACK_IMPORTED_MODULE_10__["default"].Content, {
+      className: "landing-video__button",
+      target: attributes.videoUrl
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", {
+      className: "sr-only"
+    }, "Play introductory video")));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/helper/link-button.js":
+/*!********************************************!*\
+  !*** ./src/js/block/helper/link-button.js ***!
+  \********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+/* harmony import */ var _shared_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/button */ "./src/js/block/shared/button.js");
+/* harmony import */ var _editor_link_picker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../editor/link-picker */ "./src/js/editor/link-picker.js");
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+
+
+
+
+ // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_3__["BLOCK_LINK_BUTTON"], _objectSpread(_objectSpread({}, _shared_button__WEBPACK_IMPORTED_MODULE_4__["config"]), {}, {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Link Button', _constants__WEBPACK_IMPORTED_MODULE_3__["TEXT_DOMAIN"]),
+  icon: 'admin-links',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Button that points to a link, whether internal or external', _constants__WEBPACK_IMPORTED_MODULE_3__["TEXT_DOMAIN"]),
+  edit: function edit(props) {
+    return _shared_button__WEBPACK_IMPORTED_MODULE_4__["buildButtonEdit"](props, _editor_link_picker__WEBPACK_IMPORTED_MODULE_5__["default"]);
+  },
+  save: function save(props) {
+    return _shared_button__WEBPACK_IMPORTED_MODULE_4__["buildButtonSave"](props);
+  }
+}));
+
+/***/ }),
+
+/***/ "./src/js/block/helper/resource-detail-description.js":
+/*!************************************************************!*\
+  !*** ./src/js/block/helper/resource-detail-description.js ***!
+  \************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+
+
+
+
+
+
+ // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_RESOURCE_DETAIL_DESCRIPTION"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Resource Detail Description', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORY_RESOURCE"],
+  icon: 'networking',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Title, category, and description of a specific resource', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  attributes: {
+    description: {
+      type: 'string'
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["TextareaControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Resource summary', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('This short description is used when displaying this resource in other parts of the site', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      value: attributes.description,
+      onChange: function onChange(description) {
+        return setAttributes({
+          description: description
+        });
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_5__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_RESOURCE_DETAIL_INFO"]], [_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_CONTENT_CONTAINER"], {
+        noHeadings: true,
+        title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Resource Description', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"])
+      }]]
+    }));
+  },
+  save: function save() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "resource-detail__info"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"].Content, null));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/helper/resource-detail-steps-step.js":
+/*!***********************************************************!*\
+  !*** ./src/js/block/helper/resource-detail-steps-step.js ***!
+  \***********************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+/* harmony import */ var _shared_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared/button */ "./src/js/block/shared/button.js");
+
+
+
+
+
+
+ // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_RESOURCE_DETAIL_STEPS_STEP"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Resource Detail Step', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORY_RESOURCE"],
+  icon: 'excerpt-view',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Specific step for a specific resource', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  parent: [_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_RESOURCE_DETAIL_STEPS"]],
+  edit: function edit(_ref) {
+    var _Constants$INNER_BLOC;
+
+    var clientId = _ref.clientId,
+        attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("li", {
+      key: clientId,
+      className: "resource-steps__step"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_5__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_INNER_BLOCK_WRAPPER"], {
+        wrapperClassNames: ['resource-steps__step__title'],
+        isLocked: true,
+        template: [[_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_CONTENT_CONTAINER"], {
+          noHeadings: true
+        }]]
+      }], [_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_BUTTON_CONTAINER"], {
+        expandWidth: true,
+        forceAttributes: _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, _constants__WEBPACK_IMPORTED_MODULE_5__["INNER_BLOCKS_FORCE_ATTRS_ALL"], (_Constants$INNER_BLOC = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$INNER_BLOC, _shared_button__WEBPACK_IMPORTED_MODULE_6__["ATTR_SIZE"], _constants__WEBPACK_IMPORTED_MODULE_5__["BUTTON_SIZE_SMALL"]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$INNER_BLOC, _shared_button__WEBPACK_IMPORTED_MODULE_6__["ATTR_OPTION_SIZE"], false), _Constants$INNER_BLOC)),
+        template: [[_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_FILE_BUTTON"], {
+          isOutlined: true,
+          label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Download file', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"])
+        }]]
+      }]]
+    }));
+  },
+  save: function save(_ref2) {
+    var clientId = _ref2.clientId,
+        attributes = _ref2.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("li", {
+      key: clientId,
+      className: "resource-steps__step"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/helper/resource-detail-steps.js":
+/*!******************************************************!*\
+  !*** ./src/js/block/helper/resource-detail-steps.js ***!
+  \******************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+/* harmony import */ var _heading__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../heading */ "./src/js/block/heading.js");
+
+
+
+
+
+
+
+ // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_RESOURCE_DETAIL_STEPS"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Resource Detail Steps', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORY_RESOURCE"],
+  icon: 'excerpt-view',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Next steps for a specific resource', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  edit: function edit() {
+    var _ref, _ref2;
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "dfh-editor-block-title dfh-editor-block-title--nested"
+    }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Documents & Steps', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"])), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_5__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_HEADING"], (_ref = {
+        mainTitle: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Documents', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"])
+      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ref, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_LEVEL"], _constants__WEBPACK_IMPORTED_MODULE_5__["HEADING_SIZE_MEDIUM"]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ref, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_OPTION_LEVEL"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ref, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_SHOW_PRE_TITLE"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ref, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_SHOW_POST_TITLE"], false), _ref)], [_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_INNER_BLOCK_WRAPPER"], {
+        wrapperElements: ['ol'],
+        wrapperClassNames: ['resource-steps'],
+        allowedBlocks: [_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_RESOURCE_DETAIL_STEPS_STEP"]],
+        template: [[_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_RESOURCE_DETAIL_STEPS_STEP"]]]
+      }], [_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_HEADING"], (_ref2 = {
+        mainTitle: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Next steps', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"])
+      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ref2, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_LEVEL"], _constants__WEBPACK_IMPORTED_MODULE_5__["HEADING_SIZE_MEDIUM"]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ref2, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_OPTION_LEVEL"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ref2, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_SHOW_PRE_TITLE"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ref2, _heading__WEBPACK_IMPORTED_MODULE_6__["ATTR_SHOW_POST_TITLE"], false), _ref2)], [_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_CONTENT_CONTAINER"], {
+        noHeadings: true
+      }]]
+    }));
+  },
+  save: function save() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "resource-detail__steps"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/helper/search-input.js":
+/*!*********************************************!*\
+  !*** ./src/js/block/helper/search-input.js ***!
+  \*********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+
+
+
+ // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_3__["BLOCK_SEARCH_INPUT"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Search Input', _constants__WEBPACK_IMPORTED_MODULE_3__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_3__["CATEGORY_COMMON"],
+  icon: 'search',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Text input styled as a search bar', _constants__WEBPACK_IMPORTED_MODULE_3__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  attributes: {
+    placeholder: {
+      type: 'string',
+      default: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Search here...', _constants__WEBPACK_IMPORTED_MODULE_3__["TEXT_DOMAIN"])
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("input", {
+      type: "text",
+      className: "form__control form__control--search",
+      placeholder: attributes.placeholder
+    });
+  },
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("input", {
+      type: "text",
+      className: "form__control form__control--search",
+      placeholder: attributes.placeholder
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/helper/toolkit-detail-list-link.js":
+/*!*********************************************************!*\
+  !*** ./src/js/block/helper/toolkit-detail-list-link.js ***!
+  \*********************************************************/
+/*! exports provided: ATTR_TITLE, ATTR_URL, ATTR_SHOW_AT_END, buildSaveElement */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_TITLE", function() { return ATTR_TITLE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_URL", function() { return ATTR_URL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_SHOW_AT_END", function() { return ATTR_SHOW_AT_END; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildSaveElement", function() { return buildSaveElement; });
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+/* harmony import */ var _editor_link_picker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../editor/link-picker */ "./src/js/editor/link-picker.js");
+
+
+var _attributes;
+
+
+
+
+
+
+
+
+var ATTR_TITLE = 'title';
+var ATTR_URL = 'url';
+var ATTR_SHOW_AT_END = 'showAtEnd';
+function buildSaveElement(title, url) {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("li", {
+    key: url,
+    className: "toolkit-topics__section toolkit-topics__section--unsequenced"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
+    href: url,
+    className: "link toolkit-topics__section__control",
+    rel: "noopener noreferrer",
+    target: "_blank"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", {
+    className: "toolkit-topics__section__control__title"
+  }, title)));
+} // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_TOOLKIT_DETAIL_LIST_LINK"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Toolkit Link', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORY_TOOLKIT"],
+  icon: 'admin-links',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Relevant link for a specific toolkit', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  parent: [_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_TOOLKIT_DETAIL_LIST"]],
+  attributes: (_attributes = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_TITLE, {
+    type: 'string'
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_URL, {
+    type: 'string'
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "urlTitle", {
+    type: 'string'
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_SHOW_AT_END, {
+    type: 'boolean',
+    default: false
+  }), _attributes),
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["TextControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Link title', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      value: attributes[ATTR_TITLE],
+      onChange: function onChange(title) {
+        return setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, ATTR_TITLE, title));
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["ToggleControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Show after all sections?', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Links are usually shown before toolkit sections but can also be shown after all sections', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      checked: attributes[ATTR_SHOW_AT_END],
+      onChange: function onChange(showAtEnd) {
+        return setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, ATTR_SHOW_AT_END, showAtEnd));
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_editor_link_picker__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      url: attributes[ATTR_URL],
+      title: attributes.urlTitle,
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Link target', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      onChange: function onChange(_ref2) {
+        var _setAttributes3;
+
+        var url = _ref2.url,
+            title = _ref2.title;
+        return setAttributes((_setAttributes3 = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_setAttributes3, ATTR_URL, url), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_setAttributes3, "urlTitle", title), _setAttributes3));
+      }
+    }));
+  },
+  save: function save(_ref3) {
+    var attributes = _ref3.attributes;
+    return buildSaveElement(attributes[ATTR_TITLE], attributes[ATTR_URL]);
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/helper/toolkit-detail-list.js":
+/*!****************************************************!*\
+  !*** ./src/js/block/helper/toolkit-detail-list.js ***!
+  \****************************************************/
+/*! exports provided: ATTR_OVERALL_MARKUP_ID, ATTR_PARENT_CLIENT_ID */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_OVERALL_MARKUP_ID", function() { return ATTR_OVERALL_MARKUP_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_PARENT_CLIENT_ID", function() { return ATTR_PARENT_CLIENT_ID; });
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+/* harmony import */ var _toolkit_detail_list_link__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./toolkit-detail-list-link */ "./src/js/block/helper/toolkit-detail-list-link.js");
+/* harmony import */ var _toolkit_detail_section_info__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./toolkit-detail-section-info */ "./src/js/block/helper/toolkit-detail-section-info.js");
+
+
+
+var _attributes;
+
+
+
+
+
+
+
+
+
+
+
+
+var ATTR_OVERALL_MARKUP_ID = 'overallMarkupId';
+var ATTR_PARENT_CLIENT_ID = 'parentClientId';
+var INT_SECTION_TITLE = 'title',
+    INT_SECTION_PRESENTER = 'presenter',
+    INT_LINK_TITLE = 'title',
+    INT_LINK_URL = 'url',
+    INT_LINK_SHOWATEND = 'showAtEnd';
+
+var debouncedTryUpdateInnerBlockData = lodash__WEBPACK_IMPORTED_MODULE_3___default.a.debounce(tryUpdateInnerBlockData, 500); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_6__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_9__["BLOCK_TOOLKIT_DETAIL_LIST"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__["__"])('Toolkit Detail List', _constants__WEBPACK_IMPORTED_MODULE_9__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_9__["CATEGORY_TOOLKIT"],
+  icon: 'excerpt-view',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__["__"])('Links and navigation for a specific toolkit', _constants__WEBPACK_IMPORTED_MODULE_9__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  attributes: (_attributes = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_attributes, ATTR_OVERALL_MARKUP_ID, {
+    type: 'string'
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_attributes, "sectionInfoList", {
+    type: 'array',
+    default: []
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_attributes, "linkInfoList", {
+    type: 'array',
+    default: []
+  }), _attributes),
+  edit: Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_8__["withSelect"])(function (select, _ref) {
+    var attributes = _ref.attributes;
+    var store = select(_constants__WEBPACK_IMPORTED_MODULE_9__["STORE_BLOCK_EDITOR"]),
+        descendentIds = store.getClientIdsOfDescendants([attributes[ATTR_PARENT_CLIENT_ID]]);
+    return {
+      innerBlockObjs: store.getBlocksByClientId(descendentIds)
+    };
+  })(function (_ref2) {
+    var innerBlockObjs = _ref2.innerBlockObjs,
+        attributes = _ref2.attributes,
+        setAttributes = _ref2.setAttributes;
+    // Hooks cannot be used in the `save` hook so we must set the attributes here
+    debouncedTryUpdateInnerBlockData(innerBlockObjs, attributes, setAttributes);
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+      className: "dfh-editor-block-title dfh-editor-block-title--nested"
+    }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__["__"])('Toolkit Links', _constants__WEBPACK_IMPORTED_MODULE_9__["TEXT_DOMAIN"])), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["InnerBlocks"], {
+      allowedBlocks: [_constants__WEBPACK_IMPORTED_MODULE_9__["BLOCK_TOOLKIT_DETAIL_LIST_LINK"]] // If parent InnerBlocks is locked, then we explicitly need to unlock this
+      ,
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_9__["INNER_BLOCKS_UNLOCKED"]
+    }));
+  }),
+  save: function save(_ref3) {
+    var attributes = _ref3.attributes;
+    var sectionInfoList = attributes.sectionInfoList,
+        linkInfoList = attributes.linkInfoList,
+        numSections = sectionInfoList.length;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+      className: "toolkit-topics"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("ol", {
+      className: "toolkit-topics__unsequenced-list"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["InnerBlocks"].Content, null)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("button", {
+      type: "button",
+      className: "toolkit-topics__toggle button button--small button--outline button--secondary"
+    }, "Show all ", numSections, " sections"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("ol", {
+      className: "toolkit-topics__list"
+    }, linkInfoList // Show at end is false
+    .filter(function (info) {
+      return !info[INT_LINK_SHOWATEND];
+    }).map(function (info) {
+      return _toolkit_detail_list_link__WEBPACK_IMPORTED_MODULE_10__["buildSaveElement"](info[INT_LINK_TITLE], info[INT_LINK_URL]);
+    }), _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(Array(numSections).keys()).map(function (index) {
+      return (// Toolkit sections are in the middle
+        buildSectionItem(attributes[ATTR_OVERALL_MARKUP_ID], sectionInfoList[index], numSections, index)
+      );
+    }), linkInfoList // Show at end is true
+    .filter(function (info) {
+      return info[INT_LINK_SHOWATEND];
+    }).map(function (info) {
+      return _toolkit_detail_list_link__WEBPACK_IMPORTED_MODULE_10__["buildSaveElement"](info[INT_LINK_TITLE], info[INT_LINK_URL]);
+    })));
+  }
+});
+
+function tryUpdateInnerBlockData(innerBlockData, attributes, setAttributes) {
+  var sectionInfoList = [],
+      linkInfoList = [];
+  innerBlockData.forEach(function (_ref4) {
+    var name = _ref4.name,
+        attributes = _ref4.attributes;
+
+    if (name === _constants__WEBPACK_IMPORTED_MODULE_9__["BLOCK_TOOLKIT_DETAIL_SECTION_INFO"]) {
+      var _sectionInfoList$push;
+
+      sectionInfoList.push((_sectionInfoList$push = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_sectionInfoList$push, INT_SECTION_TITLE, attributes[_toolkit_detail_section_info__WEBPACK_IMPORTED_MODULE_11__["ATTR_TITLE"]]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_sectionInfoList$push, INT_SECTION_PRESENTER, attributes[_toolkit_detail_section_info__WEBPACK_IMPORTED_MODULE_11__["ATTR_PRESENTER"]]), _sectionInfoList$push));
+    } else if (name === _constants__WEBPACK_IMPORTED_MODULE_9__["BLOCK_TOOLKIT_DETAIL_LIST_LINK"]) {
+      var _linkInfoList$push;
+
+      linkInfoList.push((_linkInfoList$push = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_linkInfoList$push, INT_LINK_TITLE, attributes[_toolkit_detail_list_link__WEBPACK_IMPORTED_MODULE_10__["ATTR_TITLE"]]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_linkInfoList$push, INT_LINK_URL, attributes[_toolkit_detail_list_link__WEBPACK_IMPORTED_MODULE_10__["ATTR_URL"]]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_linkInfoList$push, INT_LINK_SHOWATEND, attributes[_toolkit_detail_list_link__WEBPACK_IMPORTED_MODULE_10__["ATTR_SHOW_AT_END"]]), _linkInfoList$push));
+    }
+  });
+
+  if (!lodash__WEBPACK_IMPORTED_MODULE_3___default.a.isEqual(sectionInfoList, attributes.sectionInfoList) || !lodash__WEBPACK_IMPORTED_MODULE_3___default.a.isEqual(linkInfoList, attributes.linkInfoList)) {
+    setAttributes({
+      sectionInfoList: sectionInfoList,
+      linkInfoList: linkInfoList
+    });
+  }
+}
+
+function buildSectionItem(overallMarkupId, sectionInfo, numSections, index) {
+  var title = sectionInfo[INT_SECTION_TITLE],
+      presenter = sectionInfo[INT_SECTION_PRESENTER];
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("li", {
+    key: "".concat(title, "-").concat(presenter),
+    className: "toolkit-topics__section ".concat(index === numSections - 1 ? 'toolkit-topics__section--last-in-sequence' : ''),
+    "data-slick-nav-target-id": overallMarkupId,
+    "data-slick-nav-target-index": index
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    className: "toolkit-topics__section__indicator-wrapper"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("button", {
+    type: "button",
+    className: "toolkit-topics__section__control"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    className: "toolkit-topics__section__control__title"
+  }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("div", {
+    className: "toolkit-topics__section__control__subtitle"
+  }, presenter))));
+}
+
+/***/ }),
+
+/***/ "./src/js/block/helper/toolkit-detail-metadata.js":
+/*!********************************************************!*\
+  !*** ./src/js/block/helper/toolkit-detail-metadata.js ***!
+  \********************************************************/
+/*! exports provided: ATTR_PARENT_CLIENT_ID */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_PARENT_CLIENT_ID", function() { return ATTR_PARENT_CLIENT_ID; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils */ "./src/js/utils.js");
+
+
+
+
+
+
+
+ // This block exists to aggregate metadata in one place for the theme's PHP Ajax Load More
+// repeater template to have a single place to pull data for rendering from
+
+var ATTR_PARENT_CLIENT_ID = 'parentClientId';
+
+var debouncedTryUpdateMediaCounts = lodash__WEBPACK_IMPORTED_MODULE_1___default.a.debounce(tryUpdateMediaCounts, 200),
+    debouncedTryUpdateVideoPreview = lodash__WEBPACK_IMPORTED_MODULE_1___default.a.debounce(tryUpdateVideoPreview, 200); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TOOLKIT_DETAIL_METADATA"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Toolkit Detail Metadata', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_6__["CATEGORY_TOOLKIT"],
+  icon: 'portfolio',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Metadata information describing a toolkit', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  attributes: {
+    // NOTE do not need to save `ATTR_PARENT_CLIENT_ID` because this changes with every page load
+    // [ATTR_PARENT_CLIENT_ID]: { type: 'string' },
+    description: {
+      type: 'string'
+    },
+    previewVideoUrl: {
+      type: 'string'
+    },
+    previewImageUrl: {
+      type: 'string'
+    },
+    numAudio: {
+      type: 'integer'
+    },
+    numDocuments: {
+      type: 'integer'
+    },
+    numImages: {
+      type: 'integer'
+    },
+    numPolls: {
+      type: 'integer'
+    },
+    numSlideshows: {
+      type: 'integer'
+    },
+    numVideos: {
+      type: 'integer'
+    }
+  },
+  edit: Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_5__["withSelect"])(function (select, _ref) {
+    var attributes = _ref.attributes;
+    var store = select(_constants__WEBPACK_IMPORTED_MODULE_6__["STORE_BLOCK_EDITOR"]),
+        descendentIds = store.getClientIdsOfDescendants([attributes[ATTR_PARENT_CLIENT_ID]]);
+    return {
+      innerBlockObjs: store.getBlocksByClientId(descendentIds)
+    };
+  })(function (_ref2) {
+    var innerBlockObjs = _ref2.innerBlockObjs,
+        attributes = _ref2.attributes,
+        setAttributes = _ref2.setAttributes;
+    debouncedTryUpdateMediaCounts(innerBlockObjs, attributes, setAttributes);
+    debouncedTryUpdateVideoPreview(innerBlockObjs, attributes, setAttributes);
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["TextareaControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Toolkit summary', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('This short description is used when displaying this toolkit in other parts of the site', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      value: attributes.description,
+      onChange: function onChange(description) {
+        return setAttributes({
+          description: description
+        });
+      }
+    });
+  }),
+  save: function save() {
+    return null;
+  }
+});
+
+function tryUpdateMediaCounts(innerBlockData, attributes, setAttributes) {
+  var numAudio = 0,
+      numDocuments = 0,
+      numImages = 0,
+      numPolls = 0,
+      numSlideshows = 0,
+      numVideos = 0;
+  innerBlockData.forEach(function (_ref3) {
+    var name = _ref3.name,
+        attributes = _ref3.attributes;
+
+    if (_constants__WEBPACK_IMPORTED_MODULE_6__["CORE_EMBED_BLOCKS"].includes(name)) {
+      if (_constants__WEBPACK_IMPORTED_MODULE_6__["CORE_EMBED_AUDIO_BLOCKS"].includes(name)) {
+        numAudio++;
+      } else if (_constants__WEBPACK_IMPORTED_MODULE_6__["CORE_EMBED_DOCUMENT_BLOCKS"].includes(name)) {
+        numDocuments++;
+      } else if (_constants__WEBPACK_IMPORTED_MODULE_6__["CORE_EMBED_IMAGE_BLOCKS"].includes(name)) {
+        numImages++;
+      } else if (_constants__WEBPACK_IMPORTED_MODULE_6__["CORE_EMBED_POLL_BLOCKS"].includes(name)) {
+        numPolls++;
+      } else if (_constants__WEBPACK_IMPORTED_MODULE_6__["CORE_EMBED_SLIDESHOW_BLOCKS"].includes(name)) {
+        numSlideshows++;
+      } else if (_constants__WEBPACK_IMPORTED_MODULE_6__["CORE_EMBED_VIDEO_BLOCKS"].includes(name)) {
+        numVideos++;
+      }
+    }
+  });
+
+  if (!lodash__WEBPACK_IMPORTED_MODULE_1___default.a.isEqual(numAudio, attributes.numAudio) || !lodash__WEBPACK_IMPORTED_MODULE_1___default.a.isEqual(numDocuments, attributes.numDocuments) || !lodash__WEBPACK_IMPORTED_MODULE_1___default.a.isEqual(numImages, attributes.numImages) || !lodash__WEBPACK_IMPORTED_MODULE_1___default.a.isEqual(numPolls, attributes.numPolls) || !lodash__WEBPACK_IMPORTED_MODULE_1___default.a.isEqual(numSlideshows, attributes.numSlideshows) || !lodash__WEBPACK_IMPORTED_MODULE_1___default.a.isEqual(numVideos, attributes.numVideos)) {
+    setAttributes({
+      numAudio: numAudio,
+      numDocuments: numDocuments,
+      numImages: numImages,
+      numPolls: numPolls,
+      numSlideshows: numSlideshows,
+      numVideos: numVideos
+    });
+  }
+}
+
+function tryUpdateVideoPreview(innerBlockData, attributes, setAttributes) {
+  var previewVideoUrl;
+  innerBlockData.forEach(function (_ref4) {
+    var name = _ref4.name,
+        attributes = _ref4.attributes;
+
+    // extract the first videoURL that video thumbnail supports
+    if (!previewVideoUrl && _constants__WEBPACK_IMPORTED_MODULE_6__["VIDEO_THUMBNAIL_SUPPORTED_BLOCKS"].includes(name)) {
+      // see https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/embed/util.js#L77
+      previewVideoUrl = attributes.url;
+    }
+  });
+
+  if (!lodash__WEBPACK_IMPORTED_MODULE_1___default.a.isEqual(previewVideoUrl, attributes.previewVideoUrl)) {
+    Object(_utils__WEBPACK_IMPORTED_MODULE_7__["fetchVideoThumbnail"])(previewVideoUrl).then(function (previewImageUrl) {
+      return setAttributes({
+        previewVideoUrl: previewVideoUrl,
+        previewImageUrl: previewImageUrl
+      });
+    }, function () {
+      return setAttributes({
+        previewVideoUrl: null,
+        previewImageUrl: null
+      });
+    });
+  }
+}
+
+/***/ }),
+
+/***/ "./src/js/block/helper/toolkit-detail-section-container.js":
+/*!*****************************************************************!*\
+  !*** ./src/js/block/helper/toolkit-detail-section-container.js ***!
+  \*****************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+/* harmony import */ var _toolkit_detail_section__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./toolkit-detail-section */ "./src/js/block/helper/toolkit-detail-section.js");
+/* harmony import */ var _editor_with_inner_block_attrs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../editor/with-inner-block-attrs */ "./src/js/editor/with-inner-block-attrs.js");
+
+
+var _attributes;
+
+
+
+
+
+
+
+
+ // This block exists to allow for a container where the only thing possible to add is a
+// Section. Also, this block ensures that the index calculations in the Section block will
+// always be correct because the only children that can be inserted are Section blocks
+
+var title = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Toolkit Sections', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER"], {
+  title: title,
+  category: _constants__WEBPACK_IMPORTED_MODULE_6__["CATEGORY_TOOLKIT"],
+  icon: 'book-alt',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('The sections that form the heart of this toolkit', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  attributes: (_attributes = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, _toolkit_detail_section__WEBPACK_IMPORTED_MODULE_7__["ATTR_OVERALL_MARKUP_ID"], {
+    type: 'string'
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "backButtonLabel", {
+    type: 'string',
+    default: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Back', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"])
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "nextButtonLabel", {
+    type: 'string',
+    default: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Next', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"])
+  }), _attributes),
+  edit: function edit(_ref) {
+    var _Constants$BLOCK_TOOL;
+
+    var clientId = _ref.clientId,
+        attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_editor_with_inner_block_attrs__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      clientId: clientId,
+      innerBlockAttrs: _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, _constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TOOLKIT_DETAIL_SECTION"], (_Constants$BLOCK_TOOL = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_TOOL, _toolkit_detail_section__WEBPACK_IMPORTED_MODULE_7__["ATTR_OVERALL_MARKUP_ID"], attributes[_toolkit_detail_section__WEBPACK_IMPORTED_MODULE_7__["ATTR_OVERALL_MARKUP_ID"]]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_TOOL, _toolkit_detail_section__WEBPACK_IMPORTED_MODULE_7__["ATTR_PARENT_CLIENT_ID"], clientId), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_TOOL, _toolkit_detail_section__WEBPACK_IMPORTED_MODULE_7__["ATTR_BACK_BUTTON_LABEL"], attributes.backButtonLabel), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_TOOL, _toolkit_detail_section__WEBPACK_IMPORTED_MODULE_7__["ATTR_NEXT_BUTTON_LABEL"], attributes.nextButtonLabel), _Constants$BLOCK_TOOL))
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "dfh-editor-block-title dfh-editor-block-title--nested"
+    }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["TextControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Previous section button label', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Navigation buttons only shown on mobile devices', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      value: attributes.backButtonLabel,
+      onChange: function onChange(backButtonLabel) {
+        return setAttributes({
+          backButtonLabel: backButtonLabel
+        });
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["TextControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Next section button label', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Navigation buttons only shown on mobile devices', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      value: attributes.nextButtonLabel,
+      onChange: function onChange(nextButtonLabel) {
+        return setAttributes({
+          nextButtonLabel: nextButtonLabel
+        });
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"], {
+      allowedBlocks: [_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TOOLKIT_DETAIL_SECTION"]] // If parent InnerBlocks is locked, then we explicitly need to unlock this
+      ,
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_6__["INNER_BLOCKS_UNLOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TOOLKIT_DETAIL_SECTION"]]]
+    }));
+  },
+  save: function save(_ref3) {
+    var attributes = _ref3.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      id: attributes[_toolkit_detail_section__WEBPACK_IMPORTED_MODULE_7__["ATTR_OVERALL_MARKUP_ID"]],
+      className: "toolkit-detail-container__item-container",
+      "data-slick-active-class": "toolkit-topics__section--active",
+      "data-slick": JSON.stringify({
+        adaptiveHeight: true,
+        arrows: false
+      })
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/helper/toolkit-detail-section-info.js":
+/*!************************************************************!*\
+  !*** ./src/js/block/helper/toolkit-detail-section-info.js ***!
+  \************************************************************/
+/*! exports provided: ATTR_INDEX, ATTR_PRESENTER, ATTR_TITLE */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_INDEX", function() { return ATTR_INDEX; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_PRESENTER", function() { return ATTR_PRESENTER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_TITLE", function() { return ATTR_TITLE; });
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+
+
+var _attributes;
+
+
+
+
+
+
+
+var ATTR_INDEX = 'index';
+var ATTR_PRESENTER = 'presenter';
+var ATTR_TITLE = 'title'; // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_TOOLKIT_DETAIL_SECTION_INFO"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Toolkit Section Info', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORY_TOOLKIT"],
+  icon: 'analytics',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Title and presenter for a particular section of a toolkit', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  supports: {
+    inserter: false
+  },
+  attributes: (_attributes = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_INDEX, {
+    type: 'number'
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_TITLE, {
+    type: 'string'
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_PRESENTER, {
+    type: 'string'
+  }), _attributes),
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["TextControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Section title', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      value: attributes[ATTR_TITLE],
+      onChange: function onChange(title) {
+        return setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, ATTR_TITLE, title));
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["TextControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Presenter', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      value: attributes[ATTR_PRESENTER],
+      onChange: function onChange(presenter) {
+        return setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, ATTR_PRESENTER, presenter));
+      }
+    }));
+  },
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "toolkit-detail-container__header toolkit-detail-section__header"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("h2", {
+      className: "heading heading--3 heading--one-line"
+    }, attributes[ATTR_INDEX] + 1, ". ", attributes[ATTR_TITLE]), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("p", {
+      className: "toolkit-detail-section__header__presenter"
+    }, attributes[ATTR_PRESENTER]));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/helper/toolkit-detail-section.js":
+/*!*******************************************************!*\
+  !*** ./src/js/block/helper/toolkit-detail-section.js ***!
+  \*******************************************************/
+/*! exports provided: ATTR_OVERALL_MARKUP_ID, ATTR_PARENT_CLIENT_ID, ATTR_BACK_BUTTON_LABEL, ATTR_NEXT_BUTTON_LABEL */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_OVERALL_MARKUP_ID", function() { return ATTR_OVERALL_MARKUP_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_PARENT_CLIENT_ID", function() { return ATTR_PARENT_CLIENT_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_BACK_BUTTON_LABEL", function() { return ATTR_BACK_BUTTON_LABEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_NEXT_BUTTON_LABEL", function() { return ATTR_NEXT_BUTTON_LABEL; });
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+/* harmony import */ var _heading__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../heading */ "./src/js/block/heading.js");
+/* harmony import */ var _editor_with_inner_block_attrs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../editor/with-inner-block-attrs */ "./src/js/editor/with-inner-block-attrs.js");
+
+
+var _attributes;
+
+
+
+
+
+
+
+
+
+
+var ATTR_OVERALL_MARKUP_ID = 'overallMarkupId';
+var ATTR_PARENT_CLIENT_ID = 'parentClientId';
+var ATTR_BACK_BUTTON_LABEL = 'backButtonLabel';
+var ATTR_NEXT_BUTTON_LABEL = 'nextButtonLabel'; // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TOOLKIT_DETAIL_SECTION"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Toolkit Section', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_6__["CATEGORY_TOOLKIT"],
+  icon: 'analytics',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Text and rich media content for a particular section of a toolkit', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+  parent: [_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER"]],
+  attributes: (_attributes = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_OVERALL_MARKUP_ID, {
+    type: 'string'
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_BACK_BUTTON_LABEL, {
+    type: 'string'
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_NEXT_BUTTON_LABEL, {
+    type: 'string'
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "index", {
+    type: 'number'
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "isLastBlock", {
+    type: 'boolean'
+  }), _attributes),
+  edit: Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_5__["withSelect"])(function (select, _ref) {
+    var clientId = _ref.clientId,
+        attributes = _ref.attributes;
+    var store = select(_constants__WEBPACK_IMPORTED_MODULE_6__["STORE_BLOCK_EDITOR"]);
+    return {
+      // see https://developer.wordpress.org/block-editor/data/data-core-block-editor/#getBlockIndex
+      index: store.getBlockIndex(clientId, attributes[ATTR_PARENT_CLIENT_ID]),
+      // see https://developer.wordpress.org/block-editor/data/data-core-block-editor/#getNextBlockClientId
+      isLastBlock: !store.getNextBlockClientId(clientId)
+    };
+  })(function (_ref2) {
+    var _Constants$BLOCK_HEAD;
+
+    var index = _ref2.index,
+        isLastBlock = _ref2.isLastBlock,
+        clientId = _ref2.clientId,
+        attributes = _ref2.attributes,
+        setAttributes = _ref2.setAttributes;
+
+    // Hooks cannot be used in the `save` hook so we must set the attributes here
+    if (index !== attributes.index || isLastBlock !== attributes.isLastBlock) {
+      setAttributes({
+        index: index,
+        isLastBlock: isLastBlock
+      });
+    }
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "dfh-editor-block-title dfh-editor-block-title--nested"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", null, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Section', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"])), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", {
+      className: "dfh-editor-block-title__label"
+    }, index + 1)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "toolkit-detail-section"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_editor_with_inner_block_attrs__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      clientId: clientId,
+      innerBlockAttrs: _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, _constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TOOLKIT_DETAIL_SECTION_INFO"], {
+        index: index
+      })
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_6__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TOOLKIT_DETAIL_SECTION_INFO"]], [_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_CONTENT_CONTAINER"], {
+        forceAttributes: _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, _constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_HEADING"], (_Constants$BLOCK_HEAD = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_7__["ATTR_LEVEL"], _constants__WEBPACK_IMPORTED_MODULE_6__["HEADING_SIZE_MEDIUM"]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_7__["ATTR_OPTION_LEVEL"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_7__["ATTR_HIGHLIGHT_MAIN_TITLE"], false), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_7__["ATTR_OPTION_HIGHLIGHT_MAIN_TITLE"], false), _Constants$BLOCK_HEAD)),
+        template: [[_constants__WEBPACK_IMPORTED_MODULE_6__["CORE_BLOCK_EMBED"]], [_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TEXT"]], [_constants__WEBPACK_IMPORTED_MODULE_6__["CORE_BLOCK_SEPARATOR"]], [_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_HEADING"], {
+          mainTitle: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Further reading', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"])
+        }], [_constants__WEBPACK_IMPORTED_MODULE_6__["CORE_BLOCK_LIST"]]]
+      }]]
+    }))));
+  }),
+  save: function save(_ref4) {
+    var attributes = _ref4.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "toolkit-detail-section"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "toolkit-detail-section__controls"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "button-container button-container--expand-width"
+    }, attributes.index > 0 && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("button", {
+      type: "button",
+      className: "button-container__button button button--outline",
+      "data-slick-nav-target-id": attributes[ATTR_OVERALL_MARKUP_ID],
+      "data-slick-nav-method": "slickPrev"
+    }, attributes[ATTR_BACK_BUTTON_LABEL]), !attributes.isLastBlock && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("button", {
+      type: "button",
+      className: "button-container__button button button--secondary",
+      "data-slick-nav-target-id": attributes[ATTR_OVERALL_MARKUP_ID],
+      "data-slick-nav-method": "slickNext"
+    }, attributes[ATTR_NEXT_BUTTON_LABEL]))));
+  }
+});
+
+function tryUpdateSectionData(innerBlockData, attributes, setAttributes) {
+  var sectionInfoList = [],
+      linkInfoList = [];
+  innerBlockData.forEach(function (_ref5) {
+    var name = _ref5.name,
+        attributes = _ref5.attributes;
+
+    if (name === _constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TOOLKIT_DETAIL_SECTION_INFO"]) {
+      var _sectionInfoList$push;
+
+      sectionInfoList.push((_sectionInfoList$push = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_sectionInfoList$push, INT_SECTION_TITLE, attributes[SectionInfo.ATTR_TITLE]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_sectionInfoList$push, INT_SECTION_PRESENTER, attributes[SectionInfo.ATTR_PRESENTER]), _sectionInfoList$push));
+    } else if (name === _constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TOOLKIT_DETAIL_LIST_LINK"]) {
+      var _linkInfoList$push;
+
+      linkInfoList.push((_linkInfoList$push = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_linkInfoList$push, INT_LINK_TITLE, attributes[LinkList.ATTR_TITLE]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_linkInfoList$push, INT_LINK_URL, attributes[LinkList.ATTR_URL]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_linkInfoList$push, INT_LINK_SHOWATEND, attributes[LinkList.ATTR_SHOW_AT_END]), _linkInfoList$push));
+    }
+  });
+
+  if (!_.isEqual(sectionInfoList, attributes.sectionInfoList) || !_.isEqual(linkInfoList, attributes.linkInfoList)) {
+    setAttributes({
+      sectionInfoList: sectionInfoList,
+      linkInfoList: linkInfoList
+    });
+  }
+}
+
+/***/ }),
+
+/***/ "./src/js/block/hero.js":
+/*!******************************!*\
+  !*** ./src/js/block/hero.js ***!
+  \******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+
+
+
+
+
+
+
+var title = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Hero', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__["registerBlockType"])("".concat(_constants__WEBPACK_IMPORTED_MODULE_4__["NAMESPACE"], "/hero"), {
+  title: title,
+  category: _constants__WEBPACK_IMPORTED_MODULE_4__["CATEGORY_LANDING"],
+  icon: 'flag',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Header with overview video for the landing page', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+  edit: function edit() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "dfh-editor-block-title"
+    }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "landing-hero"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_4__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_4__["BLOCK_LANDING_HEADER"]], [_constants__WEBPACK_IMPORTED_MODULE_4__["BLOCK_LANDING_VIDEO"]]]
+    })));
+  },
+  save: function save() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "landing-hero"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"].Content, null));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/mission-statement.js":
+/*!*******************************************!*\
+  !*** ./src/js/block/mission-statement.js ***!
+  \*******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+
+
+
+
+
+
+
+
+var title = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Mission Statement', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__["registerBlockType"])("".concat(_constants__WEBPACK_IMPORTED_MODULE_5__["NAMESPACE"], "/mission-statement"), {
+  title: title,
+  category: _constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORY_LANDING"],
+  icon: 'lightbulb',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Statement with background graphic for emphasis', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  attributes: {
+    hiddenTitle: {
+      type: 'string',
+      default: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Our mission', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"])
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "dfh-editor-block-title"
+    }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "landing-mission"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["TextControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Hidden title text', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Title will only be visible to screen readers', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      value: attributes.hiddenTitle,
+      onChange: function onChange(hiddenTitle) {
+        return setAttributes({
+          hiddenTitle: hiddenTitle
+        });
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"], {
+      allowedBlocks: [_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_TEXT"]],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_TEXT"]]]
+    })));
+  },
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "landing-mission"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h2", {
+      className: "landing-mission__title"
+    }, attributes.hiddenTitle), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"].Content, null));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/page-header.js":
+/*!*************************************!*\
+  !*** ./src/js/block/page-header.js ***!
+  \*************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+
+
+
+
+
+
+
+var title = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Page Header', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_4__["BLOCK_PAGE_HEADER"], {
+  title: title,
+  category: _constants__WEBPACK_IMPORTED_MODULE_4__["CATEGORY_COMMON"],
+  icon: 'schedule',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Header for a page including title and right-aligned area for more content', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+  attributes: {
+    template: {
+      type: 'array'
+    },
+    isLocked: {
+      type: 'boolean',
+      default: false
+    },
+    hideBlockTitleInEdit: {
+      type: 'boolean',
+      default: false
+    },
+    hideInnerBlocksInEdit: {
+      type: 'boolean',
+      default: false
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, !attributes.hideBlockTitleInEdit && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "dfh-editor-block-title"
+    }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "page-header"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_4__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_4__["BLOCK_INNER_BLOCK_WRAPPER"], {
+        wrapperElements: ['div', 'h1', 'span'],
+        wrapperClassNames: ['page-header__section', 'heading heading--2', 'heading__title'],
+        isLocked: true,
+        template: [[_constants__WEBPACK_IMPORTED_MODULE_4__["BLOCK_PAGE_TITLE"]]]
+      }], [_constants__WEBPACK_IMPORTED_MODULE_4__["BLOCK_INNER_BLOCK_WRAPPER"], {
+        isLocked: attributes.isLocked,
+        hideInEdit: attributes.hideInnerBlocksInEdit,
+        wrapperClassNames: ['page-header__section page-header__section--right'],
+        template: attributes.template
+      }]]
+    })));
+  },
+  save: function save() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "page-header"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"].Content, null));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/resource-detail.js":
+/*!*****************************************!*\
+  !*** ./src/js/block/resource-detail.js ***!
+  \*****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+
+
+
+
+
+
+
+var title = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Resource Detail', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__["registerBlockType"])("".concat(_constants__WEBPACK_IMPORTED_MODULE_4__["NAMESPACE"], "/resource-detail"), {
+  title: title,
+  category: _constants__WEBPACK_IMPORTED_MODULE_4__["CATEGORY_RESOURCE"],
+  icon: 'networking',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Detailed information for a specific resource', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+  edit: function edit() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "dfh-editor-block-title"
+    }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "resource-detail"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_4__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_4__["BLOCK_RESOURCE_DETAIL_DESCRIPTION"]], [_constants__WEBPACK_IMPORTED_MODULE_4__["BLOCK_RESOURCE_DETAIL_STEPS"]]]
+    })));
+  },
+  save: function save() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "resource-detail"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"].Content, null));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/resource-previews.js":
+/*!*******************************************!*\
+  !*** ./src/js/block/resource-previews.js ***!
+  \*******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+
+
+
+
+
+
+
+
+
+var title = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Resource Previews', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockType"])("".concat(_constants__WEBPACK_IMPORTED_MODULE_6__["NAMESPACE"], "/resource-previews"), {
+  title: title,
+  category: _constants__WEBPACK_IMPORTED_MODULE_6__["CATEGORY_RESOURCE"],
+  icon: 'welcome-view-site',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Displays, searches, and filters previews of all resources', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+  attributes: {
+    // This input is escaped in the `save` method to prevent injection attacks
+    noResultsMessage: {
+      type: 'string',
+      default: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])("No resources found. Please try another search or let us know what we're missing.", _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"])
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "dfh-editor-block-title"
+    }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_6__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_PAGE_HEADER"], {
+        isLocked: true,
+        hideBlockTitleInEdit: true,
+        hideInnerBlocksInEdit: true,
+        template: [buildMessageAreaInfo('page-header__metadata page-header__metadata--secondary'), [_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_INNER_BLOCK_WRAPPER"], {
+          wrapperClassNames: ['form form--inline page-header__form'],
+          isLocked: true,
+          template: [[_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_SEARCH_INPUT"], {
+            placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Search for a resource...', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"])
+          }]]
+        }]]
+      }], [_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_INNER_BLOCK_WRAPPER"], {
+        wrapperClassNames: ['resource-categories'],
+        isLocked: true,
+        template: [buildMessageAreaInfo('resource-categories__metadata'), [_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_RESOURCE_CATEGORY_FILTER"]]]
+      }]]
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["TextareaControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('No results message', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      value: attributes.noResultsMessage,
+      onChange: function onChange(noResultsMessage) {
+        return setAttributes({
+          noResultsMessage: noResultsMessage
+        });
+      }
+    }));
+  },
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["RawHTML"], null, // See `alm_templates/default.php` in the THEME for resource markup
+    "[ajax_load_more\n              id=\"".concat(_constants__WEBPACK_IMPORTED_MODULE_6__["AJAX_ID_RESOURCE"], "\"\n              container_type=\"div\"\n              transition_container_classes=\"resource-previews\"\n              post_type=\"").concat(_constants__WEBPACK_IMPORTED_MODULE_6__["CONTENT_TYPE_RESOURCE"], "\"\n              no_results_text=\"<div class='ajax-loader-none'>").concat(lodash__WEBPACK_IMPORTED_MODULE_1___default.a.escape(attributes.noResultsMessage), "</div>\"\n              posts_per_page=\"12\"]")));
+  }
+}); // Insert wrapper `span`s for the frontend script to dynamically update with
+// message of the number of categories currently selected
+
+function buildMessageAreaInfo() {
+  var additionalClassName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  return [_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_INNER_BLOCK_WRAPPER"], {
+    wrapperClassNames: ["".concat(_constants__WEBPACK_IMPORTED_MODULE_6__["CLASS_RESOURCE_MESSAGE_AREA"], " ").concat(additionalClassName)],
+    isLocked: true
+  }];
+}
+
+/***/ }),
+
+/***/ "./src/js/block/shared/button.js":
+/*!***************************************!*\
+  !*** ./src/js/block/shared/button.js ***!
+  \***************************************/
+/*! exports provided: ATTR_SIZE, ATTR_OPTION_SIZE, config, buildButtonEdit, buildButtonSave */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_SIZE", function() { return ATTR_SIZE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_OPTION_SIZE", function() { return ATTR_OPTION_SIZE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "config", function() { return config; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildButtonEdit", function() { return buildButtonEdit; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buildButtonSave", function() { return buildButtonSave; });
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../constants */ "./src/js/constants.js");
+
+
+
+var _attributes;
+
+
+
+
+
+
+
+var ATTR_SIZE = 'size';
+var ATTR_OPTION_SIZE = 'showSizeOptions';
+var config = {
+  category: _constants__WEBPACK_IMPORTED_MODULE_6__["CATEGORY_COMMON"],
+  parent: [_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_BUTTON_CONTAINER"]],
+  supports: {
+    customClassName: false
+  },
+  attributes: (_attributes = {
+    label: {
+      type: 'string'
+    }
+  }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_attributes, ATTR_SIZE, {
+    type: 'string',
+    default: _constants__WEBPACK_IMPORTED_MODULE_6__["BUTTON_SIZE_DEFAULT"]
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_attributes, ATTR_OPTION_SIZE, {
+    type: 'boolean',
+    default: true
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_attributes, "isSecondary", {
+    type: 'boolean',
+    default: false
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_attributes, "isOutlined", {
+    type: 'boolean',
+    default: false
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_attributes, "url", {
+    type: 'string'
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(_attributes, "urlTitle", {
+    type: 'string'
+  }), _attributes)
+};
+function buildButtonEdit(_ref, AssetPicker) {
+  var attributes = _ref.attributes,
+      setAttributes = _ref.setAttributes;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["PanelBody"], {
+    title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Link Button Settings', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"])
+  }, attributes[ATTR_OPTION_SIZE] && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["RadioControl"], {
+    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Size', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+    selected: attributes[ATTR_SIZE],
+    options: [{
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Default', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      value: _constants__WEBPACK_IMPORTED_MODULE_6__["BUTTON_SIZE_DEFAULT"]
+    }, {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Small', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      value: _constants__WEBPACK_IMPORTED_MODULE_6__["BUTTON_SIZE_SMALL"]
+    }],
+    onChange: function onChange(size) {
+      return setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()({}, ATTR_SIZE, size));
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["ToggleControl"], {
+    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Is secondary?', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+    checked: attributes.isSecondary,
+    onChange: function onChange(isSecondary) {
+      return setAttributes({
+        isSecondary: isSecondary
+      });
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["ToggleControl"], {
+    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Is outlined?', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+    checked: attributes.isOutlined,
+    onChange: function onChange(isOutlined) {
+      return setAttributes({
+        isOutlined: isOutlined
+      });
+    }
+  }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["RichText"], {
+    className: "button-container__button button dfh-editor-is-clickable ".concat(buildButtonClassName(attributes)),
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Enter button label here', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+    value: attributes.label,
+    onChange: function onChange(label) {
+      return setAttributes({
+        label: label
+      });
+    }
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(AssetPicker, {
+    url: attributes.url,
+    title: attributes.urlTitle,
+    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Button target', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+    onChange: function onChange(_ref2) {
+      var url = _ref2.url,
+          title = _ref2.title;
+      return setAttributes({
+        url: url,
+        urlTitle: title
+      });
+    }
+  }));
+}
+function buildButtonSave(_ref3) {
+  var attributes = _ref3.attributes;
+
+  var _ref4 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+      _ref4$openInNewTab = _ref4.openInNewTab,
+      openInNewTab = _ref4$openInNewTab === void 0 ? false : _ref4$openInNewTab;
+
+  var openProps = openInNewTab ? {
+    rel: 'noopener noreferrer',
+    target: '_blank'
+  } : {};
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("a", _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, openProps, {
+    href: attributes.url,
+    className: "button-container__button button ".concat(buildButtonClassName(attributes))
+  }), attributes.label);
+}
+
+function buildButtonClassName(attributes) {
+  var sizeClass = attributes[ATTR_SIZE] ? "button--".concat(attributes[ATTR_SIZE]) : '',
+      isSecondaryClass = attributes.isSecondary ? 'button--secondary' : '',
+      isOutlinedClass = attributes.isOutlined ? 'button--outline' : '';
+  return "".concat(sizeClass, " ").concat(isSecondaryClass, " ").concat(isOutlinedClass);
+}
+
+/***/ }),
+
+/***/ "./src/js/block/text.js":
+/*!******************************!*\
+  !*** ./src/js/block/text.js ***!
+  \******************************/
+/*! exports provided: ATTR_SIZE, ATTR_OPTION_SIZE */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_SIZE", function() { return ATTR_SIZE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTR_OPTION_SIZE", function() { return ATTR_OPTION_SIZE; });
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+
+
+var _attributes;
+
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+
+
+
+
+
+
+var ATTR_SIZE = 'size';
+var ATTR_OPTION_SIZE = 'showOptionSize';
+var MERGE_BLOCK_PROP_NAME = 'value'; // Since this is now the default block, we need to support spitting, replacing, merging, etc
+// see https://wordpress.org/support/topic/split-merge-and-replace-events-on-richtext-component/
+// see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TEXT"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Text', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_6__["CATEGORY_COMMON"],
+  icon: 'editor-paragraph',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Paragraph text', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+  transforms: {
+    // Include a transform from raw DOM nodes so that pasting HTML content will create blocks of this type
+    // instead of defaulting to the fallback `core/paragraph` block
+    // see https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/paragraph/transforms.js
+    // see https://developer.wordpress.org/block-editor/developers/block-api/block-registration/#transforms-optional
+    // see https://github.com/WordPress/gutenberg/blob/03928a55a3b0b88b29573a0fd2389d0e1f28fc7d/packages/blocks/src/api/raw-handling/paste-handler.js#L83
+    from: [{
+      type: 'raw',
+      priority: 10,
+      // `core/paragraph` is a fallback and has lower priority of 20
+      selector: 'p',
+      // select the `p` tags in the Wordpress-generated custom paste markup
+      transform: function transform(node) {
+        return Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__["createBlock"])(_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TEXT"], _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, MERGE_BLOCK_PROP_NAME, node.outerHTML));
+      }
+    }]
+  },
+  attributes: (_attributes = {
+    className: {
+      type: 'string',
+      default: ''
+    },
+    deemphasize: {
+      type: 'boolean',
+      default: false
+    },
+    oneLine: {
+      type: 'boolean',
+      default: false
+    },
+    placeholder: {
+      type: 'string',
+      default: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Enter text here', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"])
+    }
+  }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_SIZE, {
+    type: 'string',
+    default: _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_SIZE_DEFAULT"]
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, ATTR_OPTION_SIZE, {
+    type: 'boolean',
+    default: true
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, "tagName", {
+    type: 'string',
+    default: 'div'
+  }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_attributes, MERGE_BLOCK_PROP_NAME, {
+    type: 'string'
+  }), _attributes),
+  merge: function merge(attributes, attributesToMerge) {
+    return _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, MERGE_BLOCK_PROP_NAME, (attributes[MERGE_BLOCK_PROP_NAME] || '') + (attributesToMerge[MERGE_BLOCK_PROP_NAME] || ''));
+  },
+  // see https://github.com/WordPress/gutenberg/blob/00c82b4809e9b8b9d8e90b7220ceb4c6371a0ff1/packages/block-library/src/paragraph/edit.js#L183-L195
+  // see https://wordpress.org/support/topic/split-merge-and-replace-events-on-richtext-component/
+  edit: function edit(_ref2) {
+    var className = _ref2.className,
+        attributes = _ref2.attributes,
+        setAttributes = _ref2.setAttributes,
+        mergeBlocks = _ref2.mergeBlocks,
+        onReplace = _ref2.onReplace;
+    // Do NOT use the `multiline` attribute on `RichText` because this disrupts the appender
+    // behavior when adding this block as a default block in the editor
+    // see https://github.com/WordPress/gutenberg/blob/106b96a6add8a1ae75b5e3649c2a9a84ecbcbf36/packages/block-editor/src/components/block-list/block.js#L307
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["PanelBody"], {
+      title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Text Settings', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"])
+    }, attributes[ATTR_OPTION_SIZE] && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["RadioControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Size', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      selected: attributes[ATTR_SIZE],
+      options: [{
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Large', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+        value: _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_SIZE_LARGE"]
+      }, {
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Default', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+        value: _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_SIZE_DEFAULT"]
+      }, {
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Small', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+        value: _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_SIZE_SMALL"]
+      }],
+      onChange: function onChange(size) {
+        return setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, ATTR_SIZE, size));
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["ToggleControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Force to be one line', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      checked: attributes.oneLine,
+      onChange: function onChange(oneLine) {
+        return setAttributes({
+          oneLine: oneLine
+        });
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["ToggleControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('De-emphasize', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      checked: attributes.deemphasize,
+      onChange: function onChange(deemphasize) {
+        return setAttributes({
+          deemphasize: deemphasize
+        });
+      }
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["RichText"], {
+      tagName: attributes.tagName,
+      identifier: MERGE_BLOCK_PROP_NAME,
+      className: "".concat(className, " text ").concat(buildClassName(attributes)),
+      placeholder: attributes.placeholder,
+      value: attributes[MERGE_BLOCK_PROP_NAME],
+      onChange: function onChange(value) {
+        return setAttributes(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, MERGE_BLOCK_PROP_NAME, value));
+      },
+      onSplit: function onSplit(value) {
+        return value ? Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__["createBlock"])(_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TEXT"], _objectSpread(_objectSpread({}, attributes), {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, MERGE_BLOCK_PROP_NAME, value))) : Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__["createBlock"])(_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_TEXT"]);
+      },
+      onMerge: mergeBlocks,
+      onReplace: onReplace,
+      onRemove: onReplace ? function () {
+        return onReplace([]);
+      } : undefined,
+      "aria-label": attributes[MERGE_BLOCK_PROP_NAME] ? Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Text block', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]) : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Empty block; start writing or type forward slash to choose a block', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"])
+    }));
+  },
+  save: function save(_ref3) {
+    var attributes = _ref3.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["RichText"].Content, {
+      tagName: attributes.tagName,
+      className: "text ".concat(buildClassName(attributes)),
+      value: attributes[MERGE_BLOCK_PROP_NAME]
+    });
+  }
+});
+
+function buildClassName(attributes) {
+  var sizeClass = attributes[ATTR_SIZE] ? "text--".concat(attributes[ATTR_SIZE]) : '',
+      oneLineClass = attributes.oneLine ? 'text--one-line' : '',
+      deemphasizeClass = attributes.deemphasize ? 'text--light' : '',
+      additionalClass = attributes.className ? attributes.className : '';
+  return "".concat(sizeClass, " ").concat(oneLineClass, " ").concat(deemphasizeClass, " ").concat(additionalClass);
+}
+
+/***/ }),
+
+/***/ "./src/js/block/toolkit-detail.js":
+/*!****************************************!*\
+  !*** ./src/js/block/toolkit-detail.js ***!
+  \****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+/* harmony import */ var _helper_toolkit_detail_list__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./helper/toolkit-detail-list */ "./src/js/block/helper/toolkit-detail-list.js");
+/* harmony import */ var _helper_toolkit_detail_metadata__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./helper/toolkit-detail-metadata */ "./src/js/block/helper/toolkit-detail-metadata.js");
+/* harmony import */ var _helper_toolkit_detail_section__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./helper/toolkit-detail-section */ "./src/js/block/helper/toolkit-detail-section.js");
+/* harmony import */ var _editor_with_inner_block_attrs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../editor/with-inner-block-attrs */ "./src/js/editor/with-inner-block-attrs.js");
+
+
+
+
+
+
+
+
+
+
+
+var title = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Toolkit Detail', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockType"])("".concat(_constants__WEBPACK_IMPORTED_MODULE_5__["NAMESPACE"], "/toolkit-detail"), {
+  title: title,
+  category: _constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORY_TOOLKIT"],
+  icon: 'portfolio',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Video, text, and link resources that form a toolkit', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  edit: function edit(_ref) {
+    var _Constants$BLOCK_TOOL2, _ref2;
+
+    var clientId = _ref.clientId;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_editor_with_inner_block_attrs__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      clientId: clientId,
+      innerBlockAttrs: (_ref2 = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ref2, _constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_TOOLKIT_DETAIL_METADATA"], _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, _helper_toolkit_detail_metadata__WEBPACK_IMPORTED_MODULE_7__["ATTR_PARENT_CLIENT_ID"], clientId)), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ref2, _constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_INNER_BLOCK_WRAPPER"], {
+        forceAttributes: _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, _constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_TOOLKIT_DETAIL_LIST"], (_Constants$BLOCK_TOOL2 = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_TOOL2, _helper_toolkit_detail_list__WEBPACK_IMPORTED_MODULE_6__["ATTR_OVERALL_MARKUP_ID"], clientId), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_TOOL2, _helper_toolkit_detail_list__WEBPACK_IMPORTED_MODULE_6__["ATTR_PARENT_CLIENT_ID"], clientId), _Constants$BLOCK_TOOL2))
+      }), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ref2, _constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER"], _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, _helper_toolkit_detail_section__WEBPACK_IMPORTED_MODULE_8__["ATTR_OVERALL_MARKUP_ID"], clientId)), _ref2)
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "dfh-editor-block-title"
+    }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_5__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_TOOLKIT_DETAIL_METADATA"]], [_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_INNER_BLOCK_WRAPPER"], {
+        wrapperClassNames: ['toolkit-detail-container__list'],
+        isLocked: true,
+        template: [[_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_TOOLKIT_DETAIL_HEADER"]], [_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_TOOLKIT_DETAIL_LIST"]]]
+      }], [_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER"]]]
+    }));
+  },
+  save: function save() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "toolkit-detail-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/toolkit-previews.js":
+/*!******************************************!*\
+  !*** ./src/js/block/toolkit-previews.js ***!
+  \******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+
+
+
+
+
+
+
+
+
+var title = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Toolkit Previews', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockType"])("".concat(_constants__WEBPACK_IMPORTED_MODULE_6__["NAMESPACE"], "/toolkit-previews"), {
+  title: title,
+  category: _constants__WEBPACK_IMPORTED_MODULE_6__["CATEGORY_TOOLKIT"],
+  icon: 'welcome-view-site',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Displays and searches previews of all toolkits', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+  attributes: {
+    // This input is escaped in the `save` method to prevent injection attacks
+    noResultsMessage: {
+      type: 'string',
+      default: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])("No toolkits found. Please try another search or let us know what we're missing.", _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"])
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "dfh-editor-block-title"
+    }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_6__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_PAGE_HEADER"], {
+        isLocked: true,
+        hideBlockTitleInEdit: true,
+        hideInnerBlocksInEdit: true,
+        template: [[_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_INNER_BLOCK_WRAPPER"], {
+          wrapperClassNames: ['form form--inline page-header__form'],
+          isLocked: true,
+          template: [[_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_SEARCH_INPUT"], {
+            placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Search for a toolkit...', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"])
+          }]]
+        }]]
+      }]]
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["TextareaControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('No results message', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      value: attributes.noResultsMessage,
+      onChange: function onChange(noResultsMessage) {
+        return setAttributes({
+          noResultsMessage: noResultsMessage
+        });
+      }
+    }));
+  },
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["RawHTML"], null, // See `alm_templates/default.php` in the THEME for toolkit markup
+    "[ajax_load_more\n              id=\"".concat(_constants__WEBPACK_IMPORTED_MODULE_6__["AJAX_ID_TOOLKIT"], "\"\n              container_type=\"div\"\n              transition_container_classes=\"container\"\n              post_type=\"").concat(_constants__WEBPACK_IMPORTED_MODULE_6__["CONTENT_TYPE_TOOLKIT"], "\"\n              no_results_text=\"<div class='ajax-loader-none'>").concat(lodash__WEBPACK_IMPORTED_MODULE_1___default.a.escape(attributes.noResultsMessage), "</div>\"\n              posts_per_page=\"8\"]")));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/block/value-statement.js":
+/*!*****************************************!*\
+  !*** ./src/js/block/value-statement.js ***!
+  \*****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+/* harmony import */ var _heading__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./heading */ "./src/js/block/heading.js");
+/* harmony import */ var _editor_image_picker__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../editor/image-picker */ "./src/js/editor/image-picker.js");
+/* harmony import */ var _assets_images_placeholder_value_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../assets/images/placeholder-value.png */ "./assets/images/placeholder-value.png");
+
+
+
+
+
+
+
+
+
+
+
+
+var title = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Value Statement', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockType"])("".concat(_constants__WEBPACK_IMPORTED_MODULE_6__["NAMESPACE"], "/value-statement"), {
+  title: title,
+  category: _constants__WEBPACK_IMPORTED_MODULE_6__["CATEGORY_LANDING"],
+  icon: 'heart',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Statement accompanied by an illustration', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+  attributes: {
+    reverse: {
+      type: 'boolean',
+      default: false
+    },
+    valueImage: {
+      type: 'string',
+      default: _assets_images_placeholder_value_png__WEBPACK_IMPORTED_MODULE_9__["default"]
+    },
+    valueImageAlt: {
+      type: 'string',
+      default: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Value illustration', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"])
+    }
+  },
+  edit: function edit(_ref) {
+    var _Constants$BLOCK_HEAD;
+
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    var Description = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "landing-value__description"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"], {
+      templateLock: _constants__WEBPACK_IMPORTED_MODULE_6__["INNER_BLOCKS_LOCKED"],
+      template: [[_constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_CONTENT_CONTAINER"], {
+        forceAttributes: _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, _constants__WEBPACK_IMPORTED_MODULE_6__["BLOCK_HEADING"], (_Constants$BLOCK_HEAD = {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_7__["ATTR_LEVEL"], _constants__WEBPACK_IMPORTED_MODULE_6__["HEADING_SIZE_LARGE"]), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_Constants$BLOCK_HEAD, _heading__WEBPACK_IMPORTED_MODULE_7__["ATTR_OPTION_LEVEL"], false), _Constants$BLOCK_HEAD))
+      }]]
+    })),
+        Image = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "landing-value__image"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_editor_image_picker__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      onSelect: function onSelect(_ref2) {
+        var url = _ref2.url,
+            alt = _ref2.alt;
+        return setAttributes({
+          valueImage: url,
+          valueImageAlt: alt
+        });
+      },
+      url: attributes.valueImage,
+      description: attributes.valueImageAlt
+    }));
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["PanelBody"], {
+      title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Value Statement Settings', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"])
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["ToggleControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Show image on left', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      checked: attributes.reverse,
+      onChange: function onChange(reverse) {
+        return setAttributes({
+          reverse: reverse
+        });
+      }
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "dfh-editor-block-title"
+    }, title), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "landing-value ".concat(buildClassName(attributes))
+    }, attributes.reverse ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Image, Description) : Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Description, Image)));
+  },
+  save: function save(_ref3) {
+    var attributes = _ref3.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "landing-value ".concat(buildClassName(attributes))
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "landing-value__description"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "landing-value__image"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_editor_image_picker__WEBPACK_IMPORTED_MODULE_8__["default"].Content, {
+      url: attributes.valueImage,
+      description: attributes.valueImageAlt
+    })));
+  }
+});
+
+function buildClassName(attributes) {
+  return attributes.reverse ? 'landing-value--reversed' : '';
+}
+
+/***/ }),
+
+/***/ "./src/js/block/video-thumbnail.js":
+/*!*****************************************!*\
+  !*** ./src/js/block/video-thumbnail.js ***!
+  \*****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+
+
+
+
+
+
+
+
+
+var wrappedUpdateThumbnail = lodash__WEBPACK_IMPORTED_MODULE_1___default.a.debounce(updateThumbnail, 200); // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__["registerBlockType"])(_constants__WEBPACK_IMPORTED_MODULE_5__["BLOCK_VIDEO_THUMBNAIL"], {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Video Thumbnail', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  category: _constants__WEBPACK_IMPORTED_MODULE_5__["CATEGORY_MEDIA"],
+  icon: 'format-video',
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Thumnail preview of a video that opens into a pop-up video', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+  attributes: {
+    label: {
+      type: 'string',
+      default: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Play', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"])
+    },
+    videoUrl: {
+      type: 'string'
+    },
+    thumbnailUrl: {
+      type: 'string'
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["TextControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Video URL', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Only YouTube and Vimeo links are supported', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      value: attributes.videoUrl,
+      onChange: function onChange(videoUrl) {
+        setAttributes({
+          videoUrl: videoUrl
+        });
+        wrappedUpdateThumbnail(videoUrl, setAttributes);
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["TextControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Hover button label', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Button shows up when hovering over thumbnail', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]),
+      value: attributes.label,
+      onChange: function onChange(label) {
+        return setAttributes({
+          label: label
+        });
+      }
+    }), attributes.thumbnailUrl && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+      className: "dfh-editor-rounded-corners",
+      src: attributes.thumbnailUrl,
+      alt: "Video thumbnail"
+    }));
+  },
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+    return attributes.thumbnailUrl ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+      href: attributes.videoUrl,
+      className: "video-thumbnail",
+      "data-lity": true
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+      className: "video-thumbnail__image",
+      src: attributes.thumbnailUrl,
+      alt: "Video thumbnail"
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
+      type: "button",
+      className: "video-thumbnail__control"
+    }, attributes.label)) : null;
+  }
+});
+
+function updateThumbnail(videoUrl, setAttributes) {
+  Object(_utils__WEBPACK_IMPORTED_MODULE_6__["fetchVideoThumbnail"])(videoUrl).then(function (thumbnailUrl) {
+    return setAttributes({
+      thumbnailUrl: thumbnailUrl
+    });
+  }, function () {
+    return setAttributes({
+      thumbnailUrl: null
+    });
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/constants.js":
+/*!*****************************!*\
+  !*** ./src/js/constants.js ***!
+  \*****************************/
+/*! exports provided: NAMESPACE, TEXT_DOMAIN, CATEGORY_COMMON, CATEGORY_LANDING, CATEGORY_LAYOUT, CATEGORY_MEDIA, CATEGORY_RESOURCE, CATEGORY_TOOLKIT, CONTENT_TYPE_RESOURCE, CONTENT_TYPE_TOOLKIT, TAXONOMY_RESOURCE, AJAX_ID_RESOURCE, AJAX_ID_TOOLKIT, CLASS_RESOURCE_MESSAGE_AREA, STORE_BLOCK_EDITOR, STORE_CORE, STORE_EDITOR, INNER_BLOCKS_LOCKED, INNER_BLOCKS_UNLOCKED, INNER_BLOCKS_FORCE_ATTRS_ALL, CORE_BLOCK_AUDIO, CORE_BLOCK_EMBED, CORE_BLOCK_GALLERY, CORE_BLOCK_IMAGE, CORE_BLOCK_LIST, CORE_BLOCK_SEPARATOR, CORE_BLOCK_SPACER, CORE_BLOCK_VIDEO, BLOCK_BUTTON_CONTAINER, BLOCK_CONTENT_CONTAINER, BLOCK_FILE_BUTTON, BLOCK_HEADING, BLOCK_INNER_BLOCK_WRAPPER, BLOCK_LINK_BUTTON, BLOCK_PAGE_HEADER, BLOCK_PAGE_TITLE, BLOCK_SEARCH_INPUT, BLOCK_TEXT, BLOCK_VIDEO_THUMBNAIL, BLOCK_LANDING_CONTACT, BLOCK_LANDING_FEATURED, BLOCK_LANDING_HEADER, BLOCK_LANDING_VIDEO, BLOCK_RESOURCE_CATEGORY_FILTER, BLOCK_RESOURCE_DETAIL_DESCRIPTION, BLOCK_RESOURCE_DETAIL_INFO, BLOCK_RESOURCE_DETAIL_STEPS, BLOCK_RESOURCE_DETAIL_STEPS_STEP, BLOCK_TOOLKIT_DETAIL_HEADER, BLOCK_TOOLKIT_DETAIL_LIST, BLOCK_TOOLKIT_DETAIL_LIST_LINK, BLOCK_TOOLKIT_DETAIL_METADATA, BLOCK_TOOLKIT_DETAIL_SECTION, BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER, BLOCK_TOOLKIT_DETAIL_SECTION_INFO, BUTTON_SIZE_DEFAULT, BUTTON_SIZE_SMALL, TEXT_SIZE_LARGE, TEXT_SIZE_DEFAULT, TEXT_SIZE_SMALL, HEADING_SIZE_XLARGE, HEADING_SIZE_LARGE, HEADING_SIZE_MEDIUM, HEADING_SIZE_SMALL, VIDEO_THUMBNAIL_SUPPORTED_BLOCKS, CORE_EMBED_AUDIO_BLOCKS, CORE_EMBED_DOCUMENT_BLOCKS, CORE_EMBED_IMAGE_BLOCKS, CORE_EMBED_POLL_BLOCKS, CORE_EMBED_SLIDESHOW_BLOCKS, CORE_EMBED_VIDEO_BLOCKS, CORE_EMBED_BLOCKS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NAMESPACE", function() { return NAMESPACE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TEXT_DOMAIN", function() { return TEXT_DOMAIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CATEGORY_COMMON", function() { return CATEGORY_COMMON; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CATEGORY_LANDING", function() { return CATEGORY_LANDING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CATEGORY_LAYOUT", function() { return CATEGORY_LAYOUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CATEGORY_MEDIA", function() { return CATEGORY_MEDIA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CATEGORY_RESOURCE", function() { return CATEGORY_RESOURCE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CATEGORY_TOOLKIT", function() { return CATEGORY_TOOLKIT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CONTENT_TYPE_RESOURCE", function() { return CONTENT_TYPE_RESOURCE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CONTENT_TYPE_TOOLKIT", function() { return CONTENT_TYPE_TOOLKIT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TAXONOMY_RESOURCE", function() { return TAXONOMY_RESOURCE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AJAX_ID_RESOURCE", function() { return AJAX_ID_RESOURCE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AJAX_ID_TOOLKIT", function() { return AJAX_ID_TOOLKIT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLASS_RESOURCE_MESSAGE_AREA", function() { return CLASS_RESOURCE_MESSAGE_AREA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STORE_BLOCK_EDITOR", function() { return STORE_BLOCK_EDITOR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STORE_CORE", function() { return STORE_CORE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STORE_EDITOR", function() { return STORE_EDITOR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INNER_BLOCKS_LOCKED", function() { return INNER_BLOCKS_LOCKED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INNER_BLOCKS_UNLOCKED", function() { return INNER_BLOCKS_UNLOCKED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INNER_BLOCKS_FORCE_ATTRS_ALL", function() { return INNER_BLOCKS_FORCE_ATTRS_ALL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CORE_BLOCK_AUDIO", function() { return CORE_BLOCK_AUDIO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CORE_BLOCK_EMBED", function() { return CORE_BLOCK_EMBED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CORE_BLOCK_GALLERY", function() { return CORE_BLOCK_GALLERY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CORE_BLOCK_IMAGE", function() { return CORE_BLOCK_IMAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CORE_BLOCK_LIST", function() { return CORE_BLOCK_LIST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CORE_BLOCK_SEPARATOR", function() { return CORE_BLOCK_SEPARATOR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CORE_BLOCK_SPACER", function() { return CORE_BLOCK_SPACER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CORE_BLOCK_VIDEO", function() { return CORE_BLOCK_VIDEO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_BUTTON_CONTAINER", function() { return BLOCK_BUTTON_CONTAINER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_CONTENT_CONTAINER", function() { return BLOCK_CONTENT_CONTAINER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_FILE_BUTTON", function() { return BLOCK_FILE_BUTTON; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_HEADING", function() { return BLOCK_HEADING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_INNER_BLOCK_WRAPPER", function() { return BLOCK_INNER_BLOCK_WRAPPER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_LINK_BUTTON", function() { return BLOCK_LINK_BUTTON; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_PAGE_HEADER", function() { return BLOCK_PAGE_HEADER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_PAGE_TITLE", function() { return BLOCK_PAGE_TITLE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_SEARCH_INPUT", function() { return BLOCK_SEARCH_INPUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_TEXT", function() { return BLOCK_TEXT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_VIDEO_THUMBNAIL", function() { return BLOCK_VIDEO_THUMBNAIL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_LANDING_CONTACT", function() { return BLOCK_LANDING_CONTACT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_LANDING_FEATURED", function() { return BLOCK_LANDING_FEATURED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_LANDING_HEADER", function() { return BLOCK_LANDING_HEADER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_LANDING_VIDEO", function() { return BLOCK_LANDING_VIDEO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_RESOURCE_CATEGORY_FILTER", function() { return BLOCK_RESOURCE_CATEGORY_FILTER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_RESOURCE_DETAIL_DESCRIPTION", function() { return BLOCK_RESOURCE_DETAIL_DESCRIPTION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_RESOURCE_DETAIL_INFO", function() { return BLOCK_RESOURCE_DETAIL_INFO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_RESOURCE_DETAIL_STEPS", function() { return BLOCK_RESOURCE_DETAIL_STEPS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_RESOURCE_DETAIL_STEPS_STEP", function() { return BLOCK_RESOURCE_DETAIL_STEPS_STEP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_TOOLKIT_DETAIL_HEADER", function() { return BLOCK_TOOLKIT_DETAIL_HEADER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_TOOLKIT_DETAIL_LIST", function() { return BLOCK_TOOLKIT_DETAIL_LIST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_TOOLKIT_DETAIL_LIST_LINK", function() { return BLOCK_TOOLKIT_DETAIL_LIST_LINK; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_TOOLKIT_DETAIL_METADATA", function() { return BLOCK_TOOLKIT_DETAIL_METADATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_TOOLKIT_DETAIL_SECTION", function() { return BLOCK_TOOLKIT_DETAIL_SECTION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER", function() { return BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BLOCK_TOOLKIT_DETAIL_SECTION_INFO", function() { return BLOCK_TOOLKIT_DETAIL_SECTION_INFO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTON_SIZE_DEFAULT", function() { return BUTTON_SIZE_DEFAULT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTON_SIZE_SMALL", function() { return BUTTON_SIZE_SMALL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TEXT_SIZE_LARGE", function() { return TEXT_SIZE_LARGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TEXT_SIZE_DEFAULT", function() { return TEXT_SIZE_DEFAULT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TEXT_SIZE_SMALL", function() { return TEXT_SIZE_SMALL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HEADING_SIZE_XLARGE", function() { return HEADING_SIZE_XLARGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HEADING_SIZE_LARGE", function() { return HEADING_SIZE_LARGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HEADING_SIZE_MEDIUM", function() { return HEADING_SIZE_MEDIUM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HEADING_SIZE_SMALL", function() { return HEADING_SIZE_SMALL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VIDEO_THUMBNAIL_SUPPORTED_BLOCKS", function() { return VIDEO_THUMBNAIL_SUPPORTED_BLOCKS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CORE_EMBED_AUDIO_BLOCKS", function() { return CORE_EMBED_AUDIO_BLOCKS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CORE_EMBED_DOCUMENT_BLOCKS", function() { return CORE_EMBED_DOCUMENT_BLOCKS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CORE_EMBED_IMAGE_BLOCKS", function() { return CORE_EMBED_IMAGE_BLOCKS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CORE_EMBED_POLL_BLOCKS", function() { return CORE_EMBED_POLL_BLOCKS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CORE_EMBED_SLIDESHOW_BLOCKS", function() { return CORE_EMBED_SLIDESHOW_BLOCKS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CORE_EMBED_VIDEO_BLOCKS", function() { return CORE_EMBED_VIDEO_BLOCKS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CORE_EMBED_BLOCKS", function() { return CORE_EMBED_BLOCKS; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+
+var NAMESPACE = 'dfh';
+var TEXT_DOMAIN = 'dfh';
+var CATEGORY_COMMON = 'dfh-common';
+var CATEGORY_LANDING = 'dfh-landing';
+var CATEGORY_LAYOUT = 'dfh-layout';
+var CATEGORY_MEDIA = 'dfh-media';
+var CATEGORY_RESOURCE = 'dfh-resource';
+var CATEGORY_TOOLKIT = 'dfh-toolkit'; // custom content types and taxonomies
+
+var CONTENT_TYPE_RESOURCE = 'dfh_resource';
+var CONTENT_TYPE_TOOLKIT = 'dfh_toolkit';
+var TAXONOMY_RESOURCE = 'dfh_resource_classification'; // ajax load more instances
+
+var AJAX_ID_RESOURCE = 'dfh_ajax_resource_previews';
+var AJAX_ID_TOOLKIT = 'dfh_ajax_toolkit_previews'; // for frontend script to know where to insert messages for resource overview
+
+var CLASS_RESOURCE_MESSAGE_AREA = 'resource-previews-label'; // documentation for stores at https://developer.wordpress.org/block-editor/data/
+
+var STORE_BLOCK_EDITOR = 'core/block-editor';
+var STORE_CORE = 'core';
+var STORE_EDITOR = 'core/editor';
+var INNER_BLOCKS_LOCKED = 'all';
+var INNER_BLOCKS_UNLOCKED = false;
+var INNER_BLOCKS_FORCE_ATTRS_ALL = 'applyToAll';
+var CORE_BLOCK_AUDIO = 'core/audio';
+var CORE_BLOCK_EMBED = 'core/embed';
+var CORE_BLOCK_GALLERY = 'core/gallery';
+var CORE_BLOCK_IMAGE = 'core/image';
+var CORE_BLOCK_LIST = 'core/list';
+var CORE_BLOCK_SEPARATOR = 'core/separator';
+var CORE_BLOCK_SPACER = 'core/spacer';
+var CORE_BLOCK_VIDEO = 'core/video';
+var BLOCK_BUTTON_CONTAINER = "".concat(NAMESPACE, "/button-container");
+var BLOCK_CONTENT_CONTAINER = "".concat(NAMESPACE, "/content-container");
+var BLOCK_FILE_BUTTON = "".concat(NAMESPACE, "/file-button");
+var BLOCK_HEADING = "".concat(NAMESPACE, "/heading");
+var BLOCK_INNER_BLOCK_WRAPPER = "".concat(NAMESPACE, "/inner-block-wrapper");
+var BLOCK_LINK_BUTTON = "".concat(NAMESPACE, "/link-button");
+var BLOCK_PAGE_HEADER = "".concat(NAMESPACE, "/page-header");
+var BLOCK_PAGE_TITLE = "".concat(NAMESPACE, "/page-title");
+var BLOCK_SEARCH_INPUT = "".concat(NAMESPACE, "/search-input");
+var BLOCK_TEXT = "".concat(NAMESPACE, "/text");
+var BLOCK_VIDEO_THUMBNAIL = "".concat(NAMESPACE, "/video-thumbnail");
+var BLOCK_LANDING_CONTACT = "".concat(NAMESPACE, "/landing-contact");
+var BLOCK_LANDING_FEATURED = "".concat(NAMESPACE, "/landing-featured");
+var BLOCK_LANDING_HEADER = "".concat(NAMESPACE, "/landing-header");
+var BLOCK_LANDING_VIDEO = "".concat(NAMESPACE, "/landing-video");
+var BLOCK_RESOURCE_CATEGORY_FILTER = "".concat(NAMESPACE, "/resource-category-filter");
+var BLOCK_RESOURCE_DETAIL_DESCRIPTION = "".concat(NAMESPACE, "/resource-detail-description");
+var BLOCK_RESOURCE_DETAIL_INFO = "".concat(NAMESPACE, "/resource-detail-info");
+var BLOCK_RESOURCE_DETAIL_STEPS = "".concat(NAMESPACE, "/resource-detail-steps");
+var BLOCK_RESOURCE_DETAIL_STEPS_STEP = "".concat(NAMESPACE, "/resource-detail-steps-step");
+var BLOCK_TOOLKIT_DETAIL_HEADER = "".concat(NAMESPACE, "/toolkit-detail-header");
+var BLOCK_TOOLKIT_DETAIL_LIST = "".concat(NAMESPACE, "/toolkit-detail-list");
+var BLOCK_TOOLKIT_DETAIL_LIST_LINK = "".concat(NAMESPACE, "/toolkit-detail-list-link");
+var BLOCK_TOOLKIT_DETAIL_METADATA = "".concat(NAMESPACE, "/toolkit-detail-metadata");
+var BLOCK_TOOLKIT_DETAIL_SECTION = "".concat(NAMESPACE, "/toolkit-detail-section");
+var BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER = "".concat(NAMESPACE, "/toolkit-detail-section-container");
+var BLOCK_TOOLKIT_DETAIL_SECTION_INFO = "".concat(NAMESPACE, "/toolkit-detail-section-info");
+var BUTTON_SIZE_DEFAULT = '';
+var BUTTON_SIZE_SMALL = 'small';
+var TEXT_SIZE_LARGE = 'large';
+var TEXT_SIZE_DEFAULT = '';
+var TEXT_SIZE_SMALL = 'small';
+var HEADING_SIZE_XLARGE = '1';
+var HEADING_SIZE_LARGE = '2';
+var HEADING_SIZE_MEDIUM = '3';
+var HEADING_SIZE_SMALL = '4';
+var VIDEO_THUMBNAIL_SUPPORTED_BLOCKS = ['core-embed/vimeo', 'core-embed/youtube']; // NOTE: need to add enter list of possible embed block to list of allowed blocks if allowing
+// any core media block! The reason is that all core media blocks will eventually transform into
+// a core embed block of some sort
+
+var CORE_EMBED_AUDIO_BLOCKS = ['core-embed/mixcloud', 'core-embed/reverbnation', 'core-embed/soundcloud', 'core-embed/speaker', 'core-embed/spotify', 'core/embed'];
+var CORE_EMBED_DOCUMENT_BLOCKS = ['core-embed/amazon-kindle', 'core-embed/issuu', 'core-embed/scribd', 'core/embed'];
+var CORE_EMBED_IMAGE_BLOCKS = ['core-embed/imgur', 'core-embed/instagram', 'core-embed/smugmug', 'core-embed/tumblr', 'core/embed'];
+var CORE_EMBED_POLL_BLOCKS = ['core-embed/cloudup', 'core-embed/crowdsignal', 'core-embed/polldaddy', 'core/embed'];
+var CORE_EMBED_SLIDESHOW_BLOCKS = ['core-embed/slideshare', 'core-embed/speaker-deck', 'core/embed'];
+var CORE_EMBED_VIDEO_BLOCKS = ['core-embed/animoto', 'core-embed/collegehumor', 'core-embed/dailymotion', 'core-embed/facebook', 'core-embed/flickr', 'core-embed/hulu', 'core-embed/instagram', 'core-embed/kickstarter', 'core-embed/screencast', 'core-embed/ted', 'core-embed/tumblr', 'core-embed/videopress', 'core-embed/vimeo', 'core-embed/wordpress-tv', 'core-embed/youtube', 'core/embed'];
+var CORE_EMBED_BLOCKS = lodash__WEBPACK_IMPORTED_MODULE_0___default.a.uniq([].concat(CORE_EMBED_AUDIO_BLOCKS, CORE_EMBED_DOCUMENT_BLOCKS, CORE_EMBED_IMAGE_BLOCKS, CORE_EMBED_POLL_BLOCKS, CORE_EMBED_SLIDESHOW_BLOCKS, CORE_EMBED_VIDEO_BLOCKS, ['core-embed/meetup-com', 'core-embed/reddit', 'core-embed/twitter', 'core-embed/wordpress', 'core/embed']));
+
+/***/ }),
+
+/***/ "./src/js/editor/file-picker.js":
+/*!**************************************!*\
+  !*** ./src/js/editor/file-picker.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FilePicker; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+
+
+
+
+
+
+
+function FilePicker(_ref) {
+  var onChange = _ref.onChange,
+      url = _ref.url,
+      title = _ref.title,
+      label = _ref.label;
+
+  var fallbackTitle = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('None', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      fallbackLabel = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Target', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      inputId = lodash__WEBPACK_IMPORTED_MODULE_1___default.a.uniqueId();
+
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "dfh-editor-link-picker"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "dfh-editor-link-picker__title-container text text--small text--light"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("label", {
+    className: "dfh-editor-link-picker__label",
+    htmlFor: inputId
+  }, label || fallbackLabel), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+    className: "dfh-editor-link-picker__title"
+  }, title || fallbackTitle)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["MediaUploadCheck"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["MediaUpload"], {
+    onSelect: onChange,
+    value: url,
+    render: function render(_ref2) {
+      var open = _ref2.open;
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["Button"], {
+        className: "link dfh-editor-link-picker__control",
+        onClick: open
+      }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Select file', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]));
+    }
+  })));
+}
+FilePicker.propTypes = {
+  onChange: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired,
+  url: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+  title: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+  label: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string
+};
+
+/***/ }),
+
+/***/ "./src/js/editor/form-picker.js":
+/*!**************************************!*\
+  !*** ./src/js/editor/form-picker.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FormPicker; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+
+
+
+
+
+
+function FormPicker(_ref) {
+  var value = _ref.value,
+      onChange = _ref.onChange;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["TextControl"], {
+    label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Contact Form 7 ID', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+    help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Find the ID of the form you wish to display from the Contact page of the admin dashboard', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Enter the form ID for the Contact Form 7 form', _constants__WEBPACK_IMPORTED_MODULE_4__["TEXT_DOMAIN"]),
+    value: value,
+    onChange: onChange
+  });
+}
+FormPicker.propTypes = {
+  onChange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+
+FormPicker.Content = function (_ref2) {
+  var value = _ref2.value,
+      _ref2$className = _ref2.className,
+      className = _ref2$className === void 0 ? '' : _ref2$className;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, value && "[contact-form-7 id=\"".concat(value, "\" html_class=\"form ").concat(className, "\" ]"), value && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "text text--small text--light"
+  }, "This site is protected by reCAPTCHA and the Google", ' ', Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+    className: "link",
+    href: "https://policies.google.com/privacy",
+    rel: "noopener noreferrer",
+    target: "_blank"
+  }, "Privacy Policy"), ' ', "and", ' ', Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+    className: "link",
+    href: "https://policies.google.com/terms",
+    rel: "noopener noreferrer",
+    target: "_blank"
+  }, "Terms of Service"), ' ', "apply."));
+};
+
+FormPicker.Content.propTypes = {
+  value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+
+/***/ }),
+
+/***/ "./src/js/editor/image-picker.js":
+/*!***************************************!*\
+  !*** ./src/js/editor/image-picker.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ImagePicker; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+
+
+
+
+
+
+
+var ALLOWED_MEDIA_TYPES = ['image'];
+function ImagePicker(_ref) {
+  var onSelect = _ref.onSelect,
+      url = _ref.url,
+      description = _ref.description,
+      label = _ref.label,
+      _ref$previewClassName = _ref.previewClassName,
+      previewClassName = _ref$previewClassName === void 0 ? '' : _ref$previewClassName;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "dfh-editor-image-picker"
+  }, buildImagePreview(url, description, previewClassName), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["MediaUploadCheck"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "dfh-editor-image-picker__control"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["MediaUpload"], {
+    onSelect: onSelect,
+    allowedTypes: ALLOWED_MEDIA_TYPES,
+    value: url,
+    render: function render(_ref2) {
+      var open = _ref2.open;
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+        className: "button button--secondary button--small",
+        onClick: open
+      }, label || Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Select image', _constants__WEBPACK_IMPORTED_MODULE_5__["TEXT_DOMAIN"]));
+    }
+  }))));
+}
+ImagePicker.propTypes = {
+  onSelect: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  url: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  description: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  label: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  previewClassName: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+
+ImagePicker.Content = function (_ref3) {
+  var url = _ref3.url,
+      description = _ref3.description,
+      _ref3$className = _ref3.className,
+      className = _ref3$className === void 0 ? '' : _ref3$className;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+    className: className,
+    src: url,
+    alt: description
+  });
+};
+
+ImagePicker.Content.propTypes = {
+  url: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  description: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+
+function buildImagePreview(src, alt, className) {
+  return src ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+    className: className,
+    src: src,
+    alt: alt
+  }) : Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Placeholder"], {
+    icon: "format-image",
+    label: "No image selected"
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/editor/link-picker.js":
+/*!**************************************!*\
+  !*** ./src/js/editor/link-picker.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return LinkPicker; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+
+
+
+
+
+
+
+function LinkPicker(_ref) {
+  var _onChange = _ref.onChange,
+      url = _ref.url,
+      title = _ref.title,
+      label = _ref.label;
+
+  var fallbackTitle = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('None', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      fallbackLabel = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Target', _constants__WEBPACK_IMPORTED_MODULE_6__["TEXT_DOMAIN"]),
+      inputId = lodash__WEBPACK_IMPORTED_MODULE_1___default.a.uniqueId();
+
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "dfh-editor-link-picker"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "dfh-editor-link-picker__title-container text text--small text--light"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("label", {
+    className: "dfh-editor-link-picker__label",
+    htmlFor: inputId
+  }, label || fallbackLabel), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+    className: "dfh-editor-link-picker__title"
+  }, title || fallbackTitle)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "dfh-editor-link-picker__control"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["URLInputButton"], {
+    id: inputId,
+    url: url,
+    onChange: function onChange(url, result) {
+      return _onChange({
+        url: url,
+        title: result ? result.title : url ? url : fallbackTitle
+      });
+    }
+  })));
+}
+LinkPicker.propTypes = {
+  onChange: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired,
+  url: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+  title: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+  label: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string
+};
+
+/***/ }),
+
+/***/ "./src/js/editor/popup-picker.js":
+/*!***************************************!*\
+  !*** ./src/js/editor/popup-picker.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PopupPicker; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _link_picker__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./link-picker */ "./src/js/editor/link-picker.js");
+
+
+
+
+function PopupPicker(_ref) {
+  var target = _ref.target,
+      _onChange = _ref.onChange,
+      label = _ref.label;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_link_picker__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    url: target,
+    title: target,
+    label: label,
+    onChange: function onChange(_ref2) {
+      var url = _ref2.url;
+      return lodash__WEBPACK_IMPORTED_MODULE_1___default.a.isFunction(_onChange) && _onChange({
+        target: url
+      });
+    }
+  });
+}
+PopupPicker.propTypes = {
+  onChange: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired,
+  target: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string
+};
+
+PopupPicker.Content = function (_ref3) {
+  var _ref3$className = _ref3.className,
+      className = _ref3$className === void 0 ? '' : _ref3$className,
+      target = _ref3.target,
+      children = _ref3.children;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+    href: target,
+    className: className,
+    "data-lity": true
+  }, children);
+};
+
+PopupPicker.Content.propTypes = {
+  className: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+  target: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+  label: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string
+};
+
+/***/ }),
+
+/***/ "./src/js/editor/recursive-wrapper.js":
+/*!********************************************!*\
+  !*** ./src/js/editor/recursive-wrapper.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return RecursiveWrapper; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function RecursiveWrapper(_ref) {
+  var elements = _ref.elements,
+      classNames = _ref.classNames,
+      children = _ref.children;
+
+  if (elements.length !== classNames.length) {
+    throw new Error('Wrapper elements and wrapper class names must be arrays of the same length');
+  }
+
+  if (elements.length === 0) {
+    return children;
+  } else {
+    var Wrapper = elements[0] ? elements[0] : _wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"];
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Wrapper, {
+      className: classNames[0]
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RecursiveWrapper, {
+      elements: elements.slice(1),
+      classNames: classNames.slice(1)
+    }, children));
+  }
+}
+RecursiveWrapper.propTypes = {
+  elements: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string).isRequired,
+  classNames: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string).isRequired
+};
+
+/***/ }),
+
+/***/ "./src/js/editor/with-inner-block-attrs.js":
+/*!*************************************************!*\
+  !*** ./src/js/editor/with-inner-block-attrs.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../constants */ "./src/js/constants.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils */ "./src/js/utils.js");
+
+
+
+
+
+
+
+ // see https://github.com/WordPress/gutenberg/blob/master/packages/components/src/higher-order/with-focus-outside/index.js#L130-L135
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_4__["withSelect"])(function (select, _ref) {
+  var clientId = _ref.clientId;
+  return {
+    foundBlocks: select(_constants__WEBPACK_IMPORTED_MODULE_6__["STORE_BLOCK_EDITOR"]).getBlocksByClientId(clientId)
+  };
+})(WithInnerBlockAttrs));
+
+function WithInnerBlockAttrs(_ref2) {
+  var foundBlocks = _ref2.foundBlocks,
+      innerBlockAttrs = _ref2.innerBlockAttrs,
+      children = _ref2.children;
+
+  // Don't need to try to override inner block attributes if none are specified
+  if (!innerBlockAttrs) {
+    return children;
+  } // Only try to update inner blocks if `innerBlockAttrs` is specified
+
+
+  var updateHandler = lodash__WEBPACK_IMPORTED_MODULE_2___default.a.debounce(function () {
+    return updateInnerBlocks(foundBlocks, innerBlockAttrs);
+  }, 500); // ensure attributes are applied on initial render even if this block does not receive focus
+
+
+  updateHandler(); // check that one top-level child is an `InnerBlocks`
+
+  if (!Object(_utils__WEBPACK_IMPORTED_MODULE_7__["hasChildOfComponentType"])(children, _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["InnerBlocks"])) {
+    throw new Error('`WithInnerBlockAttrs` requires one top-level child to be an `InnerBlocks` component');
+  }
+
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    onFocus: updateHandler,
+    onBlur: updateHandler
+  }, children);
+}
+
+WithInnerBlockAttrs.propTypes = {
+  clientId: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string.isRequired,
+  innerBlockAttrs: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object,
+  // Provided by `withSelect`, not by user
+  foundBlocks: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.array.isRequired
+};
+
+function updateInnerBlocks(foundBlocks, innerBlockAttrs) {
+  if (foundBlocks && foundBlocks[0] && innerBlockAttrs) {
+    var _loop = function _loop() {
+      var _Object$entries$_i = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_Object$entries[_i], 2),
+          blockName = _Object$entries$_i[0],
+          attrs = _Object$entries$_i[1];
+
+      // from https://github.com/WordPress/gutenberg/issues/15759#issuecomment-497359154
+      foundBlocks[0].innerBlocks.forEach(function (block) {
+        if (block.name === blockName) {
+          Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_4__["dispatch"])(_constants__WEBPACK_IMPORTED_MODULE_6__["STORE_BLOCK_EDITOR"]).updateBlockAttributes(block.clientId, attrs);
+        }
+      });
+    };
+
+    // plain objects not iterable by default, need to convert using `Object.entries`
+    // see https://stackoverflow.com/a/29891072
+    for (var _i = 0, _Object$entries = Object.entries(innerBlockAttrs); _i < _Object$entries.length; _i++) {
+      _loop();
+    }
+  }
+}
+
+/***/ }),
+
+/***/ "./src/js/editor/wrap-only-if-has-class.js":
+/*!*************************************************!*\
+  !*** ./src/js/editor/wrap-only-if-has-class.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return WrapOnlyIfHasClass; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function WrapOnlyIfHasClass(_ref) {
+  var className = _ref.className,
+      children = _ref.children;
+  return className ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: className
+  }, children) : Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, children);
+}
+WrapOnlyIfHasClass.propTypes = {
+  className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+
+/***/ }),
+
+/***/ "./src/js/utils.js":
+/*!*************************!*\
+  !*** ./src/js/utils.js ***!
+  \*************************/
+/*! exports provided: handleForceAllAttrs, hasChildOfComponentType, fetchVideoThumbnail, fetchTaxonomyDetails, withPropTypes, filterInnerBlockTemplate */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleForceAllAttrs", function() { return handleForceAllAttrs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hasChildOfComponentType", function() { return hasChildOfComponentType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchVideoThumbnail", function() { return fetchVideoThumbnail; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchTaxonomyDetails", function() { return fetchTaxonomyDetails; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "withPropTypes", function() { return withPropTypes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filterInnerBlockTemplate", function() { return filterInnerBlockTemplate; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
+/* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var thumbnail_youtube_vimeo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! thumbnail-youtube-vimeo */ "./node_modules/thumbnail-youtube-vimeo/index.js");
+/* harmony import */ var thumbnail_youtube_vimeo__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(thumbnail_youtube_vimeo__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./constants */ "./src/js/constants.js");
+
+
+
+
+
+
+function handleForceAllAttrs(forceAttrsObj) {
+  var allowedBlockNames = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+
+  if (!forceAttrsObj || !forceAttrsObj[_constants__WEBPACK_IMPORTED_MODULE_5__["INNER_BLOCKS_FORCE_ATTRS_ALL"]]) {
+    return forceAttrsObj;
+  }
+
+  var allAttrs = forceAttrsObj[_constants__WEBPACK_IMPORTED_MODULE_5__["INNER_BLOCKS_FORCE_ATTRS_ALL"]],
+      newAttrsObj = {}; // If not `allowedBlockNames` are specified, then we just copy all attribute in the force all
+  // object to the keys that are currently in the object
+
+  (allowedBlockNames || Object.keys(forceAttrsObj)).forEach(function (blockName) {
+    if (blockName !== _constants__WEBPACK_IMPORTED_MODULE_5__["INNER_BLOCKS_FORCE_ATTRS_ALL"]) {
+      newAttrsObj[blockName] = lodash__WEBPACK_IMPORTED_MODULE_0___default.a.assign({}, allAttrs, forceAttrsObj[blockName]);
+    }
+  });
+  return newAttrsObj;
+}
+function hasChildOfComponentType(children, type) {
+  return react__WEBPACK_IMPORTED_MODULE_4__["Children"].toArray(children).some(function (child) {
+    return child.type === type;
+  });
+} // NOTE only YouTube and Vimeo urls are supported
+// see https://github.com/De-Luxis/thumbnail-youtube-vimeo#readme
+
+var fetchVideoThumbnail = lodash__WEBPACK_IMPORTED_MODULE_0___default.a.memoize(function (videoUrl) {
+  // `ytimg` to get 16:9 aspect ratio to avoid bars on top and bottom of image
+  // see https://stackoverflow.com/a/18978874
+  return thumbnail_youtube_vimeo__WEBPACK_IMPORTED_MODULE_2___default()(videoUrl, {
+    ytimg: 'mqdefault'
+  });
+}); // Need to write this because `getEntity` in `core-data` uses the `view` context which does not
+// include labels. See https://developer.wordpress.org/rest-api/reference/taxonomies/#schema
+
+var fetchTaxonomyDetails = lodash__WEBPACK_IMPORTED_MODULE_0___default.a.memoize(function (taxonomyId) {
+  return _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1___default()({
+    path: "wp/v2/taxonomies/".concat(taxonomyId, "?context=edit")
+  });
+}); // Note that `SCRIPT_DEBUG` in `wp-config.php` needs to be set to `true` in order for
+// non-production script assets to be loaded. PropType checks only happen in React development builds
+// see https://wordpress.org/support/article/debugging-in-wordpress/#script_debug
+
+function withPropTypes(propTypes, wpComponent) {
+  wpComponent.propTypes = {
+    attributes: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape(propTypes)
+  };
+  return wpComponent;
+}
+function filterInnerBlockTemplate(allowedBlockNames, template) {
+  return lodash__WEBPACK_IMPORTED_MODULE_0___default.a.filter(template, function (spec) {
+    return allowedBlockNames.includes(spec[0]);
+  });
+}
+
+/***/ }),
+
+/***/ "@wordpress/api-fetch":
+/*!**********************************!*\
+  !*** external ["wp","apiFetch"] ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["apiFetch"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/block-editor":
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["blockEditor"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/blocks":
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["blocks"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["components"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/data":
+/*!******************************!*\
+  !*** external ["wp","data"] ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["data"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["element"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/hooks":
+/*!*******************************!*\
+  !*** external ["wp","hooks"] ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["hooks"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/i18n":
+/*!******************************!*\
+  !*** external ["wp","i18n"] ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["i18n"]; }());
+
+/***/ }),
+
+/***/ "lodash":
+/*!*************************!*\
+  !*** external "lodash" ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["lodash"]; }());
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["React"]; }());
+
+/***/ })
+
+/******/ });
+//# sourceMappingURL=index.js.map

@@ -3,9 +3,9 @@
     "version": "0.0.1",
     "license": "Apache-2.0",
     "scripts": {
-        "build:sass": "npx node-sass --include-path node_modules --output build src",
+        "build:sass": "npx sass --quiet-deps --load-path=node_modules src:build",
         "build:wp": "npx wp-scripts build",
-        "watch:sass": "npx concurrently \"npm:build:sass\" \"npm:build:sass -- --watch --recursive\"",
+        "watch:sass": "npx concurrently \"npm:build:sass\" \"npm:build:sass -- --watch\"",
         "watch:wp": "npx wp-scripts start",
         "build": "npx concurrently -n w: npm:build:*",
         "start": "npx concurrently -n w: npm:watch:*"
@@ -14,8 +14,8 @@
         "@wordpress/scripts": "^6.1.0",
         "concurrently": "^5.0.2",
         "lity": "^2.4.0",
-        "node-sass": "^4.13.0",
         "prop-types": "^15.7.2",
+        "sass": "^1.43.5",
         "scut": "^1.4.0",
         "slick-carousel": "^1.8.1",
         "thumbnail-youtube-vimeo": "^1.1.0",
