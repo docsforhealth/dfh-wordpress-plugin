@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - 10
+  - 14
 os: linux
 # Only build for tags, not for untagged commits
 # see https://github.com/travis-ci/travis-ci/issues/6893#issuecomment-354967391
