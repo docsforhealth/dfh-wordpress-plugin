@@ -10,7 +10,7 @@ import * as Constants from '../constants';
 const title = __('Content Width Container', Constants.TEXT_DOMAIN);
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
-registerBlockType('dfh/content-width-container', {
+registerBlockType(`${Constants.NAMESPACE}/content-width-container`, {
   title,
   category: Constants.CATEGORY_LAYOUT,
   icon: 'grid-view',

@@ -11,6 +11,7 @@ import './js/block/form-card';
 import './js/block/heading';
 import './js/block/page-header';
 import './js/block/text';
+// TODO import './js/block/reference-list';
 // Helpers
 import './js/block/dynamic/helper/page-title';
 import './js/block/helper/content-container';
@@ -18,6 +19,7 @@ import './js/block/helper/file-button';
 import './js/block/helper/inner-block-wrapper';
 import './js/block/helper/link-button';
 import './js/block/helper/search-input';
+// TODO import './js/block/helper/reference-list-item';
 
 /**
  * Media blocks
@@ -54,6 +56,11 @@ import './js/block/dynamic/helper/resource-detail-info';
 import './js/block/helper/resource-detail-description';
 import './js/block/helper/resource-detail-steps';
 import './js/block/helper/resource-detail-steps-step';
+
+/**
+ * Dot-phrase blocks
+ */
+// TODO import './js/block/dot-phrase-content';
 
 /**
  * Toolkit blocks

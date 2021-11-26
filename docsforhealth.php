@@ -3,8 +3,8 @@
  * Plugin Name: Docs for Health
  * Author: Eric Bai
  * Author URI: https://github.com/ericbai
- * Plugin URI: https://github.com/ericbai/dfh-wordpress-plugin
- * GitHub Plugin URI: https://github.com/ericbai/dfh-wordpress-plugin
+ * Plugin URI: https://github.com/docsforhealth/dfh-wordpress-plugin
+ * GitHub Plugin URI: https://github.com/docsforhealth/dfh-wordpress-plugin
  * Release Asset: true
  * Description: Custom plugin for the Docs for Health website
  * Version: 0.0.24

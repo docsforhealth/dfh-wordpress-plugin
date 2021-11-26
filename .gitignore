@@ -1,5 +1,4 @@
 *.log
-*.sublime*
 .DS_Store
 build
 node_modules
