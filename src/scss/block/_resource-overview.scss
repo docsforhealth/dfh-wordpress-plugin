@@ -124,18 +124,11 @@
         }
         &__tags {
             @include scut-list-unstyled;
+            @include scroll-horizontal;
 
             display: flex;
             align-items: center;
-
-            // see https://iamsteve.me/blog/entry/using-flexbox-for-horizontal-scrolling-navigation
-            // [2]: Automatic overflow means a scroll bar won’t be present if it isn’t needed
-            // [3]: Make it smooth scrolling on iOS devices
-            // [4]: Hide the ugly scrollbars in Edge until the scrollable area is hovered
-            flex-wrap: nowrap; /* [1] */
-            overflow-x: auto; /* [2] */
-            -webkit-overflow-scrolling: touch; /* [3] */
-            -ms-overflow-style: -ms-autohiding-scrollbar; /* [4] */
+            flex-wrap: nowrap;
 
             // see https://iamsteve.me/blog/entry/using-flexbox-for-horizontal-scrolling-navigation
             &__tag {
@@ -149,31 +142,14 @@
         padding-top: $baseunit * 2;
 
         &__preview {
+            width: calc(100% / 2);
             padding: $baseunit;
             border-right: 1px solid $color-seafoam-dark-1;
-        }
-    }
-    @media (min-width: $media-width-landscape-medium-mobile) and (max-width: #{$media-width-laptop - 1}) {
-        &__preview {
-            width: calc(100% / 2);
 
             &:nth-child(2n + 1) {
                 padding-left: 0;
             }
             &:nth-child(2n + 2) {
-                padding-right: 0;
-                border-right-width: 0;
-            }
-        }
-    }
-    @media (min-width: $media-width-laptop) {
-        &__preview {
-            width: calc(100% / 3);
-
-            &:nth-child(3n + 1) {
-                padding-left: 0;
-            }
-            &:nth-child(3n + 3) {
                 padding-right: 0;
                 border-right-width: 0;
             }

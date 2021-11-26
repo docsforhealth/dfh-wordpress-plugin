@@ -65,12 +65,11 @@
     &-topics {
         $control-padding-size: $baseunit * 0.75;
 
-        margin-bottom: $baseunit * 2.5;
-
-        &--open &__list {
-            max-height: 50vh;
+        @include vertical-slide("&__list", "&--open") {
             border-bottom: 1px solid $color-seafoam-dark-2;
         }
+
+        margin-bottom: $baseunit * 2.5;
 
         &__unsequenced-list {
             @include scut-list-unstyled;
@@ -88,10 +87,6 @@
 
         &__list {
             @include scut-list-unstyled;
-
-            max-height: 0;
-            overflow-y: scroll;
-            transition: max-height 0.2s;
         }
         &__list &__section--unsequenced {
             display: none;

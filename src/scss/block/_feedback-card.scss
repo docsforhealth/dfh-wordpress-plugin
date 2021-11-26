@@ -4,8 +4,8 @@
         @include card-bg;
 
         left: 0;
-        margin-left: 0;
         border-radius: 0;
+        transform: none;
     }
 
     display: flex;
@@ -19,6 +19,7 @@
     @media (min-width: $media-width-tablet) {
         flex-direction: row;
         align-items: flex-start;
+        justify-content: space-between;
         margin-bottom: $baseunit * 3;
         padding-bottom: $baseunit * 0.5;
 

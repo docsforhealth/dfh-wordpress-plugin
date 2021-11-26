@@ -20,7 +20,7 @@ registerBlockType(`${Constants.NAMESPACE}/resource-detail`, {
     return (
       <Fragment>
         <div className="dfh-editor-block-title">{title}</div>
-        <div className="resource-detail">
+        <div className="resource-detail detail-container">
           <InnerBlocks
             templateLock={Constants.INNER_BLOCKS_LOCKED}
             template={[
