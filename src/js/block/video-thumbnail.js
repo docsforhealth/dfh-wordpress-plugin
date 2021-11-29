@@ -1,11 +1,10 @@
-import _ from 'lodash';
-import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
 import { registerBlockType } from '@wordpress/blocks';
 import { TextControl } from '@wordpress/components';
-
-import * as Constants from '../constants';
-import { fetchVideoThumbnail } from '../utils';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import _ from 'lodash';
+import * as Constants from 'src/js/constants';
+import { fetchVideoThumbnail } from 'src/js/utils';
 
 const wrappedUpdateThumbnail = _.debounce(updateThumbnail, 200);
 
@@ -33,7 +32,7 @@ registerBlockType(Constants.BLOCK_VIDEO_THUMBNAIL, {
             Constants.TEXT_DOMAIN,
           )}
           value={attributes.videoUrl}
-          onChange={videoUrl => {
+          onChange={(videoUrl) => {
             setAttributes({ videoUrl });
             wrappedUpdateThumbnail(videoUrl, setAttributes);
           }}
@@ -45,7 +44,7 @@ registerBlockType(Constants.BLOCK_VIDEO_THUMBNAIL, {
             Constants.TEXT_DOMAIN,
           )}
           value={attributes.label}
-          onChange={label => setAttributes({ label })}
+          onChange={(label) => setAttributes({ label })}
         />
         {attributes.thumbnailUrl && (
           <img
@@ -75,7 +74,7 @@ registerBlockType(Constants.BLOCK_VIDEO_THUMBNAIL, {
 
 function updateThumbnail(videoUrl, setAttributes) {
   fetchVideoThumbnail(videoUrl).then(
-    thumbnailUrl => setAttributes({ thumbnailUrl }),
+    (thumbnailUrl) => setAttributes({ thumbnailUrl }),
     () => setAttributes({ thumbnailUrl: null }),
   );
 }

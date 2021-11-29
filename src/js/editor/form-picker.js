@@ -1,9 +1,7 @@
-import PropTypes from 'prop-types';
-import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
 import { TextControl } from '@wordpress/components';
-
-import * as Constants from '../constants';
+import { __ } from '@wordpress/i18n';
+import PropTypes from 'prop-types';
+import * as Constants from 'src/js/constants';
 
 export default function FormPicker({ value, onChange }) {
   return (
@@ -27,7 +25,7 @@ FormPicker.propTypes = {
   value: PropTypes.string,
 };
 
-FormPicker.Content = function({ value, className = '' }) {
+FormPicker.Content = function ({ value, className = '' }) {
   return (
     <div>
       {value &&

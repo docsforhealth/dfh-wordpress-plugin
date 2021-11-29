@@ -1,0 +1,50 @@
+.content-copy-area {
+    $horizontal-overhang-small: $baseunit;
+    $horizontal-overhang-large: $baseunit * 3.5;
+
+    position: relative;
+    background-color: $color-seafoam;
+    border: 1px solid $color-seafoam-dark-1;
+    border-left-width: 0;
+    border-right-width: 0;
+    margin-left: $horizontal-overhang-small * -1;
+    margin-right: $horizontal-overhang-small * -1;
+    padding: 0 $horizontal-overhang-small $baseunit * 2;
+    // to preserve line breaks and white space for multi-line strings
+    // see https://stackoverflow.com/a/44413780
+    // see https://developer.mozilla.org/en-US/docs/Web/CSS/white-space
+    white-space: pre-wrap;
+
+    & &__copy {
+        @include copy-button(
+            $breakpoint: $media-width-tablet,
+            $icon-path-initial: url('../assets/images/icon-copy.svg'),
+            $icon-path-done: url('../assets/images/icon-copy-done.svg'),
+            $class-modifier-active: '--copying',
+            $class-modifier-done: '--copied'
+        );
+
+        margin-bottom: $baseunit;
+        background-color: $color-seafoam;
+    }
+
+    @media (min-width: $media-width-tablet) {
+        border-left-width: 1px;
+        border-right-width: 1px;
+        margin-left: $horizontal-overhang-large * -1;
+        margin-right: $horizontal-overhang-large * -1;
+        padding: ($horizontal-overhang-large * 0.5) $horizontal-overhang-large;
+        border-radius: $border-radius;
+
+        & &__copy {
+            margin-bottom: 0;
+
+            position: absolute;
+            // to eliminate "double-border" effect
+            top: -1px;
+            right: -1px;
+            border: 1px solid $color-seafoam-dark-1;
+            border-bottom-left-radius: $border-radius;
+        }
+    }
+}

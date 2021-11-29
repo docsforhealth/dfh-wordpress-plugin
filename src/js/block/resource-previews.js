@@ -1,11 +1,10 @@
-import _ from 'lodash';
-import { __ } from '@wordpress/i18n';
-import { Fragment, RawHTML } from '@wordpress/element';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { TextareaControl } from '@wordpress/components';
-
-import * as Constants from '../constants';
+import { Fragment, RawHTML } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import _ from 'lodash';
+import * as Constants from 'src/js/constants';
 
 const title = __('Resource Previews', Constants.TEXT_DOMAIN);
 
@@ -84,7 +83,7 @@ registerBlockType(`${Constants.NAMESPACE}/resource-previews`, {
         <TextareaControl
           label={__('No results message', Constants.TEXT_DOMAIN)}
           value={attributes.noResultsMessage}
-          onChange={noResultsMessage => setAttributes({ noResultsMessage })}
+          onChange={(noResultsMessage) => setAttributes({ noResultsMessage })}
         />
       </Fragment>
     );

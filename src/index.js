@@ -1,77 +1,80 @@
+// organize-imports-ignore
+
 /**
  * Helpers
  */
-import './js/allow-only-custom-blocks.js';
+import 'src/js/allow-only-custom-blocks.js';
 
 /**
  * Basic blocks
  */
-import './js/block/button-container';
-import './js/block/form-card';
-import './js/block/heading';
-import './js/block/page-header';
-import './js/block/text';
-// TODO import './js/block/reference-list';
+import 'src/js/block/button-container';
+import 'src/js/block/content-copy-area';
+import 'src/js/block/form-card';
+import 'src/js/block/heading';
+import 'src/js/block/page-header';
+import 'src/js/block/text';
+// TODO import 'src/js/block/reference-list';
 // Helpers
-import './js/block/dynamic/helper/page-title';
-import './js/block/helper/content-container';
-import './js/block/helper/file-button';
-import './js/block/helper/inner-block-wrapper';
-import './js/block/helper/link-button';
-import './js/block/helper/search-input';
-// TODO import './js/block/helper/reference-list-item';
+import 'src/js/block/dynamic/helper/page-title';
+import 'src/js/block/helper/content-container';
+import 'src/js/block/helper/file-button';
+import 'src/js/block/helper/inner-block-wrapper';
+import 'src/js/block/helper/link-button';
+import 'src/js/block/helper/search-input';
+// TODO import 'src/js/block/helper/reference-list-item';
 
 /**
  * Media blocks
  */
-import './js/block/video-thumbnail';
+import 'src/js/block/video-thumbnail';
 
 /**
  * Layout blocks
  */
-import './js/block/content-width-container';
+import 'src/js/block/content-width-container';
 
 /**
  * Landing page blocks
  */
-import './js/block/dynamic/resource-overview';
-import './js/block/featured-and-contact';
-import './js/block/hero';
-import './js/block/mission-statement';
-import './js/block/value-statement';
+import 'src/js/block/dynamic/resource-overview';
+import 'src/js/block/featured-and-contact';
+import 'src/js/block/hero';
+import 'src/js/block/mission-statement';
+import 'src/js/block/value-statement';
 // Helpers
-import './js/block/helper/landing-contact';
-import './js/block/helper/landing-featured';
-import './js/block/helper/landing-header';
-import './js/block/helper/landing-video';
+import 'src/js/block/helper/landing-contact';
+import 'src/js/block/helper/landing-featured';
+import 'src/js/block/helper/landing-header';
+import 'src/js/block/helper/landing-video';
 
 /**
  * Resource blocks
  */
-import './js/block/resource-detail';
-import './js/block/resource-previews';
+import 'src/js/block/resource-detail';
+import 'src/js/block/resource-previews';
 // Helpers
-import './js/block/dynamic/helper/resource-category-filter';
-import './js/block/dynamic/helper/resource-detail-info';
-import './js/block/helper/resource-detail-description';
-import './js/block/helper/resource-detail-steps';
-import './js/block/helper/resource-detail-steps-step';
+import 'src/js/block/dynamic/helper/resource-category-filter';
+import 'src/js/block/dynamic/helper/resource-detail-info';
+import 'src/js/block/helper/resource-detail-description';
+import 'src/js/block/helper/resource-detail-steps';
+import 'src/js/block/helper/resource-detail-steps-step';
 
 /**
  * Dot-phrase blocks
  */
-// TODO import './js/block/dot-phrase-content';
+// TODO import 'src/js/block/dot-phrase-detail';
 
 /**
  * Toolkit blocks
  */
-import './js/block/toolkit-detail';
-import './js/block/toolkit-previews';
+import 'src/js/block/toolkit-detail';
+import 'src/js/block/toolkit-previews';
 // Helpers
-import './js/block/dynamic/helper/toolkit-detail-header';
-import './js/block/helper/toolkit-detail-list';
-import './js/block/helper/toolkit-detail-list-link';
-import './js/block/helper/toolkit-detail-metadata';
-import './js/block/helper/toolkit-detail-section';
-import './js/block/helper/toolkit-detail-section-container';
-import './js/block/helper/toolkit-detail-section-info';
+import 'src/js/block/dynamic/helper/toolkit-detail-header';
+import 'src/js/block/helper/toolkit-detail-list';
+import 'src/js/block/helper/toolkit-detail-list-link';
+import 'src/js/block/helper/toolkit-detail-metadata';
+import 'src/js/block/helper/toolkit-detail-section';
+import 'src/js/block/helper/toolkit-detail-section-container';
+import 'src/js/block/helper/toolkit-detail-section-info';

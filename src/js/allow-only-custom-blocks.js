@@ -1,8 +1,7 @@
-import _ from 'lodash';
-import { addFilter } from '@wordpress/hooks';
 import { setDefaultBlockName } from '@wordpress/blocks';
-
-import * as Constants from './constants';
+import { addFilter } from '@wordpress/hooks';
+import _ from 'lodash';
+import * as Constants from 'src/js/constants';
 
 // hides all non-DFH blocks
 // from https://github.com/WordPress/gutenberg/issues/11723#issuecomment-441828833
@@ -38,6 +37,6 @@ addFilter(
 );
 // sets the default block to the `dfh/text` block
 // see https://developer.wordpress.org/block-editor/packages/packages-blocks/#setDefaultBlockName
-window.onload = function() {
+window.onload = function () {
   setDefaultBlockName(Constants.BLOCK_TEXT);
 };

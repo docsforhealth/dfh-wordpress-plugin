@@ -1,21 +1,26 @@
-const path = require("path");
-const defaultConfig = require("./node_modules/@wordpress/scripts/config/webpack.config");
+const defaultConfig = require('./node_modules/@wordpress/scripts/config/webpack.config');
+const path = require('path');
+const { merge } = require('webpack-merge');
 
-module.exports = {
-  ...defaultConfig,
+module.exports = merge(defaultConfig, {
+  // enables absolute urls, see https://stackoverflow.com/a/41684002
+  // ONLY IN JS FILES, just directly use alias object key to start import
+  resolve: {
+    alias: {
+      assets: path.resolve(process.cwd(), 'assets'),
+      src: path.resolve(process.cwd(), 'src'),
+    },
+  },
   entry: {
-    ...defaultConfig.entry,
-    frontend: path.resolve(process.cwd(), "src", "frontend.js")
+    frontend: path.resolve(process.cwd(), 'src', 'frontend.js'),
   },
   module: {
-    ...defaultConfig.module,
     rules: [
-      ...defaultConfig.module.rules,
       {
         test: /\.(png|jpg|svg)$/,
         exclude: /node_modules/,
-        use: ["url-loader"]
-      }
-    ]
-  }
-};
+        use: ['url-loader'],
+      },
+    ],
+  },
+});

@@ -1,13 +1,12 @@
-import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
 import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-import { ToggleControl, PanelBody } from '@wordpress/components';
-
-import * as Constants from '../constants';
-import * as Heading from './heading';
-import ImagePicker from '../editor/image-picker';
-import placeholderImage from '../../../assets/images/placeholder-value.png';
+import { PanelBody, ToggleControl } from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import placeholderImage from 'assets/images/placeholder-value.png';
+import * as Heading from 'src/js/block/heading';
+import * as Constants from 'src/js/constants';
+import ImagePicker from 'src/js/editor/image-picker';
 
 const title = __('Value Statement', Constants.TEXT_DOMAIN);
 
@@ -69,7 +68,7 @@ registerBlockType(`${Constants.NAMESPACE}/value-statement`, {
             <ToggleControl
               label={__('Show image on left', Constants.TEXT_DOMAIN)}
               checked={attributes.reverse}
-              onChange={reverse => setAttributes({ reverse })}
+              onChange={(reverse) => setAttributes({ reverse })}
             />
           </PanelBody>
         </InspectorControls>

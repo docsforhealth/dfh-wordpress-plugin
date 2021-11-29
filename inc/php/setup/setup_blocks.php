@@ -1,7 +1,7 @@
 <?php
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#managing-block-categories
-add_filter('block_categories', 'dfh_block_categories', 10, 2);
+add_filter('block_categories_all', 'dfh_block_categories', 10, 2);
 function dfh_block_categories($categories, $post) {
     // Note that the order specified here is the order the categories will display
     return array_merge(

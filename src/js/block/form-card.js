@@ -1,11 +1,10 @@
-import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-
-import * as Constants from '../constants';
-import * as Heading from './heading';
-import FormPicker from '../editor/form-picker';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import * as Heading from 'src/js/block/heading';
+import * as Constants from 'src/js/constants';
+import FormPicker from 'src/js/editor/form-picker';
 
 const title = __('Form Card', Constants.TEXT_DOMAIN);
 
@@ -46,7 +45,7 @@ registerBlockType(`${Constants.NAMESPACE}/form-card`, {
           </div>
           <FormPicker
             value={attributes.formId}
-            onChange={formId => setAttributes({ formId })}
+            onChange={(formId) => setAttributes({ formId })}
           />
         </div>
       </Fragment>

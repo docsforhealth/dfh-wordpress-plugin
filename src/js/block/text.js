@@ -1,10 +1,9 @@
-import { __ } from '@wordpress/i18n';
+import { InspectorControls, RichText } from '@wordpress/block-editor';
 import { createBlock, registerBlockType } from '@wordpress/blocks';
+import { PanelBody, RadioControl, ToggleControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
-import { RichText, InspectorControls } from '@wordpress/block-editor';
-import { ToggleControl, PanelBody, RadioControl } from '@wordpress/components';
-
-import * as Constants from '../constants';
+import { __ } from '@wordpress/i18n';
+import * as Constants from 'src/js/constants';
 
 export const ATTR_SIZE = 'size';
 export const ATTR_OPTION_SIZE = 'showOptionSize';
@@ -88,18 +87,18 @@ registerBlockType(Constants.BLOCK_TEXT, {
                     value: Constants.TEXT_SIZE_SMALL,
                   },
                 ]}
-                onChange={size => setAttributes({ [ATTR_SIZE]: size })}
+                onChange={(size) => setAttributes({ [ATTR_SIZE]: size })}
               />
             )}
             <ToggleControl
               label={__('Force to be one line', Constants.TEXT_DOMAIN)}
               checked={attributes.oneLine}
-              onChange={oneLine => setAttributes({ oneLine })}
+              onChange={(oneLine) => setAttributes({ oneLine })}
             />
             <ToggleControl
               label={__('De-emphasize', Constants.TEXT_DOMAIN)}
               checked={attributes.deemphasize}
-              onChange={deemphasize => setAttributes({ deemphasize })}
+              onChange={(deemphasize) => setAttributes({ deemphasize })}
             />
           </PanelBody>
         </InspectorControls>
@@ -109,8 +108,10 @@ registerBlockType(Constants.BLOCK_TEXT, {
           className={`${className} text ${buildClassName(attributes)}`}
           placeholder={attributes.placeholder}
           value={attributes[MERGE_BLOCK_PROP_NAME]}
-          onChange={value => setAttributes({ [MERGE_BLOCK_PROP_NAME]: value })}
-          onSplit={value =>
+          onChange={(value) =>
+            setAttributes({ [MERGE_BLOCK_PROP_NAME]: value })
+          }
+          onSplit={(value) =>
             value
               ? createBlock(Constants.BLOCK_TEXT, {
                   ...attributes,

@@ -1,9 +1,8 @@
-import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-
-import * as Constants from '../constants';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import * as Constants from 'src/js/constants';
 
 const title = __('Hero', Constants.TEXT_DOMAIN);
 

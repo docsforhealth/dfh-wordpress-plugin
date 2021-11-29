@@ -1,10 +1,9 @@
+import { InnerBlocks } from '@wordpress/block-editor';
+import { dispatch, withSelect } from '@wordpress/data';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-import { dispatch, withSelect } from '@wordpress/data';
-import { InnerBlocks } from '@wordpress/block-editor';
-
-import * as Constants from '../constants';
-import { hasChildOfComponentType } from '../utils';
+import * as Constants from 'src/js/constants';
+import { hasChildOfComponentType } from 'src/js/utils';
 
 // see https://github.com/WordPress/gutenberg/blob/master/packages/components/src/higher-order/with-focus-outside/index.js#L130-L135
 
@@ -54,7 +53,7 @@ function updateInnerBlocks(foundBlocks, innerBlockAttrs) {
     // see https://stackoverflow.com/a/29891072
     for (const [blockName, attrs] of Object.entries(innerBlockAttrs)) {
       // from https://github.com/WordPress/gutenberg/issues/15759#issuecomment-497359154
-      foundBlocks[0].innerBlocks.forEach(block => {
+      foundBlocks[0].innerBlocks.forEach((block) => {
         if (block.name === blockName) {
           dispatch(Constants.STORE_BLOCK_EDITOR).updateBlockAttributes(
             block.clientId,

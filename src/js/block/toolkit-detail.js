@@ -1,12 +1,11 @@
-import { __ } from '@wordpress/i18n';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-
-import * as Constants from '../constants';
-import * as DetailList from './helper/toolkit-detail-list';
-import * as Metadata from './helper/toolkit-detail-metadata';
-import * as Section from './helper/toolkit-detail-section';
-import WithInnerBlockAttrs from '../editor/with-inner-block-attrs';
+import { __ } from '@wordpress/i18n';
+import * as DetailList from 'src/js/block/helper/toolkit-detail-list';
+import * as Metadata from 'src/js/block/helper/toolkit-detail-metadata';
+import * as Section from 'src/js/block/helper/toolkit-detail-section';
+import * as Constants from 'src/js/constants';
+import WithInnerBlockAttrs from 'src/js/editor/with-inner-block-attrs';
 
 const title = __('Toolkit Detail', Constants.TEXT_DOMAIN);
 

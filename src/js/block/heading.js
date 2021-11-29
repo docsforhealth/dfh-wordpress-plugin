@@ -1,15 +1,14 @@
-import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
+import { InspectorControls, RichText } from '@wordpress/block-editor';
+import { registerBlockType } from '@wordpress/blocks';
 import {
   PanelBody,
   RadioControl,
   TextControl,
   ToggleControl,
 } from '@wordpress/components';
-import { registerBlockType } from '@wordpress/blocks';
-import { RichText, InspectorControls } from '@wordpress/block-editor';
-
-import * as Constants from '../constants';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import * as Constants from 'src/js/constants';
 
 export const ATTR_LEVEL = 'level';
 export const ATTR_SHOW_PRE_TITLE = 'showPreTitle';
@@ -76,14 +75,14 @@ registerBlockType(Constants.BLOCK_HEADING, {
                     value: Constants.HEADING_SIZE_SMALL,
                   },
                 ]}
-                onChange={level => setAttributes({ [ATTR_LEVEL]: level })}
+                onChange={(level) => setAttributes({ [ATTR_LEVEL]: level })}
               />
             )}
             {attributes[ATTR_OPTION_SHOW_PRE_TITLE] && (
               <ToggleControl
                 label={__('Show pre-title?', Constants.TEXT_DOMAIN)}
                 checked={attributes[ATTR_SHOW_PRE_TITLE]}
-                onChange={showPreTitle =>
+                onChange={(showPreTitle) =>
                   setAttributes({ [ATTR_SHOW_PRE_TITLE]: showPreTitle })
                 }
               />
@@ -92,7 +91,7 @@ registerBlockType(Constants.BLOCK_HEADING, {
               <ToggleControl
                 label={__('Show post-title?', Constants.TEXT_DOMAIN)}
                 checked={attributes[ATTR_SHOW_POST_TITLE]}
-                onChange={showPostTitle =>
+                onChange={(showPostTitle) =>
                   setAttributes({ [ATTR_SHOW_POST_TITLE]: showPostTitle })
                 }
               />
@@ -101,7 +100,7 @@ registerBlockType(Constants.BLOCK_HEADING, {
               <ToggleControl
                 label={__('Highlight main title?', Constants.TEXT_DOMAIN)}
                 checked={attributes[ATTR_HIGHLIGHT_MAIN_TITLE]}
-                onChange={highlightMainTitle =>
+                onChange={(highlightMainTitle) =>
                   setAttributes({
                     [ATTR_HIGHLIGHT_MAIN_TITLE]: highlightMainTitle,
                   })
@@ -115,14 +114,12 @@ registerBlockType(Constants.BLOCK_HEADING, {
                 Constants.TEXT_DOMAIN,
               )}
               value={attributes.customId}
-              onChange={customId => setAttributes({ customId })}
+              onChange={(customId) => setAttributes({ customId })}
             />
           </PanelBody>
         </InspectorControls>
         <TitleTag
-          className={`${attributes.className} heading heading--${
-            attributes[ATTR_LEVEL]
-          }`}
+          className={`${attributes.className} heading heading--${attributes[ATTR_LEVEL]}`}
         >
           {attributes[ATTR_SHOW_PRE_TITLE] && (
             <RichText
@@ -130,7 +127,7 @@ registerBlockType(Constants.BLOCK_HEADING, {
               className="heading__subtitle heading__subtitle--pre"
               placeholder={__('Enter pre-title here', Constants.TEXT_DOMAIN)}
               value={attributes.preTitle}
-              onChange={preTitle => setAttributes({ preTitle })}
+              onChange={(preTitle) => setAttributes({ preTitle })}
             />
           )}
           <RichText
@@ -138,7 +135,7 @@ registerBlockType(Constants.BLOCK_HEADING, {
             className={buildMainTitleClassName(attributes)}
             placeholder={__('Enter main title here', Constants.TEXT_DOMAIN)}
             value={attributes.mainTitle}
-            onChange={mainTitle => setAttributes({ mainTitle })}
+            onChange={(mainTitle) => setAttributes({ mainTitle })}
           />
           {attributes[ATTR_SHOW_POST_TITLE] && (
             <RichText
@@ -146,7 +143,7 @@ registerBlockType(Constants.BLOCK_HEADING, {
               className="heading__subtitle heading__subtitle--post"
               placeholder={__('Enter post-title here', Constants.TEXT_DOMAIN)}
               value={attributes.postTitle}
-              onChange={postTitle => setAttributes({ postTitle })}
+              onChange={(postTitle) => setAttributes({ postTitle })}
             />
           )}
         </TitleTag>

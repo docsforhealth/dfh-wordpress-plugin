@@ -1,10 +1,8 @@
-import PropTypes from 'prop-types';
-import { __ } from '@wordpress/i18n';
-import { Button, Placeholder } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
-
-import * as Constants from '../constants';
+import { Button, Placeholder } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+import PropTypes from 'prop-types';
+import * as Constants from 'src/js/constants';
 
 const ALLOWED_MEDIA_TYPES = ['image'];
 
@@ -46,7 +44,7 @@ ImagePicker.propTypes = {
   previewClassName: PropTypes.string,
 };
 
-ImagePicker.Content = function({ url, description, className = '' }) {
+ImagePicker.Content = function ({ url, description, className = '' }) {
   return <img className={className} src={url} alt={description} />;
 };
 ImagePicker.Content.propTypes = {

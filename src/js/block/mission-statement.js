@@ -1,10 +1,9 @@
-import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
-import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
+import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-import { TextControl, PanelBody } from '@wordpress/components';
-
-import * as Constants from '../constants';
+import { TextControl } from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import * as Constants from 'src/js/constants';
 
 const title = __('Mission Statement', Constants.TEXT_DOMAIN);
 
@@ -35,7 +34,7 @@ registerBlockType(`${Constants.NAMESPACE}/mission-statement`, {
               Constants.TEXT_DOMAIN,
             )}
             value={attributes.hiddenTitle}
-            onChange={hiddenTitle => setAttributes({ hiddenTitle })}
+            onChange={(hiddenTitle) => setAttributes({ hiddenTitle })}
           />
           <InnerBlocks
             allowedBlocks={[Constants.BLOCK_TEXT]}

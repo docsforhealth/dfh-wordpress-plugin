@@ -1,11 +1,9 @@
-import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
-import { InnerBlocks } from '@wordpress/block-editor';
-import { InspectorControls } from '@wordpress/block-editor';
+import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-import { ToggleControl, PanelBody } from '@wordpress/components';
-
-import * as Constants from '../constants';
+import { PanelBody, ToggleControl } from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import * as Constants from 'src/js/constants';
 
 const title = __('Content Width Container', Constants.TEXT_DOMAIN);
 
@@ -32,7 +30,7 @@ registerBlockType(`${Constants.NAMESPACE}/content-width-container`, {
             <ToggleControl
               label={__('Is narrow width?', Constants.TEXT_DOMAIN)}
               checked={attributes.isNarrow}
-              onChange={isNarrow => setAttributes({ isNarrow })}
+              onChange={(isNarrow) => setAttributes({ isNarrow })}
             />
           </PanelBody>
         </InspectorControls>
