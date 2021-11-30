@@ -6,6 +6,11 @@
 import 'src/js/allow-only-custom-blocks.js';
 
 /**
+ * Overrides
+ */
+import 'src/js/block/override/list';
+
+/**
  * Basic blocks
  */
 import 'src/js/block/button-container';
@@ -14,7 +19,6 @@ import 'src/js/block/form-card';
 import 'src/js/block/heading';
 import 'src/js/block/page-header';
 import 'src/js/block/text';
-// TODO import 'src/js/block/reference-list';
 // Helpers
 import 'src/js/block/dynamic/helper/page-title';
 import 'src/js/block/helper/content-container';
@@ -22,7 +26,6 @@ import 'src/js/block/helper/file-button';
 import 'src/js/block/helper/inner-block-wrapper';
 import 'src/js/block/helper/link-button';
 import 'src/js/block/helper/search-input';
-// TODO import 'src/js/block/helper/reference-list-item';
 
 /**
  * Media blocks
@@ -49,6 +52,11 @@ import 'src/js/block/helper/landing-header';
 import 'src/js/block/helper/landing-video';
 
 /**
+ * Page blocks
+ */
+// TODO import 'src/js/block/page-faq';
+
+/**
  * Resource blocks
  */
 import 'src/js/block/resource-detail';
@@ -59,11 +67,6 @@ import 'src/js/block/dynamic/helper/resource-detail-info';
 import 'src/js/block/helper/resource-detail-description';
 import 'src/js/block/helper/resource-detail-steps';
 import 'src/js/block/helper/resource-detail-steps-step';
-
-/**
- * Dot-phrase blocks
- */
-// TODO import 'src/js/block/dot-phrase-detail';
 
 /**
  * Toolkit blocks

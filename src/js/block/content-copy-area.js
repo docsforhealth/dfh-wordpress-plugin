@@ -10,6 +10,7 @@ const title = __('Content Copy Area', Constants.TEXT_DOMAIN);
 registerBlockType(`${Constants.NAMESPACE}/content-copy-area`, {
   apiVersion: 2,
   title,
+  icon: 'media-text',
   category: Constants.CATEGORY_COMMON,
   description: __(
     'Highlights content within a visually-distinct container with one-click copying of contents',
