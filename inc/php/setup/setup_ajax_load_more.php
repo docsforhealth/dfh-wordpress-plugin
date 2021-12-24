@@ -4,7 +4,7 @@
 
 add_filter('alm_speed', 'dfh_alm_speed');
 function dfh_alm_speed(){
-   return 100; // default = 250;
+   return 50; // default = 250;
 }
 
 // NOTE no need to add `_alm_disable_css` because css is disabled already because we include a

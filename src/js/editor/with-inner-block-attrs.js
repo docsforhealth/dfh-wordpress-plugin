@@ -3,7 +3,20 @@ import { dispatch, withSelect } from '@wordpress/data';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import * as Constants from 'src/js/constants';
-import { hasChildOfComponentType } from 'src/js/utils';
+import { handleForceAllAttrs, hasChildOfComponentType } from 'src/js/utils';
+
+/**
+ * PURPOSE OF THIS HELPER BLOCK
+ *
+ * This is the actual implementation of forcing specific attributes on each type of nested child block
+ * to have a certain attribute. This is accomplished by passing in the attribute `innerBlockAttrs`
+ * which is an object where each key is the registered name of the child block and each value is
+ * another object where each key is the attribute name and each value is the desired value to force
+ *
+ * When using this helper block, you can also use the `handleForceAllAttrs` utility function which
+ * filters the keys to only preserve the specified allowed blocks and support specifying attribute
+ * name/values that should be forced upon all allowed blocks via `INNER_BLOCKS_FORCE_ATTRS_ALL`
+ */
 
 // see https://github.com/WordPress/gutenberg/blob/master/packages/components/src/higher-order/with-focus-outside/index.js#L130-L135
 
@@ -20,9 +33,12 @@ function WithInnerBlockAttrs({ foundBlocks, innerBlockAttrs, children }) {
   if (!innerBlockAttrs) {
     return children;
   }
+  // if `INNER_BLOCKS_FORCE_ATTRS_ALL` is present, `handleForceAllAttrs` copies to attributes
+  // defined in this special key to the attrs of all other block keys in this attr object
+  const newInnerBlockAttrs = handleForceAllAttrs(innerBlockAttrs);
   // Only try to update inner blocks if `innerBlockAttrs` is specified
   const updateHandler = _.debounce(
-    () => updateInnerBlocks(foundBlocks, innerBlockAttrs),
+    () => updateInnerBlocks(foundBlocks, newInnerBlockAttrs),
     500,
   );
   // ensure attributes are applied on initial render even if this block does not receive focus
@@ -42,16 +58,15 @@ function WithInnerBlockAttrs({ foundBlocks, innerBlockAttrs, children }) {
 WithInnerBlockAttrs.propTypes = {
   clientId: PropTypes.string.isRequired,
   innerBlockAttrs: PropTypes.object,
-
   // Provided by `withSelect`, not by user
   foundBlocks: PropTypes.array.isRequired,
 };
 
-function updateInnerBlocks(foundBlocks, innerBlockAttrs) {
-  if (foundBlocks && foundBlocks[0] && innerBlockAttrs) {
+function updateInnerBlocks(foundBlocks, blockAttrs) {
+  if (foundBlocks && foundBlocks[0] && blockAttrs) {
     // plain objects not iterable by default, need to convert using `Object.entries`
     // see https://stackoverflow.com/a/29891072
-    for (const [blockName, attrs] of Object.entries(innerBlockAttrs)) {
+    for (const [blockName, attrs] of Object.entries(blockAttrs)) {
       // from https://github.com/WordPress/gutenberg/issues/15759#issuecomment-497359154
       foundBlocks[0].innerBlocks.forEach((block) => {
         if (block.name === blockName) {

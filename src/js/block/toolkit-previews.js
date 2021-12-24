@@ -1,9 +1,7 @@
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-import { TextareaControl } from '@wordpress/components';
-import { Fragment, RawHTML } from '@wordpress/element';
+import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import _ from 'lodash';
 import * as Constants from 'src/js/constants';
 
 const title = __('Toolkit Previews', Constants.TEXT_DOMAIN);
@@ -17,16 +15,6 @@ registerBlockType(`${Constants.NAMESPACE}/toolkit-previews`, {
     'Displays and searches previews of all toolkits',
     Constants.TEXT_DOMAIN,
   ),
-  attributes: {
-    // This input is escaped in the `save` method to prevent injection attacks
-    noResultsMessage: {
-      type: 'string',
-      default: __(
-        "No toolkits found. Please try another search or let us know what we're missing.",
-        Constants.TEXT_DOMAIN,
-      ),
-    },
-  },
   edit({ attributes, setAttributes }) {
     return (
       <Fragment>
@@ -40,6 +28,7 @@ registerBlockType(`${Constants.NAMESPACE}/toolkit-previews`, {
                 isLocked: true,
                 hideBlockTitleInEdit: true,
                 hideInnerBlocksInEdit: true,
+                // TODO replace with BLOCK_PAGE_CATEGORIES_SEARCH_HEADER
                 template: [
                   [
                     Constants.BLOCK_INNER_BLOCK_WRAPPER,
@@ -64,12 +53,15 @@ registerBlockType(`${Constants.NAMESPACE}/toolkit-previews`, {
                 ],
               },
             ],
+            [
+              Constants.BLOCK_AJAX_LOAD_MORE,
+              {
+                contentTypeId: Constants.CONTENT_TYPE_TOOLKIT,
+                transitionContainerClass: 'container',
+                numResultsPerPage: 8,
+              },
+            ],
           ]}
-        />
-        <TextareaControl
-          label={__('No results message', Constants.TEXT_DOMAIN)}
-          value={attributes.noResultsMessage}
-          onChange={(noResultsMessage) => setAttributes({ noResultsMessage })}
         />
       </Fragment>
     );
@@ -78,20 +70,6 @@ registerBlockType(`${Constants.NAMESPACE}/toolkit-previews`, {
     return (
       <Fragment>
         <InnerBlocks.Content />
-        <RawHTML>
-          {
-            // See `alm_templates/default.php` in the THEME for toolkit markup
-            `[ajax_load_more
-              id="${Constants.AJAX_ID_TOOLKIT}"
-              container_type="div"
-              transition_container_classes="container"
-              post_type="${Constants.CONTENT_TYPE_TOOLKIT}"
-              no_results_text="<div class='ajax-loader-none'>${_.escape(
-                attributes.noResultsMessage,
-              )}</div>"
-              posts_per_page="8"]`
-          }
-        </RawHTML>
       </Fragment>
     );
   },

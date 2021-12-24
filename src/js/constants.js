@@ -15,10 +15,7 @@ export const CONTENT_TYPE_RESOURCE = 'dfh_resource';
 export const CONTENT_TYPE_TOOLKIT = 'dfh_toolkit';
 export const TAXONOMY_RESOURCE = 'dfh_resource_classification';
 
-// ajax load more instances
-export const AJAX_ID_RESOURCE = 'dfh_ajax_resource_previews';
-export const AJAX_ID_TOOLKIT = 'dfh_ajax_toolkit_previews';
-
+// TODO tweak with new class name?
 // for frontend script to know where to insert messages for resource overview
 export const CLASS_RESOURCE_MESSAGE_AREA = 'resource-previews-label';
 
@@ -40,17 +37,26 @@ export const CORE_BLOCK_SEPARATOR = 'core/separator';
 export const CORE_BLOCK_SPACER = 'core/spacer';
 export const CORE_BLOCK_VIDEO = 'core/video';
 
+export const BLOCK_AJAX_LOAD_MORE = `${NAMESPACE}/ajax-load-more`;
+
 export const BLOCK_BUTTON_CONTAINER = `${NAMESPACE}/button-container`;
 export const BLOCK_CONTENT_CONTAINER = `${NAMESPACE}/content-container`;
 export const BLOCK_FILE_BUTTON = `${NAMESPACE}/file-button`;
 export const BLOCK_HEADING = `${NAMESPACE}/heading`;
 export const BLOCK_INNER_BLOCK_WRAPPER = `${NAMESPACE}/inner-block-wrapper`;
 export const BLOCK_LINK_BUTTON = `${NAMESPACE}/link-button`;
-export const BLOCK_PAGE_HEADER = `${NAMESPACE}/page-header`;
-export const BLOCK_PAGE_TITLE = `${NAMESPACE}/page-title`;
 export const BLOCK_SEARCH_INPUT = `${NAMESPACE}/search-input`;
 export const BLOCK_TEXT = `${NAMESPACE}/text`;
 export const BLOCK_VIDEO_THUMBNAIL = `${NAMESPACE}/video-thumbnail`;
+
+export const BLOCK_PAGE_HEADER = `${NAMESPACE}/page-header`;
+export const BLOCK_PAGE_TITLE = `${NAMESPACE}/page-title`;
+export const BLOCK_PAGE_CATEGORIES_SEARCH_HEADER = `${NAMESPACE}/page-categories-search-header`;
+export const BLOCK_PAGE_TAXONOMY_FILTER = `${NAMESPACE}/page-taxonomy-filter`;
+
+export const BLOCK_FAQ_QUESTION_CONTAINER = `${NAMESPACE}/page-faq-question-container`;
+export const BLOCK_FAQ_QUESTION = `${NAMESPACE}/page-faq-question`;
+export const BLOCK_FAQ_HEADER = `${NAMESPACE}/page-faq-header`;
 
 export const BLOCK_LANDING_CONTACT = `${NAMESPACE}/landing-contact`;
 export const BLOCK_LANDING_FEATURED = `${NAMESPACE}/landing-featured`;

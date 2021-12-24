@@ -1,0 +1,113 @@
+.page-faq {
+    $card-width: 30%;
+    $middle-spacing: $baseunit * 2;
+
+    @extend .container;
+
+    &__card {
+        @include full-width-bg($color-seafoam);
+
+        padding-top: $offset-page-header-top;
+
+        &__toggle {
+            @extend .button;
+            @extend .button--small;
+            @extend .button--outline;
+
+            width: 100%;
+        }
+    }
+    &__header {
+        @include full-width-bg($color-seafoam) {
+            border-bottom: 1px solid $color-seafoam-dark-1;
+        }
+    }
+    &__questions {
+        @include scut-list-unstyled;
+    }
+
+    @media (min-width: $media-width-landscape-small-mobile) {
+        &__card {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+
+            & &__title {
+                margin-bottom: 0;
+            }
+            &__toggle {
+                width: auto;
+            }
+        }
+    }
+    @media (min-width: $media-width-laptop) {
+        @include full-width-bg($color-seafoam) {
+            height: 45vh;
+            border-bottom: 1px solid $color-seafoam-dark-1;
+        }
+
+        position: relative;
+        display: flex;
+
+        &__card {
+            $card-padding: $baseunit * 1.5;
+
+            @include card-bg;
+            @include full-width-bg(false); // remove bg
+
+            position: sticky;
+            top: 0;
+            max-height: 100vh;
+            width: $card-width;
+            flex-shrink: 0;
+            // for sticky within flexbox need to not be full height
+            // see https://stackoverflow.com/a/44446672
+            align-self: flex-start;
+            padding-top: 0;
+            margin-top: $baseunit * 0.5;
+            margin-bottom: $baseunit * 2;
+
+            align-items: initial;
+            justify-content: initial;
+            flex-direction: column;
+
+            &__title,
+            &__content {
+                padding: $card-padding;
+            }
+            & &__title {
+                padding-bottom: 0;
+                margin-bottom: $baseunit;
+            }
+            &__toggle {
+                display: none;
+            }
+            &__content {
+                @include scroll-vertical;
+
+                padding-top: 0;
+                display: initial;
+            }
+        }
+        &__header {
+            @include full-width-bg(false); // remove bg
+        }
+        &__body {
+            padding-left: $middle-spacing;
+        }
+        &__content {
+            @include full-width-bg($color-white) {
+                left: $middle-spacing * -1;
+                width: calc(100% + #{$middle-spacing * 1.5});
+                transform: none;
+                border-top-right-radius: $border-radius;
+                border-top: 1px solid $color-seafoam-dark-1;
+            }
+        }
+    }
+    @media (min-width: $media-width-large-desktop) {
+        @include full-width-bg($color-seafoam) {
+            height: 35vh;
+        }
+    }
+}

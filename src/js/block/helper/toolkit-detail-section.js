@@ -1,12 +1,11 @@
-import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { withSelect } from '@wordpress/data';
-
-import * as Constants from '../../constants';
-import * as Heading from '../heading';
-import WithInnerBlockAttrs from '../../editor/with-inner-block-attrs';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import * as Heading from 'src/js/block/heading';
+import * as Constants from 'src/js/constants';
+import WithInnerBlockAttrs from 'src/js/editor/with-inner-block-attrs';
 
 export const ATTR_OVERALL_MARKUP_ID = 'overallMarkupId';
 export const ATTR_PARENT_CLIENT_ID = 'parentClientId';

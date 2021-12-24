@@ -1,11 +1,19 @@
 import PropTypes from 'prop-types';
-import { Fragment } from '@wordpress/element';
+
+/**
+ * PURPOSE OF THIS HELPER BLOCK
+ *
+ * If a class name is specified, then wraps children with a `div` with
+ * the specified class name.
+ *
+ * if no class name is specified, then simply returns the children unchanged
+ */
 
 export default function WrapOnlyIfHasClass({ className, children }) {
   return className ? (
     <div className={className}>{children}</div>
   ) : (
-    <Fragment>{children}</Fragment>
+    <>{children}</>
   );
 }
 WrapOnlyIfHasClass.propTypes = {

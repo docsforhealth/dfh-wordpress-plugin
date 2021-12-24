@@ -4,11 +4,18 @@ import { __ } from '@wordpress/i18n';
 import PropTypes from 'prop-types';
 import * as Constants from 'src/js/constants';
 import WithInnerBlockAttrs from 'src/js/editor/with-inner-block-attrs';
-import {
-  filterInnerBlockTemplate,
-  handleForceAllAttrs,
-  withPropTypes,
-} from 'src/js/utils';
+import { filterInnerBlockTemplate, withPropTypes } from 'src/js/utils';
+
+/**
+ * PURPOSE OF THIS HELPER BLOCK
+ *
+ * To be used as part of the template attribute of InnerBlocks in order to specify a container in
+ * which users are only able to insert text and media content and not other arbitrary blocks.
+ * Because ths blocks restricts users to only inserting "content" -- that is text and media -- this
+ * bock is called a "Content Container."
+ *
+ * Also supports the ability to force the nested child blocks to have certain attributes
+ */
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_CONTENT_CONTAINER, {
@@ -35,8 +42,10 @@ registerBlockType(Constants.BLOCK_CONTENT_CONTAINER, {
       title: PropTypes.string,
       template: PropTypes.arrayOf(PropTypes.array),
       isLocked: PropTypes.bool,
-      noHeadings: PropTypes.bool,
       forceAttributes: PropTypes.objectOf(PropTypes.object),
+      // If `true` then users will not be able to insert in Heading blocks and can only insert
+      // text and media.
+      noHeadings: PropTypes.bool,
     },
     ({ attributes, clientId }) => {
       const alwaysAllowed = [
@@ -60,10 +69,7 @@ registerBlockType(Constants.BLOCK_CONTENT_CONTAINER, {
       return (
         <WithInnerBlockAttrs
           clientId={clientId}
-          innerBlockAttrs={handleForceAllAttrs(
-            attributes.forceAttributes,
-            allowedBlockNames,
-          )}
+          innerBlockAttrs={attributes.forceAttributes}
         >
           {attributes.title && (
             <div className="dfh-editor-block-title dfh-editor-block-title--nested">

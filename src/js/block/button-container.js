@@ -4,11 +4,7 @@ import { __ } from '@wordpress/i18n';
 import PropTypes from 'prop-types';
 import * as Constants from 'src/js/constants';
 import WithInnerBlockAttrs from 'src/js/editor/with-inner-block-attrs';
-import {
-  filterInnerBlockTemplate,
-  handleForceAllAttrs,
-  withPropTypes,
-} from 'src/js/utils';
+import { filterInnerBlockTemplate, withPropTypes } from 'src/js/utils';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
@@ -40,10 +36,7 @@ registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
       return (
         <WithInnerBlockAttrs
           clientId={clientId}
-          innerBlockAttrs={handleForceAllAttrs(
-            attributes.forceAttributes,
-            allowedBlockNames,
-          )}
+          innerBlockAttrs={attributes.forceAttributes}
         >
           <InnerBlocks
             allowedBlocks={allowedBlockNames}

@@ -1,20 +1,27 @@
 .page-header {
-    @extend .container;
-    @include full-width-bg($color-seafoam);
-
     display: flex;
     flex-direction: column;
-    padding: ($baseunit * 2) 0 $baseunit;
+    padding: $offset-page-header-top 0 $baseunit;
+
+    &:not(&--nested) {
+        @extend .container;
+        @include full-width-bg($color-seafoam) {
+            border-bottom: 1px solid $color-seafoam-dark-1;
+        }
+    }
+    &--nested {
+        padding-top: $baseunit;
+    }
 
     &__form {
-        flex-grow: 1;
+        flex-grow: 0.5;
     }
     &__metadata {
         @extend .text;
-        @include scut-truncate;
+        @include scut_truncate;
 
-        display: none;
         color: $color-gray;
+        display: none;
     }
     &__section {
         display: flex;
@@ -54,8 +61,12 @@
         }
     }
     @media (min-width: $media-width-laptop) {
+        &--nested {
+            padding-top: $offset-page-header-top;
+        }
+
         &__form {
-            max-width: 50%;
+            max-width: 70%;
         }
         &__metadata--secondary {
             display: block;

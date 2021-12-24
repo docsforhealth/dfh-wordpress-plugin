@@ -1,6 +1,7 @@
 <?php
 
 // [FUTURE] Note that passing props to a PHP dynamic block from Javascript does not work
+// BUT you can still pass information via the attributes set in the Javascript `edit` hook
 // Therefore, the below attributes are for reference
 
 register_block_type('dfh/resource-category-filter', array(

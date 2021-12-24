@@ -1,11 +1,10 @@
-import { __ } from '@wordpress/i18n';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { TextControl } from '@wordpress/components';
-
-import * as Constants from '../../constants';
-import * as Section from './toolkit-detail-section';
-import WithInnerBlockAttrs from '../../editor/with-inner-block-attrs';
+import { __ } from '@wordpress/i18n';
+import * as Section from 'src/js/block/helper/toolkit-detail-section';
+import * as Constants from 'src/js/constants';
+import WithInnerBlockAttrs from 'src/js/editor/with-inner-block-attrs';
 
 // This block exists to allow for a container where the only thing possible to add is a
 // Section. Also, this block ensures that the index calculations in the Section block will
@@ -58,7 +57,7 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER, {
             Constants.TEXT_DOMAIN,
           )}
           value={attributes.backButtonLabel}
-          onChange={backButtonLabel => setAttributes({ backButtonLabel })}
+          onChange={(backButtonLabel) => setAttributes({ backButtonLabel })}
         />
         <TextControl
           label={__('Next section button label', Constants.TEXT_DOMAIN)}
@@ -67,7 +66,7 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER, {
             Constants.TEXT_DOMAIN,
           )}
           value={attributes.nextButtonLabel}
-          onChange={nextButtonLabel => setAttributes({ nextButtonLabel })}
+          onChange={(nextButtonLabel) => setAttributes({ nextButtonLabel })}
         />
         <InnerBlocks
           allowedBlocks={[Constants.BLOCK_TOOLKIT_DETAIL_SECTION]}

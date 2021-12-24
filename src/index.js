@@ -17,7 +17,6 @@ import 'src/js/block/button-container';
 import 'src/js/block/content-copy-area';
 import 'src/js/block/form-card';
 import 'src/js/block/heading';
-import 'src/js/block/page-header';
 import 'src/js/block/text';
 // Helpers
 import 'src/js/block/dynamic/helper/page-title';
@@ -26,6 +25,7 @@ import 'src/js/block/helper/file-button';
 import 'src/js/block/helper/inner-block-wrapper';
 import 'src/js/block/helper/link-button';
 import 'src/js/block/helper/search-input';
+import 'src/js/block/helper/ajax-load-more'; // TODO icon, plugins
 
 /**
  * Media blocks
@@ -36,6 +36,14 @@ import 'src/js/block/video-thumbnail';
  * Layout blocks
  */
 import 'src/js/block/content-width-container';
+import 'src/js/block/page-faq-container'; // TODO
+import 'src/js/block/page-header';
+// Helpers
+import 'src/js/block/dynamic/helper/page-taxonomy-filter'; // TODO filter taxonomies by content type
+import 'src/js/block/helper/page-categories-search-header';
+import 'src/js/block/helper/page-faq-header';
+import 'src/js/block/helper/page-faq-question'; // TODO
+import 'src/js/block/helper/page-faq-question-container'; // TODO
 
 /**
  * Landing page blocks
@@ -52,18 +60,13 @@ import 'src/js/block/helper/landing-header';
 import 'src/js/block/helper/landing-video';
 
 /**
- * Page blocks
- */
-// TODO import 'src/js/block/page-faq';
-
-/**
  * Resource blocks
  */
 import 'src/js/block/resource-detail';
-import 'src/js/block/resource-previews';
+import 'src/js/block/resource-previews'; // TODO
 // Helpers
-import 'src/js/block/dynamic/helper/resource-category-filter';
-import 'src/js/block/dynamic/helper/resource-detail-info';
+import 'src/js/block/dynamic/helper/resource-category-filter'; // TODO
+import 'src/js/block/dynamic/helper/resource-detail-info'; // TODO
 import 'src/js/block/helper/resource-detail-description';
 import 'src/js/block/helper/resource-detail-steps';
 import 'src/js/block/helper/resource-detail-steps-step';
@@ -72,7 +75,7 @@ import 'src/js/block/helper/resource-detail-steps-step';
  * Toolkit blocks
  */
 import 'src/js/block/toolkit-detail';
-import 'src/js/block/toolkit-previews';
+import 'src/js/block/toolkit-previews'; // TODO
 // Helpers
 import 'src/js/block/dynamic/helper/toolkit-detail-header';
 import 'src/js/block/helper/toolkit-detail-list';

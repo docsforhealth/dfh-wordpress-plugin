@@ -1,0 +1,116 @@
+.page-taxonomy {
+    $column-gap: $baseunit * 0.25;
+
+    @include vertical-slide('&__list', '&--open', $max-height: 70vh);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-bottom: $baseunit;
+
+    & &__toggle {
+        @extend .link;
+        @include scut-truncate;
+
+        position: relative;
+        width: auto;
+        padding: ($baseunit * 0.5) $height-control-small;
+        line-height: $height-control-small;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            height: $height-control-small;
+            width: $height-control-small;
+            background-image: url('../assets/images/icon-dropdown.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+    &--open &__toggle:after {
+        transform: translateY(-50%) scaleY(-1);
+    }
+
+    &__list {
+        @include scut-list-unstyled;
+
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+    }
+    & &__category {
+        @include scut-truncate;
+
+        height: $height-control;
+        width: 100%;
+        padding: 0 $baseunit;
+        margin-bottom: $baseunit * 0.5;
+        border: 1px solid $color-seafoam-dark-2;
+        border-radius: $border-radius;
+        color: $color-navy;
+        font-weight: $font-weight-bold;
+        opacity: 0.5;
+        transition: all 0.2s;
+
+        &--active {
+            @include card-bg($color: rgba(0, 0, 0, 0.06));
+
+            opacity: 1;
+
+            &:hover {
+                @include card-bg($color: rgba(0, 0, 0, 0.12));
+            }
+        }
+    }
+
+    @media (min-width: $media-width-landscape-small-mobile) {
+        &__list {
+            // for older browsers
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            & > * {
+                flex-basis: calc(50% - #{$column-gap});
+            }
+
+            // progressive enhancement
+            // see https://stackoverflow.com/a/46099319
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-column-gap: $column-gap * 2; // older prefixed property
+            column-gap: $column-gap * 2;
+        }
+    }
+    @media (min-width: $media-width-tablet) {
+        &__toggle {
+            display: none;
+        }
+        &__list {
+            $column-gap: $baseunit * 0.35;
+
+            max-height: none; // override toggle behavior
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+
+            // for older browsers
+            justify-content: flex-start;
+
+            & > * {
+                flex-basis: calc(25% - #{$column-gap});
+            }
+        }
+        &__category {
+            margin-bottom: 0;
+        }
+    }
+    @media (min-width: $media-width-large-desktop) {
+        &__list {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+    }
+}

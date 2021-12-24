@@ -101,6 +101,7 @@ function dfh_register_dynamic_blocks() {
     // scripts and stylesheets already registered in editor-specific hooks
     // in these files, we only need to specify the render_callback AND attributes
     // see https://github.com/WordPress/gutenberg/issues/6187#issuecomment-381446732
+    require DFH_PLUGIN_DIR . '/inc/php/setup/block/page_taxonomy_filter.php';
     require DFH_PLUGIN_DIR . '/inc/php/setup/block/page_title.php';
     require DFH_PLUGIN_DIR . '/inc/php/setup/block/resource_category_filter.php';
     require DFH_PLUGIN_DIR . '/inc/php/setup/block/resource_detail_info.php';

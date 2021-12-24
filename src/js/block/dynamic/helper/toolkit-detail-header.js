@@ -14,6 +14,8 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_HEADER, {
     Constants.TEXT_DOMAIN,
   ),
   supports: { inserter: false },
+  // for dynamic blocks, see attributes in corresponding PHP file
+  // see reasoning in `page_taxonomy_filter.php`
   edit({ attributes, setAttributes }) {
     return (
       <TextControl
