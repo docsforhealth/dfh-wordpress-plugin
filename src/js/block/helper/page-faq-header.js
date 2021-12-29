@@ -17,9 +17,12 @@ registerBlockType(
       Constants.TEXT_DOMAIN,
     ),
     supports: { inserter: false },
-    edit({ clientId, attributes, setAttributes }) {
-      const updateLabelClassName = `label-${attributes[ATTR_UNIQUE_ID]}`,
-        searchClassName = `search-${attributes[ATTR_UNIQUE_ID]}`;
+    attributes: {
+      searchClassName: { type: 'string', default: '' },
+      taxonomyFilterHtmlId: { type: 'string', default: '' },
+    },
+    edit({ attributes, setAttributes }) {
+      const updateLabelClassName = `label-${attributes[ATTR_UNIQUE_ID]}`;
       return (
         <InnerBlocks
           templateLock={Constants.INNER_BLOCKS_LOCKED}
@@ -27,10 +30,7 @@ registerBlockType(
             [
               Constants.BLOCK_PAGE_HEADER,
               {
-                isLocked: true,
-                hideBlockTitleInEdit: true,
-                hideInnerBlocksInEdit: true,
-                includePageTitle: false,
+                includePageTitle: false, // implicit `hidePageTitleInEdit: true`
                 isNested: true,
                 template: [
                   [
@@ -39,7 +39,7 @@ registerBlockType(
                       className:
                         'page-header__section page-header__section--right',
                       updateLabelClassName,
-                      searchClassName,
+                      searchClassName: attributes.searchClassName,
                     },
                   ],
                 ],
@@ -49,7 +49,7 @@ registerBlockType(
               Constants.BLOCK_PAGE_TAXONOMY_FILTER,
               {
                 updateLabelClassName,
-                searchClassName,
+                htmlId: attributes.taxonomyFilterHtmlId,
               },
             ],
           ]}

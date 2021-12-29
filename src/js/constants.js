@@ -4,6 +4,7 @@ export const NAMESPACE = 'dfh';
 export const TEXT_DOMAIN = 'dfh';
 
 export const CATEGORY_COMMON = 'dfh-common';
+export const CATEGORY_DEPRECATED = 'dfh-deprecated';
 export const CATEGORY_LANDING = 'dfh-landing';
 export const CATEGORY_LAYOUT = 'dfh-layout';
 export const CATEGORY_MEDIA = 'dfh-media';
@@ -14,10 +15,7 @@ export const CATEGORY_TOOLKIT = 'dfh-toolkit';
 export const CONTENT_TYPE_RESOURCE = 'dfh_resource';
 export const CONTENT_TYPE_TOOLKIT = 'dfh_toolkit';
 export const TAXONOMY_RESOURCE = 'dfh_resource_classification';
-
-// TODO tweak with new class name?
-// for frontend script to know where to insert messages for resource overview
-export const CLASS_RESOURCE_MESSAGE_AREA = 'resource-previews-label';
+export const TAXONOMY_RESOURCE_TYPE = 'dfh_resource_content_type';
 
 // documentation for stores at https://developer.wordpress.org/block-editor/data/
 export const STORE_BLOCK_EDITOR = 'core/block-editor';
@@ -63,7 +61,6 @@ export const BLOCK_LANDING_FEATURED = `${NAMESPACE}/landing-featured`;
 export const BLOCK_LANDING_HEADER = `${NAMESPACE}/landing-header`;
 export const BLOCK_LANDING_VIDEO = `${NAMESPACE}/landing-video`;
 
-export const BLOCK_RESOURCE_CATEGORY_FILTER = `${NAMESPACE}/resource-category-filter`;
 export const BLOCK_RESOURCE_DETAIL_DESCRIPTION = `${NAMESPACE}/resource-detail-description`;
 export const BLOCK_RESOURCE_DETAIL_INFO = `${NAMESPACE}/resource-detail-info`;
 export const BLOCK_RESOURCE_DETAIL_STEPS = `${NAMESPACE}/resource-detail-steps`;

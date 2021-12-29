@@ -1,5 +1,5 @@
 import { InnerBlocks } from '@wordpress/block-editor';
-import { dispatch, withSelect } from '@wordpress/data';
+import { dispatch, useSelect } from '@wordpress/data';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import * as Constants from 'src/js/constants';
@@ -20,19 +20,19 @@ import { handleForceAllAttrs, hasChildOfComponentType } from 'src/js/utils';
 
 // see https://github.com/WordPress/gutenberg/blob/master/packages/components/src/higher-order/with-focus-outside/index.js#L130-L135
 
-export default withSelect((select, { clientId }) => {
-  return {
-    foundBlocks: select(Constants.STORE_BLOCK_EDITOR).getBlocksByClientId(
-      clientId,
-    ),
-  };
-})(WithInnerBlockAttrs);
-
-function WithInnerBlockAttrs({ foundBlocks, innerBlockAttrs, children }) {
+export default function WithInnerBlockAttrs({
+  clientId,
+  innerBlockAttrs,
+  children,
+}) {
   // Don't need to try to override inner block attributes if none are specified
   if (!innerBlockAttrs) {
     return children;
   }
+  // newer preferred style to use `useSelect` instead of `withSelect` HOC
+  const foundBlocks = useSelect((select) =>
+    select(Constants.STORE_BLOCK_EDITOR).getBlocksByClientId(clientId),
+  );
   // if `INNER_BLOCKS_FORCE_ATTRS_ALL` is present, `handleForceAllAttrs` copies to attributes
   // defined in this special key to the attrs of all other block keys in this attr object
   const newInnerBlockAttrs = handleForceAllAttrs(innerBlockAttrs);
@@ -58,24 +58,24 @@ function WithInnerBlockAttrs({ foundBlocks, innerBlockAttrs, children }) {
 WithInnerBlockAttrs.propTypes = {
   clientId: PropTypes.string.isRequired,
   innerBlockAttrs: PropTypes.object,
-  // Provided by `withSelect`, not by user
-  foundBlocks: PropTypes.array.isRequired,
 };
 
-function updateInnerBlocks(foundBlocks, blockAttrs) {
-  if (foundBlocks && foundBlocks[0] && blockAttrs) {
-    // plain objects not iterable by default, need to convert using `Object.entries`
-    // see https://stackoverflow.com/a/29891072
-    for (const [blockName, attrs] of Object.entries(blockAttrs)) {
-      // from https://github.com/WordPress/gutenberg/issues/15759#issuecomment-497359154
-      foundBlocks[0].innerBlocks.forEach((block) => {
-        if (block.name === blockName) {
-          dispatch(Constants.STORE_BLOCK_EDITOR).updateBlockAttributes(
-            block.clientId,
-            attrs,
-          );
-        }
-      });
-    }
+function updateInnerBlocks(blocks, blockForceAttrs) {
+  // if wanted to iterate over `blockForceAttrs`, NOTE that plain objects NOT iterable by default,
+  // need to convert using `Object.entries`, see https://stackoverflow.com/a/29891072
+  if (blocks.length && blockForceAttrs) {
+    blocks.forEach((block) => {
+      const forceAttrs = blockForceAttrs[block.name];
+      if (forceAttrs) {
+        // see https://github.com/WordPress/gutenberg/issues/15759#issuecomment-497359154
+        dispatch(Constants.STORE_BLOCK_EDITOR).updateBlockAttributes(
+          block.clientId,
+          forceAttrs,
+        );
+      }
+      if (block.innerBlocks?.length) {
+        updateInnerBlocks(block.innerBlocks, blockForceAttrs);
+      }
+    });
   }
 }

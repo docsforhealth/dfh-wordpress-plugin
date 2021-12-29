@@ -23,7 +23,7 @@ registerBlockType(Constants.BLOCK_AJAX_LOAD_MORE, {
     'Wrapper for the Ajax Load More plugin shortcode',
     Constants.TEXT_DOMAIN,
   ),
-  supports: { inserter: false },
+  // supports: { inserter: false }, // TODO
   attributes: {
     contentTypeId: { type: 'string', default: 'post' },
     containerElement: { type: 'string', default: 'div' },
@@ -37,6 +37,9 @@ registerBlockType(Constants.BLOCK_AJAX_LOAD_MORE, {
         Constants.TEXT_DOMAIN,
       ),
     },
+    // frontend JS functionality
+    searchClassName: { type: 'string', default: '' },
+    taxonomyFilterHtmlId: { type: 'string', default: '' },
   },
   edit({ attributes, setAttributes }) {
     // TODO make other custom data types accessible + add additional config
@@ -52,11 +55,18 @@ registerBlockType(Constants.BLOCK_AJAX_LOAD_MORE, {
   },
   save({ attributes }) {
     return (
-      <RawHTML {...useBlockProps.save()}>
-        {
-          // See `alm_templates` directory in the THEME for markup
-          // see https://connekthq.com/plugins/ajax-load-more/docs/repeater-templates/
-          `[ajax_load_more
+      <>
+        {/* Starting point for the setup-ajaxloadmore-filter-search.js frontend script */}
+        <span
+          data-ajax
+          data-ajax-search-input-class={attributes.searchClassName}
+          data-ajax-taxonomy-filter-id={attributes.taxonomyFilterHtmlId}
+        />
+        <RawHTML {...useBlockProps.save()}>
+          {
+            // See `alm_templates` directory in the THEME for markup
+            // see https://connekthq.com/plugins/ajax-load-more/docs/repeater-templates/
+            `[ajax_load_more
               container_type="${attributes.containerElement}"
               transition_container_classes="${
                 attributes.transitionContainerClass
@@ -66,8 +76,9 @@ registerBlockType(Constants.BLOCK_AJAX_LOAD_MORE, {
               no_results_text="<div class='ajax-loader-none'>${_.escape(
                 attributes.noResultsMessage,
               )}</div>"]`
-        }
-      </RawHTML>
+          }
+        </RawHTML>
+      </>
     );
   },
 });

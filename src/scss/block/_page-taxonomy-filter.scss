@@ -8,6 +8,16 @@
     align-items: flex-end;
     padding-bottom: $baseunit;
 
+    // DEPRECATED: remove with with `resource-previews` block
+    &--deprecated {
+        @extend .container;
+        @include full-width-bg($color-seafoam) {
+            border-bottom: 1px solid $color-seafoam-dark-1;
+        }
+
+        margin-top: -1px; // to cover page-header bottom border
+    }
+
     & &__toggle {
         @extend .link;
         @include scut-truncate;
@@ -42,7 +52,7 @@
         display: flex;
         flex-direction: column;
     }
-    & &__category {
+    & &__item {
         @include scut-truncate;
 
         height: $height-control;
@@ -68,6 +78,9 @@
     }
 
     @media (min-width: $media-width-landscape-small-mobile) {
+        &__toggle {
+            display: none;
+        }
         &__list {
             // for older browsers
             display: flex;
@@ -79,6 +92,9 @@
                 flex-basis: calc(50% - #{$column-gap});
             }
 
+            // override toggle behavior
+            max-height: none;
+
             // progressive enhancement
             // see https://stackoverflow.com/a/46099319
             display: grid;
@@ -86,31 +102,32 @@
             grid-column-gap: $column-gap * 2; // older prefixed property
             column-gap: $column-gap * 2;
         }
+        &__item {
+            margin-bottom: 0;
+        }
     }
     @media (min-width: $media-width-tablet) {
-        &__toggle {
-            display: none;
-        }
         &__list {
-            $column-gap: $baseunit * 0.35;
-
-            max-height: none; // override toggle behavior
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-
-            // for older browsers
+            // for older browsers, default to four across
             justify-content: flex-start;
 
             & > * {
                 flex-basis: calc(25% - #{$column-gap});
             }
+
+            // progressive enhancement
+            $column-gap: $baseunit * 0.35;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
         }
-        &__category {
-            margin-bottom: 0;
+    }
+    @media (min-width: $media-width-laptop) {
+        &__list {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
         }
     }
     @media (min-width: $media-width-large-desktop) {
         &__list {
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: repeat(6, minmax(0, 1fr));
         }
     }
 }

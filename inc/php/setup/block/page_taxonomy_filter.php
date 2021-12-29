@@ -16,12 +16,12 @@ register_block_type('dfh/page-taxonomy-filter', array(
         'openClassName'        => array('type' => 'string', 'default' => 'page-taxonomy--open'),
         'toggleClassName'      => array('type' => 'string', 'default' => 'page-taxonomy__toggle'),
         'listClassName'        => array('type' => 'string', 'default' => 'page-taxonomy__list'),
-        'itemClassName'        => array('type' => 'string', 'default' => 'page-taxonomy__category'),
-        'activeItemClassName'  => array('type' => 'string', 'default' => 'page-taxonomy__category--active'),
+        'itemClassName'        => array('type' => 'string', 'default' => 'page-taxonomy__item'),
+        'activeItemClassName'  => array('type' => 'string', 'default' => 'page-taxonomy__item--active'),
         // used by accompanying frontend script to update labels with number of categories selected
         'updateLabelClassName' => array('type' => 'string', 'default' => ''),
-        // used by accompnaying frontend script to bind change handler to search bar
-        'searchClassName' => array('type' => 'string', 'default' => ''),
+        // id for this taxonomy filter element, for the `ajax-load-more` block to identify this one
+        'htmlId'               => array('type' => 'string', 'default' => ''),
     ),
 ));
 
@@ -57,6 +57,7 @@ function dfh_dynamic_render_page_taxonomy_filter($attributes) {
             Loading...
         </button>
         <ul
+            id="<?php echo esc_attr($attributes['htmlId']); ?>"
             class="<?php echo esc_attr($attributes['listClassName']); ?>"
             data-taxonomy-plural-name="<?php echo esc_attr($name); ?>"
             data-taxonomy-singular-name="<?php echo esc_attr($singular_name); ?>"
@@ -64,7 +65,6 @@ function dfh_dynamic_render_page_taxonomy_filter($attributes) {
             data-taxonomy-active-class="<?php echo esc_attr($active_class); ?>"
             data-taxonomy-id="<?php echo esc_attr($tax_id); ?>"
             data-taxonomy-update-label-class="<?php echo esc_attr($attributes['updateLabelClassName']); ?>"
-            data-taxonomy-search-input-class="<?php echo esc_attr($attributes['searchClassName']); ?>"
         >
             <?php foreach ($terms as $term): ?>
                 <li>

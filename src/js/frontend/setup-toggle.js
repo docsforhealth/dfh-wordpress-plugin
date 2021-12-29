@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { classSelector } from 'src/js/frontend/helpers/utils'
+import { classSelector } from 'src/js/frontend/helpers/utils';
 
 $(function () {
   $('[data-toggle-container-class]').on('click', function () {

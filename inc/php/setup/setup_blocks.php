@@ -11,6 +11,10 @@ function dfh_block_categories($categories, $post) {
                 'title' => __('Common', DFH_TEXT_DOMAIN),
             ),
             array(
+                'slug'  => DFH_BLOCK_CATEGORY_DEPRECATED,
+                'title' => __('Deprecated', DFH_TEXT_DOMAIN),
+            ),
+            array(
                 'slug'  => DFH_BLOCK_CATEGORY_LAYOUT,
                 'title' => __('Layout', DFH_TEXT_DOMAIN),
             ),
@@ -103,7 +107,6 @@ function dfh_register_dynamic_blocks() {
     // see https://github.com/WordPress/gutenberg/issues/6187#issuecomment-381446732
     require DFH_PLUGIN_DIR . '/inc/php/setup/block/page_taxonomy_filter.php';
     require DFH_PLUGIN_DIR . '/inc/php/setup/block/page_title.php';
-    require DFH_PLUGIN_DIR . '/inc/php/setup/block/resource_category_filter.php';
     require DFH_PLUGIN_DIR . '/inc/php/setup/block/resource_detail_info.php';
     require DFH_PLUGIN_DIR . '/inc/php/setup/block/resource_overview.php';
     require DFH_PLUGIN_DIR . '/inc/php/setup/block/toolkit_detail_header.php';

@@ -43,7 +43,7 @@ registerBlockType(Constants.BLOCK_TEXT, {
     oneLine: { type: 'boolean', default: false },
     placeholder: {
       type: 'string',
-      default: __('Enter text here', Constants.TEXT_DOMAIN),
+      default: __('Enter text here or type / to choose a block', Constants.TEXT_DOMAIN),
     },
     [ATTR_SIZE]: { type: 'string', default: Constants.TEXT_SIZE_DEFAULT },
     [ATTR_OPTION_SIZE]: { type: 'boolean', default: true },

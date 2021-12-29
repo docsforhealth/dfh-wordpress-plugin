@@ -25,6 +25,9 @@ import { withPropTypes } from 'src/js/utils';
  * nested elements to be have a specific value.
  */
 
+// TODO change wrapper prop to put element and class name together
+// TODO evaluate `skipWrapperInEdit` for each usage of this block!
+
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_INNER_BLOCK_WRAPPER, {
   title: __('Inner Block Wrapper', Constants.TEXT_DOMAIN),

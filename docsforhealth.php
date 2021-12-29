@@ -27,6 +27,7 @@ define('DFH_REQUIRED_PLUGINS', array(
 ));
 
 define('DFH_BLOCK_CATEGORY_COMMON', 'dfh-common');
+define('DFH_BLOCK_CATEGORY_DEPRECATED', 'dfh-deprecated');
 define('DFH_BLOCK_CATEGORY_LANDING', 'dfh-landing');
 define('DFH_BLOCK_CATEGORY_LAYOUT', 'dfh-layout');
 define('DFH_BLOCK_CATEGORY_MEDIA', 'dfh-media');

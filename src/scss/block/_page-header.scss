@@ -35,10 +35,6 @@
 
         &__metadata {
             display: block;
-
-            &--secondary {
-                display: none;
-            }
         }
         &__section {
             flex-direction: row;
@@ -67,9 +63,6 @@
 
         &__form {
             max-width: 70%;
-        }
-        &__metadata--secondary {
-            display: block;
         }
     }
 }

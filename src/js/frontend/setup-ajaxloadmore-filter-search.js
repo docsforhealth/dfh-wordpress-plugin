@@ -1,10 +1,15 @@
 import $ from 'jquery';
 import _ from 'lodash';
-import { classSelector } from 'src/js/frontend/helpers/utils';
+import { classSelector, idSelector } from 'src/js/frontend/helpers/utils';
 
+// starting point for the script
+// on a data `span` adjacent to the ajaxloadmore element, see `ajax-load-more` block
+const CLASS_SEARCH_INPUT = 'ajaxSearchInputClass',
+  HTML_ID_TAXONOMY_FILTER = 'ajaxTaxonomyFilterId';
+
+// on the taxonomy filter object, see `page-taxonomy-filter` block
 const CLASS_ITEM = 'taxonomyItemClass',
   CLASS_ITEM_ACTIVE = 'taxonomyActiveClass',
-  CLASS_SEARCH_INPUT = 'taxonomySearchInputClass',
   CLASS_UPDATE_LABEL = 'taxonomyUpdateLabelClass',
   ID_TAXONOMY = 'taxonomyId',
   NAME_PLURAL = 'taxonomyPluralName',
@@ -12,21 +17,32 @@ const CLASS_ITEM = 'taxonomyItemClass',
   ITEM_TERM_SLUG = 'taxonomyTermSlug';
 
 $(function () {
-  $('[data-taxonomy-id]').each((index, taxonomyEl) =>
-    handleTaxonomy($(taxonomyEl)),
+  $('[data-ajax]').each((index, ajaxInfoEl) =>
+    handleAjaxLoadMore($(ajaxInfoEl)),
   );
 });
 
-function handleTaxonomy($taxonomy) {
+function handleAjaxLoadMore($ajaxInfoEl) {
+  const $taxonomy = $(idSelector($ajaxInfoEl.data(HTML_ID_TAXONOMY_FILTER))),
+    $search = $(classSelector($ajaxInfoEl.data(CLASS_SEARCH_INPUT)));
+  // if present, handle search input
+  handleSearch($search, $taxonomy);
+  // if present, handle taxonomy filter
+  handleTaxonomy($taxonomy, $search);
+}
+
+function handleSearch($search, $taxonomy) {
+  $search.on('change', buildSearchHandler($taxonomy));
+}
+
+function handleTaxonomy($taxonomy, $search) {
   // initialize labels
   updateLabels($taxonomy);
-  // handle search input
-  get$Search($taxonomy).on('change', buildSearchHandler($taxonomy));
   // handle category selectors
   $taxonomy.on(
     'click',
     classSelector($taxonomy.data(CLASS_ITEM)),
-    buildTaxonomyHandler($taxonomy),
+    buildTaxonomyHandler($taxonomy, $search),
   );
 }
 
@@ -39,7 +55,7 @@ function buildSearchHandler($taxonomy) {
   };
 }
 
-function buildTaxonomyHandler($taxonomy) {
+function buildTaxonomyHandler($taxonomy, $search) {
   // target vs currentTarget see https://stackoverflow.com/a/10086501
   return function ({ target: currentItem }) {
     const activeClass = $taxonomy.data(CLASS_ITEM_ACTIVE),
@@ -57,16 +73,12 @@ function buildTaxonomyHandler($taxonomy) {
       currentItem.classList.toggle(activeClass);
     }
     updateLabels($taxonomy);
-    reloadAjaxItems($taxonomy, get$Search($taxonomy).val());
+    reloadAjaxItems($taxonomy, $search.val());
   };
 }
 
 // Helpers
 // -------
-
-function get$Search($taxonomy) {
-  return $(classSelector($taxonomy.data(CLASS_SEARCH_INPUT)));
-}
 
 const updateLabels = _.debounce(($taxonomy) => {
   const { numActive, numTotal } = getItemsAndCounts($taxonomy);
@@ -83,20 +95,29 @@ const updateLabels = _.debounce(($taxonomy) => {
   }
 });
 
-const reloadAjaxItems = _.debounce(($taxonomy, searchVal = '') => {
-  const { $activeItems } = getItemsAndCounts($taxonomy);
-  window.ajaxloadmore?.filter('fade', 50, {
-    search: searchVal?.trim(),
-    taxonomy: $taxonomy.data(ID_TAXONOMY),
-    taxonomyTerms: $activeItems
-      .map((index, item) => item.dataset[ITEM_TERM_SLUG])
-      .get()
-      .join(), // default join is ','
-  });
-}, 250);
+const reloadAjaxItems = _.debounce(
+  ($taxonomy = Object.create(null), searchVal = '') => {
+    if (window.ajaxloadmore) {
+      const filterOpts = Object.create(null);
+      // if has taxonomy filter defined
+      if ($taxonomy.length) {
+        const { $activeItems } = getItemsAndCounts($taxonomy);
+        filterOpts.taxonomy = $taxonomy.data(ID_TAXONOMY);
+        filterOpts.taxonomyTerms = $activeItems
+          .map((index, item) => item.dataset[ITEM_TERM_SLUG])
+          .get()
+          .join(); // default join is ','
+      }
+      // need to have `search: ''` in the filter object to get all results
+      filterOpts.search = searchVal ? searchVal.trim() : '';
+      window.ajaxloadmore?.filter('fade', 50, filterOpts);
+    }
+  },
+  250,
+);
 
 function getItemsAndCounts($taxonomy) {
-  if ($taxonomy) {
+  if ($taxonomy?.length) {
     const itemClass = $taxonomy.data(CLASS_ITEM),
       activeClass = $taxonomy.data(CLASS_ITEM_ACTIVE),
       // returns the actual `button`s within the `li`s that contain the taxonomy slug and classes
