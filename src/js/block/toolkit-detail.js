@@ -49,7 +49,7 @@ registerBlockType(`${Constants.NAMESPACE}/toolkit-detail`, {
             [
               Constants.BLOCK_INNER_BLOCK_WRAPPER,
               {
-                wrapperClassNames: ['toolkit-detail-container__list'],
+                wrapper: [{ classNames: ['toolkit-detail-container__list'] }],
                 isLocked: true,
                 template: [
                   [Constants.BLOCK_TOOLKIT_DETAIL_HEADER],

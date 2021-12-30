@@ -20,7 +20,7 @@ registerBlockType(Constants.BLOCK_FAQ_QUESTION_CONTAINER, {
       <div {...useBlockProps()}>
         <button
           type="button"
-          class="page-faq__card__toggle"
+          className="page-faq__card__toggle"
           data-lity
           data-lity-target="#dfh-resources-faq"
           data-lity-override-modal-class="modal--open"
@@ -30,37 +30,37 @@ registerBlockType(Constants.BLOCK_FAQ_QUESTION_CONTAINER, {
         </button>
         <div
           id="dfh-resources-faq"
-          class="page-faq__card__content lity-hide modal modal--adaptive"
+          className="page-faq__card__content lity-hide modal modal--adaptive"
         >
-          <div class="modal__title">
-            <h1 class="heading heading--2 heading--bold">
+          <div className="modal__title">
+            <h1 className="heading heading--2 heading--bold">
               Forms & Letters Help
             </h1>
           </div>
-          <div class="modal__content">
-            <ul class="page-faq__questions">
-              <li class="faq-question">
-                <div class="faq-question__question">
-                  <h2 class="text text--large">TODO Question</h2>
+          <div className="modal__content">
+            <ul className="page-faq__questions">
+              <li className="faq-question">
+                <div className="faq-question__question">
+                  <h2 className="text text--large">TODO Question</h2>
                   <button
                     type="button"
-                    class="faq-question__toggle"
+                    className="faq-question__toggle"
                     data-toggle-container-class="faq-question"
                     data-toggle-container-open-class="faq-question--open"
                     data-toggle-open-word="show"
                     data-toggle-close-word="hide"
                   >
-                    <span class="sr-only">TODO Toggle show answer</span>
+                    <span className="sr-only">TODO Toggle show answer</span>
                   </button>
                 </div>
-                <div class="faq-question__answer">TODO Answer</div>
+                <div className="faq-question__answer">TODO Answer</div>
               </li>
             </ul>
           </div>
-          <div class="modal__toggle">
+          <div className="modal__toggle">
             <button
               type="button"
-              class="button button--small button--outline"
+              className="button button--small button--outline"
               data-lity-close
             >
               Close

@@ -1,10 +1,9 @@
-import { __ } from '@wordpress/i18n';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-
-import * as Constants from '../../constants';
-import * as Heading from '../heading';
-import * as Text from '../text';
+import { __ } from '@wordpress/i18n';
+import * as Heading from 'src/js/block/heading';
+import * as Text from 'src/js/block/text';
+import * as Constants from 'src/js/constants';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_LANDING_HEADER, {
@@ -23,7 +22,7 @@ registerBlockType(Constants.BLOCK_LANDING_HEADER, {
               [
                 Constants.BLOCK_INNER_BLOCK_WRAPPER,
                 {
-                  wrapperClassNames: ['margin-b-3'],
+                  wrapper: [{ classNames: ['margin-b-3'] }],
                   isLocked: true,
                   template: [
                     [

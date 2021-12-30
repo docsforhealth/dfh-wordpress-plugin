@@ -30,17 +30,23 @@ registerBlockType(
                 Constants.BLOCK_INNER_BLOCK_WRAPPER,
                 {
                   isLocked: true,
-                  wrapperElements: ['div'],
-                  wrapperClassNames: ['page-faq__card'],
+                  wrapper: [{ classNames: ['page-faq__card'] }],
                   template: [
                     [
                       Constants.BLOCK_INNER_BLOCK_WRAPPER,
                       {
                         isLocked: true,
-                        wrapperElements: ['h1', 'span'],
-                        wrapperClassNames: [
-                          'page-faq__card__title heading heading--2',
-                          'heading__title',
+                        showWrapperInEdit: true,
+                        wrapper: [
+                          {
+                            tagName: 'h1',
+                            classNames: [
+                              'page-faq__card__title',
+                              'heading',
+                              'heading--2',
+                            ],
+                          },
+                          { tagName: 'span', classNames: ['heading__title'] },
                         ],
                         template: [[Constants.BLOCK_PAGE_TITLE]],
                       },
@@ -54,8 +60,7 @@ registerBlockType(
                 Constants.BLOCK_INNER_BLOCK_WRAPPER,
                 {
                   isLocked: true,
-                  wrapperElements: ['div'],
-                  wrapperClassNames: ['page-faq__body'],
+                  wrapper: [{ classNames: ['page-faq__body'] }],
                   template: [
                     [
                       Constants.BLOCK_FAQ_HEADER,

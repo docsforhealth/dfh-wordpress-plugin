@@ -25,9 +25,6 @@ import { withPropTypes } from 'src/js/utils';
  * nested elements to be have a specific value.
  */
 
-// TODO change wrapper prop to put element and class name together
-// TODO evaluate `skipWrapperInEdit` for each usage of this block!
-
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_INNER_BLOCK_WRAPPER, {
   title: __('Inner Block Wrapper', Constants.TEXT_DOMAIN),
@@ -43,9 +40,11 @@ registerBlockType(Constants.BLOCK_INNER_BLOCK_WRAPPER, {
     template: { type: 'array' },
     isLocked: { type: 'boolean', default: false },
     hideInEdit: { type: 'boolean', default: false },
-    skipWrapperInEdit: { type: 'boolean', default: true },
-    wrapperElements: { type: 'array', default: [] },
-    wrapperClassNames: { type: 'array', default: [] },
+    showWrapperInEdit: { type: 'boolean', default: false },
+    // An array of objects that specify how to wrap the children blocks
+    wrapper: { type: 'array', default: [] },
+    // force all children (including nested children) of specific type to have
+    // certain attribute values, see `with-inner-block-attrs` block
     forceAttributes: { type: 'object' },
   },
   edit: withPropTypes(
@@ -54,20 +53,19 @@ registerBlockType(Constants.BLOCK_INNER_BLOCK_WRAPPER, {
       template: PropTypes.arrayOf(PropTypes.array),
       isLocked: PropTypes.bool,
       hideInEdit: PropTypes.bool,
-      skipWrapperInEdit: PropTypes.bool,
-      wrapperElements: PropTypes.arrayOf(PropTypes.string),
-      wrapperClassNames: PropTypes.arrayOf(PropTypes.string),
+      showWrapperInEdit: PropTypes.bool,
+      wrapper: PropTypes.arrayOf(PropTypes.object), // see `recursive-wrapper` block for content item shape
       forceAttributes: PropTypes.objectOf(PropTypes.object),
     },
     ({ clientId, attributes }) => {
       return (
+        // Need to hide via CSS instead of not rendering at all to pass `InnerBlocks` properties
         <WrapOnlyIfHasClass
           className={attributes.hideInEdit ? 'dfh-editor-hide' : ''}
         >
           <RecursiveWrapper
-            skip={attributes.skipWrapperInEdit}
-            elements={attributes.wrapperElements}
-            classNames={attributes.wrapperClassNames}
+            skip={!attributes.showWrapperInEdit}
+            wrapper={attributes.wrapper}
           >
             <WithInnerBlockAttrs
               clientId={clientId}
@@ -90,10 +88,7 @@ registerBlockType(Constants.BLOCK_INNER_BLOCK_WRAPPER, {
   ),
   save({ attributes }) {
     return (
-      <RecursiveWrapper
-        elements={attributes.wrapperElements}
-        classNames={attributes.wrapperClassNames}
-      >
+      <RecursiveWrapper wrapper={attributes.wrapper}>
         <InnerBlocks.Content />
       </RecursiveWrapper>
     );

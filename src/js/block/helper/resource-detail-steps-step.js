@@ -1,9 +1,8 @@
-import { __ } from '@wordpress/i18n';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-
-import * as Constants from '../../constants';
-import * as SharedButton from '../shared/button';
+import { __ } from '@wordpress/i18n';
+import * as SharedButton from 'src/js/block/shared/button';
+import * as Constants from 'src/js/constants';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {
@@ -24,7 +23,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {
             [
               Constants.BLOCK_INNER_BLOCK_WRAPPER,
               {
-                wrapperClassNames: ['resource-steps__step__title'],
+                wrapper: [{ classNames: ['resource-steps__step__title'] }],
                 isLocked: true,
                 template: [
                   [Constants.BLOCK_CONTENT_CONTAINER, { noHeadings: true }],

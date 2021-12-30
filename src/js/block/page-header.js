@@ -33,14 +33,13 @@ registerBlockType(Constants.BLOCK_PAGE_HEADER, {
       headerTemplate.push([
         Constants.BLOCK_INNER_BLOCK_WRAPPER,
         {
-          wrapperElements: ['div', 'h1', 'span'],
-          wrapperClassNames: [
-            'page-header__section',
-            'heading heading--2',
-            'heading__title',
+          wrapper: [
+            { tagName: 'div', classNames: ['page-header__section'] },
+            { tagName: 'h1', classNames: ['heading', 'heading--2'] },
+            { tagName: 'span', classNames: ['heading__title'] },
           ],
           hideInEdit: attributes.hidePageTitleInEdit,
-          skipWrapperInEdit: false, // if showing in edit, need to show full preview
+          showWrapperInEdit: true, // if showing in edit, need to show full preview
           isLocked: true,
           template: [[Constants.BLOCK_PAGE_TITLE]],
         },

@@ -154,7 +154,7 @@ registerBlockType(Constants.BLOCK_HEADING, {
     const TitleTag = `h${attributes[ATTR_LEVEL]}`;
     return (
       <TitleTag className={`heading heading--${attributes[ATTR_LEVEL]}`}>
-        <span id={attributes.customId} class="heading__scroll-anchor" />
+        <span id={attributes.customId} className="heading__scroll-anchor" />
         {attributes[ATTR_SHOW_PRE_TITLE] && (
           <RichText.Content
             tagName="span"

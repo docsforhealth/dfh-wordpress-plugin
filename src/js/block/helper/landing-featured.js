@@ -1,9 +1,8 @@
-import { __ } from '@wordpress/i18n';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-
-import * as Constants from '../../constants';
-import * as Heading from '../heading';
+import { __ } from '@wordpress/i18n';
+import * as Heading from 'src/js/block/heading';
+import * as Constants from 'src/js/constants';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_LANDING_FEATURED, {
@@ -22,7 +21,7 @@ registerBlockType(Constants.BLOCK_LANDING_FEATURED, {
               [
                 Constants.BLOCK_INNER_BLOCK_WRAPPER,
                 {
-                  wrapperClassNames: ['margin-b-2'],
+                  wrapper: [{ classNames: ['margin-b-2'] }],
                   isLocked: true,
                   allowedBlocks: [Constants.BLOCK_CONTENT_CONTAINER],
                   template: [

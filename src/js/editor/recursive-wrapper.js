@@ -1,4 +1,3 @@
-import { Fragment } from '@wordpress/element';
 import PropTypes from 'prop-types';
 
 /**
@@ -11,35 +10,26 @@ import PropTypes from 'prop-types';
  * length or else this component will throw an error
  */
 
-export default function RecursiveWrapper({
-  skip,
-  elements,
-  classNames,
-  children,
-}) {
-  if (elements.length !== classNames.length) {
-    throw new Error(
-      'Wrapper elements and wrapper class names must be arrays of the same length',
-    );
-  }
-  if (elements.length === 0 || skip) {
+export default function RecursiveWrapper({ skip, wrapper, children }) {
+  if (skip || wrapper.length === 0) {
     return children;
   } else {
-    const Wrapper = elements[0] ? elements[0] : Fragment;
+    const WrapperElement = wrapper[0]?.tagName ?? 'div';
     return (
-      <Wrapper className={classNames[0]}>
-        <RecursiveWrapper
-          elements={elements.slice(1)}
-          classNames={classNames.slice(1)}
-        >
+      <WrapperElement className={wrapper[0]?.classNames?.join(' ')}>
+        <RecursiveWrapper wrapper={wrapper.slice(1)}>
           {children}
         </RecursiveWrapper>
-      </Wrapper>
+      </WrapperElement>
     );
   }
 }
 RecursiveWrapper.propTypes = {
   skip: PropTypes.bool,
-  elements: PropTypes.arrayOf(PropTypes.string).isRequired,
-  classNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+  wrapper: PropTypes.arrayOf(
+    PropTypes.shape({
+      tagName: PropTypes.string, // defaults to 'div' if not given
+      classNames: PropTypes.arrayOf(PropTypes.string),
+    }),
+  ),
 };

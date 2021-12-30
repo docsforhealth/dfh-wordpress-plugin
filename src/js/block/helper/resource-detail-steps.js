@@ -1,10 +1,9 @@
-import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-
-import * as Constants from '../../constants';
-import * as Heading from '../heading';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import * as Heading from 'src/js/block/heading';
+import * as Constants from 'src/js/constants';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
@@ -35,8 +34,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
             [
               Constants.BLOCK_INNER_BLOCK_WRAPPER,
               {
-                wrapperElements: ['ol'],
-                wrapperClassNames: ['resource-steps'],
+                wrapper: [{ tagName: 'ol', classNames: ['resource-steps'] }],
                 allowedBlocks: [Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP],
                 template: [[Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP]],
               },
