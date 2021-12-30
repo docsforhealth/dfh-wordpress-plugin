@@ -24,7 +24,7 @@ import 'src/js/block/helper/content-container';
 import 'src/js/block/helper/file-button';
 import 'src/js/block/helper/inner-block-wrapper';
 import 'src/js/block/helper/link-button';
-import 'src/js/block/helper/search-input'; // TODO clear search button
+import 'src/js/block/helper/search-input';
 import 'src/js/block/helper/ajax-load-more'; // TODO icon, plugins, pass additional args into repeater templates for page-faq-header vs resource-previews???
 
 /**

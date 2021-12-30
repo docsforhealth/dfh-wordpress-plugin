@@ -1,14 +1,13 @@
-import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-
-import * as Constants from '../../constants';
-import * as Heading from '../heading';
-import * as Text from '../text';
-import ImagePicker from '../../editor/image-picker';
-import placeholderImage from '../../../../assets/images/placeholder-headshot.png';
-import PopupPicker from '../../editor/popup-picker';
+import { Fragment } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import placeholderImage from 'assets/images/placeholder-headshot.png';
+import * as Heading from 'src/js/block/heading';
+import * as Text from 'src/js/block/text';
+import * as Constants from 'src/js/constants';
+import ImagePicker from 'src/js/editor/image-picker';
+import PopupPicker from 'src/js/editor/popup-picker';
 
 const title = __('Landing Video', Constants.TEXT_DOMAIN);
 

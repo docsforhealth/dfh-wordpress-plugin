@@ -15,6 +15,11 @@
 
     &__form {
         flex-grow: 0.5;
+
+        // so that clear button aligns with the rightmost edge of input
+        &.form__clear-control .form__clear-control__clear:last-child {
+            right: 0;
+        }
     }
     &__metadata {
         @extend .text;

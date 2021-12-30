@@ -25,18 +25,10 @@ registerBlockType(Constants.BLOCK_PAGE_CATEGORIES_SEARCH_HEADER, {
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={[
             [
-              Constants.BLOCK_INNER_BLOCK_WRAPPER,
+              Constants.BLOCK_SEARCH_INPUT,
               {
-                wrapper: [
-                  { classNames: ['form', 'form--inline', 'page-header__form'] },
-                ],
-                isLocked: true,
-                template: [
-                  [
-                    Constants.BLOCK_SEARCH_INPUT,
-                    { className: attributes.searchClassName },
-                  ],
-                ],
+                wrapperClassName: 'form form--inline page-header__form',
+                inputClassName: attributes.searchClassName,
               },
             ],
           ]}
@@ -48,9 +40,9 @@ registerBlockType(Constants.BLOCK_PAGE_CATEGORIES_SEARCH_HEADER, {
     return (
       <div {...useBlockProps.save({ className: attributes.className })}>
         {attributes.updateLabelClassName && (
-          <p
+          <span
             className={`page-header__metadata ${attributes.updateLabelClassName}`}
-          ></p>
+          ></span>
         )}
         <InnerBlocks.Content />
       </div>

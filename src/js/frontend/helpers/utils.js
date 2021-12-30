@@ -6,7 +6,11 @@ export function classSelector(...classNames) {
   if (currentClassNames.length === 0) {
     return '';
   } else if (currentClassNames.length === 1) {
-    // handle case of multiple space-separated classes within one entry  here
+    // if the only item is null or undefined
+    if (!currentClassNames[0]) {
+      return '';
+    }
+    // handle case of multiple space-separated classes within one entry here
     const splitClassNames = trySplitClassNames(currentClassNames[0]);
     // if still one item after trying to split, then is indeed one class, return base condition
     if (splitClassNames.length === 1) {

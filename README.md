@@ -15,5 +15,3 @@
 | `src/frontend.js` | JS functionality that should be available in the public-facing website |
 | `src/style.scss` | Styling that is applied to both the editor and the public-facing  website |
 | `src/editor.scss` | Additional styling that is applied to the editor environment, `src/style.scss` styles are still applied |
-
-## New version for GitHub Updater plugin
