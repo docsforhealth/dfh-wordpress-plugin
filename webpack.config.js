@@ -9,6 +9,7 @@ module.exports = merge(defaultConfig, {
     alias: {
       assets: path.resolve(process.cwd(), 'assets'),
       src: path.resolve(process.cwd(), 'src'),
+      tests: path.resolve(process.cwd(), 'tests'),
     },
   },
   entry: {

@@ -1,10 +1,9 @@
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
-import PropTypes from 'prop-types';
 import * as Constants from 'src/js/constants';
 import WithInnerBlockAttrs from 'src/js/editor/with-inner-block-attrs';
-import { filterInnerBlockTemplate, withPropTypes } from 'src/js/utils';
+import { filterInnerBlockTemplate } from 'src/js/utils';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
@@ -21,39 +20,31 @@ registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
     expandWidth: { type: 'boolean', default: false },
     forceAttributes: { type: 'object' },
   },
-  edit: withPropTypes(
-    {
-      template: PropTypes.arrayOf(PropTypes.array),
-      isLocked: PropTypes.bool,
-      expandWidth: PropTypes.bool,
-      forceAttributes: PropTypes.objectOf(PropTypes.object),
-    },
-    ({ attributes, clientId }) => {
-      const allowedBlockNames = [
-        Constants.BLOCK_LINK_BUTTON,
-        Constants.BLOCK_FILE_BUTTON,
-      ];
-      return (
-        <WithInnerBlockAttrs
-          clientId={clientId}
-          innerBlockAttrs={attributes.forceAttributes}
-        >
-          <InnerBlocks
-            allowedBlocks={allowedBlockNames}
-            template={filterInnerBlockTemplate(
-              allowedBlockNames,
-              attributes.template,
-            )}
-            templateLock={
-              attributes.isLocked
-                ? Constants.INNER_BLOCKS_LOCKED
-                : Constants.INNER_BLOCKS_UNLOCKED
-            }
-          />
-        </WithInnerBlockAttrs>
-      );
-    },
-  ),
+  edit({ attributes, clientId }) {
+    const allowedBlockNames = [
+      Constants.BLOCK_LINK_BUTTON,
+      Constants.BLOCK_FILE_BUTTON,
+    ];
+    return (
+      <WithInnerBlockAttrs
+        clientId={clientId}
+        innerBlockAttrs={attributes.forceAttributes}
+      >
+        <InnerBlocks
+          allowedBlocks={allowedBlockNames}
+          template={filterInnerBlockTemplate(
+            allowedBlockNames,
+            attributes.template,
+          )}
+          templateLock={
+            attributes.isLocked
+              ? Constants.INNER_BLOCKS_LOCKED
+              : Constants.INNER_BLOCKS_UNLOCKED
+          }
+        />
+      </WithInnerBlockAttrs>
+    );
+  },
   save({ attributes }) {
     return (
       <div className={`button-container ${buildClassName(attributes)}`}>

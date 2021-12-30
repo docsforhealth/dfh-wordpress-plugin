@@ -1,6 +1,5 @@
 import { Children, Component } from '@wordpress/element';
 import _ from 'lodash';
-import PropTypes from 'prop-types';
 import * as Constants from 'src/js/constants';
 import getThumbnail from 'thumbnail-youtube-vimeo';
 
@@ -51,16 +50,6 @@ export const fetchVideoThumbnail = _.memoize(function (videoUrl) {
   // see https://stackoverflow.com/a/18978874
   return getThumbnail(videoUrl, { ytimg: 'mqdefault' });
 });
-
-// Note that `SCRIPT_DEBUG` in `wp-config.php` needs to be set to `true` in order for
-// non-production script assets to be loaded. PropType checks only happen in React development builds
-// see https://wordpress.org/support/article/debugging-in-wordpress/#script_debug
-export function withPropTypes(propTypes, wpComponent) {
-  wpComponent.propTypes = {
-    attributes: PropTypes.shape(propTypes),
-  };
-  return wpComponent;
-}
 
 /**
  * Ensures that the passed in `template` only includes blocks specified in `allowedBlockNames`

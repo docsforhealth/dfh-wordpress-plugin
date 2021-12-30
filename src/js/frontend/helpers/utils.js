@@ -30,7 +30,7 @@ export function classSelector(...classNames) {
 }
 
 export function idSelector(id) {
-  return id ? `#${id}` : '';
+  return _.isString(id) ? `#${id}` : '';
 }
 
 // Helpers

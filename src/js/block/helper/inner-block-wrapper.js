@@ -1,12 +1,10 @@
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
-import PropTypes from 'prop-types';
 import * as Constants from 'src/js/constants';
 import RecursiveWrapper from 'src/js/editor/recursive-wrapper';
 import WithInnerBlockAttrs from 'src/js/editor/with-inner-block-attrs';
 import WrapOnlyIfHasClass from 'src/js/editor/wrap-only-if-has-class';
-import { withPropTypes } from 'src/js/utils';
 
 /**
  * PURPOSE OF THIS HELPER BLOCK
@@ -42,50 +40,40 @@ registerBlockType(Constants.BLOCK_INNER_BLOCK_WRAPPER, {
     hideInEdit: { type: 'boolean', default: false },
     showWrapperInEdit: { type: 'boolean', default: false },
     // An array of objects that specify how to wrap the children blocks
+    // see `recursive-wrapper` block for content item shape
     wrapper: { type: 'array', default: [] },
     // force all children (including nested children) of specific type to have
     // certain attribute values, see `with-inner-block-attrs` block
     forceAttributes: { type: 'object' },
   },
-  edit: withPropTypes(
-    {
-      allowedBlocks: PropTypes.arrayOf(PropTypes.string),
-      template: PropTypes.arrayOf(PropTypes.array),
-      isLocked: PropTypes.bool,
-      hideInEdit: PropTypes.bool,
-      showWrapperInEdit: PropTypes.bool,
-      wrapper: PropTypes.arrayOf(PropTypes.object), // see `recursive-wrapper` block for content item shape
-      forceAttributes: PropTypes.objectOf(PropTypes.object),
-    },
-    ({ clientId, attributes }) => {
-      return (
-        // Need to hide via CSS instead of not rendering at all to pass `InnerBlocks` properties
-        <WrapOnlyIfHasClass
-          className={attributes.hideInEdit ? 'dfh-editor-hide' : ''}
+  edit({ clientId, attributes }) {
+    return (
+      // Need to hide via CSS instead of not rendering at all to pass `InnerBlocks` properties
+      <WrapOnlyIfHasClass
+        className={attributes.hideInEdit ? 'dfh-editor-hide' : ''}
+      >
+        <RecursiveWrapper
+          skip={!attributes.showWrapperInEdit}
+          wrapper={attributes.wrapper}
         >
-          <RecursiveWrapper
-            skip={!attributes.showWrapperInEdit}
-            wrapper={attributes.wrapper}
+          <WithInnerBlockAttrs
+            clientId={clientId}
+            innerBlockAttrs={attributes.forceAttributes}
           >
-            <WithInnerBlockAttrs
-              clientId={clientId}
-              innerBlockAttrs={attributes.forceAttributes}
-            >
-              <InnerBlocks
-                allowedBlocks={attributes.allowedBlocks}
-                template={attributes.template}
-                templateLock={
-                  attributes.isLocked
-                    ? Constants.INNER_BLOCKS_LOCKED
-                    : Constants.INNER_BLOCKS_UNLOCKED
-                }
-              />
-            </WithInnerBlockAttrs>
-          </RecursiveWrapper>
-        </WrapOnlyIfHasClass>
-      );
-    },
-  ),
+            <InnerBlocks
+              allowedBlocks={attributes.allowedBlocks}
+              template={attributes.template}
+              templateLock={
+                attributes.isLocked
+                  ? Constants.INNER_BLOCKS_LOCKED
+                  : Constants.INNER_BLOCKS_UNLOCKED
+              }
+            />
+          </WithInnerBlockAttrs>
+        </RecursiveWrapper>
+      </WrapOnlyIfHasClass>
+    );
+  },
   save({ attributes }) {
     return (
       <RecursiveWrapper wrapper={attributes.wrapper}>

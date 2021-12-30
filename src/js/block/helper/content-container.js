@@ -1,10 +1,9 @@
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
-import PropTypes from 'prop-types';
 import * as Constants from 'src/js/constants';
 import WithInnerBlockAttrs from 'src/js/editor/with-inner-block-attrs';
-import { filterInnerBlockTemplate, withPropTypes } from 'src/js/utils';
+import { filterInnerBlockTemplate } from 'src/js/utils';
 
 /**
  * PURPOSE OF THIS HELPER BLOCK
@@ -34,64 +33,55 @@ registerBlockType(Constants.BLOCK_CONTENT_CONTAINER, {
       default: [[Constants.BLOCK_HEADING], [Constants.BLOCK_TEXT]],
     },
     isLocked: { type: 'boolean', default: false },
+    // If `true` then users will not be able to insert in Heading blocks and can only insert
+    // text and media.
     noHeadings: { type: 'boolean', default: false },
     forceAttributes: { type: 'object' },
   },
-  edit: withPropTypes(
-    {
-      title: PropTypes.string,
-      template: PropTypes.arrayOf(PropTypes.array),
-      isLocked: PropTypes.bool,
-      forceAttributes: PropTypes.objectOf(PropTypes.object),
-      // If `true` then users will not be able to insert in Heading blocks and can only insert
-      // text and media.
-      noHeadings: PropTypes.bool,
-    },
-    ({ attributes, clientId }) => {
-      const alwaysAllowed = [
-        Constants.BLOCK_TEXT,
-        Constants.BLOCK_VIDEO_THUMBNAIL,
-        Constants.CORE_BLOCK_LIST,
-        Constants.CORE_BLOCK_SEPARATOR,
-        Constants.CORE_BLOCK_SPACER,
-        // NOTE Wordpress 5.2 bug prevents core/video block from working if isLocked
-        // see https://github.com/WordPress/gutenberg/issues/19311#issue-541875999
-        Constants.CORE_BLOCK_VIDEO,
-        Constants.CORE_BLOCK_AUDIO,
-        Constants.CORE_BLOCK_GALLERY,
-        Constants.CORE_BLOCK_IMAGE,
-        // NOTE core media blocks will transform into core embed block after processing
-        ...Constants.CORE_EMBED_BLOCKS,
-      ];
-      const allowedBlockNames = attributes.noHeadings
-        ? alwaysAllowed
-        : [...alwaysAllowed, Constants.BLOCK_HEADING];
-      return (
-        <WithInnerBlockAttrs
-          clientId={clientId}
-          innerBlockAttrs={attributes.forceAttributes}
-        >
-          {attributes.title && (
-            <div className="dfh-editor-block-title dfh-editor-block-title--nested">
-              {attributes.title}
-            </div>
+  edit({ attributes, clientId }) {
+    const alwaysAllowed = [
+      Constants.BLOCK_TEXT,
+      Constants.BLOCK_VIDEO_THUMBNAIL,
+      Constants.CORE_BLOCK_LIST,
+      Constants.CORE_BLOCK_SEPARATOR,
+      Constants.CORE_BLOCK_SPACER,
+      // NOTE Wordpress 5.2 bug prevents core/video block from working if isLocked
+      // see https://github.com/WordPress/gutenberg/issues/19311#issue-541875999
+      Constants.CORE_BLOCK_VIDEO,
+      Constants.CORE_BLOCK_AUDIO,
+      Constants.CORE_BLOCK_GALLERY,
+      Constants.CORE_BLOCK_IMAGE,
+      // NOTE core media blocks will transform into core embed block after processing
+      ...Constants.CORE_EMBED_BLOCKS,
+    ];
+    const allowedBlockNames = attributes.noHeadings
+      ? alwaysAllowed
+      : [...alwaysAllowed, Constants.BLOCK_HEADING];
+    return (
+      <WithInnerBlockAttrs
+        clientId={clientId}
+        innerBlockAttrs={attributes.forceAttributes}
+      >
+        {attributes.title && (
+          <div className="dfh-editor-block-title dfh-editor-block-title--nested">
+            {attributes.title}
+          </div>
+        )}
+        <InnerBlocks
+          allowedBlocks={allowedBlockNames}
+          template={filterInnerBlockTemplate(
+            allowedBlockNames,
+            attributes.template,
           )}
-          <InnerBlocks
-            allowedBlocks={allowedBlockNames}
-            template={filterInnerBlockTemplate(
-              allowedBlockNames,
-              attributes.template,
-            )}
-            templateLock={
-              attributes.isLocked
-                ? Constants.INNER_BLOCKS_LOCKED
-                : Constants.INNER_BLOCKS_UNLOCKED
-            }
-          />
-        </WithInnerBlockAttrs>
-      );
-    },
-  ),
+          templateLock={
+            attributes.isLocked
+              ? Constants.INNER_BLOCKS_LOCKED
+              : Constants.INNER_BLOCKS_UNLOCKED
+          }
+        />
+      </WithInnerBlockAttrs>
+    );
+  },
   save() {
     return <InnerBlocks.Content />;
   },
