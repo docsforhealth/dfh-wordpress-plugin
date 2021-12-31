@@ -38,7 +38,8 @@ $path-base-styles: 'src/scss/base';
 // ---------
 
 // Override specific third party libraries or WP plugins
-@import 'override/ajax-load-more';
+@import 'override/default/ajax-load-more'; // default AjaxLoadMore styles
+@import 'override/ajax-load-more'; // our specific overrides, import after to ensure higher priority
 @import 'override/contact-form-7';
 @import 'override/core-blocks';
 @import 'override/google-analytics';

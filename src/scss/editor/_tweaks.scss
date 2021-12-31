@@ -9,10 +9,16 @@
 }
 
 // Only controls displayed inline in editor, not in Inspector
-[data-block] .components-base-control {
+[data-block] .components-base-control,
+[data-block] .components-number-control,
+[data-block] .components-input-control {
     margin-bottom: $baseunit;
     padding-bottom: $baseunit;
     border-bottom: 1px solid $color-seafoam-dark-1;
+
+    label {
+        @extend %default-text;
+    }
 }
 
 // Default stylesheet has `height: 100%` which causes editor to only span viewport height

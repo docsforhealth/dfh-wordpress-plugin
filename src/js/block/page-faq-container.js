@@ -69,7 +69,7 @@ registerBlockType(
                     [
                       Constants.BLOCK_AJAX_LOAD_MORE,
                       {
-                        contentTypeId: '', // TODO content type selector
+                        contentTypeId: '', // TODO content type selector IN THIS ELEMENT?
                         transitionContainerClass: 'page-faq__content',
                         numResultsPerPage: 6,
                         searchClassName,

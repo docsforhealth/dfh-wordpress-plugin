@@ -1,0 +1,126 @@
+.toolkit-previews {
+    @extend .container;
+
+    // multiple Ajax Load More elements will insert multiple .container elements
+    &:first-of-type {
+        margin-top: $baseunit * 2;
+    }
+
+    &__preview {
+        display: flex;
+        flex-direction: column;
+        margin-top: $baseunit;
+        padding-bottom: $baseunit;
+        border-bottom: 1px solid $color-seafoam-dark-2;
+
+        &:last-of-type {
+            padding-bottom: 0;
+            border-bottom-width: 0;
+        }
+
+        &__info {
+            margin-bottom: $baseunit;
+        }
+        &__header {
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            margin-bottom: $baseunit * 0.5;
+
+            &__title,
+            &__metadata {
+                flex-grow: 1;
+                min-width: 0;
+            }
+            &__title {
+                @include scut-truncate;
+            }
+            &__metadata {
+                @include scut-list-unstyled;
+
+                width: 100%;
+                white-space: nowrap;
+                overflow-x: scroll;
+                overflow-y: hidden;
+            }
+        }
+        & &__video {
+            position: relative;
+            background-color: $color-seafoam;
+            text-align: center;
+
+            &__thumbnail {
+                margin: 0;
+                width: auto;
+                max-width: none;
+            }
+            &__image {
+                height: 100%;
+                width: 100%;
+                max-height: 50vh;
+                border-width: 0;
+                border-radius: 0;
+            }
+        }
+
+        @media (min-width: $media-width-landscape-medium-mobile) {
+            position: relative;
+            flex-direction: row;
+            left: $unit-horizontal-overhang-small * -1;
+            width: calc(100% + #{$unit-horizontal-overhang-small * 2});
+            padding-bottom: 0;
+            border: 1px solid $color-seafoam-dark-2;
+            border-radius: $border-radius;
+            overflow: hidden;
+
+            &:not(:first-of-type) {
+                margin-top: 0;
+                border-top-width: 0;
+            }
+            &:last-of-type {
+                border-bottom-width: 1px;
+            }
+
+            &__info {
+                flex-grow: 1;
+                min-width: 0;
+                padding: $baseunit $unit-horizontal-overhang-small;
+                margin-bottom: 0;
+            }
+            &__video {
+                flex-shrink: 0;
+                width: 30%;
+            }
+            &__header {
+                flex-direction: row;
+                margin-bottom: 0;
+
+                &__title,
+                &__metadata {
+                    flex-grow: 0;
+                }
+                &__metadata {
+                    // `inline-flex` for proper baseline alignment
+                    // see: https://www.kizu.ru/flex-baseline/;
+                    display: inline-flex;
+                    width: auto;
+                    margin-left: $baseunit;
+                }
+            }
+        }
+        @media (min-width: $media-width-tablet) {
+            &:not(:first-of-type) {
+                margin-top: $baseunit;
+                border-top-width: 1px;
+            }
+        }
+        @media (min-width: $media-width-laptop) {
+            left: $unit-horizontal-overhang * -1;
+            width: calc(100% + #{$unit-horizontal-overhang * 2});
+
+            &__info {
+                padding: $baseunit $unit-horizontal-overhang;
+            }
+        }
+    }
+}

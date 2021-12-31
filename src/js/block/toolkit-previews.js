@@ -60,7 +60,7 @@ registerBlockType(
                 Constants.BLOCK_AJAX_LOAD_MORE,
                 {
                   contentTypeId: Constants.CONTENT_TYPE_TOOLKIT,
-                  transitionContainerClass: 'container',
+                  transitionContainerClass: 'toolkit-previews',
                   numResultsPerPage: 8,
                   searchClassName,
                 },
