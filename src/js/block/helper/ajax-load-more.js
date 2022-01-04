@@ -31,6 +31,9 @@ registerBlockType(Constants.BLOCK_AJAX_LOAD_MORE, {
     containerElement: { type: 'string', default: 'div' },
     transitionContainerClass: { type: 'string', default: '' },
     numResultsPerPage: { type: 'number', default: 12 },
+    // TODO replace all below with pluralName: { type, 'string' }, OR self-lookup to core data
+
+
     // This input is escaped in the `save` method to prevent injection attacks
     noResultsMessage: {
       type: 'string',
@@ -50,13 +53,16 @@ registerBlockType(Constants.BLOCK_AJAX_LOAD_MORE, {
     },
     buttonDoneLabel: {
       type: 'string',
-      default: __('Loaded all', Constants.TEXT_DOMAIN),
+      default: __('Finished loading', Constants.TEXT_DOMAIN),
     },
+
+
     // frontend JS functionality
     searchClassName: { type: 'string', default: '' },
     taxonomyFilterHtmlId: { type: 'string', default: '' },
   },
   edit({ attributes, setAttributes }) {
+
     // TODO If we select content type here, is there a way to pass this data up to parent?
     return (
       <div {...useBlockProps()}>
@@ -70,7 +76,7 @@ registerBlockType(Constants.BLOCK_AJAX_LOAD_MORE, {
           min={1}
           max={999}
         />
-        <TextControl
+        {/*<TextControl
           label={__('Button load more label', Constants.TEXT_DOMAIN)}
           value={attributes.buttonLabel}
           onChange={(buttonLabel) => setAttributes({ buttonLabel })}
@@ -91,11 +97,15 @@ registerBlockType(Constants.BLOCK_AJAX_LOAD_MORE, {
           label={__('No results message', Constants.TEXT_DOMAIN)}
           value={attributes.noResultsMessage}
           onChange={(noResultsMessage) => setAttributes({ noResultsMessage })}
-        />
+        />*/}
       </div>
     );
   },
   save({ attributes }) {
+    // TODO if we change the contentTypeId from above which may change the generated saved content,
+    // does that invalidate this block?
+
+
     return (
       <>
         {/* Starting point for the setup-ajaxloadmore-filter-search.js frontend script */}

@@ -1,28 +1,4 @@
-import { INNER_BLOCKS_FORCE_ATTRS_ALL } from 'src/js/constants';
-import { addUniqueIdInApiVersionOne, handleForceAllAttrs } from 'src/js/utils';
-
-describe('handleForceAllAttrs', () => {
-  test('calling without arguments', () => {
-    expect(handleForceAllAttrs()).toBeUndefined();
-  });
-
-  test('returns object if no `INNER_BLOCKS_FORCE_ATTRS_ALL` key', () => {
-    const obj = jest.fn();
-    expect(handleForceAllAttrs(obj)).toBe(obj);
-  });
-
-  test('copies `INNER_BLOCKS_FORCE_ATTRS_ALL` to all others then removes it', () => {
-    const obj = {
-      hello: { a: 'b' },
-      [INNER_BLOCKS_FORCE_ATTRS_ALL]: { c: 'd' },
-      world: { e: 'f' },
-    };
-    expect(handleForceAllAttrs(obj)).toEqual({
-      hello: { a: 'b', c: 'd' },
-      world: { e: 'f', c: 'd' },
-    });
-  });
-});
+import { addUniqueIdInApiVersionOne } from 'src/js/utils';
 
 describe('addUniqueIdInApiVersionOne', () => {
   const idAttrName = 'uniqueId';

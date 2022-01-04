@@ -126,7 +126,8 @@
         }
     }
     @media (min-width: $media-width-large-desktop) {
-        &__list {
+        // DEPRECATED
+        &--deprecated &__list {
             grid-template-columns: repeat(6, minmax(0, 1fr));
         }
     }

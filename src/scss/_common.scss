@@ -21,8 +21,6 @@
 // Base styles
 // -----------
 
-$path-base-styles: 'src/scss/base';
-
 // NOT ACTUALLY USED FOR STYLING, styles in corresponding theme are used instead as these have the
 // proper priority to override the WP defaults. Instead these files are imported here to allow
 // the frontend to be able to extend or include the necessary SCSS

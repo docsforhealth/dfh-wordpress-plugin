@@ -21,6 +21,10 @@ import WrapOnlyIfHasClass from 'src/js/editor/wrap-only-if-has-class';
  * This block also surfaces functionality from InnerBlocks and extends this functionality by
  * providing the ability to hide the InnerBlocks content in the editor and force attributes of specific
  * nested elements to be have a specific value.
+ *
+ * NOTE: Setting any values on any `InnerBlock`s related block only sets INITIAL VALUES
+ * If you want to pass down subsequent value updates, you need to use the `WithInnerBlockAttrs`
+ * helper block directly. See https://github.com/WordPress/gutenberg/issues/15759
  */
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/

@@ -6,11 +6,13 @@
 // this PHP file as default values in the JS file are NOT actually set and persisted to the database
 // see: https://awhitepixel.com/blog/wordpress-gutenberg-create-custom-block-part-9-dynamic-blocks-php-render/
 
+// NOTE: unknown bug in WP 5.8.2 so that $block->context is always empty despite the JS edit component
+// being able to successfully access the context object
+
 register_block_type('dfh/page-taxonomy-filter', array(
     'api_version' => 2,
     'render_callback' => 'dfh_dynamic_render_page_taxonomy_filter',
     'attributes'      => array(
-        'taxonomyId'           => array('type' => 'string', 'default' => DFH_TAXONOMY_RESOURCE),
         'maxNumToShow'         => array('type' => 'number', 'default' => 9),
         'className'            => array('type' => 'string', 'default' => 'page-taxonomy'),
         'openClassName'        => array('type' => 'string', 'default' => 'page-taxonomy--open'),
@@ -22,6 +24,13 @@ register_block_type('dfh/page-taxonomy-filter', array(
         'updateLabelClassName' => array('type' => 'string', 'default' => ''),
         // id for this taxonomy filter element, for the `ajax-load-more` block to identify this one
         'htmlId'               => array('type' => 'string', 'default' => ''),
+        // user selects a `taxonomyId` from one of the available taxonomies obtained THROUGH CONTEXT
+        //      with key `CONTEXT_CONTENT_TYPE_INFO`
+        // NOTE that if no available taxonomies still may have a selected taxonomyId because we
+        // cannot update state from within the `edit` hook
+        'taxonomyId'           => array('type' => 'string', 'default' => ''),
+        // if passing context, need to explicitly instruct block to use context
+        'shouldUseContext'     => array('type' => 'boolean', 'default' => false),
     ),
 ));
 
@@ -29,12 +38,23 @@ function dfh_dynamic_render_page_taxonomy_filter($attributes) {
     $tax_id = $attributes['taxonomyId'];
     $item_class = $attributes['itemClassName'];
     $active_class = $attributes['activeItemClassName'];
-
+    // If no taxonomyId, then do not show filter
+    // NOTE: should technically be using $block->context as described in https://developer.wordpress.org/block-editor/reference-guides/block-api/block-context/#php
+    // but the block context is never populated in PHP in WordPress WordPress 5.8.2. Therefore, the workaround
+    // is to use `useEffect` in the JS edit component to clear the taxonomy id when no
+    // available taxonomies are present
+    if ($tax_id == '') {
+        return;
+    }
+    // if should display taxonomy filter, then get taxonomy terms
     $terms = get_terms(array(
         'taxonomy'   => $tax_id,
         'hide_empty' => false,
         'number'     => $attributes['maxNumToShow'],
     ));
+    if (empty($terms)) {
+        return;
+    }
     $taxonomy = get_taxonomy($tax_id);
     // data attributes used to support the frontend script in `frontend.js`
     // Names are for building the message about currently-selected categories

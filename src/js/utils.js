@@ -3,42 +3,6 @@ import _ from 'lodash';
 import * as Constants from 'src/js/constants';
 import getThumbnail from 'thumbnail-youtube-vimeo';
 
-/**
- * Helper function for the `innerBlockAttrs` attribute of the `WithInnerBlockAttrs` helper block,
- * which expects an object of nested objects that is used to force all specific attributes of
- * nested blocks of a certain type to have a specific value. Main purpose of this function is to
- * copy attributes specified in the special key `INNER_BLOCKS_FORCE_ATTRS_ALL` to all blocks.
- *
- * @param  {Object} forceAttrsObj     Object of registered block name to nested attribute key/name objects.
- *                                    This object can contain a special key `INNER_BLOCKS_FORCE_ATTRS_ALL`
- *                                    which maps onto a nested object of attribute names/values
- *                                    that you want to be copied to all block names. This allows for
- *                                    specifying attributes to force without having to manually
- *                                    repeat the specification for all blocks in the object.
- * @return {Object}                   Object with the same structure as the original passed-in `forceAttrsObj`
- *                                    with `INNER_BLOCKS_FORCE_ATTRS_ALL` copied over
- */
-export function handleForceAllAttrs(forceAttrsObj) {
-  // if no `forceAttrsObj` is specific OR no special apply-all key `INNER_BLOCKS_FORCE_ATTRS_ALL`
-  // is specified, then we do not need to any processing in this function and can just return
-  if (
-    !forceAttrsObj ||
-    !forceAttrsObj[Constants.INNER_BLOCKS_FORCE_ATTRS_ALL]
-  ) {
-    return forceAttrsObj;
-  }
-  const allAttrs = forceAttrsObj[Constants.INNER_BLOCKS_FORCE_ATTRS_ALL],
-    newAttrsObj = {};
-  // recreate the attrs object by `INNER_BLOCKS_FORCE_ATTRS_ALL` to all other keys then excluding
-  // the INNER_BLOCKS_FORCE_ATTRS_ALL key
-  Object.keys(forceAttrsObj).forEach((blockName) => {
-    if (blockName !== Constants.INNER_BLOCKS_FORCE_ATTRS_ALL) {
-      newAttrsObj[blockName] = _.assign({}, allAttrs, forceAttrsObj[blockName]);
-    }
-  });
-  return newAttrsObj;
-}
-
 export function hasChildOfComponentType(children, type) {
   return Children.toArray(children).some((child) => child.type === type);
 }
@@ -120,9 +84,16 @@ export function addUniqueIdInApiVersionOne(idAttrName, blockInfo) {
       super(props);
     }
     render() {
-      return _.isFunction(blockInfo.edit)
-        ? blockInfo.edit?.call(undefined, this.props)
-        : null;
+      // if `edit` property is function, then might be a function OR a class React component
+      if (_.isFunction(blockInfo.edit)) {
+        // TIP: if you want to distinguish between React functional vs class components,
+        // you can use `!!blockInfo.edit.prototype?.isReactComponent` for React class components
+        // see https://overreacted.io/how-does-react-tell-a-class-from-a-function/
+        const EditComponent = blockInfo.edit;
+        return <EditComponent {...this.props} />;
+      } else {
+        return null;
+      }
     }
   };
   return newBlockInfo;
