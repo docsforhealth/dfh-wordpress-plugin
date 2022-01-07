@@ -5,6 +5,8 @@ import { withSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 import _ from 'lodash';
 import * as PageTaxonomyFilter from 'src/js/block/dynamic/helper/page-taxonomy-filter';
+import * as AjaxLoadMore from 'src/js/block/helper/ajax-load-more';
+import * as SearchInput from 'src/js/block/helper/search-input';
 import * as Constants from 'src/js/constants';
 import { addUniqueIdInApiVersionOne } from 'src/js/utils';
 
@@ -18,7 +20,11 @@ import { addUniqueIdInApiVersionOne } from 'src/js/utils';
 //    calls to WP Data in components to use Contexts
 
 const ATTR_UNIQUE_ID = '_uniqueId',
-  ATTR_CONTENT_TYPE_INFO = 'contentTypeInfo',
+  ATTR_CONTENT_ID = 'contentTypeId',
+  ATTR_CONTENT_INFO = 'contentTypeInfo',
+  ATTR_PLURAL_NAME = 'pluralName',
+  ATTR_CONTENT_CONTAINER_CLASS = 'contentContainerClass',
+  ATTR_SEARCH_PLACEHOLDER = 'searchPlaceholder',
   INITIAL_VAL_CONTENT_TYPE_ID = '',
   title = __('Page FAQ Container', Constants.TEXT_DOMAIN);
 
@@ -33,8 +39,16 @@ registerBlockType(
       Constants.TEXT_DOMAIN,
     ),
     attributes: {
-      contentTypeId: { type: 'string', default: INITIAL_VAL_CONTENT_TYPE_ID },
-      [ATTR_CONTENT_TYPE_INFO]: { type: 'object', default: null },
+      [ATTR_CONTENT_ID]: {
+        ...AjaxLoadMore.CONTEXT_CONTENT_ID_DEFINITION,
+        default: INITIAL_VAL_CONTENT_TYPE_ID,
+      },
+      [ATTR_CONTENT_INFO]:
+        PageTaxonomyFilter.CONTEXT_CONTENT_TYPE_INFO_DEFINITION,
+      [ATTR_CONTENT_CONTAINER_CLASS]:
+        AjaxLoadMore.CONTEXT_CONTAINER_CLASS_DEFINITION,
+      [ATTR_PLURAL_NAME]: AjaxLoadMore.CONTEXT_PLURAL_NAME_DEFINITION,
+      [ATTR_SEARCH_PLACEHOLDER]: SearchInput.CONTEXT_PLACEHOLDER_DEFINITION,
     },
     // Need to use Contexts because setting properties on `InnerBlocks` only works
     // on the INITIAL RENDER. Did NOT use `WithInnerBlockAttrs.forceAttributes` because of excessive
@@ -43,7 +57,11 @@ registerBlockType(
     // is merely undefined instead of throwing an error.
     // See https://github.com/WordPress/gutenberg/issues/15759
     providesContext: {
-      [PageTaxonomyFilter.CONTEXT_CONTENT_TYPE_INFO]: ATTR_CONTENT_TYPE_INFO,
+      [PageTaxonomyFilter.CONTEXT_CONTENT_TYPE_INFO_KEY]: ATTR_CONTENT_INFO,
+      [AjaxLoadMore.CONTEXT_PLURAL_NAME_KEY]: ATTR_PLURAL_NAME,
+      [AjaxLoadMore.CONTEXT_CONTENT_ID_KEY]: ATTR_CONTENT_ID,
+      [AjaxLoadMore.CONTEXT_CONTAINER_CLASS_KEY]: ATTR_CONTENT_CONTAINER_CLASS,
+      [SearchInput.CONTEXT_PLACEHOLDER_KEY]: ATTR_SEARCH_PLACEHOLDER,
     },
     // Because `addUniqueIdInApiVersionOne` changes this to a class-based component, cannot use the
     // `ueSelect` hook so need to use the HOC `withSelect` instead
@@ -69,8 +87,6 @@ registerBlockType(
         setAttributes,
         clientId,
       }) => {
-        // TODO some sort of loading state??
-
         const searchClassName = `search-${attributes[ATTR_UNIQUE_ID]}`,
           taxonomyFilterHtmlId = `taxonomy-${attributes[ATTR_UNIQUE_ID]}`,
           contentTypeIdToInfo = mapContentTypeIdToInfo(
@@ -82,7 +98,7 @@ registerBlockType(
             <div className="dfh-editor-block-title">{title}</div>
             <SelectControl
               label={__('Select content type', Constants.TEXT_DOMAIN)}
-              value={attributes.contentTypeId}
+              value={attributes[ATTR_CONTENT_ID]}
               options={[
                 {
                   label: __('Select a content type...', Constants.TEXT_DOMAIN),
@@ -95,9 +111,16 @@ registerBlockType(
                 })),
               ]}
               onChange={(contentTypeId) => {
+                const info = contentTypeIdToInfo[contentTypeId];
                 setAttributes({
-                  [ATTR_CONTENT_TYPE_INFO]: contentTypeIdToInfo[contentTypeId],
-                  contentTypeId,
+                  [ATTR_CONTENT_ID]: contentTypeId,
+                  [ATTR_CONTENT_INFO]: info,
+                  [ATTR_PLURAL_NAME]: info?.labels?.name,
+                  [ATTR_CONTENT_CONTAINER_CLASS]:
+                    'page-faq__content__ajax ' +
+                    (Constants.CONTENT_TYPE_TO_CONTAINER_CLASS[contentTypeId] ??
+                      ''),
+                  [ATTR_SEARCH_PLACEHOLDER]: info?.labels?.search_items,
                 });
               }}
             />
@@ -142,11 +165,6 @@ registerBlockType(
                   {
                     isLocked: true,
                     wrapper: [{ classNames: ['page-faq__body'] }],
-                    forceAttributes: {
-                      [Constants.BLOCK_PAGE_TAXONOMY_FILTER]: {
-                        shouldUseContext: true,
-                      },
-                    },
                     template: [
                       [
                         Constants.BLOCK_FAQ_HEADER,
@@ -156,12 +174,19 @@ registerBlockType(
                         },
                       ],
                       [
-                        Constants.BLOCK_AJAX_LOAD_MORE,
+                        Constants.BLOCK_INNER_BLOCK_WRAPPER,
                         {
-                          transitionContainerClass: 'page-faq__content',
-                          numResultsPerPage: 6,
-                          searchClassName,
-                          taxonomyFilterHtmlId,
+                          isLocked: true,
+                          wrapper: [{ classNames: ['page-faq__content'] }],
+                          template: [
+                            [
+                              Constants.BLOCK_AJAX_LOAD_MORE,
+                              {
+                                searchClassName,
+                                taxonomyFilterHtmlId,
+                              },
+                            ],
+                          ],
                         },
                       ],
                     ],
@@ -183,7 +208,6 @@ registerBlockType(
   }),
 );
 
-// TODO test
 function mapContentTypeIdToInfo(customContentTypes, allTaxonomies) {
   const contentTypeIdToInfo = Object.create(null);
   _.forEach(customContentTypes, (contentType) => {

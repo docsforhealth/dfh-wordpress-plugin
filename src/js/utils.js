@@ -1,6 +1,5 @@
 import { Children, Component } from '@wordpress/element';
 import _ from 'lodash';
-import * as Constants from 'src/js/constants';
 import getThumbnail from 'thumbnail-youtube-vimeo';
 
 export function hasChildOfComponentType(children, type) {
@@ -39,6 +38,11 @@ export function filterInnerBlockTemplate(allowedBlockNames, template) {
  * This is because API version 2 requires the `edit` and `save` hooks to call the `useBlockProps` hook
  * and hooks are, by definition, not supported in class components.
  * See https://wordpress.stackexchange.com/q/398626
+ *
+ * The `edit` property of `blockInfo` can be one of the following:
+ *   1. Functional React component
+ *   2. Class-based React component
+ *   3. Object of individual class-based React lifecycle methods.
  *
  * @param  {String} idAttrName Name of the unique id attribute to add
  * @param  {Object} blockInfo  Original object passed into the `registerBlockType` function
@@ -83,18 +87,73 @@ export function addUniqueIdInApiVersionOne(idAttrName, blockInfo) {
       // call super AFTER we've modified the props as above
       super(props);
     }
+    // For class lifecycle methods, see https://reactjs.org/docs/react-component.html
+    // called on initial render, NOT subsequent renders
+    componentDidMount() {
+      if (
+        !_.isFunction(blockInfo.edit) &&
+        _.isObject(blockInfo.edit) &&
+        _.isFunction(blockInfo.edit.componentDidMount)
+      ) {
+        blockInfo.edit.componentDidMount(this.props);
+      }
+    }
+    // called on subsequent renders, NOT initial render
+    // explanation of snapshot vs prevProps, see https://stackoverflow.com/q/64963205
+    componentDidUpdate(prevProps, prevState, snapshot) {
+      if (
+        !_.isFunction(blockInfo.edit) &&
+        _.isObject(blockInfo.edit) &&
+        _.isFunction(blockInfo.edit.componentDidUpdate)
+      ) {
+        // note that we pass current props ahead of default arguments
+        blockInfo.edit.componentDidUpdate(
+          this.props,
+          prevProps,
+          prevState,
+          snapshot,
+        );
+      }
+    }
     render() {
+      let EditComponent;
       // if `edit` property is function, then might be a function OR a class React component
       if (_.isFunction(blockInfo.edit)) {
         // TIP: if you want to distinguish between React functional vs class components,
         // you can use `!!blockInfo.edit.prototype?.isReactComponent` for React class components
         // see https://overreacted.io/how-does-react-tell-a-class-from-a-function/
-        const EditComponent = blockInfo.edit;
+        EditComponent = blockInfo.edit;
+      } else if (
+        _.isObject(blockInfo.edit) &&
+        _.isFunction(blockInfo.edit.render)
+      ) {
+        EditComponent = blockInfo.edit.render;
+      }
+      // if has edit component then call and return
+      // use JSX because it has built in handling for function vs class React components
+      if (EditComponent) {
         return <EditComponent {...this.props} />;
-      } else {
-        return null;
       }
     }
   };
   return newBlockInfo;
+}
+
+export function syncAttrFromContextIfDefined(
+  { context, attributes, setAttributes },
+  contextKey,
+  attrKey,
+) {
+  if (!_.isString(contextKey) || !_.isString(attrKey)) {
+    return;
+  }
+  if (
+    _.isObject(context) &&
+    !_.isEmpty(context) &&
+    context.hasOwnProperty(contextKey)
+  ) {
+    if (context[contextKey] !== attributes[attrKey]) {
+      setAttributes({ [attrKey]: context[contextKey] });
+    }
+  }
 }

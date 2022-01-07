@@ -6,8 +6,6 @@ import WithInnerBlockAttrs from 'src/js/editor/with-inner-block-attrs';
 import { filterInnerBlockTemplate } from 'src/js/utils';
 
 /**
- * PURPOSE OF THIS HELPER BLOCK
- *
  * To be used as part of the template attribute of InnerBlocks in order to specify a container in
  * which users are only able to insert text and media content and not other arbitrary blocks.
  * Because ths blocks restricts users to only inserting "content" -- that is text and media -- this

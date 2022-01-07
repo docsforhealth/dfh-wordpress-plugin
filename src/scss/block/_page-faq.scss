@@ -1,6 +1,5 @@
 .page-faq {
     $card-width: 30%;
-    $middle-spacing: $baseunit * 2;
 
     @extend .container;
 
@@ -94,15 +93,19 @@
         }
         &__body {
             flex-grow: 1;
-            padding-left: $middle-spacing;
+            min-width: 0;
+            padding-left: $unit-horizontal-overhang;
         }
         &__content {
             @include full-width-bg($color-white) {
-                left: $middle-spacing * -1;
-                width: calc(100% + #{$middle-spacing * 1.5});
+                left: $unit-horizontal-overhang * -1;
+                width: calc(100% + #{$unit-horizontal-overhang * 2});
                 transform: none;
                 border-top-right-radius: $border-radius;
                 border-top: 1px solid $color-seafoam-dark-1;
+            }
+            &__ajax {
+                width: 100%;
             }
         }
     }

@@ -1,11 +1,16 @@
 import { registerBlockType } from '@wordpress/blocks';
-import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import * as Constants from 'src/js/constants';
-import { addUniqueIdInApiVersionOne } from 'src/js/utils';
+import {
+  addUniqueIdInApiVersionOne,
+  syncAttrFromContextIfDefined,
+} from 'src/js/utils';
 
-export const ATTR_PLACEHOLDER = 'placeholder';
-export const ATTR_HIDE_IN_EDIT = 'hideInEdit';
+export const CONTEXT_PLACEHOLDER_KEY = `${Constants.BLOCK_SEARCH_INPUT}/placeholder`;
+export const CONTEXT_PLACEHOLDER_DEFINITION = {
+  type: 'string',
+  default: __('Search here...', Constants.TEXT_DOMAIN),
+};
 
 const ATTR_UNIQUE_ID = '_uniqueId';
 
@@ -21,24 +26,29 @@ registerBlockType(
     attributes: {
       wrapperClassName: { type: 'string', default: '' },
       inputClassName: { type: 'string', default: '' },
-      [ATTR_PLACEHOLDER]: {
-        type: 'string',
-        default: __('Search here...', Constants.TEXT_DOMAIN),
-      },
-      [ATTR_HIDE_IN_EDIT]: { type: 'boolean', default: false },
+      placeholder: CONTEXT_PLACEHOLDER_DEFINITION,
     },
-    edit({ attributes, setAttributes }) {
-      return (
-        !attributes[ATTR_HIDE_IN_EDIT] && (
-          <TextControl
-            label={__('Search bar placeholder', Constants.TEXT_DOMAIN)}
-            value={attributes[ATTR_PLACEHOLDER]}
-            onChange={(placeholder) =>
-              setAttributes({ [ATTR_PLACEHOLDER]: placeholder })
-            }
-          />
-        )
-      );
+    usesContext: [CONTEXT_PLACEHOLDER_KEY],
+    // see `addUniqueIdInApiVersionOne` for how this `edit` object is handled
+    edit: {
+      componentDidMount(props) {
+        syncAttrFromContextIfDefined(
+          props,
+          CONTEXT_PLACEHOLDER_KEY,
+          'placeholder',
+        );
+      },
+      componentDidUpdate(currentProps) {
+        syncAttrFromContextIfDefined(
+          currentProps,
+          CONTEXT_PLACEHOLDER_KEY,
+          'placeholder',
+        );
+      },
+      // have to return something from edit hook
+      render(props) {
+        return <div></div>;
+      },
     },
     save({ attributes }) {
       const parentId = `parent-${attributes[ATTR_UNIQUE_ID]}`,
@@ -49,13 +59,13 @@ registerBlockType(
           className={`form__clear-control ${attributes.wrapperClassName}`}
         >
           <label htmlFor={controlId} className="sr-only">
-            {attributes[ATTR_PLACEHOLDER]}
+            {attributes.placeholder}
           </label>
           <input
             id={controlId}
             type="text"
             className={`form__control form__control--search ${attributes.inputClassName}`}
-            placeholder={attributes[ATTR_PLACEHOLDER]}
+            placeholder={attributes.placeholder}
           />
           <button
             type="button"

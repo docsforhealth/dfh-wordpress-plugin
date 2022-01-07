@@ -1,20 +1,33 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-import {
-  TextareaControl,
-  TextControl,
-  __experimentalNumberControl as NumberControl,
-} from '@wordpress/components';
-import { RawHTML } from '@wordpress/element';
+import { __experimentalNumberControl as NumberControl } from '@wordpress/components';
+import { RawHTML, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import _ from 'lodash';
 import * as Constants from 'src/js/constants';
+import { syncAttrFromContextIfDefined } from 'src/js/utils';
 
 /**
  * Wrapper for the Ajax Load More plugin shortcode
  *
  * see https://connekthq.com/plugins/ajax-load-more/docs/parameters/
  */
+
+export const CONTEXT_PLURAL_NAME_KEY = `${Constants.BLOCK_AJAX_LOAD_MORE}/pluralName`;
+export const CONTEXT_PLURAL_NAME_DEFINITION = { type: 'string' };
+
+export const CONTEXT_CONTENT_ID_KEY = `${Constants.BLOCK_AJAX_LOAD_MORE}/contentId`;
+export const CONTEXT_CONTENT_ID_DEFINITION = { type: 'string' };
+
+export const CONTEXT_CONTAINER_CLASS_KEY = `${Constants.BLOCK_AJAX_LOAD_MORE}/containerClass`;
+export const CONTEXT_CONTAINER_CLASS_DEFINITION = {
+  type: 'string',
+  default: '',
+};
+
+const ATTR_PLURAL_NAME = 'pluralName';
+const ATTR_CONTENT_ID = 'contentTypeId';
+const ATTR_TRANSITION_CONTAINER_CLASS = 'transitionContainerClass';
 
 registerBlockType(Constants.BLOCK_AJAX_LOAD_MORE, {
   apiVersion: 2,
@@ -27,43 +40,41 @@ registerBlockType(Constants.BLOCK_AJAX_LOAD_MORE, {
   ),
   supports: { inserter: false },
   attributes: {
-    contentTypeId: { type: 'string', default: 'post' },
     containerElement: { type: 'string', default: 'div' },
-    transitionContainerClass: { type: 'string', default: '' },
+    [ATTR_TRANSITION_CONTAINER_CLASS]: CONTEXT_CONTAINER_CLASS_DEFINITION,
     numResultsPerPage: { type: 'number', default: 12 },
-    // TODO replace all below with pluralName: { type, 'string' }, OR self-lookup to core data
-
-
-    // This input is escaped in the `save` method to prevent injection attacks
-    noResultsMessage: {
-      type: 'string',
-      default: __(
-        "We couldn't find anything. Please try another search or let us know what we're missing.",
-        Constants.TEXT_DOMAIN,
-      ),
-    },
-    // labels for load more button, see https://connekthq.com/plugins/ajax-load-more/docs/parameters/
-    buttonLabel: {
-      type: 'string',
-      default: __('Load more', Constants.TEXT_DOMAIN),
-    },
-    buttonLoadingLabel: {
-      type: 'string',
-      default: __('Loading...', Constants.TEXT_DOMAIN),
-    },
-    buttonDoneLabel: {
-      type: 'string',
-      default: __('Finished loading', Constants.TEXT_DOMAIN),
-    },
-
-
+    // synced with context in order to make available to save hook
+    [ATTR_PLURAL_NAME]: CONTEXT_PLURAL_NAME_DEFINITION,
+    [ATTR_CONTENT_ID]: CONTEXT_CONTENT_ID_DEFINITION,
     // frontend JS functionality
     searchClassName: { type: 'string', default: '' },
     taxonomyFilterHtmlId: { type: 'string', default: '' },
   },
-  edit({ attributes, setAttributes }) {
-
-    // TODO If we select content type here, is there a way to pass this data up to parent?
+  usesContext: [
+    CONTEXT_PLURAL_NAME_KEY,
+    CONTEXT_CONTENT_ID_KEY,
+    CONTEXT_CONTAINER_CLASS_KEY,
+  ],
+  edit(props) {
+    const { attributes, setAttributes } = props;
+    // Can define these attributes by directly passing in OR via Context
+    useEffect(() => {
+      syncAttrFromContextIfDefined(
+        props,
+        CONTEXT_PLURAL_NAME_KEY,
+        ATTR_PLURAL_NAME,
+      );
+      syncAttrFromContextIfDefined(
+        props,
+        CONTEXT_CONTENT_ID_KEY,
+        ATTR_CONTENT_ID,
+      );
+      syncAttrFromContextIfDefined(
+        props,
+        CONTEXT_CONTAINER_CLASS_KEY,
+        ATTR_TRANSITION_CONTAINER_CLASS,
+      );
+    });
     return (
       <div {...useBlockProps()}>
         <NumberControl
@@ -76,36 +87,16 @@ registerBlockType(Constants.BLOCK_AJAX_LOAD_MORE, {
           min={1}
           max={999}
         />
-        {/*<TextControl
-          label={__('Button load more label', Constants.TEXT_DOMAIN)}
-          value={attributes.buttonLabel}
-          onChange={(buttonLabel) => setAttributes({ buttonLabel })}
-        />
-        <TextControl
-          label={__('Button currently loading label', Constants.TEXT_DOMAIN)}
-          value={attributes.buttonLoadingLabel}
-          onChange={(buttonLoadingLabel) =>
-            setAttributes({ buttonLoadingLabel })
-          }
-        />
-        <TextControl
-          label={__('Button done loading label', Constants.TEXT_DOMAIN)}
-          value={attributes.buttonDoneLabel}
-          onChange={(buttonDoneLabel) => setAttributes({ buttonDoneLabel })}
-        />
-        <TextareaControl
-          label={__('No results message', Constants.TEXT_DOMAIN)}
-          value={attributes.noResultsMessage}
-          onChange={(noResultsMessage) => setAttributes({ noResultsMessage })}
-        />*/}
       </div>
     );
   },
   save({ attributes }) {
-    // TODO if we change the contentTypeId from above which may change the generated saved content,
-    // does that invalidate this block?
-
-
+    const {
+      buttonLabel,
+      buttonLoadingLabel,
+      buttonDoneLabel,
+      noResultsMessage,
+    } = getLabelNamesInSave(attributes[ATTR_PLURAL_NAME]);
     return (
       <>
         {/* Starting point for the setup-ajaxloadmore-filter-search.js frontend script */}
@@ -123,16 +114,16 @@ registerBlockType(Constants.BLOCK_AJAX_LOAD_MORE, {
             `[ajax_load_more
               container_type="${attributes.containerElement}"
               transition_container_classes="${
-                attributes.transitionContainerClass
+                attributes[ATTR_TRANSITION_CONTAINER_CLASS]
               }"
-              post_type="${attributes.contentTypeId}"
+              post_type="${attributes[ATTR_CONTENT_ID]}"
               posts_per_page="${attributes.numResultsPerPage}"
               scroll="false"
-              button_label="${attributes.buttonLabel}"
-              button_loading_label="${attributes.buttonLoadingLabel}"
-              button_done_label="${attributes.buttonDoneLabel}"
+              button_label="${buttonLabel}"
+              button_loading_label="${buttonLoadingLabel}"
+              button_done_label="${buttonDoneLabel}"
               no_results_text="<div class='ajax-loader-none'>${_.escape(
-                attributes.noResultsMessage,
+                noResultsMessage,
               )}</div>"
             ]`
           }
@@ -141,3 +132,28 @@ registerBlockType(Constants.BLOCK_AJAX_LOAD_MORE, {
     );
   },
 });
+
+function getLabelNamesInSave(pluralName = null) {
+  // labels for load more button, see https://connekthq.com/plugins/ajax-load-more/docs/parameters/
+  let buttonLabel = __('Load more', Constants.TEXT_DOMAIN),
+    buttonLoadingLabel = __('Loading...', Constants.TEXT_DOMAIN),
+    buttonDoneLabel = __('Finished loading', Constants.TEXT_DOMAIN),
+    noResultsMessage = __(
+      "We couldn't find anything. Please try another search or let us know what we're missing.",
+      Constants.TEXT_DOMAIN,
+    );
+  // use custom name if available
+  if (_.isString(pluralName)) {
+    const lowercased = pluralName.toLowerCase();
+    buttonLabel = `Load more ${lowercased}`;
+    buttonLoadingLabel = `Loading ${lowercased}...`;
+    buttonDoneLabel = `Loaded all ${lowercased}`;
+    noResultsMessage = `We couldn't find any ${lowercased}. Please try another search or let us know what we're missing.`;
+  }
+  return {
+    buttonLabel,
+    buttonLoadingLabel,
+    buttonDoneLabel,
+    noResultsMessage,
+  };
+}

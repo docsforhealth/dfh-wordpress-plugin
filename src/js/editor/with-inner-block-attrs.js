@@ -6,8 +6,6 @@ import * as Constants from 'src/js/constants';
 import { hasChildOfComponentType } from 'src/js/utils';
 
 /**
- * PURPOSE OF THIS HELPER BLOCK
- *
  * This is the actual implementation of forcing specific attributes on each type of nested child block
  * to have a certain attribute. This is accomplished by passing in the attribute `innerBlockAttrs`
  * which is an object where each key is the registered name of the child block and each value is

@@ -7,8 +7,6 @@ import WithInnerBlockAttrs from 'src/js/editor/with-inner-block-attrs';
 import WrapOnlyIfHasClass from 'src/js/editor/wrap-only-if-has-class';
 
 /**
- * PURPOSE OF THIS HELPER BLOCK
- *
  * WordPress uses InnerBlocks to specify nested blocks within a parent block. Because each block
  * can only contain ONE InnerBlocks, this helper block allows for multiple distinct InnerBlocks areas
  * representing multiple dynamic areas within one parent block

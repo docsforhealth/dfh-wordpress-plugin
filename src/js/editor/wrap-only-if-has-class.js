@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 
 /**
- * PURPOSE OF THIS HELPER BLOCK
- *
  * If a class name is specified, then wraps children with a `div` with
  * the specified class name.
  *

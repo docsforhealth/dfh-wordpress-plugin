@@ -5,8 +5,6 @@ import _ from 'lodash';
 import * as Constants from 'src/js/constants';
 
 /**
- * PURPOSE OF THIS BLOCK
- *
  * Page header for use on all pages, including a nested variant.
  */
 

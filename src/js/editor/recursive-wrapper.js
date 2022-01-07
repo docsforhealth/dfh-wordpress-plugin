@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 
 /**
- * PURPOSE OF THIS HELPER BLOCK
- *
  * Wraps children in layers of `elements` with each layer having a class name tht corresponds
  * to the same index position in the corresponding `classNames` array.
  *

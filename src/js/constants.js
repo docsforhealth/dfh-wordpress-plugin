@@ -14,6 +14,10 @@ export const CATEGORY_TOOLKIT = 'dfh-toolkit';
 // custom content types and taxonomies
 export const CONTENT_TYPE_RESOURCE = 'dfh_resource';
 export const CONTENT_TYPE_TOOLKIT = 'dfh_toolkit';
+export const CONTENT_TYPE_TO_CONTAINER_CLASS = {
+  [CONTENT_TYPE_RESOURCE]: 'resource-previews',
+  [CONTENT_TYPE_TOOLKIT]: 'toolkit-previews',
+};
 export const TAXONOMY_RESOURCE = 'dfh_resource_classification';
 export const TAXONOMY_RESOURCE_TYPE = 'dfh_resource_content_type';
 

@@ -29,8 +29,6 @@ register_block_type('dfh/page-taxonomy-filter', array(
         // NOTE that if no available taxonomies still may have a selected taxonomyId because we
         // cannot update state from within the `edit` hook
         'taxonomyId'           => array('type' => 'string', 'default' => ''),
-        // if passing context, need to explicitly instruct block to use context
-        'shouldUseContext'     => array('type' => 'boolean', 'default' => false),
     ),
 ));
 

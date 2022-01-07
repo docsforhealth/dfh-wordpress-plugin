@@ -10,8 +10,6 @@ import _ from 'lodash';
 import * as Constants from 'src/js/constants';
 
 /**
- * PURPOSE OF THIS BLOCK
- *
  * Display taxonomy values for user to multi-select, updates labels with info about number selected
  * if a label class name is provided
  */
@@ -20,7 +18,16 @@ import * as Constants from 'src/js/constants';
 // set in the JS file are not read -- to specify default values, you must use the
 // `attributes` key in the PHP registration function
 
-export const CONTEXT_CONTENT_TYPE_INFO = `${Constants.BLOCK_PAGE_TAXONOMY_FILTER}/contentTypeInfo`;
+// expects object with shape:
+// {
+//    <post type properties>,
+//    availableTaxonomies: <array of taxonomy properties>
+// }
+export const CONTEXT_CONTENT_TYPE_INFO_KEY = `${Constants.BLOCK_PAGE_TAXONOMY_FILTER}/contentTypeInfo`;
+export const CONTEXT_CONTENT_TYPE_INFO_DEFINITION = {
+  type: 'object',
+  default: { availableTaxonomies: [] },
+};
 
 registerBlockType(Constants.BLOCK_PAGE_TAXONOMY_FILTER, {
   apiVersion: 2,
@@ -32,15 +39,12 @@ registerBlockType(Constants.BLOCK_PAGE_TAXONOMY_FILTER, {
     Constants.TEXT_DOMAIN,
   ),
   supports: { inserter: false },
-  usesContext: [CONTEXT_CONTENT_TYPE_INFO],
+  usesContext: [CONTEXT_CONTENT_TYPE_INFO_KEY],
   // for dynamic blocks, see attributes in corresponding PHP file
   // see reasoning in `page_taxonomy_filter.php`
   edit(props) {
-    console.log(
-      'props.attributes.shouldUseContext',
-      props.attributes.shouldUseContext,
-    );
-    if (props.attributes.shouldUseContext) {
+    // If used outside of a block context, then the `context` object will be empty
+    if (!_.isEmpty(props.context)) {
       return <EditWithContext {...props} />;
     } else {
       return <EditNoContext {...props} />;
@@ -71,7 +75,7 @@ const EditNoContext = function ({ attributes, setAttributes }) {
 };
 
 const EditWithContext = function ({ context, attributes, setAttributes }) {
-  const info = context[CONTEXT_CONTENT_TYPE_INFO],
+  const info = context[CONTEXT_CONTENT_TYPE_INFO_KEY],
     hasAvailableTaxonomies = !_.isEmpty(info?.availableTaxonomies);
   // NOTE: we should be accessing the context directly from the PHP as documented in
   // https://developer.wordpress.org/block-editor/reference-guides/block-api/block-context/#php

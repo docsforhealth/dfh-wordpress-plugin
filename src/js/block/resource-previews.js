@@ -10,6 +10,7 @@ import { addUniqueIdInApiVersionOne } from 'src/js/utils';
 // when this block is removed
 
 const ATTR_UNIQUE_ID = '_uniqueId',
+  ATTR_SEARCH_PLACEHOLDER = 'searchPlaceholder',
   title = __('Resource Overview Previews', Constants.TEXT_DOMAIN);
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
@@ -23,8 +24,21 @@ registerBlockType(
       'Displays, searches, and filters previews of all resources',
       Constants.TEXT_DOMAIN,
     ),
+    attributes: {
+      [ATTR_SEARCH_PLACEHOLDER]: {
+        ...SearchInput.CONTEXT_PLACEHOLDER_DEFINITION,
+        default: __('Search for a resource...', Constants.TEXT_DOMAIN),
+      },
+    },
+    providesContext: {
+      [SearchInput.CONTEXT_PLACEHOLDER_KEY]: ATTR_SEARCH_PLACEHOLDER,
+    },
     edit({ attributes, setAttributes }) {
-      const updateLabelClassName = `label-${attributes[ATTR_UNIQUE_ID]}`,
+      const containerClass =
+          Constants.CONTENT_TYPE_TO_CONTAINER_CLASS[
+            Constants.CONTENT_TYPE_RESOURCE
+          ],
+        updateLabelClassName = `label-${attributes[ATTR_UNIQUE_ID]}`,
         searchClassName = `search-${attributes[ATTR_UNIQUE_ID]}`,
         taxonomyFilterHtmlId = `taxonomy-${attributes[ATTR_UNIQUE_ID]}`;
       return (
@@ -36,13 +50,6 @@ registerBlockType(
               [
                 Constants.BLOCK_INNER_BLOCK_WRAPPER,
                 {
-                  forceAttributes: {
-                    [Constants.BLOCK_SEARCH_INPUT]: {
-                      [SearchInput.ATTR_PLACEHOLDER]:
-                        'Search for a resource...',
-                      [SearchInput.ATTR_HIDE_IN_EDIT]: true,
-                    },
-                  },
                   template: [
                     [
                       Constants.BLOCK_PAGE_HEADER,
@@ -78,8 +85,8 @@ registerBlockType(
                 Constants.BLOCK_AJAX_LOAD_MORE,
                 {
                   contentTypeId: Constants.CONTENT_TYPE_RESOURCE,
-                  transitionContainerClass:
-                    'resource-previews resource-previews--deprecated',
+                  pluralName: 'resources',
+                  transitionContainerClass: `${containerClass} ${containerClass}--deprecated`,
                   numResultsPerPage: 12,
                   searchClassName,
                   taxonomyFilterHtmlId,
