@@ -14,7 +14,8 @@ const CLASS_ITEM = 'taxonomyItemClass',
   ID_TAXONOMY = 'taxonomyId',
   NAME_PLURAL = 'taxonomyPluralName',
   NAME_SINGULAR = 'taxonomySingularName',
-  ITEM_TERM_SLUG = 'taxonomyTermSlug';
+  ITEM_TERM_SLUG = 'taxonomyTermSlug',
+  NUM_TOTAL_TERMS = 'taxonomyTotalNumTerms';
 
 $(function () {
   $('[data-ajax]').each((index, ajaxInfoEl) =>
@@ -101,15 +102,24 @@ const reloadAjaxItems = _.debounce(
       const filterOpts = Object.create(null);
       // if has taxonomy filter defined
       if ($taxonomy.length) {
-        const { $activeItems } = getItemsAndCounts($taxonomy);
+        const { $activeItems } = getItemsAndCounts($taxonomy),
+          totalNumTerms = $taxonomy.data(NUM_TOTAL_TERMS);
+
         filterOpts.taxonomy = $taxonomy.data(ID_TAXONOMY);
-        filterOpts.taxonomyTerms = $activeItems
-          .map((index, item) => item.dataset[ITEM_TERM_SLUG])
-          .get()
-          .join(); // default join is ','
+        // if including all taxonomy terms, then set terms to empty string to also show
+        // items that have zero taxonomy terms assigned
+        if ($activeItems.length === totalNumTerms) {
+          filterOpts.taxonomyTerms = '';
+        } else {
+          filterOpts.taxonomyTerms = $activeItems
+            .map((index, item) => item.dataset[ITEM_TERM_SLUG])
+            .get()
+            .join(); // default join is ','
+        }
       }
       // need to have `search: ''` in the filter object to get all results
       filterOpts.search = searchVal ? searchVal.trim() : '';
+
       window.ajaxloadmore?.filter('fade', 50, filterOpts);
     }
   },

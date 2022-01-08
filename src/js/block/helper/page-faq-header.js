@@ -24,40 +24,49 @@ registerBlockType(
     edit({ attributes, setAttributes }) {
       const updateLabelClassName = `label-${attributes[ATTR_UNIQUE_ID]}`;
       return (
-        <InnerBlocks
-          templateLock={Constants.INNER_BLOCKS_LOCKED}
-          template={[
-            [
-              Constants.BLOCK_PAGE_HEADER,
-              {
-                includePageTitle: false, // implicit `hidePageTitleInEdit: true`
-                isNested: true,
-                template: [
-                  [
-                    Constants.BLOCK_PAGE_CATEGORIES_SEARCH_HEADER,
-                    {
-                      className:
-                        'page-header__section page-header__section--right',
-                      updateLabelClassName,
-                      searchClassName: attributes.searchClassName,
-                    },
+        <>
+          <div className="dfh-editor-block-title dfh-editor-block-title--nested">
+            {__('Content Display Options', Constants.TEXT_DOMAIN)}
+          </div>
+          <InnerBlocks
+            templateLock={Constants.INNER_BLOCKS_LOCKED}
+            template={[
+              [
+                Constants.BLOCK_PAGE_HEADER,
+                {
+                  includePageTitle: false, // implicit `hidePageTitleInEdit: true`
+                  isNested: true,
+                  template: [
+                    [
+                      Constants.BLOCK_PAGE_CATEGORIES_SEARCH_HEADER,
+                      {
+                        className:
+                          'page-header__section page-header__section--right',
+                        updateLabelClassName,
+                        searchClassName: attributes.searchClassName,
+                      },
+                    ],
                   ],
-                ],
-              },
-            ],
-            [
-              Constants.BLOCK_PAGE_TAXONOMY_FILTER,
-              {
-                updateLabelClassName,
-                htmlId: attributes.taxonomyFilterHtmlId,
-              },
-            ],
-          ]}
-        />
+                },
+              ],
+              [
+                Constants.BLOCK_PAGE_TAXONOMY_FILTER,
+                {
+                  updateLabelClassName,
+                  htmlId: attributes.taxonomyFilterHtmlId,
+                },
+              ],
+            ]}
+          />
+        </>
       );
     },
     save({ attributes }) {
-      return <InnerBlocks.Content />;
+      return (
+        <div className="page-faq__header">
+          <InnerBlocks.Content />
+        </div>
+      );
     },
   }),
 );

@@ -36,14 +36,14 @@ import 'src/js/block/video-thumbnail';
  * Layout blocks
  */
 import 'src/js/block/content-width-container';
-import 'src/js/block/page-faq-container'; // TODO
+import 'src/js/block/page-faq-container';
 import 'src/js/block/page-header';
 // Helpers
 import 'src/js/block/dynamic/helper/page-taxonomy-filter';
 import 'src/js/block/helper/page-categories-search-header';
 import 'src/js/block/helper/page-faq-header';
-import 'src/js/block/helper/page-faq-question'; // TODO
-import 'src/js/block/helper/page-faq-question-container'; // TODO
+import 'src/js/block/helper/page-faq-question';
+import 'src/js/block/helper/page-faq-question-container';
 
 /**
  * Landing page blocks

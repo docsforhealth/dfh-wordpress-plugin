@@ -39,10 +39,8 @@ export function filterInnerBlockTemplate(allowedBlockNames, template) {
  * and hooks are, by definition, not supported in class components.
  * See https://wordpress.stackexchange.com/q/398626
  *
- * The `edit` property of `blockInfo` can be one of the following:
- *   1. Functional React component
- *   2. Class-based React component
- *   3. Object of individual class-based React lifecycle methods.
+ * Since the `edit` attribute of the returned object is a HOC wrapper around the original
+ * `edit` component, it DOES NOT MATTER if the `edit` property of `blockInfo` is a class or function
  *
  * @param  {String} idAttrName Name of the unique id attribute to add
  * @param  {Object} blockInfo  Original object passed into the `registerBlockType` function
@@ -87,34 +85,6 @@ export function addUniqueIdInApiVersionOne(idAttrName, blockInfo) {
       // call super AFTER we've modified the props as above
       super(props);
     }
-    // For class lifecycle methods, see https://reactjs.org/docs/react-component.html
-    // called on initial render, NOT subsequent renders
-    componentDidMount() {
-      if (
-        !_.isFunction(blockInfo.edit) &&
-        _.isObject(blockInfo.edit) &&
-        _.isFunction(blockInfo.edit.componentDidMount)
-      ) {
-        blockInfo.edit.componentDidMount(this.props);
-      }
-    }
-    // called on subsequent renders, NOT initial render
-    // explanation of snapshot vs prevProps, see https://stackoverflow.com/q/64963205
-    componentDidUpdate(prevProps, prevState, snapshot) {
-      if (
-        !_.isFunction(blockInfo.edit) &&
-        _.isObject(blockInfo.edit) &&
-        _.isFunction(blockInfo.edit.componentDidUpdate)
-      ) {
-        // note that we pass current props ahead of default arguments
-        blockInfo.edit.componentDidUpdate(
-          this.props,
-          prevProps,
-          prevState,
-          snapshot,
-        );
-      }
-    }
     render() {
       let EditComponent;
       // if `edit` property is function, then might be a function OR a class React component
@@ -123,11 +93,6 @@ export function addUniqueIdInApiVersionOne(idAttrName, blockInfo) {
         // you can use `!!blockInfo.edit.prototype?.isReactComponent` for React class components
         // see https://overreacted.io/how-does-react-tell-a-class-from-a-function/
         EditComponent = blockInfo.edit;
-      } else if (
-        _.isObject(blockInfo.edit) &&
-        _.isFunction(blockInfo.edit.render)
-      ) {
-        EditComponent = blockInfo.edit.render;
       }
       // if has edit component then call and return
       // use JSX because it has built in handling for function vs class React components
@@ -139,6 +104,17 @@ export function addUniqueIdInApiVersionOne(idAttrName, blockInfo) {
   return newBlockInfo;
 }
 
+/**
+ * For blocks that use the Context feature, will copy the context value
+ * to the corresponding attribute if the context object has the specified key
+ *
+ * @param  {object} options.context         WP block context object
+ * @param  {object} options.attributes      WP block attributes object
+ * @param  {function} options.setAttributes WP function to set attributes
+ * @param  {string} contextKey              Key to look up in context object
+ * @param  {string} attrKey                 Key to update in attributes object
+
+ */
 export function syncAttrFromContextIfDefined(
   { context, attributes, setAttributes },
   contextKey,
@@ -156,4 +132,33 @@ export function syncAttrFromContextIfDefined(
       setAttributes({ [attrKey]: context[contextKey] });
     }
   }
+}
+
+/**
+ * Returns singular or plural word forms depending on count
+ *
+ * @param  {integer} count   Integer count
+ * @param  {string} singular Singular form of word
+ * @param  {string} plural   Plural form of word
+ * @return {string}          Appropriate form based on count
+ */
+export function pluralize(count, singular, plural) {
+  if (!_.isFinite(count)) {
+    return '';
+  } else if (count === 1) {
+    return singular;
+  } else {
+    return plural;
+  }
+}
+
+/**
+ * Transforms input arguments to a space-separated string of names suitable for
+ * use as the className attribute
+ *
+ * @param  {...string} classNames Array of class names
+ * @return {string}               Class name attribute string
+ */
+export function classNameAttribute(...classNames) {
+  return _.filter(classNames, _.isString).join(' ');
 }

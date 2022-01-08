@@ -8,7 +8,7 @@
 
         padding-top: $offset-page-header-top;
 
-        &__toggle {
+        & &__toggle {
             @extend .button;
             @extend .button--small;
             @extend .button--outline;
@@ -24,6 +24,15 @@
     &__questions {
         @include scut-list-unstyled;
     }
+    &__content {
+        &__ajax {
+            width: 100%;
+            // to override `.container` horizontal padding inherited by
+            // `.resource-previews` and `.toolkit-previews`
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
 
     @media (min-width: $media-width-landscape-small-mobile) {
         &__card {
@@ -34,7 +43,7 @@
             & &__title {
                 margin-bottom: 0;
             }
-            &__toggle {
+            & &__toggle {
                 width: auto;
             }
         }
@@ -78,7 +87,7 @@
                 padding-bottom: 0;
                 margin-bottom: $baseunit;
             }
-            &__toggle {
+            & &__toggle {
                 display: none;
             }
             &__content {
@@ -95,6 +104,8 @@
             flex-grow: 1;
             min-width: 0;
             padding-left: $unit-horizontal-overhang;
+            // to add some additional spacing between card and content
+            margin-left: $baseunit;
         }
         &__content {
             @include full-width-bg($color-white) {
@@ -103,9 +114,6 @@
                 transform: none;
                 border-top-right-radius: $border-radius;
                 border-top: 1px solid $color-seafoam-dark-1;
-            }
-            &__ajax {
-                width: 100%;
             }
         }
     }

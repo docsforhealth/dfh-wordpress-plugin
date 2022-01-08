@@ -1,8 +1,9 @@
-import { InnerBlocks } from '@wordpress/block-editor';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 import _ from 'lodash';
 import * as Constants from 'src/js/constants';
+import { classNameAttribute } from 'src/js/utils';
 
 /**
  * Page header for use on all pages, including a nested variant.
@@ -12,6 +13,7 @@ const title = __('Page Header', Constants.TEXT_DOMAIN);
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_PAGE_HEADER, {
+  apiVersion: 2,
   title,
   category: Constants.CATEGORY_LAYOUT,
   icon: 'schedule',
@@ -20,6 +22,7 @@ registerBlockType(Constants.BLOCK_PAGE_HEADER, {
     Constants.TEXT_DOMAIN,
   ),
   attributes: {
+    className: { type: 'string' },
     template: { type: 'array' },
     hidePageTitleInEdit: { type: 'boolean', default: false },
     includePageTitle: { type: 'boolean', default: true },
@@ -50,7 +53,7 @@ registerBlockType(Constants.BLOCK_PAGE_HEADER, {
       headerTemplate.push(...attributes.template);
     }
     return (
-      <div className={wrapperClassName(attributes.isNested)}>
+      <div {...useBlockProps({ className: wrapperClassName(attributes) })}>
         <InnerBlocks
           templateLock={Constants.INNER_BLOCKS_LOCKED}
           template={headerTemplate}
@@ -60,13 +63,21 @@ registerBlockType(Constants.BLOCK_PAGE_HEADER, {
   },
   save({ attributes }) {
     return (
-      <div className={wrapperClassName(attributes.isNested)}>
+      <div
+        {...useBlockProps.save({
+          className: wrapperClassName(attributes),
+        })}
+      >
         <InnerBlocks.Content />
       </div>
     );
   },
 });
 
-function wrapperClassName(isNested) {
-  return isNested ? 'page-header page-header--nested' : 'page-header';
+function wrapperClassName(attributes) {
+  return classNameAttribute(
+    'page-header',
+    attributes.isNested ? 'page-header--nested' : '',
+    attributes.className,
+  );
 }

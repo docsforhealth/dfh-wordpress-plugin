@@ -54,6 +54,7 @@ function dfh_dynamic_render_page_taxonomy_filter($attributes) {
         return;
     }
     $taxonomy = get_taxonomy($tax_id);
+    $num_terms = wp_count_terms($tax_id);
     // data attributes used to support the frontend script in `frontend.js`
     // Names are for building the message about currently-selected categories
     // Active class is for easy toggling of what is active and what is not
@@ -83,6 +84,7 @@ function dfh_dynamic_render_page_taxonomy_filter($attributes) {
             data-taxonomy-active-class="<?php echo esc_attr($active_class); ?>"
             data-taxonomy-id="<?php echo esc_attr($tax_id); ?>"
             data-taxonomy-update-label-class="<?php echo esc_attr($attributes['updateLabelClassName']); ?>"
+            data-taxonomy-total-num-terms="<?php echo esc_attr($num_terms); ?>"
         >
             <?php foreach ($terms as $term): ?>
                 <li>

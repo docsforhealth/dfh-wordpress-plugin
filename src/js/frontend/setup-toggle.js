@@ -25,4 +25,28 @@ $(function () {
       }
     }
   });
+  // open initial specified number of children toggles on initial page load
+  $('[data-toggle-parent]').each((index, toggleParent) =>
+    openTogglesOnInitialLoad($(toggleParent)),
+  );
 });
+
+function openTogglesOnInitialLoad($toggleParent) {
+  const {
+    toggleParentChildClass,
+    toggleParentNumInitialOpen,
+    toggleParentChildOpenClass,
+  } = $toggleParent.data();
+  if (
+    toggleParentChildClass &&
+    toggleParentNumInitialOpen &&
+    toggleParentChildOpenClass
+  ) {
+    // slice first arg is starting index, and second arg is ending index (excludes ending index)
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+    $toggleParent
+      .find(classSelector(toggleParentChildClass))
+      .slice(0, toggleParentNumInitialOpen)
+      .addClass(toggleParentChildOpenClass);
+  }
+}

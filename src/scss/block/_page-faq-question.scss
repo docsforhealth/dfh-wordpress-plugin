@@ -1,0 +1,37 @@
+.faq-question {
+    @include vertical-slide('&__answer', '&--open') {
+        padding-bottom: $baseunit;
+    }
+
+    padding-top: $baseunit;
+    border-bottom: 1px solid $color-seafoam-dark-1;
+
+    &:last-child {
+        padding-bottom: 0;
+        border-bottom-width: 0;
+    }
+    &--open &__toggle {
+        transform: scaleY(-1);
+    }
+
+    &__question {
+        display: flex;
+        justify-content: space-between;
+        line-height: $height-control-small;
+    }
+    &__answer {
+        // to preserve line breaks and white space for multi-line strings
+        // see https://stackoverflow.com/a/44413780
+        // see https://developer.mozilla.org/en-US/docs/Web/CSS/white-space
+        white-space: pre-wrap;
+    }
+    & &__toggle {
+        height: $height-control-small;
+        width: $height-control-small;
+        flex-shrink: 0;
+        background-image: url('../assets/images/icon-dropdown.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}

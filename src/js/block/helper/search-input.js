@@ -1,4 +1,5 @@
 import { registerBlockType } from '@wordpress/blocks';
+import { useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import * as Constants from 'src/js/constants';
 import {
@@ -29,26 +30,19 @@ registerBlockType(
       placeholder: CONTEXT_PLACEHOLDER_DEFINITION,
     },
     usesContext: [CONTEXT_PLACEHOLDER_KEY],
-    // see `addUniqueIdInApiVersionOne` for how this `edit` object is handled
-    edit: {
-      componentDidMount(props) {
+    edit(props) {
+      // Can use `useEffect` hook here even though the `addUniqueIdInApiVersionOne` uses a CLASS-based
+      // component because that is a HOC that wraps this one. Therefore, as long as this component
+      // is a functional component, it can use hooks
+      useEffect(() => {
         syncAttrFromContextIfDefined(
           props,
           CONTEXT_PLACEHOLDER_KEY,
           'placeholder',
         );
-      },
-      componentDidUpdate(currentProps) {
-        syncAttrFromContextIfDefined(
-          currentProps,
-          CONTEXT_PLACEHOLDER_KEY,
-          'placeholder',
-        );
-      },
-      // have to return something from edit hook
-      render(props) {
-        return <div></div>;
-      },
+      });
+      // Can't return null, have to return something from edit hook
+      return <div></div>;
     },
     save({ attributes }) {
       const parentId = `parent-${attributes[ATTR_UNIQUE_ID]}`,

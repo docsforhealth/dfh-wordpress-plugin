@@ -1,7 +1,7 @@
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { SelectControl } from '@wordpress/components';
-import { withSelect } from '@wordpress/data';
+import { useSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 import _ from 'lodash';
 import * as PageTaxonomyFilter from 'src/js/block/dynamic/helper/page-taxonomy-filter';
@@ -63,141 +63,131 @@ registerBlockType(
       [AjaxLoadMore.CONTEXT_CONTAINER_CLASS_KEY]: ATTR_CONTENT_CONTAINER_CLASS,
       [SearchInput.CONTEXT_PLACEHOLDER_KEY]: ATTR_SEARCH_PLACEHOLDER,
     },
-    // Because `addUniqueIdInApiVersionOne` changes this to a class-based component, cannot use the
-    // `ueSelect` hook so need to use the HOC `withSelect` instead
     // best practices for WP Data https://jsnajdr.wordpress.com/2021/01/22/some-best-practices-for-using-useselect-from-wordpress-data/
     // TIP: to debug wp-data, you can call `wp.data.select` in the console
-    edit: withSelect((select) => {
-      const query = { per_page: -1 };
-      return {
+    edit({ attributes, setAttributes }) {
+      // Can use hooks here even though the `addUniqueIdInApiVersionOne` uses a CLASS-based
+      // component because that is a HOC that wraps this one. Therefore, as long as this component
+      // is a functional component, it can use hooks
+      const { customContentTypes, allTaxonomies } = useSelect((select) => ({
         customContentTypes: _.filter(
-          select(Constants.STORE_CORE).getPostTypes(query),
+          select(Constants.STORE_CORE).getPostTypes({ per_page: -1 }),
           (postType) => _.startsWith(postType.slug, 'dfh'),
         ),
         allTaxonomies: select(Constants.STORE_CORE).getTaxonomies({
           per_page: -1,
         }),
-      };
-    })(
-      ({
-        customContentTypes,
-        allTaxonomies,
-        isResolving,
-        attributes,
-        setAttributes,
-        clientId,
-      }) => {
-        const searchClassName = `search-${attributes[ATTR_UNIQUE_ID]}`,
-          taxonomyFilterHtmlId = `taxonomy-${attributes[ATTR_UNIQUE_ID]}`,
-          contentTypeIdToInfo = mapContentTypeIdToInfo(
-            customContentTypes,
-            allTaxonomies,
-          );
-        return (
-          <>
-            <div className="dfh-editor-block-title">{title}</div>
-            <SelectControl
-              label={__('Select content type', Constants.TEXT_DOMAIN)}
-              value={attributes[ATTR_CONTENT_ID]}
-              options={[
-                {
-                  label: __('Select a content type...', Constants.TEXT_DOMAIN),
-                  value: INITIAL_VAL_CONTENT_TYPE_ID,
-                  disabled: true,
-                },
-                ..._.map(customContentTypes, (contentType) => ({
-                  label: contentType.name,
-                  value: contentType.slug,
-                })),
-              ]}
-              onChange={(contentTypeId) => {
-                const info = contentTypeIdToInfo[contentTypeId];
-                setAttributes({
-                  [ATTR_CONTENT_ID]: contentTypeId,
-                  [ATTR_CONTENT_INFO]: info,
-                  [ATTR_PLURAL_NAME]: info?.labels?.name,
-                  [ATTR_CONTENT_CONTAINER_CLASS]:
-                    'page-faq__content__ajax ' +
-                    (Constants.CONTENT_TYPE_TO_CONTAINER_CLASS[contentTypeId] ??
-                      ''),
-                  [ATTR_SEARCH_PLACEHOLDER]: info?.labels?.search_items,
-                });
-              }}
-            />
-            <InnerBlocks
-              templateLock={Constants.INNER_BLOCKS_LOCKED}
-              template={[
-                [
-                  Constants.BLOCK_INNER_BLOCK_WRAPPER,
-                  {
-                    isLocked: true,
-                    wrapper: [{ classNames: ['page-faq__card'] }],
-                    template: [
-                      [
-                        Constants.BLOCK_INNER_BLOCK_WRAPPER,
-                        {
-                          isLocked: true,
-                          hideInEdit: true,
-                          wrapper: [
-                            {
-                              tagName: 'h1',
-                              classNames: [
-                                'page-faq__card__title',
-                                'heading',
-                                'heading--2',
-                              ],
-                            },
-                            {
-                              tagName: 'span',
-                              classNames: ['heading__title'],
-                            },
-                          ],
-                          template: [[Constants.BLOCK_PAGE_TITLE]],
-                        },
-                      ],
-                      // // TODO
-                      // [Constants.BLOCK_FAQ_QUESTION_CONTAINER],
-                    ],
-                  },
-                ],
-                [
-                  Constants.BLOCK_INNER_BLOCK_WRAPPER,
-                  {
-                    isLocked: true,
-                    wrapper: [{ classNames: ['page-faq__body'] }],
-                    template: [
-                      [
-                        Constants.BLOCK_FAQ_HEADER,
-                        {
-                          searchClassName,
-                          taxonomyFilterHtmlId,
-                        },
-                      ],
-                      [
-                        Constants.BLOCK_INNER_BLOCK_WRAPPER,
-                        {
-                          isLocked: true,
-                          wrapper: [{ classNames: ['page-faq__content'] }],
-                          template: [
-                            [
-                              Constants.BLOCK_AJAX_LOAD_MORE,
-                              {
-                                searchClassName,
-                                taxonomyFilterHtmlId,
-                              },
-                            ],
-                          ],
-                        },
-                      ],
-                    ],
-                  },
-                ],
-              ]}
-            />
-          </>
+      }));
+
+      const searchClassName = `search-${attributes[ATTR_UNIQUE_ID]}`,
+        taxonomyFilterHtmlId = `taxonomy-${attributes[ATTR_UNIQUE_ID]}`,
+        contentTypeIdToInfo = mapContentTypeIdToInfo(
+          customContentTypes,
+          allTaxonomies,
         );
-      },
-    ),
+      return (
+        <>
+          <div className="dfh-editor-block-title">{title}</div>
+          <SelectControl
+            label={__('Select content type', Constants.TEXT_DOMAIN)}
+            value={attributes[ATTR_CONTENT_ID]}
+            options={[
+              {
+                label: __('Select a content type...', Constants.TEXT_DOMAIN),
+                value: INITIAL_VAL_CONTENT_TYPE_ID,
+                disabled: true,
+              },
+              ..._.map(customContentTypes, (contentType) => ({
+                label: contentType.name,
+                value: contentType.slug,
+              })),
+            ]}
+            onChange={(contentTypeId) => {
+              const info = contentTypeIdToInfo[contentTypeId];
+              setAttributes({
+                [ATTR_CONTENT_ID]: contentTypeId,
+                [ATTR_CONTENT_INFO]: info,
+                [ATTR_PLURAL_NAME]: info?.labels?.name,
+                [ATTR_CONTENT_CONTAINER_CLASS]:
+                  'page-faq__content__ajax ' +
+                  (Constants.CONTENT_TYPE_TO_CONTAINER_CLASS[contentTypeId] ??
+                    ''),
+                [ATTR_SEARCH_PLACEHOLDER]: info?.labels?.search_items,
+              });
+            }}
+          />
+          <InnerBlocks
+            templateLock={Constants.INNER_BLOCKS_LOCKED}
+            template={[
+              [
+                Constants.BLOCK_INNER_BLOCK_WRAPPER,
+                {
+                  isLocked: true,
+                  wrapper: [{ classNames: ['page-faq__card'] }],
+                  template: [
+                    [
+                      Constants.BLOCK_INNER_BLOCK_WRAPPER,
+                      {
+                        isLocked: true,
+                        hideInEdit: true,
+                        wrapper: [
+                          {
+                            tagName: 'h1',
+                            classNames: [
+                              'page-faq__card__title',
+                              'heading',
+                              'heading--2',
+                            ],
+                          },
+                          {
+                            tagName: 'span',
+                            classNames: ['heading__title'],
+                          },
+                        ],
+                        template: [[Constants.BLOCK_PAGE_TITLE]],
+                      },
+                    ],
+                    [Constants.BLOCK_FAQ_QUESTION_CONTAINER],
+                  ],
+                },
+              ],
+              [
+                Constants.BLOCK_INNER_BLOCK_WRAPPER,
+                {
+                  isLocked: true,
+                  wrapper: [{ classNames: ['page-faq__body'] }],
+                  template: [
+                    [
+                      Constants.BLOCK_FAQ_HEADER,
+                      {
+                        searchClassName,
+                        taxonomyFilterHtmlId,
+                      },
+                    ],
+                    [
+                      Constants.BLOCK_INNER_BLOCK_WRAPPER,
+                      {
+                        isLocked: true,
+                        wrapper: [{ classNames: ['page-faq__content'] }],
+                        template: [
+                          [
+                            Constants.BLOCK_AJAX_LOAD_MORE,
+                            {
+                              searchClassName,
+                              taxonomyFilterHtmlId,
+                            },
+                          ],
+                        ],
+                      },
+                    ],
+                  ],
+                },
+              ],
+            ]}
+          />
+        </>
+      );
+    },
     save({ attributes }) {
       return (
         <div className="page-faq">

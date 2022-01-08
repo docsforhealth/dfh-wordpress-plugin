@@ -79,7 +79,7 @@ registerBlockType(Constants.BLOCK_AJAX_LOAD_MORE, {
       <div {...useBlockProps()}>
         <NumberControl
           label={__(
-            'Number of results to load per page',
+            'Number of results to load per request',
             Constants.TEXT_DOMAIN,
           )}
           value={attributes.numResultsPerPage}
