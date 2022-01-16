@@ -15,6 +15,7 @@ function dfh_activation_rewrite_flush() {
     // when you add a post of this CPT.
     dfh_register_resource_type();
     dfh_register_toolkit_type();
+    dfh_register_dot_phrase_type();
     // ATTENTION: This is *only* done during plugin activation hook
     // You should *NEVER EVER* do this on every page load!
     flush_rewrite_rules();
@@ -38,6 +39,7 @@ function dfh_register_resource_type() {
         'rewrite'             => array('slug' => 'resources', 'with_front' => false),
         'menu_icon'           => 'dashicons-image-filter',
         'template'            => array(array(DFH_TEMPLATE_BLOCK_RESOURCE)),
+        'template_lock'       => 'insert',
         'labels'              => array(
             'add_new'                  => __('Add New', DFH_TEXT_DOMAIN),
             'add_new_item'             => __('Add New Resource', DFH_TEXT_DOMAIN),
@@ -82,7 +84,7 @@ function dfh_register_resource_type() {
         'show_admin_column'     => true,
         'query_var'             => true,
         'show_in_rest'          => true,
-        'rewrite'               => array('slug' => 'categories'),
+        'rewrite'               => array('slug' => 'resource-categories'),
         'labels'                => array(
             'name'                       => __('Categories', DFH_TEXT_DOMAIN),
             'singular_name'              => __('Category', DFH_TEXT_DOMAIN),
@@ -107,7 +109,7 @@ function dfh_register_resource_type() {
         'show_admin_column'     => true,
         'query_var'             => true,
         'show_in_rest'          => true,
-        'rewrite'               => array('slug' => 'types'),
+        'rewrite'               => array('slug' => 'resource-content-types'),
         'labels'                => array(
             'name'                       => __('Content Types', DFH_TEXT_DOMAIN),
             'singular_name'              => __('Content Type', DFH_TEXT_DOMAIN),
@@ -146,6 +148,7 @@ function dfh_register_toolkit_type() {
         'rewrite'             => array('slug' => 'toolkits', 'with_front' => false),
         'menu_icon'           => 'dashicons-portfolio',
         'template'            => array(array(DFH_TEMPLATE_BLOCK_TOOLKIT)),
+        'template_lock'       => 'insert',
         'labels'              => array(
             'add_new'                  => __('Add New', DFH_TEXT_DOMAIN),
             'add_new_item'             => __('Add New Toolkit', DFH_TEXT_DOMAIN),
@@ -181,6 +184,89 @@ function dfh_register_toolkit_type() {
             'use_featured_image'       => __('Use as featured image', DFH_TEXT_DOMAIN),
             'view_item'                => __('View Toolkit', DFH_TEXT_DOMAIN),
             'view_items'               => __('View Toolkits', DFH_TEXT_DOMAIN),
+        ),
+    ));
+}
+
+add_action('init', 'dfh_register_dot_phrase_type');
+function dfh_register_dot_phrase_type() {
+    // see https://developer.wordpress.org/plugins/post-types/registering-custom-post-types/
+    register_post_type(DFH_CONTENT_TYPE_DOT_PHRASE, array(
+        'description'         => 'Pre-made dot phrase with supporting research',
+        'hierarchical'        => false,
+        'supports'            => array('title', 'editor'),
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_rest'        => true,
+        'publicly_queryable'  => true,
+        'exclude_from_search' => true,
+        'has_archive'         => false,
+        'query_var'           => true,
+        'can_export'          => true,
+        'rewrite'             => array('slug' => 'dot-phrases', 'with_front' => false),
+        'menu_icon'           => 'dashicons-format-status',
+        'template'            => array(array(DFH_TEMPLATE_BLOCK_DOT_PHRASE)),
+        'template_lock'       => 'insert',
+        'labels'              => array(
+            'add_new'                  => __('Add New', DFH_TEXT_DOMAIN),
+            'add_new_item'             => __('Add New Dot Phrase', DFH_TEXT_DOMAIN),
+            'all_items'                => __('Dot Phrases', DFH_TEXT_DOMAIN),
+            'archives'                 => __('Dot Phrases', DFH_TEXT_DOMAIN),
+            'attributes'               => __('Dot Phrase Attributes', DFH_TEXT_DOMAIN),
+            'edit_item'                => __('Edit Dot Phrase', DFH_TEXT_DOMAIN),
+            'featured_image'           => __('Featured image', DFH_TEXT_DOMAIN),
+            'filter_by_date'           => __('Filter by date', DFH_TEXT_DOMAIN),
+            'filter_items_list'        => __('Filter dot phrases list', DFH_TEXT_DOMAIN),
+            'insert_into_item'         => __('Insert into dot phrase', DFH_TEXT_DOMAIN),
+            'item_link'                => __('Dot Phrase Link', DFH_TEXT_DOMAIN),
+            'item_link_description'    => __('A link to a dot phrase.', DFH_TEXT_DOMAIN),
+            'item_published'           => __('Dot Phrase published.', DFH_TEXT_DOMAIN),
+            'item_published_privately' => __('Dot Phrase published privately.', DFH_TEXT_DOMAIN),
+            'item_reverted_to_draft'   => __('Dot Phrase reverted to draft.', DFH_TEXT_DOMAIN),
+            'item_scheduled'           => __('Dot Phrase scheduled.', DFH_TEXT_DOMAIN),
+            'item_updated'             => __('Dot Phrase updated.', DFH_TEXT_DOMAIN),
+            'items_list'               => __('Dot Phrases list', DFH_TEXT_DOMAIN),
+            'items_list_navigation'    => __('Dot Phrases list navigation', DFH_TEXT_DOMAIN),
+            'menu_name'                => __('Dot Phrases', DFH_TEXT_DOMAIN),
+            'name'                     => __('Dot Phrases', DFH_TEXT_DOMAIN),
+            'name_admin_bar'           => __('Dot Phrase', DFH_TEXT_DOMAIN),
+            'new_item'                 => __('New Dot Phrase', DFH_TEXT_DOMAIN),
+            'not_found'                => __('No Dot Phrases found', DFH_TEXT_DOMAIN),
+            'not_found_in_trash'       => __('No Dot Phrases found in Trash', DFH_TEXT_DOMAIN),
+            'parent_item_colon'        => __('Parent Dot Phrase:', DFH_TEXT_DOMAIN),
+            'remove_featured_image'    => __('Remove featured image', DFH_TEXT_DOMAIN),
+            'search_items'             => __('Search for a dot phrase...', DFH_TEXT_DOMAIN),
+            'set_featured_image'       => __('Set featured image', DFH_TEXT_DOMAIN),
+            'singular_name'            => __('Dot Phrase', DFH_TEXT_DOMAIN),
+            'uploaded_to_this_item'    => __('Uploaded to this dot phrase', DFH_TEXT_DOMAIN),
+            'use_featured_image'       => __('Use as featured image', DFH_TEXT_DOMAIN),
+            'view_item'                => __('View Dot Phrase', DFH_TEXT_DOMAIN),
+            'view_items'               => __('View Dot Phrases', DFH_TEXT_DOMAIN),
+        ),
+    ));
+    register_taxonomy(DFH_TAXONOMY_DOT_PHRASE_CATEGORY, DFH_CONTENT_TYPE_DOT_PHRASE, array(
+        'hierarchical'          => false,
+        'show_ui'               => true,
+        'show_admin_column'     => true,
+        'query_var'             => true,
+        'show_in_rest'          => true,
+        'rewrite'               => array('slug' => 'dot-phrase-categories'),
+        'labels'                => array(
+            'name'                       => __('Categories', DFH_TEXT_DOMAIN),
+            'singular_name'              => __('Category', DFH_TEXT_DOMAIN),
+            'search_items'               => __('Categories', DFH_TEXT_DOMAIN),
+            'popular_items'              => __('Popular Categories', DFH_TEXT_DOMAIN),
+            'all_items'                  => __('All Categories', DFH_TEXT_DOMAIN),
+            'edit_item'                  => __('Edit Category', DFH_TEXT_DOMAIN),
+            'update_item'                => __('Update Category', DFH_TEXT_DOMAIN),
+            'add_new_item'               => __('Add New Category', DFH_TEXT_DOMAIN),
+            'new_item_name'              => __('New Category Name', DFH_TEXT_DOMAIN),
+            'separate_items_with_commas' => __('Separate Categories with commas', DFH_TEXT_DOMAIN),
+            'add_or_remove_items'        => __('Add or remove Categories', DFH_TEXT_DOMAIN),
+            'choose_from_most_used'      => __('Choose from most used Categories', DFH_TEXT_DOMAIN),
+            'not_found'                  => __('No Categories found', DFH_TEXT_DOMAIN),
+            'menu_name'                  => __('Categories', DFH_TEXT_DOMAIN),
+            'back_to_items'              => __('Back to Categories', DFH_TEXT_DOMAIN),
         ),
     ));
 }

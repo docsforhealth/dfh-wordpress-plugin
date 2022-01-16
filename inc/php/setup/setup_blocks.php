@@ -11,10 +11,6 @@ function dfh_block_categories($categories, $post) {
                 'title' => __('Common', DFH_TEXT_DOMAIN),
             ),
             array(
-                'slug'  => DFH_BLOCK_CATEGORY_DEPRECATED,
-                'title' => __('Deprecated', DFH_TEXT_DOMAIN),
-            ),
-            array(
                 'slug'  => DFH_BLOCK_CATEGORY_LAYOUT,
                 'title' => __('Layout', DFH_TEXT_DOMAIN),
             ),
@@ -33,6 +29,14 @@ function dfh_block_categories($categories, $post) {
             array(
                 'slug'  => DFH_BLOCK_CATEGORY_TOOLKIT,
                 'title' => __('Toolkits', DFH_TEXT_DOMAIN),
+            ),
+            array(
+                'slug'  => DFH_BLOCK_CATEGORY_DOT_PHRASE,
+                'title' => __('Dot Phrases', DFH_TEXT_DOMAIN),
+            ),
+            array(
+                'slug'  => DFH_BLOCK_CATEGORY_DEPRECATED,
+                'title' => __('Deprecated', DFH_TEXT_DOMAIN),
             ),
         ),
         $categories
@@ -105,6 +109,7 @@ function dfh_register_dynamic_blocks() {
     // scripts and stylesheets already registered in editor-specific hooks
     // in these files, we only need to specify the render_callback AND attributes
     // see https://github.com/WordPress/gutenberg/issues/6187#issuecomment-381446732
+    require DFH_PLUGIN_DIR . '/inc/php/setup/block/dot_phrase_detail_info.php';
     require DFH_PLUGIN_DIR . '/inc/php/setup/block/page_taxonomy_filter.php';
     require DFH_PLUGIN_DIR . '/inc/php/setup/block/page_title.php';
     require DFH_PLUGIN_DIR . '/inc/php/setup/block/resource_detail_info.php';

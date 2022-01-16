@@ -8,15 +8,18 @@ export const CATEGORY_DEPRECATED = 'dfh-deprecated';
 export const CATEGORY_LANDING = 'dfh-landing';
 export const CATEGORY_LAYOUT = 'dfh-layout';
 export const CATEGORY_MEDIA = 'dfh-media';
+export const CATEGORY_DOT_PHRASE = 'dfh-dot-phrase';
 export const CATEGORY_RESOURCE = 'dfh-resource';
 export const CATEGORY_TOOLKIT = 'dfh-toolkit';
 
 // custom content types and taxonomies
 export const CONTENT_TYPE_RESOURCE = 'dfh_resource';
 export const CONTENT_TYPE_TOOLKIT = 'dfh_toolkit';
+export const CONTENT_TYPE_DOT_PHRASE = 'dfh_dot_phrase';
 export const CONTENT_TYPE_TO_CONTAINER_CLASS = {
   [CONTENT_TYPE_RESOURCE]: 'resource-previews',
   [CONTENT_TYPE_TOOLKIT]: 'toolkit-previews',
+  [CONTENT_TYPE_DOT_PHRASE]: 'dot-phrase-preview-list',
 };
 export const TAXONOMY_RESOURCE = 'dfh_resource_classification';
 export const TAXONOMY_RESOURCE_TYPE = 'dfh_resource_content_type';
@@ -43,6 +46,7 @@ export const BLOCK_AJAX_LOAD_MORE = `${NAMESPACE}/ajax-load-more`;
 
 export const BLOCK_BUTTON_CONTAINER = `${NAMESPACE}/button-container`;
 export const BLOCK_CONTENT_CONTAINER = `${NAMESPACE}/content-container`;
+export const BLOCK_CONTENT_COPY_AREA = `${NAMESPACE}/content-copy-area`;
 export const BLOCK_FILE_BUTTON = `${NAMESPACE}/file-button`;
 export const BLOCK_HEADING = `${NAMESPACE}/heading`;
 export const BLOCK_INNER_BLOCK_WRAPPER = `${NAMESPACE}/inner-block-wrapper`;
@@ -51,10 +55,10 @@ export const BLOCK_SEARCH_INPUT = `${NAMESPACE}/search-input`;
 export const BLOCK_TEXT = `${NAMESPACE}/text`;
 export const BLOCK_VIDEO_THUMBNAIL = `${NAMESPACE}/video-thumbnail`;
 
-export const BLOCK_PAGE_HEADER = `${NAMESPACE}/page-header`;
-export const BLOCK_PAGE_TITLE = `${NAMESPACE}/page-title`;
 export const BLOCK_PAGE_CATEGORIES_SEARCH_HEADER = `${NAMESPACE}/page-categories-search-header`;
+export const BLOCK_PAGE_HEADER = `${NAMESPACE}/page-header`;
 export const BLOCK_PAGE_TAXONOMY_FILTER = `${NAMESPACE}/page-taxonomy-filter`;
+export const BLOCK_PAGE_TITLE = `${NAMESPACE}/page-title`;
 
 export const BLOCK_FAQ_QUESTION_CONTAINER = `${NAMESPACE}/page-faq-question-container`;
 export const BLOCK_FAQ_QUESTION = `${NAMESPACE}/page-faq-question`;
@@ -77,6 +81,8 @@ export const BLOCK_TOOLKIT_DETAIL_METADATA = `${NAMESPACE}/toolkit-detail-metada
 export const BLOCK_TOOLKIT_DETAIL_SECTION = `${NAMESPACE}/toolkit-detail-section`;
 export const BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER = `${NAMESPACE}/toolkit-detail-section-container`;
 export const BLOCK_TOOLKIT_DETAIL_SECTION_INFO = `${NAMESPACE}/toolkit-detail-section-info`;
+
+export const BLOCK_PAGE_DOT_PHRASE_DETAIL_INFO = `${NAMESPACE}/dot-phrase-detail-info`;
 
 export const BUTTON_SIZE_DEFAULT = '';
 export const BUTTON_SIZE_SMALL = 'small';

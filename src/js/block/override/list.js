@@ -10,7 +10,7 @@ import * as Constants from 'src/js/constants';
 //    see https://css-tricks.com/a-crash-course-in-wordpress-block-filters/
 // WP list block: https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/list
 
-const OVERRIDE_BLOCK_NAME = 'core/list';
+const OVERRIDE_BLOCK_NAME = Constants.CORE_BLOCK_LIST;
 
 export const ATTR_HANGING_INDENT = 'hasHangingIndent';
 

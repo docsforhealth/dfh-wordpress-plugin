@@ -49,8 +49,10 @@
         }
     }
     @media (min-width: $media-width-laptop) {
+        $green-background-height: 45vh;
+
         @include full-width-bg($color-seafoam) {
-            height: 45vh;
+            height: $green-background-height;
             border-bottom: 1px solid $color-seafoam-dark-1;
         }
 
@@ -110,16 +112,23 @@
         &__content {
             @include full-width-bg($color-white) {
                 left: $unit-horizontal-overhang * -1;
+                min-height: $green-background-height;
                 width: calc(100% + #{$unit-horizontal-overhang * 2});
                 transform: none;
-                border-top-right-radius: $border-radius;
+                border-top-right-radius: $border-radius * 2;
+                border-top-left-radius: $border-radius * 2;
                 border-top: 1px solid $color-seafoam-dark-1;
             }
         }
     }
     @media (min-width: $media-width-large-desktop) {
+        $green-background-height: 35vh;
+
         @include full-width-bg($color-seafoam) {
-            height: 35vh;
+            height: $green-background-height;
+        }
+        &__content:before {
+            min-height: $green-background-height;
         }
     }
 }

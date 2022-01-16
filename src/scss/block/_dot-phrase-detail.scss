@@ -1,0 +1,7 @@
+.dot-phrase-detail {
+    @extend .container;
+    @extend .container--narrow;
+    @extend .detail-container;
+
+    @include auto-space-vertical($baseunit * 2, false);
+}

@@ -60,12 +60,19 @@ import 'src/js/block/helper/landing-header';
 import 'src/js/block/helper/landing-video';
 
 /**
+ * Dot phrase blocks
+ */
+import 'src/js/block/dot-phrase-detail'; // template detail block
+// Helpers
+import 'src/js/block/dynamic/helper/dot-phrase-detail-info';
+
+/**
  * Resource blocks
  */
-import 'src/js/block/resource-detail';
-import 'src/js/block/resource-previews';
+import 'src/js/block/resource-detail'; // template detail block
+import 'src/js/block/resource-previews'; // deprecated overview block
 // Helpers
-import 'src/js/block/dynamic/helper/resource-detail-info'; // TODO refactor into page-detail-info??
+import 'src/js/block/dynamic/helper/resource-detail-info';
 import 'src/js/block/helper/resource-detail-description';
 import 'src/js/block/helper/resource-detail-steps';
 import 'src/js/block/helper/resource-detail-steps-step';
@@ -73,8 +80,8 @@ import 'src/js/block/helper/resource-detail-steps-step';
 /**
  * Toolkit blocks
  */
-import 'src/js/block/toolkit-detail';
-import 'src/js/block/toolkit-previews';
+import 'src/js/block/toolkit-detail'; // template detail block
+import 'src/js/block/toolkit-previews'; // deprecated overview block
 // Helpers
 import 'src/js/block/dynamic/helper/toolkit-detail-header';
 import 'src/js/block/helper/toolkit-detail-list';

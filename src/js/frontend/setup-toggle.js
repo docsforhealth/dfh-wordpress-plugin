@@ -2,7 +2,8 @@ import $ from 'jquery';
 import { classSelector } from 'src/js/frontend/helpers/utils';
 
 $(function () {
-  $('[data-toggle-container-class]').on('click', function () {
+  // to support async content loaded via ajax
+  $(document).on('click', '[data-toggle-container-class]', function () {
     if (this.dataset) {
       const $this = $(this),
         {

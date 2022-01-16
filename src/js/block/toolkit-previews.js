@@ -14,7 +14,7 @@ registerBlockType(
   `${Constants.NAMESPACE}/toolkit-previews`,
   addUniqueIdInApiVersionOne(ATTR_UNIQUE_ID, {
     title,
-    category: Constants.CATEGORY_TOOLKIT,
+    category: Constants.CATEGORY_DEPRECATED,
     icon: 'welcome-view-site',
     description: __(
       'Displays and searches previews of all toolkits',

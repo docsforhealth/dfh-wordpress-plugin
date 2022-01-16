@@ -1,0 +1,80 @@
+.dot-phrase-preview-list {
+    @include scut-list-unstyled;
+
+    padding-top: $baseunit;
+
+    &__preview {
+        margin-bottom: $baseunit;
+    }
+
+    @media (min-width: $media-width-landscape-medium-mobile) {
+        padding-top: $baseunit * 2;
+    }
+}
+
+.dot-phrase-preview {
+    border: 1px solid $color-seafoam-dark-1;
+    border-radius: $border-radius;
+
+    &__header {
+        &__info {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            background-color: $color-seafoam;
+            border-bottom: 1px solid $color-seafoam-dark-1;
+            padding: ($baseunit * 0.5) $baseunit;
+        }
+        & &__copy {
+            @include copy-button(
+                $breakpoint: $media-width-landscape-medium-mobile,
+                $icon-path-initial: url('../assets/images/icon-copy.svg'),
+                $icon-path-done: url('../assets/images/icon-copy-done.svg'),
+                $class-modifier-active: '--copying',
+                $class-modifier-done: '--copied'
+            );
+
+            flex-shrink: 0;
+        }
+    }
+    &__body {
+        padding: $baseunit;
+
+        &__text {
+            // to preserve line breaks and white space for multi-line strings
+            // `pre-line` ignores leading spaces for each line
+            // see https://stackoverflow.com/a/44413780
+            // see https://developer.mozilla.org/en-US/docs/Web/CSS/white-space
+            white-space: pre-line;
+
+            // eliminate leading whitespace from markup
+            // https://stackoverflow.com/a/31897821
+            &:first-line {
+                line-height: 0;
+            }
+
+            // add space if has tags afterwards
+            &:not(:last-child) {
+                margin-bottom: $baseunit * 1.5;
+            }
+        }
+    }
+
+    @media (min-width: $media-width-landscape-medium-mobile) {
+        &__header {
+            display: flex;
+            align-items: center;
+            padding: 0 $baseunit;
+            background-color: $color-seafoam;
+            border-bottom: 1px solid $color-seafoam-dark-1;
+
+            &__info {
+                border-bottom-width: 0;
+
+                flex-grow: 1;
+                padding: ($baseunit * 0.5) $baseunit;
+                padding-left: 0;
+            }
+        }
+    }
+}

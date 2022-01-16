@@ -1,12 +1,12 @@
 // Selectors to constrain to frontend and editor views
 #content,
 [data-block] {
-    // For `core/list`
-    ul {
+    // For both flavors of `core/list`
+    ul, ol {
         li {
             @extend .text;
 
-            margin-bottom: 0 !important;
+            margin-bottom: ($baseunit / 2);
         }
         a {
             @extend .link;

@@ -4,8 +4,6 @@ import { TextControl } from '@wordpress/components';
 
 import * as Constants from '../../../constants';
 
-// TODO REFACTOR into more reusable form that can be used for more than resources
-
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_INFO, {
   title: __('Resource Detail Info', Constants.TEXT_DOMAIN),
@@ -17,7 +15,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_INFO, {
   ),
   supports: { inserter: false },
   // for dynamic blocks, see attributes in corresponding PHP file
-  // see reasoning in `page_taxonomy_filter.php`
+  // see reasoning in `resource_detail_info.php`
   edit({ attributes, setAttributes }) {
     return (
       <TextControl

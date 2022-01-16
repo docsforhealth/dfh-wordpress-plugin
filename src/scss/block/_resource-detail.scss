@@ -1,5 +1,6 @@
 .resource-detail {
     @extend .container;
+    @extend .detail-container;
 
     display: flex;
     flex-direction: column;

@@ -8,7 +8,8 @@ import $ from 'jquery';
 // `data-copy-done-text` = text for control after done
 
 $(function () {
-  $('[data-copy-selector]').on('click', function () {
+  // to support async content loaded via ajax
+  $(document).on('click', '[data-copy-selector]', function () {
     const element = this,
       textToCopy = $(element.dataset.copySelector)?.text()?.trim(),
       activeClass = element.dataset.copyActiveClass,

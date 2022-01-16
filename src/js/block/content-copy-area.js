@@ -9,7 +9,7 @@ const ATTR_UNIQUE_ID = '_uniqueId',
   title = __('Content Copy Area', Constants.TEXT_DOMAIN);
 
 registerBlockType(
-  `${Constants.NAMESPACE}/content-copy-area`,
+  Constants.BLOCK_CONTENT_COPY_AREA,
   addUniqueIdInApiVersionOne(ATTR_UNIQUE_ID, {
     title,
     icon: 'media-text',

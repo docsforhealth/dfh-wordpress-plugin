@@ -1,3 +1,7 @@
+// Standardize vertical spacing on load more button
+.alm-btn-wrap {
+    padding: ($baseunit * 2) 0;
+}
 // Override Load More button
 // `default` class name added in `setup_ajax_load_more.php`
 .ajax-load-more-wrap.default .alm-load-more-btn {
