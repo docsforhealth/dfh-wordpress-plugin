@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - 14
 os: linux
+dist: xenial
 # Only build for tags, not for untagged commits
 # see https://github.com/travis-ci/travis-ci/issues/6893#issuecomment-354967391
 if: tag IS present
@@ -20,15 +21,18 @@ before_install:
 install:
   - yarn install
 script:
+  - yarn test
   - yarn build
 before_deploy:
   # see https://superuser.com/a/496903
-  - zip -r /tmp/dfh-wordpress-plugin-${TRAVIS_TAG}.zip . -x 'node_modules/*' 'src/*' '.git*' '*.log' '*.DS_Store*' '*.sublime*'
+  - zip -r /tmp/dfh-wordpress-plugin-${TRAVIS_TAG}.zip . -x 'node_modules/*' 'src/*' 'tests/*' '.git*' '*.log' '*.DS_Store*' '*.sublime*'
 deploy:
+  # using dpl v1 instead of v2 right now
   - provider: releases
     token: ${GITHUB_TOKEN}
     file: /tmp/dfh-wordpress-plugin-${TRAVIS_TAG}.zip
-    skip_cleanup: true
+    skip_cleanup: true # v2: renamed to `cleanup`
     overwrite: true
+    edge: false # use dpl v1 not v2
     on:
       tags: true

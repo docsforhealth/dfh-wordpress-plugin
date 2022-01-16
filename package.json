@@ -1,16 +1,20 @@
 {
   "name": "docs-for-health-wordpress-plugin",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "license": "Apache-2.0",
   "scripts": {
     "build:sass": "npx sass --quiet-deps --load-path=node_modules src:build",
     "build:wp": "npx wp-scripts build",
-    "build:test": "npx wp-scripts test-unit-js",
     "watch:sass": "npx concurrently \"npm:build:sass\" \"npm:build:sass -- --watch\"",
     "watch:wp": "npx wp-scripts start",
     "watch:test": "npx wp-scripts test-unit-js --watch",
-    "build": "npx concurrently -n w: npm:build:*",
+    "test": "npx wp-scripts test-unit-js",
+    "build": "npm run build:wp && npm run build:sass",
     "start": "npx concurrently -n w: npm:watch:*"
+  },
+  "scriptsComments": {
+    "build": "Builds production assets sequentially. Note that WP build must come before SCSS compilation to avoid overwriting compiled CSS files",
+    "start": "Starts up development server to concurrently compile JS, SCSS, and run tests"
   },
   "devDependencies": {
     "@wordpress/scripts": "~19.2.2",
@@ -20,7 +24,7 @@
     "prettier-plugin-organize-imports": "^2.3.4",
     "prop-types": "^15.7.2",
     "sass": "^1.43.5",
-    "scut": "^1.4.0",
+    "scut": "^1.4.1",
     "slick-carousel": "^1.8.1",
     "thumbnail-youtube-vimeo": "^1.1.0",
     "typescript": "^4.5.2",

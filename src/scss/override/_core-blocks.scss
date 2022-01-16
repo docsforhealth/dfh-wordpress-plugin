@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // Selectors to constrain to frontend and editor views
 #content,
 [data-block] {
@@ -6,7 +8,7 @@
         li {
             @extend .text;
 
-            margin-bottom: ($baseunit / 2);
+            margin-bottom: math.div($baseunit, 2);
         }
         a {
             @extend .link;
