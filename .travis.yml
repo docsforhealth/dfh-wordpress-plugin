@@ -26,6 +26,8 @@ script:
 before_deploy:
   # see https://superuser.com/a/496903
   - zip -r /tmp/dfh-wordpress-plugin-${TRAVIS_TAG}.zip . -x 'node_modules/*' 'src/*' 'tests/*' '.git*' '*.log' '*.DS_Store*' '*.sublime*'
+  # adding the `base-assets` folder used by the base styling code
+  - zip -r /tmp/dfh-wordpress-plugin-${TRAVIS_TAG}.zip src/scss/base/base-assets
 deploy:
   # using dpl v1 instead of v2 right now
   - provider: releases
