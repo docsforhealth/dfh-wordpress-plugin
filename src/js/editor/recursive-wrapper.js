@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
  */
 
 export default function RecursiveWrapper({ skip, wrapper, children }) {
-  if (skip || wrapper.length === 0) {
+  if (skip || !wrapper || wrapper.length === 0) {
     return children;
   } else {
     const WrapperElement = wrapper[0]?.tagName ?? 'div';
@@ -30,4 +30,39 @@ RecursiveWrapper.propTypes = {
       classNames: PropTypes.arrayOf(PropTypes.string),
     }),
   ),
+};
+
+/**
+ * DEPRECATED
+ *
+ * This deprecated version is preserved solely for enabling the block migration in `inner-block-wrapper`
+ *
+ * See https://developer.wordpress.org/block-editor/reference-guides/block-api/block-deprecation/
+ */
+
+export function V1RecursiveWrapper({ elements, classNames, children }) {
+  if (elements.length !== classNames.length) {
+    throw new Error(
+      'Wrapper elements and wrapper class names must be arrays of the same length',
+    );
+  }
+  if (elements.length === 0) {
+    return children;
+  } else {
+    const Wrapper = elements[0] ? elements[0] : Fragment;
+    return (
+      <Wrapper className={classNames[0]}>
+        <V1RecursiveWrapper
+          elements={elements.slice(1)}
+          classNames={classNames.slice(1)}
+        >
+          {children}
+        </V1RecursiveWrapper>
+      </Wrapper>
+    );
+  }
+}
+V1RecursiveWrapper.propTypes = {
+  elements: PropTypes.arrayOf(PropTypes.string).isRequired,
+  classNames: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

@@ -35,6 +35,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS, {
               Constants.BLOCK_INNER_BLOCK_WRAPPER,
               {
                 wrapper: [{ tagName: 'ol', classNames: ['resource-steps'] }],
+                showWrapperInEdit: true,
                 allowedBlocks: [Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP],
                 template: [[Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP]],
               },

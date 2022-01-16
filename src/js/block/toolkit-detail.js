@@ -50,6 +50,7 @@ registerBlockType(`${Constants.NAMESPACE}/toolkit-detail`, {
               Constants.BLOCK_INNER_BLOCK_WRAPPER,
               {
                 wrapper: [{ classNames: ['toolkit-detail-container__list'] }],
+                showWrapperInEdit: true,
                 isLocked: true,
                 template: [
                   [Constants.BLOCK_TOOLKIT_DETAIL_HEADER],

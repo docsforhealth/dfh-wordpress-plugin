@@ -1,8 +1,11 @@
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
+import _ from 'lodash';
 import * as Constants from 'src/js/constants';
-import RecursiveWrapper from 'src/js/editor/recursive-wrapper';
+import RecursiveWrapper, {
+  V1RecursiveWrapper,
+} from 'src/js/editor/recursive-wrapper';
 import WithInnerBlockAttrs from 'src/js/editor/with-inner-block-attrs';
 import WrapOnlyIfHasClass from 'src/js/editor/wrap-only-if-has-class';
 
@@ -25,6 +28,18 @@ import WrapOnlyIfHasClass from 'src/js/editor/wrap-only-if-has-class';
  * helper block directly. See https://github.com/WordPress/gutenberg/issues/15759
  */
 
+const v1Attributes = {
+  allowedBlocks: { type: 'array' },
+  template: { type: 'array' },
+  isLocked: { type: 'boolean', default: false },
+  hideInEdit: { type: 'boolean', default: false },
+  wrapperElements: { type: 'array', default: ['div'] },
+  wrapperClassNames: { type: 'array', default: [''] },
+  // force all children (including nested children) of specific type to have
+  // certain attribute values, see `with-inner-block-attrs` block
+  forceAttributes: { type: 'object' },
+};
+
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_INNER_BLOCK_WRAPPER, {
   title: __('Inner Block Wrapper', Constants.TEXT_DOMAIN),
@@ -35,19 +50,19 @@ registerBlockType(Constants.BLOCK_INNER_BLOCK_WRAPPER, {
     Constants.TEXT_DOMAIN,
   ),
   supports: { inserter: false },
-  attributes: {
-    allowedBlocks: { type: 'array' },
-    template: { type: 'array' },
-    isLocked: { type: 'boolean', default: false },
-    hideInEdit: { type: 'boolean', default: false },
-    showWrapperInEdit: { type: 'boolean', default: false },
-    // An array of objects that specify how to wrap the children blocks
-    // see `recursive-wrapper` block for content item shape
-    wrapper: { type: 'array', default: [] },
-    // force all children (including nested children) of specific type to have
-    // certain attribute values, see `with-inner-block-attrs` block
-    forceAttributes: { type: 'object' },
-  },
+  attributes: _.omit(
+    {
+      ...v1Attributes,
+      // An array of objects that specify how to wrap the children blocks
+      // see `recursive-wrapper` block for content item shape
+      wrapper: { type: 'array', default: [] },
+      // Note that, by default, the specified wrapper is only rendered in the SAVE hook.
+      // For ease of display, it is not rendered by default in the EDIT hook
+      showWrapperInEdit: { type: 'boolean', default: false },
+    },
+    // Deleted elements
+    ['wrapperElements', 'wrapperClassNames'],
+  ),
   edit({ clientId, attributes }) {
     return (
       // Need to hide via CSS instead of not rendering at all to pass `InnerBlocks` properties
@@ -83,4 +98,43 @@ registerBlockType(Constants.BLOCK_INNER_BLOCK_WRAPPER, {
       </RecursiveWrapper>
     );
   },
+  // see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-deprecation/
+  // [BUG] As of WP 5.8.3, the `isEligible` hook seems to be never called
+  deprecated: [
+    // 1. added `showWrapperInEdit`
+    // 2. consolidated `wrapperElements` and `wrapperClassNames` into `wrapper`
+    {
+      attributes: v1Attributes,
+      supports: { inserter: false },
+      save({ attributes }) {
+        return (
+          <V1RecursiveWrapper
+            elements={attributes.wrapperElements}
+            classNames={attributes.wrapperClassNames}
+          >
+            <InnerBlocks.Content />
+          </V1RecursiveWrapper>
+        );
+      },
+      migrate(attributes, innerBlocks) {
+        const newAttributes = {
+          ...attributes,
+          showWrapperInEdit: true, // in the past wrapper was always shown
+          wrapper: [],
+        };
+        // build new `wrapper` attribute
+        attributes.wrapperElements?.forEach((elementName, index) => {
+          newAttributes.wrapper.push({
+            tagName: elementName,
+            classNames: [attributes.wrapperClassNames[index]],
+          });
+        });
+        // remove outdated attributes
+        delete newAttributes.wrapperElements;
+        delete newAttributes.wrapperClassNames;
+        // return new attributes
+        return newAttributes;
+      },
+    },
+  ],
 });
