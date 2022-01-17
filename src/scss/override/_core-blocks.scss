@@ -1,16 +1,17 @@
-@use "sass:math";
+@use 'sass:math';
 
-// Selectors to constrain to frontend and editor views
+// Selectors to constrain to frontend via `#content` and editor via `[data-block]`
 #content,
 [data-block] {
     // For both flavors of `core/list`
-    ul, ol {
+    ul,
+    ol {
         li {
-            @extend .text;
+            @extend %default-text;
 
             margin-bottom: math.div($baseunit, 2);
         }
-        a {
+        a:not(.button) {
             @extend .link;
         }
     }

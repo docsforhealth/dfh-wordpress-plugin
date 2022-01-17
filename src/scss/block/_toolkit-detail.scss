@@ -28,6 +28,7 @@
             }
             &__header {
                 margin-top: $baseunit;
+                border-bottom: 1px solid $color-seafoam-dark-2;
             }
             &__list &__header {
                 position: sticky;
@@ -57,7 +58,6 @@
             &__header {
                 padding: $baseunit 0 ($baseunit * 0.5);
                 margin-top: 0;
-                border-bottom: 1px solid $color-seafoam-dark-2;
             }
         }
     }

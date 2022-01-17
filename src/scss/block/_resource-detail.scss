@@ -69,17 +69,20 @@
         &:before {
             content: counter(resource-steps-counter);
             position: absolute;
-            top: $spacing-around * -1;
             left: 0;
             transform: translateX(calc(-100% - #{$counter-offset}));
             height: $counter-height;
             min-width: $counter-height;
-            padding: $spacing-around;
             background-color: $color-navy;
             color: $color-white;
             font-weight: $font-weight-bold;
             border-radius: 100%;
             text-align: center;
+
+            // combination of shift background circle up slightly and adding padding to content box
+            // to ensure that number is centered in blue circle
+            top: $spacing-around * -1;
+            padding: $spacing-around * 0.5;
         }
 
         &__title {
