@@ -1,44 +1,44 @@
-.wpcf7 {
-    // Do not need provided loading state spinner
-    & .form .ajax-loader {
-        @include scut-center-transform;
+// custom styles for contact form 7 forms
+// See https://contactform7.com/styling-contact-form/
 
-        height: 100%;
-        width: 100%;
-        background-image: url('../assets/images/ajax-load-more/loader-fading-circles.gif');
-        background-color: rgba(0, 0, 0, 0.03);
-        background-repeat: no-repeat;
-        background-position: center;
-        border-radius: $border-radius;
-        cursor: progress;
+.wpcf7 {
+    // loading indicator upon submission
+    & form &-spinner {
+        @include scut-center-transform;
     }
 
     // Inline error message
-    & &-not-valid-tip {
+    & form &-not-valid-tip {
         margin-top: $baseunit * 0.5;
         color: $color-red-dark-1;
         font-size: $baseunit;
     }
 
-    // After send message displayed at bottom of form
-    & &-response-output {
+    /**
+     * Customizing response messages
+     */
+
+    // default state
+    & form.form &-response-output {
         width: 100%;
         margin: $baseunit 0;
         padding: $baseunit;
         border-width: 0;
         border-radius: $border-radius;
-        background-color: $color-red-light-1;
+        background-color: $color-seafoam;
         text-align: center;
     }
-    & &-mail-sent-ok {
+    // success state
+    & form.form.sent &-response-output {
         border-width: 0;
         background-color: $color-seafoam;
     }
-    & &-mail-sent-ng,
-    & &-aborted,
-    & &-spam-blocked,
-    & &-validation-errors,
-    & &-acceptance-missing {
+    // error/failure state
+    & form.form.failed &-response-output,
+    & form.form.aborted &-response-output,
+    & form.form.spam &-response-output,
+    & form.form.invalid &-response-output,
+    & form.form.unaccepted &-response-output {
         border-width: 0;
         background-color: $color-red-light-1;
     }

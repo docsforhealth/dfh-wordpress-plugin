@@ -3,6 +3,14 @@
 // Selectors to constrain to frontend via `#content` and editor via `[data-block]`
 #content,
 [data-block] {
+    // For core media blocks
+    figcaption {
+        @extend .text;
+        @extend .text--small;
+    }
+}
+
+[data-block] {
     // For both flavors of `core/list`
     ul,
     ol {
@@ -14,12 +22,6 @@
         a:not(.button) {
             @extend .link;
         }
-    }
-
-    // For core media blocks
-    figcaption {
-        @extend .text;
-        @extend .text--small;
     }
 }
 

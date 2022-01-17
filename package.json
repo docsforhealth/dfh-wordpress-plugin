@@ -1,6 +1,6 @@
 {
   "name": "docs-for-health-wordpress-plugin",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "Apache-2.0",
   "scripts": {
     "build:sass": "npx sass --quiet-deps --load-path=node_modules src:build",
