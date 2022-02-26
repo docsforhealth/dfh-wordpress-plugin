@@ -26,6 +26,6 @@ class DFH_Missing_Dependency_Reporter {
             return;
         }
         $missing_plugin_names = $this->missing_plugin_names;
-        include DFH_PLUGIN_DIR . '/inc/php/view/missing-dependencies-admin-notice.php';
+        include DFH_PLUGIN_DIR . '/src/php/view/missing-dependencies-admin-notice.php';
     }
 }
