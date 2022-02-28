@@ -28,17 +28,7 @@ registerBlockType(`${Constants.NAMESPACE}/dot-phrase-detail`, {
               Constants.BLOCK_CONTENT_CONTAINER,
               {
                 noHeadings: true,
-                template: [
-                  [
-                    Constants.BLOCK_TEXT,
-                    {
-                      placeholder: __(
-                        'Enter dot phrase rationale here...',
-                        Constants.TEXT_DOMAIN,
-                      ),
-                    },
-                  ],
-                ],
+                template: [[Constants.CORE_BLOCK_QUOTE]],
               },
             ],
             [
@@ -57,7 +47,7 @@ registerBlockType(`${Constants.NAMESPACE}/dot-phrase-detail`, {
                 forceAttributes: {
                   [Constants.CORE_BLOCK_LIST]: {
                     [ListOverride.ATTR_HANGING_INDENT]: true,
-                  }
+                  },
                 },
                 template: [
                   [
