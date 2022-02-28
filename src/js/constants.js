@@ -38,7 +38,6 @@ export const CORE_BLOCK_QUOTE = 'core/quote';
 
 export const CORE_BLOCK_COLUMNS = 'core/columns';
 export const CORE_BLOCK_SEPARATOR = 'core/separator';
-export const CORE_BLOCK_SPACER = 'core/spacer';
 export const CORE_BLOCK_TABLE = 'core/table';
 
 export const CORE_BLOCK_AUDIO = 'core/audio';

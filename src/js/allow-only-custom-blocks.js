@@ -15,7 +15,6 @@ addFilter(
 
       [Constants.CORE_BLOCK_COLUMNS]: Constants.CATEGORY_LAYOUT,
       [Constants.CORE_BLOCK_SEPARATOR]: Constants.CATEGORY_LAYOUT, // TODO fix styling
-      [Constants.CORE_BLOCK_SPACER]: Constants.CATEGORY_LAYOUT, // TODO fix styling
       [Constants.CORE_BLOCK_TABLE]: Constants.CATEGORY_LAYOUT, // TODO test styling
 
       [Constants.CORE_BLOCK_AUDIO]: Constants.CATEGORY_MEDIA,

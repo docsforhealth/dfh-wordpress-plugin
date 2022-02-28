@@ -47,7 +47,6 @@ registerBlockType(Constants.BLOCK_CONTENT_CONTAINER, {
 
       Constants.CORE_BLOCK_COLUMNS,
       Constants.CORE_BLOCK_SEPARATOR,
-      Constants.CORE_BLOCK_SPACER,
       Constants.CORE_BLOCK_TABLE,
 
       // NOTE Wordpress 5.2 bug prevents core/video block from working if isLocked
