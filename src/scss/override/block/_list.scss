@@ -1,0 +1,16 @@
+@use 'sass:math';
+
+[data-block] {
+    // For both flavors of `core/list`
+    ul,
+    ol {
+        li {
+            @extend %default-text;
+
+            margin-bottom: math.div($baseunit, 2);
+        }
+        a:not(.button) {
+            @extend .link;
+        }
+    }
+}

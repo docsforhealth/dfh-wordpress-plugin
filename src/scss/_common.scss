@@ -21,7 +21,8 @@
 // Base styles
 // -----------
 
-$path-base-styles: 'src/scss/base';
+// path to base styles should be from BUILT LOCATION
+$path-base-styles: '../src/scss/base';
 
 // NOT ACTUALLY USED FOR STYLING, styles in corresponding theme are used instead as these have the
 // proper priority to override the WP defaults. Instead these files are imported here to allow
@@ -34,13 +35,19 @@ $path-base-styles: 'src/scss/base';
 @import 'base/structure';
 @import 'base/typography';
 
-// Overrides
-// ---------
+// Override built-in blocks
+// ------------------------
 
-// Override specific third party libraries or WP plugins
-@import 'override/default/ajax-load-more'; // default AjaxLoadMore styles
+@import 'override/block/list';
+@import 'override/block/media';
+@import 'override/block/quote';
+@import 'override/block/separator';
+
+// Override third party libraries
+// ------------------------------
+
 @import 'override/ajax-load-more'; // our specific overrides, import after to ensure higher priority
 @import 'override/contact-form-7';
-@import 'override/core-blocks';
+@import 'override/default/ajax-load-more'; // default AjaxLoadMore styles
 @import 'override/google-analytics';
 @import 'override/lity';

@@ -1,0 +1,99 @@
+// Source code
+//      https://github.com/WordPress/gutenberg/blob/trunk/packages/block-library/src/quote/style.scss
+//      https://github.com/WordPress/gutenberg/blob/trunk/packages/block-library/src/quote/theme.scss
+
+blockquote.wp-block-quote {
+    $vertical-spacing: $baseunit * 2;
+    $gutter-size: $baseunit * 4;
+
+    position: relative;
+    margin: 0 0 $vertical-spacing 0;
+    padding: $baseunit;
+    padding-left: $gutter-size;
+    overflow-wrap: break-word;
+    border: 0 solid $color-seafoam-dark-1;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+
+    & + & {
+        margin-top: $vertical-spacing * -1;
+        border-top-width: 0;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: $gutter-size;
+        width: $gutter-size;
+        background-image: url('../assets/images/icon-quote.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &.has-text-align-right {
+        border-left: none;
+        border-right: none;
+        padding: $baseunit;
+        padding-right: $gutter-size;
+
+        &:after {
+            left: auto;
+            right: 0;
+            transform: scaleX(-1);
+        }
+    }
+    &.has-text-align-center {
+        border: 0 solid $color-seafoam-dark-1;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        padding: $baseunit;
+        padding-top: $gutter-size;
+
+        &:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &.is-style-large-text {
+        p {
+            @extend .text--large;
+        }
+        cite,
+        footer {
+            font-size: $baseunit;
+        }
+    }
+
+    p {
+        @extend %default-text;
+
+        margin-top: 0;
+        margin-bottom: $baseunit * 0.5;
+        font-size: $baseunit;
+
+        // block will sometimes insert empty paragraph tags
+        &:empty {
+            margin-bottom: 0;
+        }
+    }
+    cite,
+    footer {
+        @extend %default-text;
+
+        // ensure that emdash is always next to content, even in editor
+        display: initial !important;
+
+        position: relative;
+        padding-left: $baseunit * 1.25;
+        font-style: italic;
+
+        &:after {
+            @include scut-center-transform(y);
+
+            content: '—';
+            left: 0;
+        }
+    }
+}

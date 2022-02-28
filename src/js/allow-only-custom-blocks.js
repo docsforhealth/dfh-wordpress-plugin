@@ -10,16 +10,19 @@ addFilter(
   Constants.NAMESPACE,
   (blockSettings, blockName) => {
     const allowedCoreBlocks = {
-      'core/list': Constants.CATEGORY_COMMON,
+      [Constants.CORE_BLOCK_LIST]: Constants.CATEGORY_COMMON,
+      [Constants.CORE_BLOCK_QUOTE]: Constants.CATEGORY_COMMON,
 
-      'core/separator': Constants.CATEGORY_LAYOUT,
-      'core/spacer': Constants.CATEGORY_LAYOUT,
+      [Constants.CORE_BLOCK_COLUMNS]: Constants.CATEGORY_LAYOUT,
+      [Constants.CORE_BLOCK_SEPARATOR]: Constants.CATEGORY_LAYOUT, // TODO fix styling
+      [Constants.CORE_BLOCK_SPACER]: Constants.CATEGORY_LAYOUT, // TODO fix styling
+      [Constants.CORE_BLOCK_TABLE]: Constants.CATEGORY_LAYOUT, // TODO test styling
 
-      'core/audio': Constants.CATEGORY_MEDIA,
-      'core/embed': Constants.CATEGORY_MEDIA,
-      'core/gallery': Constants.CATEGORY_MEDIA,
-      'core/image': Constants.CATEGORY_MEDIA,
-      'core/video': Constants.CATEGORY_MEDIA,
+      [Constants.CORE_BLOCK_AUDIO]: Constants.CATEGORY_MEDIA,
+      [Constants.CORE_BLOCK_EMBED]: Constants.CATEGORY_MEDIA,
+      [Constants.CORE_BLOCK_GALLERY]: Constants.CATEGORY_MEDIA,
+      [Constants.CORE_BLOCK_IMAGE]: Constants.CATEGORY_MEDIA,
+      [Constants.CORE_BLOCK_VIDEO]: Constants.CATEGORY_MEDIA,
     };
     if (allowedCoreBlocks[blockName]) {
       return _.assign({}, blockSettings, {

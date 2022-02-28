@@ -25,3 +25,8 @@
 .edit-post-visual-editor.editor-styles-wrapper {
     height: auto;
 }
+
+// Allow page title in editor to have heading styles
+.edit-post-visual-editor__post-title-wrapper {
+    @extend .heading--2;
+}

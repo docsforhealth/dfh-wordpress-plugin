@@ -9,6 +9,7 @@ import 'src/js/allow-only-custom-blocks.js';
  * Overrides
  */
 import 'src/js/block/override/list';
+import 'src/js/block/override/quote';
 
 /**
  * Basic blocks

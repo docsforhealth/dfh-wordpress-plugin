@@ -37,19 +37,28 @@ registerBlockType(Constants.BLOCK_CONTENT_CONTAINER, {
     forceAttributes: { type: 'object' },
   },
   edit({ attributes, clientId }) {
+    // For allowed core blocks, see `src/js/allow-only-custom-blocks.js`
     const alwaysAllowed = [
       Constants.BLOCK_TEXT,
       Constants.BLOCK_VIDEO_THUMBNAIL,
+
       Constants.CORE_BLOCK_LIST,
+      Constants.CORE_BLOCK_QUOTE,
+
+      Constants.CORE_BLOCK_COLUMNS,
       Constants.CORE_BLOCK_SEPARATOR,
       Constants.CORE_BLOCK_SPACER,
+      Constants.CORE_BLOCK_TABLE,
+
       // NOTE Wordpress 5.2 bug prevents core/video block from working if isLocked
       // see https://github.com/WordPress/gutenberg/issues/19311#issue-541875999
-      Constants.CORE_BLOCK_VIDEO,
       Constants.CORE_BLOCK_AUDIO,
+      Constants.CORE_BLOCK_EMBED,
       Constants.CORE_BLOCK_GALLERY,
       Constants.CORE_BLOCK_IMAGE,
-      // NOTE core media blocks will transform into core embed block after processing
+      Constants.CORE_BLOCK_VIDEO,
+
+      // NOTE core media blocks will transform into `core/embed` block after processing
       ...Constants.CORE_EMBED_BLOCKS,
     ];
     const allowedBlockNames = attributes.noHeadings

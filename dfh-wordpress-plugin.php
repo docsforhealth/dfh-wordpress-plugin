@@ -77,6 +77,9 @@ if (!defined('DFH_CONTENT_TYPE_DOT_PHRASE')) {
 }
 
 // Template block for each content type
+if (!defined('DFH_TEMPLATE_BLOCK_PAGE')) {
+    define('DFH_TEMPLATE_BLOCK_PAGE', 'dfh/content-width-container');
+}
 if (!defined('DFH_TEMPLATE_BLOCK_RESOURCE')) {
     define('DFH_TEMPLATE_BLOCK_RESOURCE', 'dfh/resource-detail');
 }
@@ -107,6 +110,11 @@ if (!defined('DFH_TAXONOMY_RESOURCE_TYPE')) {
 }
 if (!defined('DFH_TAXONOMY_DOT_PHRASE_CATEGORY')) {
     define('DFH_TAXONOMY_DOT_PHRASE_CATEGORY', 'dfh_dot_phrase_category');
+}
+
+// Custom blocks
+if (!defined('DFH_BLOCK_TEXT')) {
+    define('DFH_BLOCK_TEXT', 'dfh/text');
 }
 
 // from https://waclawjacek.com/check-wordpress-plugin-dependencies/

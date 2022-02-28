@@ -33,13 +33,18 @@ export const INNER_BLOCKS_LOCKED = 'all';
 export const INNER_BLOCKS_UNLOCKED = false;
 export const INNER_BLOCKS_FORCE_ATTRS_ALL = 'applyToAll';
 
+export const CORE_BLOCK_LIST = 'core/list';
+export const CORE_BLOCK_QUOTE = 'core/quote';
+
+export const CORE_BLOCK_COLUMNS = 'core/columns';
+export const CORE_BLOCK_SEPARATOR = 'core/separator';
+export const CORE_BLOCK_SPACER = 'core/spacer';
+export const CORE_BLOCK_TABLE = 'core/table';
+
 export const CORE_BLOCK_AUDIO = 'core/audio';
 export const CORE_BLOCK_EMBED = 'core/embed';
 export const CORE_BLOCK_GALLERY = 'core/gallery';
 export const CORE_BLOCK_IMAGE = 'core/image';
-export const CORE_BLOCK_LIST = 'core/list';
-export const CORE_BLOCK_SEPARATOR = 'core/separator';
-export const CORE_BLOCK_SPACER = 'core/spacer';
 export const CORE_BLOCK_VIDEO = 'core/video';
 
 export const BLOCK_AJAX_LOAD_MORE = `${NAMESPACE}/ajax-load-more`;
@@ -110,31 +115,31 @@ export const CORE_EMBED_AUDIO_BLOCKS = [
   'core-embed/soundcloud',
   'core-embed/speaker',
   'core-embed/spotify',
-  'core/embed',
+  CORE_BLOCK_EMBED,
 ];
 export const CORE_EMBED_DOCUMENT_BLOCKS = [
   'core-embed/amazon-kindle',
   'core-embed/issuu',
   'core-embed/scribd',
-  'core/embed',
+  CORE_BLOCK_EMBED,
 ];
 export const CORE_EMBED_IMAGE_BLOCKS = [
   'core-embed/imgur',
   'core-embed/instagram',
   'core-embed/smugmug',
   'core-embed/tumblr',
-  'core/embed',
+  CORE_BLOCK_EMBED,
 ];
 export const CORE_EMBED_POLL_BLOCKS = [
   'core-embed/cloudup',
   'core-embed/crowdsignal',
   'core-embed/polldaddy',
-  'core/embed',
+  CORE_BLOCK_EMBED,
 ];
 export const CORE_EMBED_SLIDESHOW_BLOCKS = [
   'core-embed/slideshare',
   'core-embed/speaker-deck',
-  'core/embed',
+  CORE_BLOCK_EMBED,
 ];
 export const CORE_EMBED_VIDEO_BLOCKS = [
   'core-embed/animoto',
@@ -152,7 +157,7 @@ export const CORE_EMBED_VIDEO_BLOCKS = [
   'core-embed/vimeo',
   'core-embed/wordpress-tv',
   'core-embed/youtube',
-  'core/embed',
+  CORE_BLOCK_EMBED,
 ];
 export const CORE_EMBED_BLOCKS = _.uniq([
   ...CORE_EMBED_AUDIO_BLOCKS,
@@ -165,5 +170,5 @@ export const CORE_EMBED_BLOCKS = _.uniq([
   'core-embed/reddit',
   'core-embed/twitter',
   'core-embed/wordpress',
-  'core/embed',
+  CORE_BLOCK_EMBED,
 ]);
