@@ -35,6 +35,7 @@ class DFH_Setup {
     }
 
     private function setup_plugin() {
+        require_once DFH_PLUGIN_DIR . '/src/php/setup/setup_plugin_deps.php';
         require_once DFH_PLUGIN_DIR . '/src/php/setup/add_analytics.php';
         require_once DFH_PLUGIN_DIR . '/src/php/setup/helpers.php';
         require_once DFH_PLUGIN_DIR . '/src/php/setup/remove_comments.php';

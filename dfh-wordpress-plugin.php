@@ -16,15 +16,20 @@
 defined('ABSPATH') || exit;
 
 // From Contact Form 7 plugin setup files
-define('DFH_PLUGIN_ROOT', __FILE__);
-define('DFH_PLUGIN_DIR', untrailingslashit(dirname(DFH_PLUGIN_ROOT)));
-
+if (!defined('DFH_PLUGIN_ROOT')) {
+    define('DFH_PLUGIN_ROOT', __FILE__);
+}
+if (!defined('DFH_PLUGIN_DIR')) {
+    define('DFH_PLUGIN_DIR', untrailingslashit(dirname(DFH_PLUGIN_ROOT)));
+}
 // Define the plugins that our plugin requires to function.
 // Array format: 'Plugin Name' => 'Path to main plugin file'
-define('DFH_REQUIRED_PLUGINS', array(
-    'Contact Form 7' => 'contact-form-7/wp-contact-form-7.php',
-    'Ajax Load More' => 'ajax-load-more/ajax-load-more.php',
-));
+if (!defined('DFH_REQUIRED_PLUGINS')) {
+    define('DFH_REQUIRED_PLUGINS', array(
+        'Contact Form 7' => 'contact-form-7/wp-contact-form-7.php',
+        'Ajax Load More' => 'ajax-load-more/ajax-load-more.php',
+    ));
+}
 
 // *************************
 // * SHARED WITH DFH THEME *

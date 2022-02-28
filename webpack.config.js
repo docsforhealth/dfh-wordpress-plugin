@@ -13,6 +13,7 @@ module.exports = merge(defaultConfig, {
     },
   },
   entry: {
+    editor: path.resolve(process.cwd(), 'src', 'editor.js'),
     frontend: path.resolve(process.cwd(), 'src', 'frontend.js'),
   },
   module: {

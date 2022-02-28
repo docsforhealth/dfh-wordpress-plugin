@@ -16,10 +16,10 @@
 | File | Description |
 | ---- | ----------- |
 | `docsforhealth.php` | Contains plugin header, defines project-wide constants, and calls `src/php/class/Setup.php` |
-| `src/index.js` | Definitions for editor components and other aspects of editor functionality, imported by the `src/php/setup/setup_blocks.php` setup class after being built by Webpack to the `build` directory |
+| `src/editor.js` | Definitions for editor components and other aspects of editor functionality, imported by the `src/php/setup/setup_plugin_deps.php` setup class after being built by Webpack to the `build` directory |
+| `src/editor.scss` | Styling that is applied to the editor environment, imports frontend styles to apply to the editor via `src/scss/_common.scss` |
 | `src/frontend.js` | JS functionality that should be available in the public-facing website |
-| `src/style.scss` | Styling that is applied to both the editor and the public-facing  website |
-| `src/editor.scss` | Additional styling that is applied to the editor environment, `src/style.scss` styles are still applied |
+| `src/frontend.scss` | Styling that is applied to the public-facing website |
 
 ### Tips
 
@@ -27,6 +27,8 @@
 - `prop-types` checking only works for native React components, not WP blocks defined via `registerBlockType`
     + Note that [`SCRIPT_DEBUG` in `wp-config.php`](https://wordpress.org/support/article/debugging-in-wordpress/#script_debug) needs to be set to `true` in order for non-production script assets to be loaded. 
     + PropType checks only happen in React development builds, not in production builds 
+- Use `git pull && git submodule foreach git pull origin master` to [pull remote changes for the current repo and all submodules](https://stackoverflow.com/a/65130154)
+    + `yarn git:pull` available for convenience
 
 ## Deploying
 

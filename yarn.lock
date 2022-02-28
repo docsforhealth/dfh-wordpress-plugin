@@ -7982,10 +7982,10 @@ schema-utils@^3.0.0, schema-utils@^3.1.0, schema-utils@^3.1.1:
     ajv "^6.12.5"
     ajv-keywords "^3.5.2"
 
-scut@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/scut/-/scut-1.4.1.tgz#1d624d53078454a238b19af195d0a5f51ede20bc"
-  integrity sha512-rpFIIWyOtmAs20TZtdrv5CJfgM+IEhSENvw5ioqAmf5Bfq0169cqCotDDEQmO0Ej+fK16tIlyaa/W7j/kyj8bw==
+scut@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/scut/-/scut-2.0.0.tgz#9302eff2b3944079ae022e1a7159cd85af5103ea"
+  integrity sha512-wC4LRSfWqr3MqkXTrelF/T4JCY8or51qGmzbCjkANSCCMkcURhpMH5clULnhe1cwp8XAcADxBYOICD5m6Mlrlw==
 
 "semver@2 || 3 || 4 || 5", semver@^5.5.0:
   version "5.7.1"
