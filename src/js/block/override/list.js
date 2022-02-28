@@ -65,7 +65,7 @@ addFilter(
   }, 'withReferenceBlockToolbar'),
 );
 
-// 3. Add class to block wrapper in edit more
+// 3. Add class to block wrapper in edit mode
 addFilter(
   'editor.BlockListBlock',
   `${Constants.NAMESPACE}/block-core-list/add-edit-mode-class`,

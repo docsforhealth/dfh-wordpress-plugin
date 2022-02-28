@@ -1,16 +1,26 @@
 // `core/separator`, see https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/separator
 
-.wp-block-separator {
-    border-color: $color-seafoam-dark-1;
-
-    &:not(.is-style-wide):not(.is-style-dots) {
-        max-width: 50%;
-        border-width: 1px;
+hr.wp-block-separator {
+    &,
+    &:not(.is-style-wide):not(.is-style-dots),
+    &.has-background:not(.is-style-dots),
+    &.has-background:not(.is-style-wide):not(.is-style-dots) {
+        height: 2px;
+        width: 75%;
+        padding: 0;
+        margin: ($baseunit * 2) auto;
+        border-width: 0;
+        border-radius: $border-radius;
+        background-color: $color-seafoam-dark-3;
     }
-    &.is-style-dots:before {
-        color: $color-seafoam-dark-2;
-        font-weight: $font-weight-bold;
-        font-size: 2em;
-        letter-spacing: 1.5em;
+}
+
+// Increase height of block separator in edit mode for easier selection
+[data-block].wp-block-separator {
+    &,
+    &:not(.is-style-wide):not(.is-style-dots),
+    &.has-background:not(.is-style-dots),
+    &.has-background:not(.is-style-wide):not(.is-style-dots) {
+        height: $baseunit * 0.5;
     }
 }

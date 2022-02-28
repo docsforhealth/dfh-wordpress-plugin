@@ -17,7 +17,7 @@ blockquote.wp-block-quote {
         margin-top: $vertical-spacing * -1;
         border-top-width: 0;
     }
-    &:after {
+    &:before {
         content: '';
         position: absolute;
         top: 0;
@@ -35,7 +35,7 @@ blockquote.wp-block-quote {
         padding: $baseunit;
         padding-right: $gutter-size;
 
-        &:after {
+        &:before {
             left: auto;
             right: 0;
             transform: scaleX(-1);
@@ -48,7 +48,7 @@ blockquote.wp-block-quote {
         padding: $baseunit;
         padding-top: $gutter-size;
 
-        &:after {
+        &:before {
             left: 50%;
             transform: translateX(-50%);
         }
@@ -87,7 +87,7 @@ blockquote.wp-block-quote {
         padding-left: $baseunit * 1.25;
         font-style: italic;
 
-        &:after {
+        &:before {
             @include scut-center-transform(y);
 
             content: '—';

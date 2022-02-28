@@ -3,7 +3,7 @@ import { addFilter } from '@wordpress/hooks';
 import _ from 'lodash';
 import * as Constants from 'src/js/constants';
 
-// hides all non-DFH blocks
+// hides all non-DFH blocks, with some exceptions
 // from https://github.com/WordPress/gutenberg/issues/11723#issuecomment-441828833
 addFilter(
   'blocks.registerBlockType',
@@ -14,7 +14,7 @@ addFilter(
       [Constants.CORE_BLOCK_QUOTE]: Constants.CATEGORY_COMMON,
 
       [Constants.CORE_BLOCK_COLUMNS]: Constants.CATEGORY_LAYOUT,
-      [Constants.CORE_BLOCK_SEPARATOR]: Constants.CATEGORY_LAYOUT, // TODO fix styling
+      [Constants.CORE_BLOCK_SEPARATOR]: Constants.CATEGORY_LAYOUT,
       [Constants.CORE_BLOCK_TABLE]: Constants.CATEGORY_LAYOUT, // TODO test styling
 
       [Constants.CORE_BLOCK_AUDIO]: Constants.CATEGORY_MEDIA,
