@@ -1,6 +1,7 @@
 // `core/quote`, see https://github.com/WordPress/gutenberg/blob/trunk/packages/block-library/src/quote
 
 blockquote.wp-block-quote {
+    $border-color: $color-seafoam-dark-1;
     $vertical-spacing: $baseunit * 2;
     $gutter-size: $baseunit * 4;
 
@@ -9,7 +10,7 @@ blockquote.wp-block-quote {
     padding: $baseunit;
     padding-left: $gutter-size;
     overflow-wrap: break-word;
-    border: 0 solid $color-seafoam-dark-1;
+    border: 0 solid $border-color;
     border-top-width: 1px;
     border-bottom-width: 1px;
 
@@ -42,7 +43,7 @@ blockquote.wp-block-quote {
         }
     }
     &.has-text-align-center {
-        border: 0 solid $color-seafoam-dark-1;
+        border: 0 solid $border-color;
         border-top-width: 1px;
         border-bottom-width: 1px;
         padding: $baseunit;

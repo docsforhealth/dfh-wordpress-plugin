@@ -11,6 +11,7 @@ import 'src/js/allow-only-custom-blocks.js';
 import 'src/js/block/override/list';
 import 'src/js/block/override/quote';
 import 'src/js/block/override/separator';
+import 'src/js/block/override/table';
 
 /**
  * Basic blocks

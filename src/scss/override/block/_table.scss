@@ -1,0 +1,60 @@
+// `core/table`, see https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/table
+
+figure.wp-block-table {
+    margin: 0 0 ($baseunit * 2) 0;
+    color: $color-gray;
+
+    table {
+        border: 1px solid $color-seafoam-dark-1;
+
+        // can't use `border-collapse: collapse` if we want `border-radius`
+        // see https://stackoverflow.com/a/635863
+        border-radius: $border-radius;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+    td,
+    th {
+        @extend %default-text;
+
+        padding: $baseunit;
+        word-break: normal;
+    }
+    // with `border-collapse: separate` we can't set border on `thead` or `tfoot` anymore
+    th,
+    tfoot td {
+        border: 0 solid $color-seafoam-dark-2;
+        font-weight: $font-weight-normal;
+        text-transform: uppercase;
+        text-align: left;
+    }
+    th {
+        border-bottom-width: 1px;
+    }
+    tfoot td {
+        border-top-width: 1px;
+    }
+    tbody td {
+        // 0.5px because of `border-collapse: separate;`
+        border: 0.5px solid $color-seafoam-dark-1;
+
+        &:first-of-type {
+            border-left: 0;
+        }
+        &:last-of-type {
+            border-right: 0;
+        }
+    }
+
+    &.is-style-large-text {
+        tbody td {
+            @extend .text--large;
+        }
+    }
+
+    // see `src/scss/override/block/_figcaption.scss`
+    figcaption:not(:empty) {
+        margin-top: $baseunit * 0.5;
+    }
+}

@@ -1,0 +1,13 @@
+// Selectors to constrain to frontend via `#content` and editor via `[data-block]`
+#content,
+[data-block] {
+    figcaption {
+        @extend %default-text;
+
+        font-style: italic;
+
+        &:not(:empty) {
+            margin-bottom: $baseunit;
+        }
+    }
+}

@@ -38,10 +38,12 @@ $path-base-styles: '../src/scss/base';
 // Override built-in blocks
 // ------------------------
 
+@import 'override/block/figcaption';
 @import 'override/block/list';
 @import 'override/block/media';
 @import 'override/block/quote';
 @import 'override/block/separator';
+@import 'override/block/table';
 
 // Override third party libraries
 // ------------------------------

@@ -1,13 +1,3 @@
-// Selectors to constrain to frontend via `#content` and editor via `[data-block]`
-#content,
-[data-block] {
-    // For core media blocks
-    figcaption {
-        @extend .text;
-        @extend .text--small;
-    }
-}
-
 // For `core/audio`, `core/image`, `core/video`, `core/gallery`
 [data-block] .components-placeholder {
     .components-form-file-upload {
