@@ -15,7 +15,7 @@
 
 | File | Description |
 | ---- | ----------- |
-| `docsforhealth.php` | Contains plugin header, defines project-wide constants, and calls `src/php/class/Setup.php` |
+| `dfh-wordpress-plugin.php` | Contains plugin header, defines project-wide constants, and calls `src/php/class/Setup.php` |
 | `src/editor.js` | Definitions for editor components and other aspects of editor functionality, imported by the `src/php/setup/setup_plugin_deps.php` setup class after being built by Webpack to the `build` directory |
 | `src/editor.scss` | Styling that is applied to the editor environment, imports frontend styles to apply to the editor via `src/scss/_common.scss` |
 | `src/frontend.js` | JS functionality that should be available in the public-facing website |
@@ -32,7 +32,7 @@
 
 ## Deploying
 
-1. Update the `Version` field in the masthead of `docsforhealth.php` to your desired release version
+1. Update the `Version` field in the masthead of `dfh-wordpress-plugin.php` to your desired release version
 2. For completeness, also update the `version` field in `package.json` to the same version you entered in the prior step
 3. Commit changes with `git commit -am <message here>`
 4. Create [an annotated tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) to mark the release with `git tag -a <tag version> -m <release message>`. By convention, the tag version is the same as the release version specified earlier. Note that we use [annotated tags instead of lightweight tags](https://stackoverflow.com/a/25996877) as these are intended for release. 
