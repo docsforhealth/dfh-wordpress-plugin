@@ -9,7 +9,6 @@ function dfh_alter_default_page_type_args($args, $post_type) {
         // Ensure that all blocks for a page are automatically wrapped in a content width container
         // see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-templates/
         $args['template']      = array(array(DFH_TEMPLATE_BLOCK_PAGE, array(), array(array(DFH_BLOCK_TEXT))));
-        $args['template_lock'] = 'insert';
     }
     return $args;
 }

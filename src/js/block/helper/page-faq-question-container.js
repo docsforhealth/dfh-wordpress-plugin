@@ -1,17 +1,22 @@
-import { InnerBlocks } from '@wordpress/block-editor';
+import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
+import {
+  PanelBody,
+  __experimentalNumberControl as NumberControl,
+} from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import * as Constants from 'src/js/constants';
 import { addUniqueIdInApiVersionOne, pluralize } from 'src/js/utils';
 
-const ATTR_UNIQUE_ID = '_uniqueId';
+const ATTR_UNIQUE_ID = '_uniqueId',
+  title = __('Page FAQ Question Container', Constants.TEXT_DOMAIN);
 
 registerBlockType(
   Constants.BLOCK_FAQ_QUESTION_CONTAINER,
   addUniqueIdInApiVersionOne(ATTR_UNIQUE_ID, {
-    title: __('Page FAQ Question Container', Constants.TEXT_DOMAIN),
+    title,
     category: Constants.CATEGORY_LAYOUT,
     icon: 'align-wide',
     description: __(
@@ -21,6 +26,7 @@ registerBlockType(
     supports: { inserter: false },
     attributes: {
       numQuestions: { type: 'number', default: 0 },
+      maxNumToOpenInitially: { type: 'number', default: 1 },
     },
     // Can use hooks here even though the `addUniqueIdInApiVersionOne` uses a CLASS-based
     // component because that is a HOC that wraps this one. Therefore, as long as this component
@@ -43,6 +49,21 @@ registerBlockType(
           <div className="dfh-editor-block-title dfh-editor-block-title--nested">
             {__('Frequently Asked Questions', Constants.TEXT_DOMAIN)}
           </div>
+          <InspectorControls>
+            <PanelBody title={__(`${title} Settings`, Constants.TEXT_DOMAIN)}>
+              <NumberControl
+                label={__(
+                  'Max # of questions to open at start',
+                  Constants.TEXT_DOMAIN,
+                )}
+                value={attributes.maxNumToOpenInitially}
+                onChange={(maxNumToOpenInitially) =>
+                  setAttributes({ maxNumToOpenInitially })
+                }
+                min={1}
+              />
+            </PanelBody>
+          </InspectorControls>
           <InnerBlocks
             templateLock={Constants.INNER_BLOCKS_LOCKED}
             template={[
@@ -98,7 +119,9 @@ registerBlockType(
             data-toggle-parent
             data-toggle-parent-child-class="faq-question"
             data-toggle-parent-child-open-class="faq-question--open"
-            data-toggle-parent-num-initial-open="1"
+            data-toggle-parent-num-initial-open={
+              attributes.maxNumToOpenInitially
+            }
           >
             <InnerBlocks.Content />
             <div className="modal__toggle">
