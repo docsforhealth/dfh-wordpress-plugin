@@ -3,6 +3,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 import _ from 'lodash';
 import * as Constants from 'src/js/constants';
+import AutoLabelAppender from 'src/js/editor/auto-label-appender';
 import RecursiveWrapper, {
   V1RecursiveWrapper,
 } from 'src/js/editor/recursive-wrapper';
@@ -85,6 +86,7 @@ registerBlockType(Constants.BLOCK_INNER_BLOCK_WRAPPER, {
                   ? Constants.INNER_BLOCKS_LOCKED
                   : Constants.INNER_BLOCKS_UNLOCKED
               }
+              renderAppender={AutoLabelAppender}
             />
           </WithInnerBlockAttrs>
         </RecursiveWrapper>

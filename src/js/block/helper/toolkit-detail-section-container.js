@@ -4,6 +4,7 @@ import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import * as Section from 'src/js/block/helper/toolkit-detail-section';
 import * as Constants from 'src/js/constants';
+import AutoLabelAppender from 'src/js/editor/auto-label-appender';
 import WithInnerBlockAttrs from 'src/js/editor/with-inner-block-attrs';
 
 // This block exists to allow for a container where the only thing possible to add is a
@@ -73,6 +74,7 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER, {
           // If parent InnerBlocks is locked, then we explicitly need to unlock this
           templateLock={Constants.INNER_BLOCKS_UNLOCKED}
           template={[[Constants.BLOCK_TOOLKIT_DETAIL_SECTION]]}
+          renderAppender={AutoLabelAppender}
         />
       </WithInnerBlockAttrs>
     );

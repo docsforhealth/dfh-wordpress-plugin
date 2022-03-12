@@ -4,6 +4,7 @@ import { PanelBody, ToggleControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import * as Constants from 'src/js/constants';
+import AutoLabelAppender from 'src/js/editor/auto-label-appender';
 
 const title = __('Content Width Container', Constants.TEXT_DOMAIN);
 
@@ -35,7 +36,10 @@ registerBlockType(`${Constants.NAMESPACE}/content-width-container`, {
           </PanelBody>
         </InspectorControls>
         <div className="dfh-editor-block-title">{title}</div>
-        <InnerBlocks templateLock={false} />
+        <InnerBlocks
+          templateLock={false}
+          renderAppender={() => <AutoLabelAppender deemphasized={true} />}
+        />
       </Fragment>
     );
   },

@@ -1,9 +1,9 @@
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { TextControl } from '@wordpress/components';
-import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import * as Constants from 'src/js/constants';
+import AutoLabelAppender from 'src/js/editor/auto-label-appender';
 
 const title = __('Mission Statement', Constants.TEXT_DOMAIN);
 
@@ -24,7 +24,7 @@ registerBlockType(`${Constants.NAMESPACE}/mission-statement`, {
   },
   edit({ attributes, setAttributes }) {
     return (
-      <Fragment>
+      <>
         <div className="dfh-editor-block-title">{title}</div>
         <div className="landing-mission">
           <TextControl
@@ -39,9 +39,10 @@ registerBlockType(`${Constants.NAMESPACE}/mission-statement`, {
           <InnerBlocks
             allowedBlocks={[Constants.BLOCK_TEXT]}
             template={[[Constants.BLOCK_TEXT]]}
+            renderAppender={AutoLabelAppender}
           />
         </div>
-      </Fragment>
+      </>
     );
   },
   save({ attributes }) {

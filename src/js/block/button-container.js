@@ -2,6 +2,7 @@ import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 import * as Constants from 'src/js/constants';
+import AutoLabelAppender from 'src/js/editor/auto-label-appender';
 import WithInnerBlockAttrs from 'src/js/editor/with-inner-block-attrs';
 import { filterInnerBlockTemplate } from 'src/js/utils';
 
@@ -41,6 +42,12 @@ registerBlockType(Constants.BLOCK_BUTTON_CONTAINER, {
               ? Constants.INNER_BLOCKS_LOCKED
               : Constants.INNER_BLOCKS_UNLOCKED
           }
+          renderAppender={() => (
+            <AutoLabelAppender
+              deemphasized={true}
+              label={__('Add button', Constants.TEXT_DOMAIN)}
+            />
+          )}
         />
       </WithInnerBlockAttrs>
     );

@@ -1,14 +1,12 @@
-import _ from 'lodash';
-import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-import { TextControl } from '@wordpress/components';
 import { withSelect } from '@wordpress/data';
-
-import * as Constants from '../../constants';
-import * as LinkList from './toolkit-detail-list-link';
-import * as SectionInfo from './toolkit-detail-section-info';
+import { __ } from '@wordpress/i18n';
+import _ from 'lodash';
+import * as LinkList from 'src/js/block/helper/toolkit-detail-list-link';
+import * as SectionInfo from 'src/js/block/helper/toolkit-detail-section-info';
+import * as Constants from 'src/js/constants';
+import AutoLabelAppender from 'src/js/editor/auto-label-appender';
 
 export const ATTR_OVERALL_MARKUP_ID = 'overallMarkupId';
 export const ATTR_PARENT_CLIENT_ID = 'parentClientId';
@@ -52,7 +50,7 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_LIST, {
     // Hooks cannot be used in the `save` hook so we must set the attributes here
     debouncedTryUpdateInnerBlockData(innerBlockObjs, attributes, setAttributes);
     return (
-      <Fragment>
+      <>
         <div className="dfh-editor-block-title dfh-editor-block-title--nested">
           {__('Toolkit Links', Constants.TEXT_DOMAIN)}
         </div>
@@ -60,8 +58,9 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_LIST, {
           allowedBlocks={[Constants.BLOCK_TOOLKIT_DETAIL_LIST_LINK]}
           // If parent InnerBlocks is locked, then we explicitly need to unlock this
           templateLock={Constants.INNER_BLOCKS_UNLOCKED}
+          renderAppender={AutoLabelAppender}
         />
-      </Fragment>
+      </>
     );
   }),
   save({ attributes }) {
@@ -81,14 +80,14 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_LIST, {
         <ol className="toolkit-topics__list">
           {linkInfoList
             // Show at end is false
-            .filter(info => !info[INT_LINK_SHOWATEND])
-            .map(info =>
+            .filter((info) => !info[INT_LINK_SHOWATEND])
+            .map((info) =>
               LinkList.buildSaveElement(
                 info[INT_LINK_TITLE],
                 info[INT_LINK_URL],
               ),
             )}
-          {[...Array(numSections).keys()].map(index =>
+          {[...Array(numSections).keys()].map((index) =>
             // Toolkit sections are in the middle
             buildSectionItem(
               attributes[ATTR_OVERALL_MARKUP_ID],
@@ -99,8 +98,8 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_LIST, {
           )}
           {linkInfoList
             // Show at end is true
-            .filter(info => info[INT_LINK_SHOWATEND])
-            .map(info =>
+            .filter((info) => info[INT_LINK_SHOWATEND])
+            .map((info) =>
               LinkList.buildSaveElement(
                 info[INT_LINK_TITLE],
                 info[INT_LINK_URL],

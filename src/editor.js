@@ -3,7 +3,7 @@
 /**
  * Helpers
  */
-import 'src/js/allow-only-custom-blocks.js';
+import 'src/js/allow-only-custom-blocks';
 
 /**
  * Overrides
