@@ -40,6 +40,7 @@ registerBlockType(
               [
                 Constants.BLOCK_INNER_BLOCK_WRAPPER,
                 {
+                  isLocked: true,
                   template: [
                     [
                       Constants.BLOCK_PAGE_HEADER,

@@ -23,12 +23,13 @@ import 'src/js/block/heading';
 import 'src/js/block/text';
 // Helpers
 import 'src/js/block/dynamic/helper/page-title';
+import 'src/js/block/helper/ajax-load-more';
 import 'src/js/block/helper/content-container';
 import 'src/js/block/helper/file-button';
 import 'src/js/block/helper/inner-block-wrapper';
 import 'src/js/block/helper/link-button';
+import 'src/js/block/helper/new-page-placeholder';
 import 'src/js/block/helper/search-input';
-import 'src/js/block/helper/ajax-load-more';
 
 /**
  * Media blocks

@@ -73,7 +73,7 @@ function dfh_dynamic_render_page_taxonomy_filter($attributes) {
             data-toggle-container-open-class="<?php echo esc_attr($attributes['openClassName']); ?>"
         >
             <!-- Label for this toggle button dynamically updated in corresponding frontend JS script -->
-            Loading...
+            <?php echo esc_html(__('Loading', DFH_TEXT_DOMAIN) . '...'); ?>
         </button>
         <ul
             id="<?php echo esc_attr($attributes['htmlId']); ?>"

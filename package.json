@@ -18,6 +18,7 @@
     "start": "Starts up development server to concurrently compile JS, SCSS, and run tests"
   },
   "devDependencies": {
+    "@wordpress/icons": "^8.1.0",
     "@wordpress/scripts": "~19.2.2",
     "concurrently": "~6.4.0",
     "lity": "^2.4.0",

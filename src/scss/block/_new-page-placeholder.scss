@@ -1,0 +1,37 @@
+.new-page-placeholder {
+    @include scut-list-unstyled;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $baseunit * 0.5;
+    justify-items: stretch;
+    margin-top: $baseunit * 0.5;
+
+    &__option {
+        height: 100%;
+        padding: ($baseunit * 0.75) !important;
+        border-radius: $border-radius;
+        border: 1px solid $color-seafoam-dark-2 !important;
+        transition: background-color 0.5s;
+
+        // see https://css-tricks.com/snippets/css/link-pseudo-classes-in-order/
+        &:link,
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $color-seafoam !important;
+        }
+
+        &__title,
+        &__description {
+            @extend %default-text;
+
+            display: block;
+        }
+
+        &__title {
+            margin-bottom: $baseunit * 0.5;
+            font-weight: $font-weight-bold;
+        }
+    }
+}
