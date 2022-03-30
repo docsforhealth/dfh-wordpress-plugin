@@ -17,6 +17,7 @@
 @import 'lity/dist/lity';
 @import 'scut/dist/scut';
 @import 'slick-carousel/slick/slick.scss';
+@import 'tippy.js/dist/tippy';
 
 // Base styles
 // -----------
@@ -35,6 +36,11 @@ $path-base-styles: '../src/scss/base';
 @import 'base/structure';
 @import 'base/typography';
 
+// Formats
+// -------
+
+@import 'format/more-info';
+
 // Override built-in blocks
 // ------------------------
 
@@ -42,6 +48,7 @@ $path-base-styles: '../src/scss/base';
 @import 'override/block/list';
 @import 'override/block/media';
 @import 'override/block/quote';
+@import 'override/block/rich-text';
 @import 'override/block/separator';
 @import 'override/block/table';
 
@@ -53,3 +60,4 @@ $path-base-styles: '../src/scss/base';
 @import 'override/default/ajax-load-more'; // default AjaxLoadMore styles
 @import 'override/google-analytics';
 @import 'override/lity';
+@import 'override/tippy';

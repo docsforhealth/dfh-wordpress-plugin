@@ -72,7 +72,7 @@
             opacity: 1;
 
             &:hover {
-                @include card-bg($color: rgba(0, 0, 0, 0.12));
+                @include card-bg($color: $color-transparent-gray-light-1);
             }
         }
     }

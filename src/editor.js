@@ -14,6 +14,11 @@ import 'src/js/block/override/separator';
 import 'src/js/block/override/table';
 
 /**
+ * Custom formats
+ */
+import 'src/js/editor/format/more-info';
+
+/**
  * Basic blocks
  */
 import 'src/js/block/button-container';

@@ -1,10 +1,8 @@
-import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
 import { registerBlockType } from '@wordpress/blocks';
 import { TextControl, ToggleControl } from '@wordpress/components';
-
-import * as Constants from '../../constants';
-import LinkPicker from '../../editor/link-picker';
+import { __ } from '@wordpress/i18n';
+import * as Constants from 'src/js/constants';
+import LinkPicker from 'src/js/editor/link-picker';
 
 export const ATTR_TITLE = 'title';
 export const ATTR_URL = 'url';
@@ -46,11 +44,11 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_LIST_LINK, {
   },
   edit({ attributes, setAttributes }) {
     return (
-      <Fragment>
+      <>
         <TextControl
           label={__('Link title', Constants.TEXT_DOMAIN)}
           value={attributes[ATTR_TITLE]}
-          onChange={title => setAttributes({ [ATTR_TITLE]: title })}
+          onChange={(title) => setAttributes({ [ATTR_TITLE]: title })}
         />
         <ToggleControl
           label={__('Show after all sections?', Constants.TEXT_DOMAIN)}
@@ -59,7 +57,7 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_LIST_LINK, {
             Constants.TEXT_DOMAIN,
           )}
           checked={attributes[ATTR_SHOW_AT_END]}
-          onChange={showAtEnd =>
+          onChange={(showAtEnd) =>
             setAttributes({ [ATTR_SHOW_AT_END]: showAtEnd })
           }
         />
@@ -71,7 +69,7 @@ registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_LIST_LINK, {
             setAttributes({ [ATTR_URL]: url, urlTitle: title })
           }
         />
-      </Fragment>
+      </>
     );
   },
   save({ attributes }) {

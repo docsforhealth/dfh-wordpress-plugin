@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import _ from 'lodash';
-import { classSelector, idSelector } from 'src/js/frontend/helpers/utils';
+import { classSelector, idSelector } from 'src/js/frontend/helper/utils';
 
 // starting point for the script
 // on a data `span` adjacent to the ajaxloadmore element, see `ajax-load-more` block

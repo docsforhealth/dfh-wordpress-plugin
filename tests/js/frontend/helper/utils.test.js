@@ -1,4 +1,4 @@
-import { classSelector, idSelector } from 'src/js/frontend/helpers/utils';
+import { classSelector, idSelector } from 'src/js/frontend/helper/utils';
 
 describe('idSelector', () => {
   test('null conditions', () => {

@@ -1,6 +1,6 @@
 {
   "name": "dfh-wordpress-plugin",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "license": "Apache-2.0",
   "scripts": {
     "git:pull": "git pull && git submodule foreach git pull origin master",
@@ -29,6 +29,7 @@
     "scut": "^2.0.0",
     "slick-carousel": "^1.8.1",
     "thumbnail-youtube-vimeo": "^1.1.0",
+    "tippy.js": "^6.3.7",
     "typescript": "^4.5.2",
     "url-loader": "~4.1.1",
     "webpack-merge": "^5.8.0"

@@ -5,5 +5,6 @@ import 'src/js/frontend/setup-carousel';
 import 'src/js/frontend/setup-clear-control';
 import 'src/js/frontend/setup-copy';
 import 'src/js/frontend/setup-modal';
+import 'src/js/frontend/setup-more-info';
 import 'src/js/frontend/setup-toggle';
 import 'src/js/frontend/setup-toolkit-mobile-nav';

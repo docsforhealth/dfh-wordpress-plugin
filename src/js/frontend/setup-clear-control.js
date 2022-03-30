@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { idSelector } from 'src/js/frontend/helpers/utils';
+import { idSelector } from 'src/js/frontend/helper/utils';
 
 const ID_CONTROL = 'clearControlId',
   ID_PARENT = 'clearParentId';

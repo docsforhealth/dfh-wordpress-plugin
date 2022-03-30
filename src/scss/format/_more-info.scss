@@ -1,0 +1,61 @@
+// FRONTEND (#content): only show styling if has a description
+// BACKEND (div.rich-text): show styling all the time whether focused or not
+#content span[data-more-info-description].more-info,
+div.rich-text span.more-info,
+div.rich-text:focus span[data-rich-text-format-boundary].more-info {
+    position: relative;
+    padding-right: $baseunit * 1.5;
+    color: $color-navy;
+    font-weight: $font-weight-bold;
+    text-decoration: underline;
+    cursor: pointer;
+
+    // Use the `after` pseudoelement with default positioning to ensure that the icon appears
+    // at the end of the text even if the text has wrapped to a new line
+    &:after {
+        content: '';
+        position: absolute;
+        transform: translateY(1px);
+        height: $baseunit * 1.3;
+        width: $baseunit * 1.3;
+        background-image: url('../assets/images/icon-in-text-info.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+// editor only, don't use pointer while editing
+// when rich text is focused, `data-rich-text-format-boundary` is applied
+div.rich-text span.more-info,
+div.rich-text:focus span[data-rich-text-format-boundary].more-info {
+    cursor: initial;
+}
+
+.more-info-editor-popover {
+    // Inspired by link-control styling
+    // see https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/link-control/style.scss
+    &__control {
+        padding: 16px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #ddd;
+
+        textarea {
+            padding: 11px 16px;
+            border-radius: 2px !important;
+            border: 1px solid #ddd !important;
+        }
+    }
+}
+
+.more-info-popover {
+    &__description {
+        padding: $baseunit;
+    }
+    &__link {
+        @extend .link;
+
+        display: block;
+        padding: 0 $baseunit $baseunit;
+    }
+}

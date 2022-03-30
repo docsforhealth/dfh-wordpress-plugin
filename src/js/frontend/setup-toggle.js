@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { classSelector } from 'src/js/frontend/helpers/utils';
+import { classSelector } from 'src/js/frontend/helper/utils';
 
 $(function () {
   // to support async content loaded via ajax

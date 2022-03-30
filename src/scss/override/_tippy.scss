@@ -1,0 +1,37 @@
+@import 'tippy.js/dist/border';
+
+.tippy-box[data-theme~='dfh'] {
+    color: $color-gray;
+    box-shadow: 0px 0px 15px 0px $color-transparent-gray-light-1;
+    background-color: $color-seafoam;
+    // enabled by the `border.css` import above
+    border: 1px solid $color-gray-light-1;
+
+    // enable scrolling if too large
+    @include scroll-vertical();
+    max-height: 80vh;
+
+    &[data-placement^='top'] > .tippy-arrow:before {
+        border-top-color: $color-seafoam;
+    }
+    &[data-placement^='bottom'] > .tippy-arrow:before {
+        border-bottom-color: $color-seafoam;
+    }
+    &[data-placement^='left'] > .tippy-arrow:before {
+        border-left-color: $color-seafoam;
+    }
+    &[data-placement^='right'] > .tippy-arrow:before {
+        border-right-color: $color-seafoam;
+    }
+    & > .tippy-backdrop {
+        background-color: $color-seafoam;
+    }
+    & > .tippy-svg-arrow {
+        fill: $color-seafoam;
+    }
+
+    // Allow contents to set their own padding
+    & > .tippy-content {
+        padding: 0;
+    }
+}
