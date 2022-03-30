@@ -1,10 +1,15 @@
 import {
-  RichTextToolbarButton,
+  BlockControls,
   __experimentalLinkControl as LinkControl,
 } from '@wordpress/block-editor';
-import { Popover, TextareaControl } from '@wordpress/components';
+import {
+  Popover,
+  TextareaControl,
+  ToolbarButton,
+  ToolbarGroup,
+} from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import { help as HelpIcon } from '@wordpress/icons';
+import { info as InfoIcon } from '@wordpress/icons';
 import {
   applyFormat,
   registerFormatType,
@@ -44,16 +49,23 @@ registerFormatType(type, {
           },
         }),
       );
+    // The documentation uses `RichTextToolbarButton` which adds the format to the "More" dropdown
+    // Since we want to surface this format as a top-level button, we will use `BlockControls` instead
+    // see https://github.com/WordPress/gutenberg/issues/14881#issuecomment-517115815
     return (
       <>
-        <RichTextToolbarButton
-          icon={HelpIcon}
-          title={
-            isActive ? __('Remove More Info', Constants.TEXT_DOMAIN) : title
-          }
-          isActive={isActive}
-          onClick={() => onChange(toggleFormat(value, { type }))}
-        />
+        <BlockControls>
+          <ToolbarGroup>
+            <ToolbarButton
+              icon={InfoIcon}
+              title={
+                isActive ? __('Remove More Info', Constants.TEXT_DOMAIN) : title
+              }
+              isActive={isActive}
+              onClick={() => onChange(toggleFormat(value, { type }))}
+            />
+          </ToolbarGroup>
+        </BlockControls>
         {isActive && (
           <Popover
             anchorRef={useAnchorRef({ ref: contentRef, value })}
