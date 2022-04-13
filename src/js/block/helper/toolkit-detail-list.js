@@ -24,7 +24,7 @@ const debouncedTryUpdateInnerBlockData = _.debounce(
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_LIST, {
   title: __('Toolkit Detail List', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY_TOOLKIT,
+  category: Constants.CATEGORY_CUSTOM_DATA,
   icon: 'excerpt-view',
   description: __(
     'Links and navigation for a specific toolkit',

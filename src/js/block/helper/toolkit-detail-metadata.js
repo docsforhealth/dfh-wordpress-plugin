@@ -18,7 +18,7 @@ const debouncedTryUpdateMediaCounts = _.debounce(tryUpdateMediaCounts, 200),
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_METADATA, {
   title: __('Toolkit Detail Metadata', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY_TOOLKIT,
+  category: Constants.CATEGORY_CUSTOM_DATA,
   icon: 'portfolio',
   description: __(
     'Metadata information describing a toolkit',

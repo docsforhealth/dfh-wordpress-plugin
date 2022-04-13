@@ -10,7 +10,7 @@ const title = __('Dot Phrase Detail', Constants.TEXT_DOMAIN);
 registerBlockType(`${Constants.NAMESPACE}/dot-phrase-detail`, {
   apiVersion: 2,
   title,
-  category: Constants.CATEGORY_DOT_PHRASE,
+  category: Constants.CATEGORY_CUSTOM_DATA,
   icon: 'format-status',
   description: __(
     'Detailed information for a specific dot phrase',

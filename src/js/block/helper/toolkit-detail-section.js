@@ -15,7 +15,7 @@ export const ATTR_NEXT_BUTTON_LABEL = 'nextButtonLabel';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION, {
   title: __('Toolkit Section', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY_TOOLKIT,
+  category: Constants.CATEGORY_CUSTOM_DATA,
   icon: 'analytics',
   description: __(
     'Text and rich media content for a particular section of a toolkit',

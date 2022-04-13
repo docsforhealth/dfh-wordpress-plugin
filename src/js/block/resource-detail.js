@@ -9,7 +9,7 @@ const title = __('Resource Detail', Constants.TEXT_DOMAIN);
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(`${Constants.NAMESPACE}/resource-detail`, {
   title,
-  category: Constants.CATEGORY_RESOURCE,
+  category: Constants.CATEGORY_CUSTOM_DATA,
   icon: 'networking',
   description: __(
     'Detailed information for a specific resource',

@@ -12,7 +12,7 @@ export const ATTR_TITLE = 'title';
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION_INFO, {
   title: __('Toolkit Section Info', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY_TOOLKIT,
+  category: Constants.CATEGORY_CUSTOM_DATA,
   icon: 'analytics',
   description: __(
     'Title and presenter for a particular section of a toolkit',

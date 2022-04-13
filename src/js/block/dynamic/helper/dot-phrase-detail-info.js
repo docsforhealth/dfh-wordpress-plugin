@@ -6,7 +6,7 @@ import * as Constants from 'src/js/constants';
 registerBlockType(Constants.BLOCK_PAGE_DOT_PHRASE_DETAIL_INFO, {
   apiVersion: 2,
   title: __('Dot Phrase Detail Info', Constants.TEXT_DOMAIN),
-  category: Constants.CATEGORY_DOT_PHRASE,
+  category: Constants.CATEGORY_CUSTOM_DATA,
   icon: 'format-status',
   description: __(
     'Title and taxonomies for a specific dot phrase',

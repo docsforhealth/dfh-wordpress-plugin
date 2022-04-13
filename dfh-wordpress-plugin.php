@@ -55,14 +55,8 @@ if (!defined('DFH_BLOCK_CATEGORY_LAYOUT')) {
 if (!defined('DFH_BLOCK_CATEGORY_MEDIA')) {
     define('DFH_BLOCK_CATEGORY_MEDIA', 'dfh-media');
 }
-if (!defined('DFH_BLOCK_CATEGORY_DOT_PHRASE')) {
-    define('DFH_BLOCK_CATEGORY_DOT_PHRASE', 'dfh-dot-phrase');
-}
-if (!defined('DFH_BLOCK_CATEGORY_RESOURCE')) {
-    define('DFH_BLOCK_CATEGORY_RESOURCE', 'dfh-resource');
-}
-if (!defined('DFH_BLOCK_CATEGORY_TOOLKIT')) {
-    define('DFH_BLOCK_CATEGORY_TOOLKIT', 'dfh-toolkit');
+if (!defined('DFH_BLOCK_CATEGORY_CUSTOM_DATA')) {
+    define('DFH_BLOCK_CATEGORY_CUSTOM_DATA', 'dfh-custom-data');
 }
 
 // Content types

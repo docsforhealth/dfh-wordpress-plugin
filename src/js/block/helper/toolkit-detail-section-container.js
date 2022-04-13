@@ -16,7 +16,7 @@ const title = __('Toolkit Sections', Constants.TEXT_DOMAIN);
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_TOOLKIT_DETAIL_SECTION_CONTAINER, {
   title,
-  category: Constants.CATEGORY_TOOLKIT,
+  category: Constants.CATEGORY_CUSTOM_DATA,
   icon: 'book-alt',
   description: __(
     'The sections that form the heart of this toolkit',

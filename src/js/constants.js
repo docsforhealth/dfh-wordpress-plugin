@@ -4,13 +4,11 @@ export const NAMESPACE = 'dfh';
 export const TEXT_DOMAIN = 'dfh';
 
 export const CATEGORY_COMMON = 'dfh-common';
+export const CATEGORY_CUSTOM_DATA = 'dfh-custom-data';
 export const CATEGORY_DEPRECATED = 'dfh-deprecated';
 export const CATEGORY_LANDING = 'dfh-landing';
 export const CATEGORY_LAYOUT = 'dfh-layout';
 export const CATEGORY_MEDIA = 'dfh-media';
-export const CATEGORY_DOT_PHRASE = 'dfh-dot-phrase';
-export const CATEGORY_RESOURCE = 'dfh-resource';
-export const CATEGORY_TOOLKIT = 'dfh-toolkit';
 
 // custom content types and taxonomies
 export const CONTENT_TYPE_RESOURCE = 'dfh_resource';

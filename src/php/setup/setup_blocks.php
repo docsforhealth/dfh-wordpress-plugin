@@ -15,24 +15,16 @@ function dfh_block_categories($categories, $post) {
                 'title' => __('Layout', DFH_TEXT_DOMAIN),
             ),
             array(
-                'slug'  => DFH_BLOCK_CATEGORY_MEDIA,
-                'title' => __('Media', DFH_TEXT_DOMAIN),
-            ),
-            array(
                 'slug'  => DFH_BLOCK_CATEGORY_LANDING,
                 'title' => __('Landing Page', DFH_TEXT_DOMAIN),
             ),
             array(
-                'slug'  => DFH_BLOCK_CATEGORY_RESOURCE,
-                'title' => __('Resources', DFH_TEXT_DOMAIN),
+                'slug'  => DFH_BLOCK_CATEGORY_CUSTOM_DATA,
+                'title' => __('Custom Data', DFH_TEXT_DOMAIN),
             ),
             array(
-                'slug'  => DFH_BLOCK_CATEGORY_TOOLKIT,
-                'title' => __('Toolkits', DFH_TEXT_DOMAIN),
-            ),
-            array(
-                'slug'  => DFH_BLOCK_CATEGORY_DOT_PHRASE,
-                'title' => __('Dot Phrases', DFH_TEXT_DOMAIN),
+                'slug'  => DFH_BLOCK_CATEGORY_MEDIA,
+                'title' => __('Media', DFH_TEXT_DOMAIN),
             ),
             array(
                 'slug'  => DFH_BLOCK_CATEGORY_DEPRECATED,

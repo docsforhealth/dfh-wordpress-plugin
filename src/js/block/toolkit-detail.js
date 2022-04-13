@@ -12,7 +12,7 @@ const title = __('Toolkit Detail', Constants.TEXT_DOMAIN);
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(`${Constants.NAMESPACE}/toolkit-detail`, {
   title,
-  category: Constants.CATEGORY_TOOLKIT,
+  category: Constants.CATEGORY_CUSTOM_DATA,
   icon: 'portfolio',
   description: __(
     'Video, text, and link resources that form a toolkit',
