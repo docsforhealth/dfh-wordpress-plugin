@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-
 import LinkPicker from './link-picker';
 
 export default function PopupPicker({ target, onChange, label }) {
@@ -20,7 +19,7 @@ PopupPicker.propTypes = {
   target: PropTypes.string,
 };
 
-PopupPicker.Content = function({ className = '', target, children }) {
+PopupPicker.Content = function ({ className = '', target, children }) {
   return (
     <a href={target} className={className} data-lity>
       {children}

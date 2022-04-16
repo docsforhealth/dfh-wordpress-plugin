@@ -2,6 +2,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 import * as Constants from 'src/js/constants';
+import TaxonomySelector from 'src/js/editor/taxonomy-selector';
 
 registerBlockType(Constants.BLOCK_PAGE_DOT_PHRASE_DETAIL_INFO, {
   apiVersion: 2,
@@ -16,9 +17,14 @@ registerBlockType(Constants.BLOCK_PAGE_DOT_PHRASE_DETAIL_INFO, {
   // for dynamic blocks, see attributes in corresponding PHP file
   // see reasoning in `dot_phrase_detail.php`
   edit() {
-    return <div {...useBlockProps()}></div>;
-  },
-  save() {
-    return null;
+    return (
+      <div {...useBlockProps()}>
+        <TaxonomySelector
+          className="taxonomy-selector--bottom-border"
+          taxonomySlug={Constants.TAXONOMY_DOT_PHRASE_CATEGORY}
+          allowMultiple={true}
+        />
+      </div>
+    );
   },
 });

@@ -26,7 +26,6 @@ import { hasChildOfComponentType } from 'src/js/utils';
  */
 
 // see https://github.com/WordPress/gutenberg/blob/master/packages/components/src/higher-order/with-focus-outside/index.js#L130-L135
-
 export default function WithInnerBlockAttrs({
   clientId,
   innerBlockAttrs,

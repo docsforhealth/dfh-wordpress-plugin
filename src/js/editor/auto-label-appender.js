@@ -1,6 +1,7 @@
 import { InnerBlocks } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 import $ from 'jquery';
+import PropTypes from 'prop-types';
 
 /**
  * Custom appender for InnerBlocks
@@ -11,7 +12,6 @@ import $ from 'jquery';
 
 // https://kurtrank.me/gutenberg-custom-innerblocks-appender/
 // https://github.com/WordPress/gutenberg/tree/trunk/packages/block-editor/src/components/inner-blocks#renderappender
-
 export default function AutoLabelAppender({ className, label, deemphasized }) {
   useEffect(() => {
     // Wait for page to finish loading
@@ -50,3 +50,8 @@ export default function AutoLabelAppender({ className, label, deemphasized }) {
     </div>
   );
 }
+AutoLabelAppender.propTypes = {
+  className: PropTypes.string,
+  label: PropTypes.string,
+  deemphasized: PropTypes.bool,
+};

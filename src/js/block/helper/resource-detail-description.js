@@ -1,9 +1,7 @@
-import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { TextareaControl } from '@wordpress/components';
-
+import { __ } from '@wordpress/i18n';
 import * as Constants from '../../constants';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
@@ -21,7 +19,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_DESCRIPTION, {
   },
   edit({ attributes, setAttributes }) {
     return (
-      <Fragment>
+      <>
         <TextareaControl
           label={__('Resource summary', Constants.TEXT_DOMAIN)}
           help={__(
@@ -29,7 +27,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_DESCRIPTION, {
             Constants.TEXT_DOMAIN,
           )}
           value={attributes.description}
-          onChange={description => setAttributes({ description })}
+          onChange={(description) => setAttributes({ description })}
         />
         <InnerBlocks
           templateLock={Constants.INNER_BLOCKS_LOCKED}
@@ -44,7 +42,7 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_DESCRIPTION, {
             ],
           ]}
         />
-      </Fragment>
+      </>
     );
   },
   save() {

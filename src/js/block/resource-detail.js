@@ -1,6 +1,5 @@
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-import { Fragment } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import * as Constants from 'src/js/constants';
 
@@ -17,7 +16,7 @@ registerBlockType(`${Constants.NAMESPACE}/resource-detail`, {
   ),
   edit() {
     return (
-      <Fragment>
+      <>
         <div className="dfh-editor-block-title">{title}</div>
         <div className="resource-detail">
           <InnerBlocks
@@ -28,7 +27,7 @@ registerBlockType(`${Constants.NAMESPACE}/resource-detail`, {
             ]}
           />
         </div>
-      </Fragment>
+      </>
     );
   },
   save() {

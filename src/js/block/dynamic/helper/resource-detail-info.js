@@ -1,8 +1,7 @@
-import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-import { TextControl } from '@wordpress/components';
-
-import * as Constants from '../../../constants';
+import { __ } from '@wordpress/i18n';
+import * as Constants from 'src/js/constants';
+import TaxonomySelector from 'src/js/editor/taxonomy-selector';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
 registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_INFO, {
@@ -17,16 +16,19 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_INFO, {
   // for dynamic blocks, see attributes in corresponding PHP file
   // see reasoning in `resource_detail_info.php`
   edit({ attributes, setAttributes }) {
+    // Remove ability for users to change the label because we always want to be the default
+    // "All resource" label
     return (
-      <TextControl
-        label={__('Back to all resources label', Constants.TEXT_DOMAIN)}
-        help={__(
-          'This label is shown on mobile devices only',
-          Constants.TEXT_DOMAIN,
-        )}
-        value={attributes.allResourcesLabel}
-        onChange={allResourcesLabel => setAttributes({ allResourcesLabel })}
-      />
+      <>
+        <TaxonomySelector
+          taxonomySlug={Constants.TAXONOMY_RESOURCE}
+          allowMultiple={true}
+        />
+        <TaxonomySelector
+          taxonomySlug={Constants.TAXONOMY_RESOURCE_TYPE}
+          allowMultiple={true}
+        />
+      </>
     );
   },
   save() {

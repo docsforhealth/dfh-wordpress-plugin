@@ -1,0 +1,51 @@
+.taxonomy-selector {
+    // Mixins (but not selectors) are SCOPED when nested
+    // see https://stackoverflow.com/a/23746347
+    @mixin pseudo-border() {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid $color-seafoam-dark-1;
+    }
+
+    & + &:not(:empty) {
+        position: relative;
+        padding-top: $baseunit;
+
+        &:before {
+            @include pseudo-border();
+
+            top: 0;
+        }
+    }
+    &:not(:last-of-type),
+    &--bottom-border {
+        padding-bottom: $baseunit;
+    }
+    &--bottom-border {
+        position: relative;
+
+        &:after {
+            @include pseudo-border();
+
+            bottom: 0;
+        }
+    }
+
+    &__label {
+        display: inline-block;
+        margin-bottom: 8px;
+    }
+    &__button-group {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: $baseunit * 0.5;
+    }
+    &__button {
+        &--active {
+            background-color: $color-navy !important;
+            color: $color-white !important;
+        }
+    }
+}

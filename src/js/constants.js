@@ -19,6 +19,7 @@ export const CONTENT_TYPE_TO_CONTAINER_CLASS = {
   [CONTENT_TYPE_TOOLKIT]: 'toolkit-previews',
   [CONTENT_TYPE_DOT_PHRASE]: 'dot-phrase-preview-list',
 };
+export const TAXONOMY_DOT_PHRASE_CATEGORY = 'dfh_dot_phrase_category';
 export const TAXONOMY_RESOURCE = 'dfh_resource_classification';
 export const TAXONOMY_RESOURCE_TYPE = 'dfh_resource_content_type';
 
@@ -61,6 +62,7 @@ export const BLOCK_PAGE_CATEGORIES_SEARCH_HEADER = `${NAMESPACE}/page-categories
 export const BLOCK_PAGE_HEADER = `${NAMESPACE}/page-header`;
 export const BLOCK_PAGE_TAXONOMY_FILTER = `${NAMESPACE}/page-taxonomy-filter`;
 export const BLOCK_PAGE_TITLE = `${NAMESPACE}/page-title`;
+export const BLOCK_TAXONOMY_SELECTOR = `${NAMESPACE}/taxonomy-selector`;
 
 export const BLOCK_FAQ_QUESTION_CONTAINER = `${NAMESPACE}/page-faq-question-container`;
 export const BLOCK_FAQ_QUESTION = `${NAMESPACE}/page-faq-question`;
