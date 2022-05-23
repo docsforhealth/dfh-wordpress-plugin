@@ -1,7 +1,7 @@
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
-import * as SharedButton from 'src/js/block/shared/button';
+import { ATTR_OPTION_SIZE, ATTR_SIZE } from 'src/js/block/shared/button';
 import * as Constants from 'src/js/constants';
 
 // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
@@ -36,8 +36,8 @@ registerBlockType(Constants.BLOCK_RESOURCE_DETAIL_STEPS_STEP, {
                 expandWidth: true,
                 forceAttributes: {
                   [Constants.INNER_BLOCKS_FORCE_ATTRS_ALL]: {
-                    [SharedButton.ATTR_SIZE]: Constants.BUTTON_SIZE_SMALL,
-                    [SharedButton.ATTR_OPTION_SIZE]: false,
+                    [ATTR_SIZE]: Constants.BUTTON_SIZE_SMALL,
+                    [ATTR_OPTION_SIZE]: false,
                   },
                 },
                 template: [

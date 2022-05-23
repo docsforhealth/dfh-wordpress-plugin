@@ -1,6 +1,7 @@
 import { InnerBlocks } from '@wordpress/block-editor';
 import { useEffect } from '@wordpress/element';
 import $ from 'jquery';
+import { throttle } from 'lodash';
 import PropTypes from 'prop-types';
 
 /**
@@ -10,31 +11,36 @@ import PropTypes from 'prop-types';
  * from the `aria-label` of the `ButtonBlockAppender`
  */
 
+const tryUpdateAppenderText = throttle(() => {
+  // Wait for page to finish loading, just in case still loading
+  $(function () {
+    // Find all instances of `data-auto-label-appender` currently on the page
+    // Because React hooks are global by nature, no easy way to scope to only this block
+    $('[data-auto-label-appender=true]').each(function () {
+      const {
+          autoLabelAppenderSourceSelector,
+          autoLabelAppenderSourceAttribute,
+          autoLabelAppenderTargetSelector,
+        } = this.dataset,
+        $el = $(this),
+        label = $el
+          .find(autoLabelAppenderSourceSelector)
+          .attr(autoLabelAppenderSourceAttribute);
+      if (label) {
+        $el.find(autoLabelAppenderTargetSelector).text(label);
+      }
+    });
+  });
+}, 200);
+
 // https://kurtrank.me/gutenberg-custom-innerblocks-appender/
 // https://github.com/WordPress/gutenberg/tree/trunk/packages/block-editor/src/components/inner-blocks#renderappender
 export default function AutoLabelAppender({ className, label, deemphasized }) {
+  // run on every render with rate-limited function to check if label should be pulled from appender
   useEffect(() => {
-    // Wait for page to finish loading
-    $(function () {
-      // Find all instances of `data-auto-label-appender` currently on the page
-      // Because React hooks are global by nature, no easy way to scope to only this block
-      $('[data-auto-label-appender=true]').each(function () {
-        const {
-            autoLabelAppenderSourceSelector,
-            autoLabelAppenderSourceAttribute,
-            autoLabelAppenderTargetSelector,
-          } = this.dataset,
-          $el = $(this),
-          label = $el
-            .find(autoLabelAppenderSourceSelector)
-            .attr(autoLabelAppenderSourceAttribute);
-        if (label) {
-          $el.find(autoLabelAppenderTargetSelector).text(label);
-        }
-      });
-    });
+    tryUpdateAppenderText();
+    return tryUpdateAppenderText.cancel;
   });
-
   return (
     <div
       className={`auto-label-appender ${className ?? ''} ${

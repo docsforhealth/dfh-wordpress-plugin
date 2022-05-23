@@ -35,20 +35,25 @@ class DFH_Setup {
     }
 
     private function setup_plugin() {
-        require_once DFH_PLUGIN_DIR . '/src/php/setup/setup_plugin_deps.php';
-        require_once DFH_PLUGIN_DIR . '/src/php/setup/add_analytics.php';
         require_once DFH_PLUGIN_DIR . '/src/php/setup/helpers.php';
 
-        require_once DFH_PLUGIN_DIR . '/src/php/setup/edit_default_page.php';
         require_once DFH_PLUGIN_DIR . '/src/php/setup/remove_block_patterns.php';
         require_once DFH_PLUGIN_DIR . '/src/php/setup/remove_comments.php';
         require_once DFH_PLUGIN_DIR . '/src/php/setup/remove_default_post_type.php';
         require_once DFH_PLUGIN_DIR . '/src/php/setup/remove_default_taxonomies.php';
+        require_once DFH_PLUGIN_DIR . '/src/php/setup/remove_remote_block_directory.php';
 
-        require_once DFH_PLUGIN_DIR . '/src/php/setup/setup_ajax_load_more.php';
-        require_once DFH_PLUGIN_DIR . '/src/php/setup/setup_blocks.php';
-        require_once DFH_PLUGIN_DIR . '/src/php/setup/setup_content_types.php';
-        require_once DFH_PLUGIN_DIR . '/src/php/setup/setup_security.php';
-        require_once DFH_PLUGIN_DIR . '/src/php/setup/setup_textdomain.php';
+        require_once DFH_PLUGIN_DIR . '/src/php/setup/edit_default_page.php';
+        require_once DFH_PLUGIN_DIR . '/src/php/setup/add_analytics.php';
+        require_once DFH_PLUGIN_DIR . '/src/php/setup/security.php';
+        require_once DFH_PLUGIN_DIR . '/src/php/setup/textdomain.php';
+
+        // see `src/js/allow-only-custom-blocks` for hiding core blocks
+        require_once DFH_PLUGIN_DIR . '/src/php/setup/blocks.php';
+        require_once DFH_PLUGIN_DIR . '/src/php/setup/dynamic_blocks.php';
+        require_once DFH_PLUGIN_DIR . '/src/php/setup/block_categories.php';
+
+        require_once DFH_PLUGIN_DIR . '/src/php/setup/ajax_load_more.php';
+        require_once DFH_PLUGIN_DIR . '/src/php/setup/custom_content_types.php';
     }
 }

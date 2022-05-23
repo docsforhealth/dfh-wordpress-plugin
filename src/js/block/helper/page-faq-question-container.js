@@ -43,7 +43,7 @@ registerBlockType(
         if (numQuestions !== attributes.numQuestions) {
           setAttributes({ numQuestions });
         }
-      });
+      }, [numQuestions, attributes.numQuestions]);
       return (
         <>
           <div className="dfh-editor-block-title dfh-editor-block-title--nested">

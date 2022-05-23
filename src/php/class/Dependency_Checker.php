@@ -20,8 +20,8 @@ class DFH_Dependency_Checker {
      */
     private function get_missing_plugins_list() {
         $missing_plugins = array();
-        foreach (DFH_REQUIRED_PLUGINS as $plugin_name => $main_file_path) {
-            if (!$this->is_plugin_active($main_file_path)) {
+        foreach (DFH_REQUIRED_PLUGINS as $plugin_name => $main_file_pattern) {
+            if (!$this->is_plugin_active($main_file_pattern)) {
                 $missing_plugins[] = $plugin_name;
             }
         }
@@ -29,12 +29,12 @@ class DFH_Dependency_Checker {
     }
 
     /**
-     * @param string $main_file_path Path to main plugin file, as defined in DFH_REQUIRED_PLUGINS
+     * @param string $main_file_pattern Regex pattern for main plugin file, as defined in DFH_REQUIRED_PLUGINS
      *
      * @return bool
      */
-    private function is_plugin_active( $main_file_path ) {
-        return in_array($main_file_path, $this->get_active_plugins());
+    private function is_plugin_active($main_file_pattern) {
+        return !empty(preg_grep($main_file_pattern, $this->get_active_plugins()));
     }
 
     /**

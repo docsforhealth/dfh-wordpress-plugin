@@ -84,7 +84,7 @@ const EditWithContext = function ({ context, attributes, setAttributes }) {
     if (!hasAvailableTaxonomies && attributes.taxonomyId) {
       setAttributes({ taxonomyId: '' });
     }
-  });
+  }, [hasAvailableTaxonomies, attributes.taxonomyId]);
   // NOTE: do NOT return null, must return SOMETHING from this edit hook
   return (
     <div {...useBlockProps()}>

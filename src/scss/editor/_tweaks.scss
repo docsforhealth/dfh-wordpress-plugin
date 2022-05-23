@@ -4,7 +4,7 @@
 }
 
 // Greater top spacing for room for block title
-.editor-styles-wrapper [data-block] {
+[data-block]:first-child {
     margin-top: 40px;
 }
 
@@ -12,10 +12,15 @@
 [data-block] .components-base-control,
 [data-block] .components-number-control,
 [data-block] .components-input-control {
-    margin-bottom: $baseunit;
-    padding-bottom: $baseunit;
-    border-bottom: 1px solid $color-seafoam-dark-1;
+    &:not(:last-of-type) {
+        margin-bottom: $baseunit;
+        padding-bottom: $baseunit;
+        border-bottom: 1px solid $color-seafoam-dark-1;
+    }
 
+    &__field:last-child {
+        margin-bottom: 0;
+    }
     label {
         @extend %default-text;
     }
@@ -29,4 +34,12 @@
 // Allow page title in editor to have heading styles
 .edit-post-visual-editor__post-title-wrapper {
     @extend .heading--2;
+}
+
+// Ensure consistent text styling
+.components-placeholder__error,
+.components-placeholder__instructions,
+.components-placeholder__label,
+.components-placeholder__fieldset {
+    @extend %default-text;
 }

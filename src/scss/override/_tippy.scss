@@ -5,11 +5,7 @@
     box-shadow: 0px 0px 15px 0px $color-transparent-gray-light-1;
     background-color: $color-seafoam;
     // enabled by the `border.css` import above
-    border: 1px solid $color-gray-light-1;
-
-    // enable scrolling if too large
-    @include scroll-vertical();
-    max-height: 80vh;
+    border: 1px solid $color-gray-light-2;
 
     &[data-placement^='top'] > .tippy-arrow:before {
         border-top-color: $color-seafoam;

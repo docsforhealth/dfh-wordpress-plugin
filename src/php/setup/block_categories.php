@@ -4,7 +4,8 @@
 add_filter('block_categories_all', 'dfh_block_categories', 10, 2);
 function dfh_block_categories($categories, $post) {
     // Note that the order specified here is the order the categories will display
-    return array_merge(
+    // also has custom hook, see https://developer.wordpress.org/plugins/hooks/custom-hooks
+    return apply_filters(DFH_FILTER_BLOCK_CATEGORIES, array_merge(
         array(
             array(
                 'slug'  => DFH_BLOCK_CATEGORY_COMMON,
@@ -32,22 +33,5 @@ function dfh_block_categories($categories, $post) {
             ),
         ),
         $categories
-    );
-}
-
-add_action('init', 'dfh_register_dynamic_blocks');
-function dfh_register_dynamic_blocks() {
-    // if Block Editor is not active, bail.
-    if (!function_exists('register_block_type')) {
-        return;
-    }
-    // scripts and stylesheets already registered in editor-specific hooks
-    // in these files, we only need to specify the render_callback AND attributes
-    // see https://github.com/WordPress/gutenberg/issues/6187#issuecomment-381446732
-    require DFH_PLUGIN_DIR . '/src/php/setup/block/dot_phrase_detail_info.php';
-    require DFH_PLUGIN_DIR . '/src/php/setup/block/page_taxonomy_filter.php';
-    require DFH_PLUGIN_DIR . '/src/php/setup/block/page_title.php';
-    require DFH_PLUGIN_DIR . '/src/php/setup/block/resource_detail_info.php';
-    require DFH_PLUGIN_DIR . '/src/php/setup/block/resource_overview.php';
-    require DFH_PLUGIN_DIR . '/src/php/setup/block/toolkit_detail_header.php';
+    ));
 }

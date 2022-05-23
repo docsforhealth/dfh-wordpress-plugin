@@ -25,6 +25,7 @@ export const TAXONOMY_RESOURCE_TYPE = 'dfh_resource_content_type';
 
 // documentation for stores at https://developer.wordpress.org/block-editor/data/
 export const STORE_BLOCK_EDITOR = 'core/block-editor';
+export const STORE_BLOCKS = 'core/blocks';
 export const STORE_CORE = 'core';
 export const STORE_EDITOR = 'core/editor';
 

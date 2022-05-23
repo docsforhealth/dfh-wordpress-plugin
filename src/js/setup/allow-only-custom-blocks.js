@@ -1,13 +1,21 @@
-import { setDefaultBlockName } from '@wordpress/blocks';
 import { addFilter } from '@wordpress/hooks';
-import _ from 'lodash';
 import * as Constants from 'src/js/constants';
+
+// allow reusable blocks category `reusable` to remain
+const DEFAULT_CATEGORY_SLUGS_TO_HIDE = [
+  'text',
+  'media',
+  'design',
+  'widgets',
+  'theme',
+  'embed',
+];
 
 // hides all non-DFH blocks, with some exceptions
 // from https://github.com/WordPress/gutenberg/issues/11723#issuecomment-441828833
 addFilter(
   'blocks.registerBlockType',
-  Constants.NAMESPACE,
+  `${Constants.NAMESPACE}/custom-blocks`,
   (blockSettings, blockName) => {
     const allowedCoreBlocks = {
       [Constants.CORE_BLOCK_LIST]: Constants.CATEGORY_COMMON,
@@ -24,21 +32,24 @@ addFilter(
       [Constants.CORE_BLOCK_VIDEO]: Constants.CATEGORY_MEDIA,
     };
     if (allowedCoreBlocks[blockName]) {
-      return _.assign({}, blockSettings, {
+      return {
+        ...blockSettings,
         category: allowedCoreBlocks[blockName],
-      });
+      };
+    } else if (
+      DEFAULT_CATEGORY_SLUGS_TO_HIDE.includes(blockSettings.category)
+    ) {
+      // hide remaining core blocks that fall within predefined default categories to ensure that
+      // we are not hiding the blocks from other plugins
+      return {
+        ...blockSettings,
+        supports: {
+          ...blockSettings.supports,
+          inserter: false,
+        },
+      };
     } else {
-      // If not special whitelisted core blocks, then only allow custom DFH blocks
-      return _.startsWith(blockName, Constants.NAMESPACE)
-        ? blockSettings
-        : _.assign({}, blockSettings, {
-            supports: _.assign({}, blockSettings.supports, { inserter: false }),
-          });
+      return blockSettings;
     }
   },
 );
-// sets the default block to the `dfh/text` block
-// see https://developer.wordpress.org/block-editor/packages/packages-blocks/#setDefaultBlockName
-window.onload = function () {
-  setDefaultBlockName(Constants.BLOCK_TEXT);
-};

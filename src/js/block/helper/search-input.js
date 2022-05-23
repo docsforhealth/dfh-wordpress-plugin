@@ -34,13 +34,14 @@ registerBlockType(
       // Can use `useEffect` hook here even though the `addUniqueIdInApiVersionOne` uses a CLASS-based
       // component because that is a HOC that wraps this one. Therefore, as long as this component
       // is a functional component, it can use hooks
+      const { context, attributes } = props;
       useEffect(() => {
         syncAttrFromContextIfDefined(
           props,
           CONTEXT_PLACEHOLDER_KEY,
           'placeholder',
         );
-      });
+      }, [context[CONTEXT_PLACEHOLDER_KEY], attributes.placeholder]);
       // Can't return null, have to return something from edit hook
       return <div></div>;
     },

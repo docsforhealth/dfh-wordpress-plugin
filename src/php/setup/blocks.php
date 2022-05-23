@@ -1,5 +1,7 @@
 <?php
 
+// see `src/js/allow-only-custom-blocks` for hiding core blocks
+
 // see https://jasonyingling.me/enqueueing-scripts-and-styles-for-gutenberg-blocks/
 add_action('enqueue_block_editor_assets', 'dfh_register_editor_blocks');
 function dfh_register_editor_blocks() {
@@ -7,7 +9,7 @@ function dfh_register_editor_blocks() {
     wp_enqueue_script(
         'dfh-editor-script', // label
         plugins_url('/build/editor.js', DFH_PLUGIN_ROOT), // URL to script file
-        array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-block-editor', 'wp-data', 'wp-hooks', 'wp-api-fetch'), // dependencies
+        array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-block-editor', 'wp-data', 'wp-hooks', 'wp-dom-ready'), // dependencies
         filemtime(DFH_PLUGIN_DIR . '/build/editor.js') // is a file path, set version as file last modified time
     );
     // see https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/

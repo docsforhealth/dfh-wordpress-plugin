@@ -48,7 +48,13 @@ div.rich-text:focus span[data-rich-text-format-boundary].more-info {
     }
 }
 
+// Styling the contents of the popover on the frontend. For styling of the enclosing `tippy`
+// elements via our custom `dfh` theme, see `src/scss/override/tippy`
 .more-info-popover {
+    // enable scrolling if too large
+    @include scroll-vertical();
+    max-height: 80vh;
+
     &__description {
         padding: $baseunit;
     }

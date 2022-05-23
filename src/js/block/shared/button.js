@@ -1,13 +1,23 @@
+import { InspectorControls, RichText } from '@wordpress/block-editor';
+import { PanelBody, RadioControl, ToggleControl } from '@wordpress/components';
+import { forwardRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
-import { RichText, InspectorControls } from '@wordpress/block-editor';
-import { ToggleControl, PanelBody, RadioControl } from '@wordpress/components';
+import { filter } from 'lodash';
+import PropTypes from 'prop-types';
+import * as Constants from 'src/js/constants';
 
-import * as Constants from '../../constants';
+////////////////
+// Attributes //
+////////////////
 
 export const ATTR_SIZE = 'size';
 export const ATTR_OPTION_SIZE = 'showSizeOptions';
-export const config = {
+
+///////////////////
+// Configuration //
+///////////////////
+
+export const SHARED_CONFIG = {
   category: Constants.CATEGORY_COMMON,
   parent: [Constants.BLOCK_BUTTON_CONTAINER],
   supports: { customClassName: false },
@@ -22,83 +32,115 @@ export const config = {
   },
 };
 
-export function buildButtonEdit({ attributes, setAttributes }, AssetPicker) {
-  return (
-    <Fragment>
-      <InspectorControls>
-        <PanelBody title={__('Link Button Settings', Constants.TEXT_DOMAIN)}>
-          {attributes[ATTR_OPTION_SIZE] && (
-            <RadioControl
-              label={__('Size', Constants.TEXT_DOMAIN)}
-              selected={attributes[ATTR_SIZE]}
-              options={[
-                {
-                  label: __('Default', Constants.TEXT_DOMAIN),
-                  value: Constants.BUTTON_SIZE_DEFAULT,
-                },
-                {
-                  label: __('Small', Constants.TEXT_DOMAIN),
-                  value: Constants.BUTTON_SIZE_SMALL,
-                },
-              ]}
-              onChange={size => setAttributes({ [ATTR_SIZE]: size })}
+//////////
+// Edit //
+//////////
+
+export const Edit = forwardRef(
+  ({ attributes, setAttributes, children, ...otherProps }, ref) => {
+    return (
+      <>
+        <InspectorControls>
+          <PanelBody title={__('Link Button Settings', Constants.TEXT_DOMAIN)}>
+            {attributes[ATTR_OPTION_SIZE] && (
+              <RadioControl
+                label={__('Size', Constants.TEXT_DOMAIN)}
+                selected={attributes[ATTR_SIZE]}
+                options={[
+                  {
+                    label: __('Default', Constants.TEXT_DOMAIN),
+                    value: Constants.BUTTON_SIZE_DEFAULT,
+                  },
+                  {
+                    label: __('Small', Constants.TEXT_DOMAIN),
+                    value: Constants.BUTTON_SIZE_SMALL,
+                  },
+                ]}
+                onChange={(size) => setAttributes({ [ATTR_SIZE]: size })}
+              />
+            )}
+            <ToggleControl
+              label={__('Is secondary?', Constants.TEXT_DOMAIN)}
+              checked={attributes.isSecondary}
+              onChange={(isSecondary) => setAttributes({ isSecondary })}
             />
-          )}
-          <ToggleControl
-            label={__('Is secondary?', Constants.TEXT_DOMAIN)}
-            checked={attributes.isSecondary}
-            onChange={isSecondary => setAttributes({ isSecondary })}
+            <ToggleControl
+              label={__('Is outlined?', Constants.TEXT_DOMAIN)}
+              checked={attributes.isOutlined}
+              onChange={(isOutlined) => setAttributes({ isOutlined })}
+            />
+          </PanelBody>
+        </InspectorControls>
+        <div {...otherProps} ref={ref}>
+          <RichText
+            className={`button-container__button button dfh-editor-is-clickable ${buildButtonClassName(
+              attributes,
+            )}`}
+            placeholder={__('Enter button label here', Constants.TEXT_DOMAIN)}
+            value={attributes.label}
+            onChange={(label) => setAttributes({ label })}
+            allowedFormats={[]}
           />
-          <ToggleControl
-            label={__('Is outlined?', Constants.TEXT_DOMAIN)}
-            checked={attributes.isOutlined}
-            onChange={isOutlined => setAttributes({ isOutlined })}
-          />
-        </PanelBody>
-      </InspectorControls>
-      <RichText
-        className={`button-container__button button dfh-editor-is-clickable ${buildButtonClassName(
+          {children &&
+            children({
+              url: attributes.url,
+              title: attributes.urlTitle,
+              label: __('Button target', Constants.TEXT_DOMAIN),
+              onChange: ({ url, title }) =>
+                setAttributes({ url, urlTitle: title }),
+            })}
+        </div>
+      </>
+    );
+  },
+);
+Edit.propTypes = {
+  attributes: PropTypes.object.isRequired,
+  setAttributes: PropTypes.func.isRequired,
+  children: PropTypes.func,
+};
+
+//////////
+// Save //
+//////////
+
+export const Save = forwardRef(
+  ({ attributes, openInNewTab, ...otherProps }, ref) => {
+    // see https://github.com/WordPress/gutenberg/tree/trunk/packages/block-editor/src/components/rich-text#richtextcontent
+    const openProps = openInNewTab
+      ? {
+          rel: 'noopener noreferrer',
+          target: '_blank',
+        }
+      : {};
+    return (
+      <a
+        {...otherProps}
+        {...openProps}
+        ref={ref}
+        href={attributes.url}
+        className={`button-container__button button ${buildButtonClassName(
           attributes,
         )}`}
-        placeholder={__('Enter button label here', Constants.TEXT_DOMAIN)}
-        value={attributes.label}
-        onChange={label => setAttributes({ label })}
-      />
-      <AssetPicker
-        url={attributes.url}
-        title={attributes.urlTitle}
-        label={__('Button target', Constants.TEXT_DOMAIN)}
-        onChange={({ url, title }) => setAttributes({ url, urlTitle: title })}
-      />
-    </Fragment>
-  );
-}
+      >
+        <RichText.Content value={attributes.label} />
+      </a>
+    );
+  },
+);
+Save.propTypes = {
+  attributes: PropTypes.object.isRequired,
+  openInNewTab: PropTypes.bool,
+};
 
-export function buildButtonSave({ attributes }, { openInNewTab = false } = {}) {
-  const openProps = openInNewTab
-    ? {
-        rel: 'noopener noreferrer',
-        target: '_blank',
-      }
-    : {};
-  return (
-    <a
-      {...openProps}
-      href={attributes.url}
-      className={`button-container__button button ${buildButtonClassName(
-        attributes,
-      )}`}
-    >
-      {attributes.label}
-    </a>
-  );
-}
+/////////////
+// Helpers //
+/////////////
 
 function buildButtonClassName(attributes) {
-  const sizeClass = attributes[ATTR_SIZE]
-      ? `button--${attributes[ATTR_SIZE]}`
-      : '',
-    isSecondaryClass = attributes.isSecondary ? 'button--secondary' : '',
-    isOutlinedClass = attributes.isOutlined ? 'button--outline' : '';
-  return `${sizeClass} ${isSecondaryClass} ${isOutlinedClass}`;
+  return filter([
+    attributes[ATTR_SIZE] ? `button--${attributes[ATTR_SIZE]}` : '',
+    attributes.isSecondary ? 'button--secondary' : '',
+    attributes.isOutlined ? 'button--outline' : '',
+  ]).join(' ');
 }

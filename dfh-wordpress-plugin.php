@@ -23,12 +23,20 @@ if (!defined('DFH_PLUGIN_DIR')) {
     define('DFH_PLUGIN_DIR', untrailingslashit(dirname(DFH_PLUGIN_ROOT)));
 }
 // Define the plugins that our plugin requires to function.
-// Array format: 'Plugin Name' => 'Path to main plugin file'
+// Array format: 'Plugin Name' => 'Regex pattern for main plugin file'
 if (!defined('DFH_REQUIRED_PLUGINS')) {
     define('DFH_REQUIRED_PLUGINS', array(
-        'Contact Form 7' => 'contact-form-7/wp-contact-form-7.php',
-        'Ajax Load More' => 'ajax-load-more/ajax-load-more.php',
+        'Contact Form 7' => '/wp-contact-form-7.php/',
+        'Ajax Load More' => '/ajax-load-more.php/',
     ));
+}
+
+// *****************
+// * EXTENSIBILITY *
+// *****************
+
+if (!defined('DFH_FILTER_BLOCK_CATEGORIES')) {
+    define('DFH_FILTER_BLOCK_CATEGORIES', 'dfh_block_categories');
 }
 
 // *************************

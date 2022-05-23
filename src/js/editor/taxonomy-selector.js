@@ -1,6 +1,7 @@
 import { Button, ButtonGroup } from '@wordpress/components';
 import { useDispatch, useSelect } from '@wordpress/data';
 import { useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import * as Constants from 'src/js/constants';
@@ -51,7 +52,11 @@ export default function TaxonomySelector({
               className={`button button--small button--outline taxonomy-selector__button ${
                 isSelected ? 'taxonomy-selector__button--active' : ''
               }`}
-              label={`Toggle selection for ${value.name}`}
+              label={
+                __('Toggle selection for', Constants.TEXT_DOMAIN) +
+                ' ' +
+                value.name
+              }
               onClick={() => {
                 editPost({
                   [taxonomySlug]: buildTaxonomySelection(

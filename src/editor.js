@@ -1,9 +1,10 @@
 // organize-imports-ignore
 
 /**
- * Helpers
+ * Setup
  */
-import 'src/js/allow-only-custom-blocks';
+import 'src/js/setup/allow-only-custom-blocks';
+import 'src/js/setup/change-default-block';
 
 /**
  * Overrides
@@ -16,7 +17,7 @@ import 'src/js/block/override/table';
 /**
  * Custom formats
  */
-import 'src/js/editor/format/more-info';
+import 'src/js/format/more-info';
 
 /**
  * Basic blocks

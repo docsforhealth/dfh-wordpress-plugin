@@ -56,7 +56,7 @@ registerBlockType(Constants.BLOCK_AJAX_LOAD_MORE, {
     CONTEXT_CONTAINER_CLASS_KEY,
   ],
   edit(props) {
-    const { attributes, setAttributes } = props;
+    const { context, attributes, setAttributes } = props;
     // Can define these attributes by directly passing in OR via Context
     useEffect(() => {
       syncAttrFromContextIfDefined(
@@ -74,7 +74,14 @@ registerBlockType(Constants.BLOCK_AJAX_LOAD_MORE, {
         CONTEXT_CONTAINER_CLASS_KEY,
         ATTR_TRANSITION_CONTAINER_CLASS,
       );
-    });
+    }, [
+      context[CONTEXT_PLURAL_NAME_KEY],
+      context[CONTEXT_CONTENT_ID_KEY],
+      context[CONTEXT_CONTAINER_CLASS_KEY],
+      attributes[ATTR_PLURAL_NAME],
+      attributes[ATTR_CONTENT_ID],
+      attributes[ATTR_TRANSITION_CONTAINER_CLASS],
+    ]);
     return (
       <div {...useBlockProps()}>
         <NumberControl

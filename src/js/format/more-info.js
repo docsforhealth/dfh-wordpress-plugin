@@ -23,13 +23,13 @@ import * as Constants from 'src/js/constants';
 // Rich Text block: https://github.com/WordPress/gutenberg/tree/trunk/packages/block-editor/src/components/rich-text
 // Rich Text helper library: https://github.com/WordPress/gutenberg/tree/trunk/packages/rich-text
 
-const type = `${Constants.NAMESPACE}/format-more-info`,
-  title = __('More Info', Constants.TEXT_DOMAIN);
-
-// see https://github.com/WordPress/gutenberg/tree/trunk/packages/rich-text#registerformattype
-// see https://github.com/WordPress/gutenberg/blob/trunk/packages/rich-text/src/register-format-type.js
-registerFormatType(type, {
+const type = `${Constants.NAMESPACE}/format-more-info`;
+const title = __('More Info', Constants.TEXT_DOMAIN);
+const settings = {
   title,
+  // `object` implies a SELF-CLOSING tag so if true will assume that the tag is self-closing
+  // see https://github.com/WordPress/gutenberg/issues/40051#issuecomment-1088836769
+  object: false,
   tagName: 'span',
   className: 'more-info',
   attributes: {
@@ -38,6 +38,9 @@ registerFormatType(type, {
   },
   // see https://github.com/WordPress/gutenberg/blob/trunk/packages/format-library/src/link/index.js
   // example: https://wordpress.stackexchange.com/a/376740
+  // Note: because this is NOT an object, which is determine by whether `toggleFormat` or `insertObject`
+  // is passed to the `onChange` function, we reference `isActive` and `activeAttributes` instead of
+  // `isObjectActive` and `activeObjectAttributes`
   edit({ isActive, activeAttributes, value, onChange, onFocus, contentRef }) {
     const updateAttributes = (newAttrs) =>
       onChange(
@@ -49,6 +52,9 @@ registerFormatType(type, {
           },
         }),
       );
+    // NOTE: Because `useAnchorRef` also called the `useMemo` hook, we need to call it here so that
+    // adding a `Popover` doesn't change the hook order and trigger a React exception
+    const anchorRef = useAnchorRef({ ref: contentRef, value, settings });
     // The documentation uses `RichTextToolbarButton` which adds the format to the "More" dropdown
     // Since we want to surface this format as a top-level button, we will use `BlockControls` instead
     // see https://github.com/WordPress/gutenberg/issues/14881#issuecomment-517115815
@@ -68,7 +74,7 @@ registerFormatType(type, {
         </BlockControls>
         {isActive && (
           <Popover
-            anchorRef={useAnchorRef({ ref: contentRef, value })}
+            anchorRef={anchorRef}
             focusOnMount={false}
             onClose={onFocus}
             className="more-info-editor-popover"
@@ -95,4 +101,8 @@ registerFormatType(type, {
       </>
     );
   },
-});
+};
+
+// see https://github.com/WordPress/gutenberg/tree/trunk/packages/rich-text#registerformattype
+// see https://github.com/WordPress/gutenberg/blob/trunk/packages/rich-text/src/register-format-type.js
+registerFormatType(type, settings);
