@@ -1,6 +1,6 @@
 {
   "name": "dfh-wordpress-plugin",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "license": "Apache-2.0",
   "scripts": {
     "git:pull": "git pull && git submodule foreach git pull origin master",
@@ -33,5 +33,6 @@
     "tippy.js": "^6.3.7",
     "typescript": "^4.5.2",
     "webpack-merge": "^5.8.0"
-  }
+  },
+  "dependencies": {}
 }
