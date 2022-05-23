@@ -32,6 +32,7 @@ describe('addUniqueIdInApiVersionOne', () => {
     const editComponent = addUniqueIdInApiVersionOne(idAttrName, {}).edit;
 
     expect(editComponent).toEqual(expect.any(Function));
-    expect(editComponent.name).toEqual('Component');
+    // see https://stackoverflow.com/a/41658173
+    expect(editComponent.prototype.isReactComponent).toBeTruthy();
   });
 });

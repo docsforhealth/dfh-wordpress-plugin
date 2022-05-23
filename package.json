@@ -11,7 +11,7 @@
     "watch:test": "npx wp-scripts test-unit-js --watch",
     "test": "npx wp-scripts test-unit-js",
     "build": "npm run build:wp && npm run build:sass",
-    "start": "npx concurrently -n w: npm:watch:*"
+    "start": "npx concurrently \"npm:watch:*\""
   },
   "scriptsComments": {
     "build": "Builds production assets sequentially. Note that WP build must come before SCSS compilation to avoid overwriting compiled CSS files",
@@ -34,5 +34,5 @@
     "typescript": "^4.5.2",
     "webpack-merge": "^5.8.0"
   },
-  "dependencies": {}
+  "packageManager": "yarn@3.2.1"
 }
